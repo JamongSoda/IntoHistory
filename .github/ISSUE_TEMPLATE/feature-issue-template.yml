@@ -2,6 +2,7 @@ name: Feature Template
 description: 새로운 기능 추가
 title: "[Feature] Title"
 labels: ["feature"]
+projects: ["IntoHistory Project"]
 
 body:
   - type: textarea
