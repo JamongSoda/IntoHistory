@@ -24,10 +24,3 @@ class LoadingPersonJson {
         }
     }
 }
-
-struct Person: Codable {
-    let person_id: Int?
-    let person_name: String?
-    let person_type: String?
-    let person_description: String?
-}

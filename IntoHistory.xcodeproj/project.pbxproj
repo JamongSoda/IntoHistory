@@ -18,6 +18,8 @@
 		98AD0C7D28A267770052E7AE /* person_json.json in Resources */ = {isa = PBXBuildFile; fileRef = 98AD0C7B28A267770052E7AE /* person_json.json */; };
 		98AD0C7F28A268770052E7AE /* LoadingCourseJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AD0C7E28A268770052E7AE /* LoadingCourseJSON.swift */; };
 		98AD0C8128A272D30052E7AE /* LoadingPersonJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AD0C8028A272D30052E7AE /* LoadingPersonJSON.swift */; };
+		98AD0C8328A2D7400052E7AE /* PersonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AD0C8228A2D7400052E7AE /* PersonData.swift */; };
+		98AD0C8528A2D75B0052E7AE /* CourseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AD0C8428A2D75B0052E7AE /* CourseData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		98AD0C7B28A267770052E7AE /* person_json.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = person_json.json; sourceTree = "<group>"; };
 		98AD0C7E28A268770052E7AE /* LoadingCourseJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCourseJSON.swift; sourceTree = "<group>"; };
 		98AD0C8028A272D30052E7AE /* LoadingPersonJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingPersonJSON.swift; sourceTree = "<group>"; };
+		98AD0C8228A2D7400052E7AE /* PersonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonData.swift; sourceTree = "<group>"; };
+		98AD0C8428A2D75B0052E7AE /* CourseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,8 @@
 				98AD0C7B28A267770052E7AE /* person_json.json */,
 				98AD0C7E28A268770052E7AE /* LoadingCourseJSON.swift */,
 				98AD0C8028A272D30052E7AE /* LoadingPersonJSON.swift */,
+				98AD0C8428A2D75B0052E7AE /* CourseData.swift */,
+				98AD0C8228A2D7400052E7AE /* PersonData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -168,6 +174,8 @@
 				260F9992289D1B460010E258 /* AppDelegate.swift in Sources */,
 				98AD0C7F28A268770052E7AE /* LoadingCourseJSON.swift in Sources */,
 				260F9994289D1B460010E258 /* SceneDelegate.swift in Sources */,
+				98AD0C8328A2D7400052E7AE /* PersonData.swift in Sources */,
+				98AD0C8528A2D75B0052E7AE /* CourseData.swift in Sources */,
 				98AD0C8128A272D30052E7AE /* LoadingPersonJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
