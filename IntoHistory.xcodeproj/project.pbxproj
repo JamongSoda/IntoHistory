@@ -14,12 +14,6 @@
 		260F999C289D1B460010E258 /* IntoHistory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 260F999A289D1B460010E258 /* IntoHistory.xcdatamodeld */; };
 		260F999E289D1B470010E258 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 260F999D289D1B470010E258 /* Assets.xcassets */; };
 		260F99A1289D1B470010E258 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 260F999F289D1B470010E258 /* LaunchScreen.storyboard */; };
-		98AD0C7C28A267770052E7AE /* course_json.json in Resources */ = {isa = PBXBuildFile; fileRef = 98AD0C7A28A267770052E7AE /* course_json.json */; };
-		98AD0C7D28A267770052E7AE /* person_json.json in Resources */ = {isa = PBXBuildFile; fileRef = 98AD0C7B28A267770052E7AE /* person_json.json */; };
-		98AD0C7F28A268770052E7AE /* LoadingCourseJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AD0C7E28A268770052E7AE /* LoadingCourseJSON.swift */; };
-		98AD0C8128A272D30052E7AE /* LoadingPersonJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AD0C8028A272D30052E7AE /* LoadingPersonJSON.swift */; };
-		98AD0C8328A2D7400052E7AE /* PersonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AD0C8228A2D7400052E7AE /* PersonData.swift */; };
-		98AD0C8528A2D75B0052E7AE /* CourseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AD0C8428A2D75B0052E7AE /* CourseData.swift */; };
 		26F01C4B28A2680D00D3FD88 /* Data in Resources */ = {isa = PBXBuildFile; fileRef = 26F01C4A28A2680D00D3FD88 /* Data */; };
 /* End PBXBuildFile section */
 
@@ -33,12 +27,6 @@
 		260F999D289D1B470010E258 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		260F99A0289D1B470010E258 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		260F99A2289D1B470010E258 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		98AD0C7A28A267770052E7AE /* course_json.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = course_json.json; sourceTree = "<group>"; };
-		98AD0C7B28A267770052E7AE /* person_json.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = person_json.json; sourceTree = "<group>"; };
-		98AD0C7E28A268770052E7AE /* LoadingCourseJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCourseJSON.swift; sourceTree = "<group>"; };
-		98AD0C8028A272D30052E7AE /* LoadingPersonJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingPersonJSON.swift; sourceTree = "<group>"; };
-		98AD0C8228A2D7400052E7AE /* PersonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonData.swift; sourceTree = "<group>"; };
-		98AD0C8428A2D75B0052E7AE /* CourseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseData.swift; sourceTree = "<group>"; };
 		26F01C4A28A2680D00D3FD88 /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Data; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,19 +71,6 @@
 				26F01C4A28A2680D00D3FD88 /* Data */,
 			);
 			path = IntoHistory;
-			sourceTree = "<group>";
-		};
-		98AD0C7928A267770052E7AE /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				98AD0C7A28A267770052E7AE /* course_json.json */,
-				98AD0C7B28A267770052E7AE /* person_json.json */,
-				98AD0C7E28A268770052E7AE /* LoadingCourseJSON.swift */,
-				98AD0C8028A272D30052E7AE /* LoadingPersonJSON.swift */,
-				98AD0C8428A2D75B0052E7AE /* CourseData.swift */,
-				98AD0C8228A2D7400052E7AE /* PersonData.swift */,
-			);
-			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,8 +133,6 @@
 			files = (
 				260F99A1289D1B470010E258 /* LaunchScreen.storyboard in Resources */,
 				260F999E289D1B470010E258 /* Assets.xcassets in Resources */,
-				98AD0C7C28A267770052E7AE /* course_json.json in Resources */,
-				98AD0C7D28A267770052E7AE /* person_json.json in Resources */,
 				26F01C4B28A2680D00D3FD88 /* Data in Resources */,
 				260F9999289D1B460010E258 /* Main.storyboard in Resources */,
 			);
@@ -175,11 +148,7 @@
 				260F999C289D1B460010E258 /* IntoHistory.xcdatamodeld in Sources */,
 				260F9996289D1B460010E258 /* ViewController.swift in Sources */,
 				260F9992289D1B460010E258 /* AppDelegate.swift in Sources */,
-				98AD0C7F28A268770052E7AE /* LoadingCourseJSON.swift in Sources */,
 				260F9994289D1B460010E258 /* SceneDelegate.swift in Sources */,
-				98AD0C8328A2D7400052E7AE /* PersonData.swift in Sources */,
-				98AD0C8528A2D75B0052E7AE /* CourseData.swift in Sources */,
-				98AD0C8128A272D30052E7AE /* LoadingPersonJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
