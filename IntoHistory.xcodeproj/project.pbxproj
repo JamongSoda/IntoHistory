@@ -20,6 +20,7 @@
 		98AD0C8128A272D30052E7AE /* LoadingPersonJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AD0C8028A272D30052E7AE /* LoadingPersonJSON.swift */; };
 		98AD0C8328A2D7400052E7AE /* PersonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AD0C8228A2D7400052E7AE /* PersonData.swift */; };
 		98AD0C8528A2D75B0052E7AE /* CourseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AD0C8428A2D75B0052E7AE /* CourseData.swift */; };
+		26F01C4B28A2680D00D3FD88 /* Data in Resources */ = {isa = PBXBuildFile; fileRef = 26F01C4A28A2680D00D3FD88 /* Data */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		98AD0C8028A272D30052E7AE /* LoadingPersonJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingPersonJSON.swift; sourceTree = "<group>"; };
 		98AD0C8228A2D7400052E7AE /* PersonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonData.swift; sourceTree = "<group>"; };
 		98AD0C8428A2D75B0052E7AE /* CourseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseData.swift; sourceTree = "<group>"; };
+		26F01C4A28A2680D00D3FD88 /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Data; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +80,7 @@
 				260F999F289D1B470010E258 /* LaunchScreen.storyboard */,
 				260F99A2289D1B470010E258 /* Info.plist */,
 				260F999A289D1B460010E258 /* IntoHistory.xcdatamodeld */,
-				98AD0C7928A267770052E7AE /* Data */,
+				26F01C4A28A2680D00D3FD88 /* Data */,
 			);
 			path = IntoHistory;
 			sourceTree = "<group>";
@@ -158,6 +160,7 @@
 				260F999E289D1B470010E258 /* Assets.xcassets in Resources */,
 				98AD0C7C28A267770052E7AE /* course_json.json in Resources */,
 				98AD0C7D28A267770052E7AE /* person_json.json in Resources */,
+				26F01C4B28A2680D00D3FD88 /* Data in Resources */,
 				260F9999289D1B460010E258 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
