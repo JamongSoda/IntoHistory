@@ -7,7 +7,6 @@
 
 import Foundation
 import UIKit
-import CloudKit
 
 class LoadingPersonJson {
     @Published var person = [Person]()
