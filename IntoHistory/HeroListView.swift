@@ -8,6 +8,16 @@
 import UIKit
 
 class HeroListView: UIView {
+    let scrollView: UIScrollView = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        return $0
+    }(UIScrollView())
+    
+    let contentView: UIView = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+       return $0
+    }(UIView())
+    
     let descriptionSection: UIStackView = {
         $0.axis = .vertical
         $0.spacing = 2
@@ -63,19 +73,38 @@ class HeroListView: UIView {
         super.init(frame: frame)
         
         self.backgroundColor = .white
-        self.addSubview(descriptionSection)
         
+        self.addSubview(scrollView)
+        self.scrollView.addSubview(contentView)
+        
+        self.contentView.addSubview(descriptionSection)
         self.descriptionSection.addArrangedSubview(descriptionInnerView)
         
         self.descriptionInnerView.addSubview(descriptionTitle)
         self.descriptionInnerView.addSubview(descriptionContent)
         
-        self.addSubview(resistanceTitle)
-        self.addSubview(warriorTitle)
+        self.contentView.addSubview(resistanceTitle)
+        self.contentView.addSubview(warriorTitle)
         
-        self.descriptionSection.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor, constant: 16).isActive = true
-        self.descriptionSection.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor, constant: -16).isActive = true
-        self.descriptionSection.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 13).isActive = true
+        self.scrollView.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor, constant: 0).isActive = true
+        self.scrollView.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor, constant: 0).isActive = true
+        self.scrollView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
+        self.scrollView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
+        
+        self.contentView.leftAnchor.constraint(equalTo: self.scrollView.contentLayoutGuide.leftAnchor, constant: 0).isActive = true
+        self.contentView.rightAnchor.constraint(equalTo: self.scrollView.contentLayoutGuide.rightAnchor, constant: 0).isActive = true
+        self.contentView.topAnchor.constraint(equalTo: self.scrollView.contentLayoutGuide.topAnchor, constant: 0).isActive = true
+        self.contentView.bottomAnchor.constraint(equalTo: self.scrollView.contentLayoutGuide.bottomAnchor, constant: 0).isActive = true
+        
+        self.contentView.widthAnchor.constraint(equalTo: self.scrollView.widthAnchor).isActive = true
+        
+        let contentViewHeight = self.contentView.heightAnchor.constraint(greaterThanOrEqualTo: self.heightAnchor)
+        contentViewHeight.priority = .defaultLow
+        contentViewHeight.isActive = true
+        
+        self.descriptionSection.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 16).isActive = true
+        self.descriptionSection.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -16).isActive = true
+        self.descriptionSection.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 13).isActive = true
         self.descriptionSection.bottomAnchor.constraint(equalTo: self.resistanceTitle.topAnchor, constant: -30).isActive = true
         
         self.descriptionInnerView.leftAnchor.constraint(equalTo: self.descriptionSection.leftAnchor, constant: 0).isActive = true
@@ -93,21 +122,22 @@ class HeroListView: UIView {
         self.descriptionContent.topAnchor.constraint(equalTo: self.descriptionTitle.bottomAnchor, constant: 2).isActive = true
         self.descriptionContent.bottomAnchor.constraint(equalTo: self.descriptionInnerView.bottomAnchor, constant: -20).isActive = true
         
-        self.resistanceTitle.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16).isActive = true
-        self.resistanceTitle.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16).isActive = true
+        self.resistanceTitle.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 16).isActive = true
+        self.resistanceTitle.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -16).isActive = true
         self.resistanceTitle.topAnchor.constraint(equalTo: self.descriptionContent.bottomAnchor, constant: 30).isActive = true
         self.resistanceTitle.bottomAnchor.constraint(equalTo: self.warriorTitle.topAnchor, constant: -30).isActive = true
         
-        self.warriorTitle.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16).isActive = true
-        self.warriorTitle.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16).isActive = true
+        self.warriorTitle.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 16).isActive = true
+        self.warriorTitle.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -16).isActive = true
         self.warriorTitle.topAnchor.constraint(equalTo: self.resistanceTitle.bottomAnchor, constant: 30).isActive = true
-        self.warriorTitle.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -30).isActive = true
+        self.warriorTitle.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -30).isActive = true
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
 
 #if canImport(SwifTUI) && DEBUG
 import SwiftUI
