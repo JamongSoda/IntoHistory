@@ -73,20 +73,25 @@ class HeroListView: UIView {
         self.addSubview(resistanceTitle)
         self.addSubview(warriorTitle)
         
-        self.descriptionSection.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16).isActive = true
-        self.descriptionSection.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16).isActive = true
-        self.descriptionSection.topAnchor.constraint(equalTo: self.topAnchor, constant: 13).isActive = true
+        self.descriptionSection.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor, constant: 16).isActive = true
+        self.descriptionSection.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor, constant: -16).isActive = true
+        self.descriptionSection.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 13).isActive = true
         self.descriptionSection.bottomAnchor.constraint(equalTo: self.resistanceTitle.topAnchor, constant: -30).isActive = true
+        
+        self.descriptionInnerView.leftAnchor.constraint(equalTo: self.descriptionSection.leftAnchor, constant: 0).isActive = true
+        self.descriptionInnerView.rightAnchor.constraint(equalTo: self.descriptionSection.rightAnchor, constant: 0).isActive = true
+        self.descriptionInnerView.topAnchor.constraint(equalTo: self.descriptionSection.topAnchor, constant: 0).isActive = true
+        self.descriptionInnerView.bottomAnchor.constraint(equalTo: self.descriptionSection.bottomAnchor, constant: 0).isActive = true
 
-        self.descriptionTitle.leftAnchor.constraint(equalTo: self.descriptionSection.leftAnchor, constant: 14).isActive = true
-        self.descriptionTitle.rightAnchor.constraint(equalTo: self.descriptionSection.rightAnchor, constant: -14).isActive = true
-        self.descriptionTitle.topAnchor.constraint(equalTo: self.descriptionSection.topAnchor, constant: 20).isActive = true
+        self.descriptionTitle.leftAnchor.constraint(equalTo: self.descriptionInnerView.leftAnchor, constant: 14).isActive = true
+        self.descriptionTitle.rightAnchor.constraint(equalTo: self.descriptionInnerView.rightAnchor, constant: -14).isActive = true
+        self.descriptionTitle.topAnchor.constraint(equalTo: self.descriptionInnerView.topAnchor, constant: 20).isActive = true
         self.descriptionTitle.bottomAnchor.constraint(equalTo: self.descriptionContent.topAnchor, constant: -2).isActive = true
         
-        self.descriptionContent.leftAnchor.constraint(equalTo: self.descriptionSection.leftAnchor, constant: 14).isActive = true
-        self.descriptionContent.rightAnchor.constraint(equalTo: self.descriptionSection.rightAnchor, constant: -14).isActive = true
+        self.descriptionContent.leftAnchor.constraint(equalTo: self.descriptionInnerView.leftAnchor, constant: 14).isActive = true
+        self.descriptionContent.rightAnchor.constraint(equalTo: self.descriptionInnerView.rightAnchor, constant: -14).isActive = true
         self.descriptionContent.topAnchor.constraint(equalTo: self.descriptionTitle.bottomAnchor, constant: 2).isActive = true
-        self.descriptionContent.bottomAnchor.constraint(equalTo: self.descriptionSection.bottomAnchor, constant: -20).isActive = true
+        self.descriptionContent.bottomAnchor.constraint(equalTo: self.descriptionInnerView.bottomAnchor, constant: -20).isActive = true
         
         self.resistanceTitle.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16).isActive = true
         self.resistanceTitle.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16).isActive = true
@@ -96,7 +101,7 @@ class HeroListView: UIView {
         self.warriorTitle.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16).isActive = true
         self.warriorTitle.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16).isActive = true
         self.warriorTitle.topAnchor.constraint(equalTo: self.resistanceTitle.bottomAnchor, constant: 30).isActive = true
-        self.warriorTitle.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -30).isActive = true
+        self.warriorTitle.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -30).isActive = true
     }
     
     required init?(coder: NSCoder) {
