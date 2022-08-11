@@ -27,7 +27,6 @@ class HeroListViewController: UIViewController {
         $0.layer.shadowOpacity = 0.3
         $0.layer.shadowOffset = CGSize(width: 4, height: 4)
         $0.layer.shadowRadius = 20
-//        $0.layer.borderWidth = 1
         $0.axis = .vertical
         $0.spacing = 2
         return $0
@@ -102,8 +101,6 @@ class HeroListViewController: UIViewController {
             paddingBottom: 0,
             paddingRight: 0
         )
-        
-        contentView.widthAnchor.constraint(equalTo: scrollView.contentLayoutGuide.widthAnchor).isActive = true
         
         let contentViewHeight = self.contentView.heightAnchor.constraint(greaterThanOrEqualTo: self.scrollView.heightAnchor)
         contentViewHeight.priority = .defaultLow
