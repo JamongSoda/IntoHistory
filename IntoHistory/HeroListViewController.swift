@@ -8,45 +8,43 @@
 import UIKit
 
 class HeroListViewController: UIViewController {
-//    private lazy var heroListView = HeroListView(frame: self.view.frame)
     
-    lazy var scrollView: UIScrollView = {
-        $0.translatesAutoresizingMaskIntoConstraints = false
+    let scrollView: UIScrollView = {
         return $0
     }(UIScrollView())
     
-    lazy var contentView: UIView = {
-        $0.translatesAutoresizingMaskIntoConstraints = false
+    let contentView: UIStackView = {
+        $0.axis = .vertical
+        $0.spacing = 30
        return $0
-    }(UIView())
+    }(UIStackView())
     
-    lazy var descriptionSection: UIStackView = {
+    let descriptionSection: UIStackView = {
+        $0.setWidth(width: UIScreen.main.bounds.width - 32)
         $0.backgroundColor = .white
         $0.layer.cornerRadius = 16
         $0.layer.shadowColor = UIColor.black.cgColor
         $0.layer.shadowOpacity = 0.3
         $0.layer.shadowOffset = CGSize(width: 4, height: 4)
         $0.layer.shadowRadius = 20
+//        $0.layer.borderWidth = 1
         $0.axis = .vertical
         $0.spacing = 2
-        $0.translatesAutoresizingMaskIntoConstraints = false
         return $0
     }(UIStackView())
     
-    lazy var descriptionTitle: UILabel = {
+    let descriptionTitle: UILabel = {
         $0.text = "숭고한 희생과 헌신 기억하겠습니다."
         $0.textColor = .black
         $0.font = UIFont.boldSystemFont(ofSize: 16)
-        $0.translatesAutoresizingMaskIntoConstraints = false
         return $0
     }(UILabel())
     
-    lazy var descriptionContent: UILabel = {
+    let descriptionContent: UILabel = {
         $0.text = "순국 선열과 호국영령의 숭고한 희생정신을 기리며 우리가 누리는 자유와 평화와 행복이, 가장 젊고 빛나는 시기에 자신의 모든 것을 조국에 바치신 순국선열과 호국영령의 희생과 헌신을 딛고 서 있는 것임을 잊지 않겠습니다"
         $0.textColor = .black
         $0.font = UIFont.systemFont(ofSize: 16)
         $0.numberOfLines = 0
-        $0.translatesAutoresizingMaskIntoConstraints = false
         return $0
     }(UILabel())
     
@@ -54,7 +52,6 @@ class HeroListViewController: UIViewController {
         $0.text = "순국 선열"
         $0.textColor = .black
         $0.font = UIFont.boldSystemFont(ofSize: 24)
-        $0.translatesAutoresizingMaskIntoConstraints = false
         return $0
     }(UILabel())
     
@@ -62,62 +59,98 @@ class HeroListViewController: UIViewController {
         $0.text = "호국영령"
         $0.textColor = .black
         $0.font = UIFont.boldSystemFont(ofSize: 24)
-        $0.translatesAutoresizingMaskIntoConstraints = false
         return $0
     }(UILabel())
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.view = heroListView
-        self.view = scrollView
         view.backgroundColor = .white
-        view.addSubview(contentView)
-        contentView.addSubview(descriptionSection)
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        contentView.addArrangedSubview(descriptionSection)
         
         descriptionSection.addArrangedSubview(descriptionTitle)
         descriptionSection.addArrangedSubview(descriptionContent)
         
-        contentView.addSubview(resistanceTitle)
-        contentView.addSubview(warriorTitle)
+        contentView.addArrangedSubview(resistanceTitle)
+        contentView.addArrangedSubview(warriorTitle)
         
-        configureView()
+        configureUI()
     }
     
-    func configureView() {
-//        contentView.leftAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.leftAnchor, constant: 0).isActive = true
-//        contentView.rightAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.rightAnchor, constant: 0).isActive = true
-//        contentView.topAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
-//        contentView.bottomAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
-        contentView.leftAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leftAnchor, constant: 0).isActive = true
-        contentView.rightAnchor.constraint(equalTo: scrollView.contentLayoutGuide.rightAnchor, constant: 0).isActive = true
-        contentView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor, constant: 0).isActive = true
-        contentView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor, constant: 0).isActive = true
+    func configureUI() {
         
-        descriptionSection.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16).isActive = true
-        descriptionSection.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16).isActive = true
-        descriptionSection.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20).isActive = true
-        descriptionSection.bottomAnchor.constraint(equalTo: resistanceTitle.bottomAnchor, constant: -30).isActive = true
+        scrollView.anchor(
+            top: view.safeAreaLayoutGuide.topAnchor,
+            left: view.safeAreaLayoutGuide.leftAnchor,
+            bottom: view.safeAreaLayoutGuide.bottomAnchor,
+            right: view.safeAreaLayoutGuide.rightAnchor,
+            paddingTop: 0,
+            paddingLeft: 0,
+            paddingBottom: 0,
+            paddingRight: 0
+        )
         
-        descriptionTitle.leftAnchor.constraint(equalTo: descriptionSection.leftAnchor, constant: 14).isActive = true
-        descriptionTitle.rightAnchor.constraint(equalTo: descriptionSection.rightAnchor, constant: -14).isActive = true
-        descriptionTitle.topAnchor.constraint(equalTo: descriptionSection.topAnchor, constant: 20).isActive = true
-        descriptionTitle.bottomAnchor.constraint(equalTo: descriptionContent.topAnchor, constant: -2).isActive = true
+        contentView.anchor(
+            top: scrollView.contentLayoutGuide.topAnchor,
+            left: scrollView.contentLayoutGuide.leftAnchor,
+            bottom: scrollView.contentLayoutGuide.bottomAnchor,
+            right: scrollView.contentLayoutGuide.rightAnchor,
+            paddingTop: 0,
+            paddingLeft: 0,
+            paddingBottom: 0,
+            paddingRight: 0
+        )
         
-        descriptionContent.leftAnchor.constraint(equalTo: descriptionSection.leftAnchor, constant: 14).isActive = true
-        descriptionContent.rightAnchor.constraint(equalTo: descriptionSection.rightAnchor, constant: -14).isActive = true
-        descriptionContent.topAnchor.constraint(equalTo: descriptionTitle.bottomAnchor, constant: 2).isActive = true
-        descriptionContent.bottomAnchor.constraint(equalTo: descriptionSection.bottomAnchor, constant: -20).isActive = true
+        contentView.widthAnchor.constraint(equalTo: scrollView.contentLayoutGuide.widthAnchor).isActive = true
         
-        resistanceTitle.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 30).isActive = true
-        resistanceTitle.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -30).isActive = true
-        resistanceTitle.topAnchor.constraint(equalTo: descriptionSection.bottomAnchor, constant: 30).isActive = true
-        resistanceTitle.bottomAnchor.constraint(equalTo: warriorTitle.topAnchor, constant: -30).isActive = true
+        let contentViewHeight = self.contentView.heightAnchor.constraint(greaterThanOrEqualTo: self.scrollView.heightAnchor)
+        contentViewHeight.priority = .defaultLow
+        contentViewHeight.isActive = true
         
-        warriorTitle.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 30).isActive = true
-        warriorTitle.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -30).isActive = true
-        warriorTitle.topAnchor.constraint(equalTo: resistanceTitle.bottomAnchor, constant: 30).isActive = true
-        warriorTitle.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -30).isActive = true
+        descriptionSection.anchor(
+            top: contentView.topAnchor,
+            left: contentView.leftAnchor,
+            bottom: resistanceTitle.topAnchor,
+            right: contentView.rightAnchor,
+            paddingTop: 20,
+            paddingLeft: 16,
+            paddingBottom: 30,
+            paddingRight: 16
+        )
+        
+        descriptionTitle.anchor(
+            top: descriptionSection.topAnchor,
+            left: descriptionSection.leftAnchor,
+            bottom: descriptionContent.topAnchor,
+            right: descriptionSection.rightAnchor,
+            paddingTop: 20,
+            paddingLeft: 14,
+            paddingBottom: 2,
+            paddingRight: 14
+        )
+        
+        descriptionContent.anchor(
+            top: descriptionTitle.bottomAnchor,
+            left: descriptionSection.leftAnchor,
+            bottom: descriptionSection.bottomAnchor,
+            right: descriptionSection.rightAnchor,
+            paddingTop: 2,
+            paddingLeft: 14,
+            paddingBottom: 20,
+            paddingRight: 14
+        )
+        
+        resistanceTitle.anchor(
+            bottom: warriorTitle.topAnchor,
+            paddingBottom: 30
+        )
+
+        warriorTitle.anchor(
+            bottom: contentView.bottomAnchor,
+            paddingBottom: 30
+        )
     }
 }
 
