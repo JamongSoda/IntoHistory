@@ -15,6 +15,14 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var arscene: ARSCNView!
 
+    // MARK: - Cycle
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        addARView()
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
