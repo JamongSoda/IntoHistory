@@ -29,7 +29,6 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
         
         if CLLocationManager.locationServicesEnabled() {
             locationManager.startUpdatingLocation()
-        } else {
         }
     }
 }
