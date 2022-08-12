@@ -14,6 +14,22 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     // MARK: - View
 
     @IBOutlet var arscene: ARSCNView!
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        let configuration = ARWorldTrackingConfiguration()
+        arscene.session.run(configuration)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        arscene.session.pause()
+    }
+
+    // MARK: - Method
+
     private func addARView() {
         self.arscene = ARSCNView(frame : self.view.frame)
         self.view.addSubview(arscene)
