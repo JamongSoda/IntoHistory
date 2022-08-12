@@ -39,7 +39,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     // MARK: - Method
 
     private func addARView() {
-        self.arscene = ARSCNView(frame : self.view.frame)
+        self.arscene = ARSCNView(frame: self.view.frame)
         self.view.addSubview(arscene)
 
         arscene.delegate = self
@@ -47,25 +47,26 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
 
         let scene = SCNScene()
         let sphere = SCNSphere(radius: 0.2)
-        sphere.firstMaterial?.diffuse.contents = UIImage(named : "testImage.jpg")
+        // TODO: - 이미지 변경
+        sphere.firstMaterial?.diffuse.contents = UIImage(named: "testImage.jpg")
 
-        let sphereNode = SCNNode(geometry : sphere)
+        let sphereNode = SCNNode(geometry: sphere)
         sphereNode.position = SCNVector3(0.5, 0.1, -1)
         scene.rootNode.addChildNode(sphereNode)
 
-        let tapGestureRecognizer = UITapGestureRecognizer(target : self, action : #selector(tapped))
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapped))
         self.arscene.addGestureRecognizer(tapGestureRecognizer)
         arscene.scene = scene
     }
 
     @objc func tapped(recognizer : UITapGestureRecognizer){
         let sceneView = recognizer.view as! SCNView
-        let touchLocation : CGPoint = recognizer.location(in: sceneView)
-        let hitResults : [SCNHitTestResult] = sceneView.hitTest(touchLocation, options: [:])
+        let touchLocation: CGPoint = recognizer.location(in: sceneView)
+        let hitResults: [SCNHitTestResult] = sceneView.hitTest(touchLocation, options: [:])
 
         if !hitResults.isEmpty {
             let node = hitResults[0].node
-            let material : SCNMaterial? = node.geometry?.material(named : "Color")
+            let material: SCNMaterial? = node.geometry?.material(named: "Color")
 
             // TODO: - 화면 전환 코드
             self.presentingViewController?.dismiss(animated: true, completion: nil)
