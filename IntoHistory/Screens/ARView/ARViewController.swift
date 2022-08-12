@@ -33,3 +33,19 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         self.arscene.addGestureRecognizer(tapGestureRecognizer)
         arscene.scene = scene
     }
+
+    @objc func tapped(recognizer : UITapGestureRecognizer){
+        let sceneView = recognizer.view as! SCNView
+        let touchLocation : CGPoint = recognizer.location(in: sceneView)
+        let hitResults : [SCNHitTestResult] = sceneView.hitTest(touchLocation, options: [:])
+
+        if !hitResults.isEmpty {
+            let node = hitResults[0].node
+            let material : SCNMaterial? = node.geometry?.material(named : "Color")
+
+            // TODO: - 화면 전환 코드
+            self.presentingViewController?.dismiss(animated: true, completion: nil)
+            print("AR box가 tap 되었습니다아")
+        }
+    }
+}
