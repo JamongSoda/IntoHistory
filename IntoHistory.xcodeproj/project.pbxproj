@@ -29,9 +29,11 @@
 		7B2C3E0628A3D85900BF197D /* AutoLayout+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2C3E0528A3D85900BF197D /* AutoLayout+Extension.swift */; };
 		7B2C3E0928A3D8FA00BF197D /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2C3E0828A3D8FA00BF197D /* Color+Extension.swift */; };
 		7B2C3E0B28A3DDD300BF197D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2C3E0A28A3DDD300BF197D /* MainViewController.swift */; };
+		7B32F65628A6758E00F4CB48 /* MainViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B32F65528A6758E00F4CB48 /* MainViewButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0AF13A4023B2AC0C86E1AACC /* Pods-IntoHistory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntoHistory.debug.xcconfig"; path = "Target Support Files/Pods-IntoHistory/Pods-IntoHistory.debug.xcconfig"; sourceTree = "<group>"; };
 		260F998E289D1B460010E258 /* IntoHistory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntoHistory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		260F9991289D1B460010E258 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		260F9993289D1B460010E258 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,12 +54,14 @@
 		9828EC8A28A600DF00D0D82E /* course_json.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = course_json.json; sourceTree = "<group>"; };
 		9835250828A4FFDB002C2B20 /* NMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMapViewController.swift; sourceTree = "<group>"; };
 		<!-- 26F01C4A28A2680D00D3FD88 /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Data; sourceTree = "<group>"; }; -->
-		437BF5BF00867FA43E5D2831 /* Pods-IntoHistory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntoHistory.release.xcconfig"; path = "Target Support Files/Pods-IntoHistory/Pods-IntoHistory.release.xcconfig"; sourceTree = "<group>"; };
-    7B2C3E0528A3D85900BF197D /* AutoLayout+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AutoLayout+Extension.swift"; sourceTree = "<group>"; };
+    	7B2C3E0528A3D85900BF197D /* AutoLayout+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AutoLayout+Extension.swift"; sourceTree = "<group>"; };
 		7B2C3E0828A3D8FA00BF197D /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		D4DFE012FD0C7A48B9E431C9 /* Pods-IntoHistory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntoHistory.debug.xcconfig"; path = "Target Support Files/Pods-IntoHistory/Pods-IntoHistory.debug.xcconfig"; sourceTree = "<group>"; };
 		D5AB256B7E455FBDF91C78F0 /* Pods_IntoHistory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntoHistory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		31444BDF2B6EE4561E242759 /* Pods-IntoHistory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntoHistory.release.xcconfig"; path = "Target Support Files/Pods-IntoHistory/Pods-IntoHistory.release.xcconfig"; sourceTree = "<group>"; };
 		7B2C3E0A28A3DDD300BF197D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		7B32F65528A6758E00F4CB48 /* MainViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewButton.swift; sourceTree = "<group>"; };
+		D5AB256B7E455FBDF91C78F0 /* Pods_IntoHistory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntoHistory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +81,8 @@
 			children = (
 				260F9990289D1B460010E258 /* IntoHistory */,
 				260F998F289D1B460010E258 /* Products */,
-				B97F6BEF954CFEDAF682FA1D /* Pods */,
 				D248856CD8D1AB8367A7B5B7 /* Frameworks */,
+				2861C5E7D5B62E2D060652C9 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,11 +97,11 @@
 		260F9990289D1B460010E258 /* IntoHistory */ = {
 			isa = PBXGroup;
 			children = (
+				7B32F65128A674A600F4CB48 /* MainView */,
 				260F9991289D1B460010E258 /* AppDelegate.swift */,
 				260F9993289D1B460010E258 /* SceneDelegate.swift */,
 				260F9995289D1B460010E258 /* ViewController.swift */,
 				7B2C3E0728A3D86200BF197D /* Extension */,
-				7B2C3E0A28A3DDD300BF197D /* MainViewController.swift */,
 				260F9997289D1B460010E258 /* Main.storyboard */,
 				260F999D289D1B470010E258 /* Assets.xcassets */,
 				260F999F289D1B470010E258 /* LaunchScreen.storyboard */,
@@ -112,6 +116,15 @@
         		9835250828A4FFDB002C2B20 /* NMapViewController.swift */,
 			);
 			path = IntoHistory;
+			sourceTree = "<group>";
+		};
+		2861C5E7D5B62E2D060652C9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0AF13A4023B2AC0C86E1AACC /* Pods-IntoHistory.debug.xcconfig */,
+				31444BDF2B6EE4561E242759 /* Pods-IntoHistory.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		7B2C3E0728A3D86200BF197D /* Extension */ = {
@@ -136,13 +149,22 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
-		B97F6BEF954CFEDAF682FA1D /* Pods */ = {
+		7B32F65128A674A600F4CB48 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
-				D4DFE012FD0C7A48B9E431C9 /* Pods-IntoHistory.debug.xcconfig */,
-				437BF5BF00867FA43E5D2831 /* Pods-IntoHistory.release.xcconfig */,
+				7B2C3E0A28A3DDD300BF197D /* MainViewController.swift */,
+				7B32F65428A6750800F4CB48 /* support Views */,
 			);
-			path = Pods;
+			<!-- path = Pods; -->
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		7B32F65428A6750800F4CB48 /* support Views */ = {
+			isa = PBXGroup;
+			children = (
+				7B32F65528A6758E00F4CB48 /* MainViewButton.swift */,
+			);
+			path = "support Views";
 			sourceTree = "<group>";
 		};
 		D248856CD8D1AB8367A7B5B7 /* Frameworks */ = {
@@ -270,17 +292,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				260F9992289D1B460010E258 /* AppDelegate.swift in Sources */,
-				7B2C3E0D28A3EE5C00BF197D /* Extension.swift in Sources */,
-				260F9994289D1B460010E258 /* SceneDelegate.swift in Sources */,
-				260F9996289D1B460010E258 /* ViewController.swift in Sources */,
 				260F999C289D1B460010E258 /* IntoHistory.xcdatamodeld in Sources */,
+				7B2C3E0928A3D8FA00BF197D /* Color+Extension.swift in Sources */,
+				7B2C3E0628A3D85900BF197D /* AutoLayout+Extension.swift in Sources */,
+				7B32F65628A6758E00F4CB48 /* MainViewButton.swift in Sources */,
+				260F9996289D1B460010E258 /* ViewController.swift in Sources */,
+				260F9992289D1B460010E258 /* AppDelegate.swift in Sources */,
+				260F9994289D1B460010E258 /* SceneDelegate.swift in Sources */,
 				2694641428A65FD000485526 /* HeroListCell.swift in Sources */,
 				2694641928A6973C00485526 /* HeroListDescriptionCell.swift in Sources */,
 				2694641B28A7577300485526 /* CollectionViewHeader.swift in Sources */,
 				26F01C4F28A3F57800D3FD88 /* HeroListViewController.swift in Sources */,
-				7B2C3E0928A3D8FA00BF197D /* Color+Extension.swift in Sources */,
-				7B2C3E0628A3D85900BF197D /* AutoLayout+Extension.swift in Sources */,
         		9828EC8E28A600DF00D0D82E /* LoadingPersonJSON.swift in Sources */,
 				9828EC8D28A600DF00D0D82E /* LoadingCourseJSON.swift in Sources */,
 				9828EC8B28A600DF00D0D82E /* PersonData.swift in Sources */,
@@ -420,7 +442,7 @@
 		};
 		260F99A6289D1B470010E258 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D4DFE012FD0C7A48B9E431C9 /* Pods-IntoHistory.debug.xcconfig */;
+			baseConfigurationReference = 0AF13A4023B2AC0C86E1AACC /* Pods-IntoHistory.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -451,7 +473,7 @@
 		};
 		260F99A7289D1B470010E258 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 437BF5BF00867FA43E5D2831 /* Pods-IntoHistory.release.xcconfig */;
+			baseConfigurationReference = 31444BDF2B6EE4561E242759 /* Pods-IntoHistory.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
