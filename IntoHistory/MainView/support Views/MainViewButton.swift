@@ -11,7 +11,7 @@ class MainViewButton: UIView {
 
     // MARK: - Property
 
-    private let buttonBackground: UIView = {
+    private let buttonShape: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = UIColor.white
@@ -61,21 +61,21 @@ class MainViewButton: UIView {
     // MARK: - Layout
 
     private func render() {
-        self.addSubview(buttonBackground)
+        self.addSubview(buttonShape)
         NSLayoutConstraint.activate([
-            buttonBackground.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            buttonBackground.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            buttonBackground.topAnchor.constraint(equalTo: self.topAnchor),
-            buttonBackground.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            buttonShape.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            buttonShape.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            buttonShape.topAnchor.constraint(equalTo: self.topAnchor),
+            buttonShape.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
 
         self.addSubview(self.labelStack)
-        labelStack.centerY(inView: buttonBackground)
-        labelStack.anchor(left: buttonBackground.leftAnchor, paddingLeft: 25)
+        labelStack.centerY(inView: buttonShape)
+        labelStack.anchor(left: buttonShape.leftAnchor, paddingLeft: 25)
 
         self.addSubview(buttonImage)
-        buttonImage.centerY(inView: buttonBackground)
-        buttonImage.anchor(right: buttonBackground.rightAnchor, paddingRight: 25)
+        buttonImage.centerY(inView: buttonShape)
+        buttonImage.anchor(right: buttonShape.rightAnchor, paddingRight: 25)
     }
 }
 

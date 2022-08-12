@@ -80,14 +80,14 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         configureUI()
         render()
-        setbuttonGesture()
+        setButtonGesture()
     }
 
     // MARK: - Layout
 
     private func configureUI() {
         self.view.backgroundColor = UIColor.basicBackground
-        setNavigation()
+        setNavigationTitle()
         setScrollView()
     }
 
@@ -134,14 +134,14 @@ class MainViewController: UIViewController {
         heroButton.anchor(top: courseButton.bottomAnchor, left: contentView.leftAnchor, right: contentView.rightAnchor, paddingTop: 20, paddingLeft: 16, paddingRight: 16, height: 140)
     }
 
-    private func setNavigation() {
+    private func setNavigationTitle() {
         navigationController?.navigationBar.topItem?.title = "오늘의 역사 상식"
         navigationController?.navigationBar.prefersLargeTitles = true
     }
 
     // MARK: - Action
 
-    private func setbuttonGesture() {
+    private func setButtonGesture() {
         let tapCourseButtonGesture = UITapGestureRecognizer(target: self, action: #selector(tapCourseButton(_:)))
         courseButton.addGestureRecognizer(tapCourseButtonGesture)
 
