@@ -18,12 +18,20 @@
 		7B2C3E0628A3D85900BF197D /* AutoLayout+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2C3E0528A3D85900BF197D /* AutoLayout+Extension.swift */; };
 		7B2C3E0928A3D8FA00BF197D /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2C3E0828A3D8FA00BF197D /* Color+Extension.swift */; };
 		9828EC8B28A600DF00D0D82E /* PersonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9828EC8528A600DF00D0D82E /* PersonData.swift */; };
-		9828EC8C28A600DF00D0D82E /* CourseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9828EC8628A600DF00D0D82E /* CourseData.swift */; };
+		<!-- 9828EC8C28A600DF00D0D82E /* CourseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9828EC8628A600DF00D0D82E /* CourseData.swift */; }; -->
 		9828EC8D28A600DF00D0D82E /* LoadingCourseJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9828EC8728A600DF00D0D82E /* LoadingCourseJSON.swift */; };
 		9828EC8E28A600DF00D0D82E /* LoadingPersonJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9828EC8828A600DF00D0D82E /* LoadingPersonJSON.swift */; };
 		9828EC8F28A600DF00D0D82E /* person_json.json in Resources */ = {isa = PBXBuildFile; fileRef = 9828EC8928A600DF00D0D82E /* person_json.json */; };
 		9828EC9028A600DF00D0D82E /* course_json.json in Resources */ = {isa = PBXBuildFile; fileRef = 9828EC8A28A600DF00D0D82E /* course_json.json */; };
+		9828EC7E28A6007C00D0D82E /* CourseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9828EC7828A6007C00D0D82E /* CourseData.swift */; };
+		<!-- 9828EC7F28A6007C00D0D82E /* person_json.json in Resources */ = {isa = PBXBuildFile; fileRef = 9828EC7928A6007C00D0D82E /* person_json.json */; }; -->
+		<!-- 9828EC8028A6007C00D0D82E /* PersonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9828EC7A28A6007C00D0D82E /* PersonData.swift */; }; -->
+		<!-- 9828EC8128A6007C00D0D82E /* course_json.json in Resources */ = {isa = PBXBuildFile; fileRef = 9828EC7B28A6007C00D0D82E /* course_json.json */; }; -->
+		<!--9828EC8228A6007C00D0D82E /* LoadingPersonJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9828EC7C28A6007C00D0D82E /* LoadingPersonJSON.swift */; }; -->
+		<!-- 9828EC8328A6007C00D0D82E /* LoadingCourseJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9828EC7D28A6007C00D0D82E /* LoadingCourseJSON.swift */; }; -->
+		9828EC9328A6103000D0D82E /* ImageLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9828EC9228A6103000D0D82E /* ImageLiteral.swift */; };
 		9835250928A4FFDB002C2B20 /* NMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9835250828A4FFDB002C2B20 /* NMapViewController.swift */; };
+		9857167428A568560099CC56 /* CourseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9857167328A568560099CC56 /* CourseListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,12 +48,20 @@
 		7B2C3E0528A3D85900BF197D /* AutoLayout+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AutoLayout+Extension.swift"; sourceTree = "<group>"; };
 		7B2C3E0828A3D8FA00BF197D /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		9828EC8528A600DF00D0D82E /* PersonData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonData.swift; sourceTree = "<group>"; };
-		9828EC8628A600DF00D0D82E /* CourseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseData.swift; sourceTree = "<group>"; };
+		<!-- 9828EC8628A600DF00D0D82E /* CourseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseData.swift; sourceTree = "<group>"; }; -->
 		9828EC8728A600DF00D0D82E /* LoadingCourseJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingCourseJSON.swift; sourceTree = "<group>"; };
 		9828EC8828A600DF00D0D82E /* LoadingPersonJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingPersonJSON.swift; sourceTree = "<group>"; };
 		9828EC8928A600DF00D0D82E /* person_json.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = person_json.json; sourceTree = "<group>"; };
 		9828EC8A28A600DF00D0D82E /* course_json.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = course_json.json; sourceTree = "<group>"; };
+		9828EC7828A6007C00D0D82E /* CourseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseData.swift; sourceTree = "<group>"; };
+		<!-- 9828EC7928A6007C00D0D82E /* person_json.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = person_json.json; sourceTree = "<group>"; }; -->
+		<!-- 9828EC7A28A6007C00D0D82E /* PersonData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonData.swift; sourceTree = "<group>"; }; -->
+		<!-- 9828EC7B28A6007C00D0D82E /* course_json.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = course_json.json; sourceTree = "<group>"; }; -->
+		<!-- 9828EC7C28A6007C00D0D82E /* LoadingPersonJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingPersonJSON.swift; sourceTree = "<group>"; }; -->
+		<!-- 9828EC7D28A6007C00D0D82E /* LoadingCourseJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingCourseJSON.swift; sourceTree = "<group>"; }; -->
+		9828EC9228A6103000D0D82E /* ImageLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiteral.swift; sourceTree = "<group>"; };
 		9835250828A4FFDB002C2B20 /* NMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMapViewController.swift; sourceTree = "<group>"; };
+		9857167328A568560099CC56 /* CourseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListViewController.swift; sourceTree = "<group>"; };
 		D4DFE012FD0C7A48B9E431C9 /* Pods-IntoHistory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntoHistory.debug.xcconfig"; path = "Target Support Files/Pods-IntoHistory/Pods-IntoHistory.debug.xcconfig"; sourceTree = "<group>"; };
 		D5AB256B7E455FBDF91C78F0 /* Pods_IntoHistory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntoHistory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -86,14 +102,17 @@
 				260F9991289D1B460010E258 /* AppDelegate.swift */,
 				260F9993289D1B460010E258 /* SceneDelegate.swift */,
 				260F9995289D1B460010E258 /* ViewController.swift */,
+				9857167328A568560099CC56 /* CourseListViewController.swift */,
 				9835250828A4FFDB002C2B20 /* NMapViewController.swift */,
+				9828EC9128A60F4200D0D82E /* Literal */,
 				7B2C3E0728A3D86200BF197D /* Extension */,
 				260F9997289D1B460010E258 /* Main.storyboard */,
 				260F999D289D1B470010E258 /* Assets.xcassets */,
 				260F999F289D1B470010E258 /* LaunchScreen.storyboard */,
 				260F99A2289D1B470010E258 /* Info.plist */,
 				260F999A289D1B460010E258 /* IntoHistory.xcdatamodeld */,
-				9828EC8428A600D300D0D82E /* Data */,
+				<!-- 9828EC8428A600D300D0D82E /* Data */, -->
+				9828EC7728A6006C00D0D82E /* Data */,
 			);
 			path = IntoHistory;
 			sourceTree = "<group>";
@@ -111,13 +130,30 @@
 			isa = PBXGroup;
 			children = (
 				9828EC8A28A600DF00D0D82E /* course_json.json */,
-				9828EC8628A600DF00D0D82E /* CourseData.swift */,
+				<!-- 9828EC8628A600DF00D0D82E /* CourseData.swift */, -->
 				9828EC8728A600DF00D0D82E /* LoadingCourseJSON.swift */,
 				9828EC8828A600DF00D0D82E /* LoadingPersonJSON.swift */,
 				9828EC8928A600DF00D0D82E /* person_json.json */,
 				9828EC8528A600DF00D0D82E /* PersonData.swift */,
+		<!-- 9828EC7728A6006C00D0D82E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9828EC7B28A6007C00D0D82E /* course_json.json */, -->
+				9828EC7828A6007C00D0D82E /* CourseData.swift */,
+				<!-- 9828EC7D28A6007C00D0D82E /* LoadingCourseJSON.swift */, -->
+				<!-- 9828EC7C28A6007C00D0D82E /* LoadingPersonJSON.swift */, -->
+				<!-- 9828EC7928A6007C00D0D82E /* person_json.json */, -->
+				<!-- 9828EC7A28A6007C00D0D82E /* PersonData.swift */,-->
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		9828EC9128A60F4200D0D82E /* Literal */ = {
+			isa = PBXGroup;
+			children = (
+				9828EC9228A6103000D0D82E /* ImageLiteral.swift */,
+			);
+			path = Literal;
 			sourceTree = "<group>";
 		};
 		B97F6BEF954CFEDAF682FA1D /* Pods */ = {
@@ -257,14 +293,20 @@
 				260F999C289D1B460010E258 /* IntoHistory.xcdatamodeld in Sources */,
 				9828EC8E28A600DF00D0D82E /* LoadingPersonJSON.swift in Sources */,
 				7B2C3E0928A3D8FA00BF197D /* Color+Extension.swift in Sources */,
+				9828EC7E28A6007C00D0D82E /* CourseData.swift in Sources */,
+				9828EC8328A6007C00D0D82E /* LoadingCourseJSON.swift in Sources */,
 				7B2C3E0628A3D85900BF197D /* AutoLayout+Extension.swift in Sources */,
 				9828EC8D28A600DF00D0D82E /* LoadingCourseJSON.swift in Sources */,
 				260F9996289D1B460010E258 /* ViewController.swift in Sources */,
 				9828EC8B28A600DF00D0D82E /* PersonData.swift in Sources */,
 				260F9992289D1B460010E258 /* AppDelegate.swift in Sources */,
+				9828EC8028A6007C00D0D82E /* PersonData.swift in Sources */,
+				9828EC8228A6007C00D0D82E /* LoadingPersonJSON.swift in Sources */,
 				260F9994289D1B460010E258 /* SceneDelegate.swift in Sources */,
 				9835250928A4FFDB002C2B20 /* NMapViewController.swift in Sources */,
 				9828EC8C28A600DF00D0D82E /* CourseData.swift in Sources */,
+				9828EC9328A6103000D0D82E /* ImageLiteral.swift in Sources */,
+				9857167428A568560099CC56 /* CourseListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
