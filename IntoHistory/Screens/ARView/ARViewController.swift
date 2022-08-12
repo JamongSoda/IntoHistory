@@ -66,7 +66,6 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
 
         if !hitResults.isEmpty {
             let node = hitResults[0].node
-            let material: SCNMaterial? = node.geometry?.material(named: "Color")
 
             // TODO: - 화면 전환 코드
             self.presentingViewController?.dismiss(animated: true, completion: nil)
