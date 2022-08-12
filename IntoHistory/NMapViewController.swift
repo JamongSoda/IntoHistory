@@ -28,10 +28,7 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.requestWhenInUseAuthorization()
         
         if CLLocationManager.locationServicesEnabled() {
-            print("위치서비스 on")
             locationManager.startUpdatingLocation()
-        } else {
-            print("위치서비스 off")
         }
     }
 }
