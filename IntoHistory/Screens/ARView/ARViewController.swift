@@ -70,7 +70,6 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
 
             // TODO: - 화면 전환 코드
             self.presentingViewController?.dismiss(animated: true, completion: nil)
-            print("AR box가 tap 되었습니다아")
         }
     }
 }

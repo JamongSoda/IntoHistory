@@ -41,10 +41,6 @@ class TempButtonViewController: UIViewController {
     }
 
     @objc func buttonDidTap(_ sender: Any) {
-        if sender is UIButton {
-            print("button tapped")
-        }
-
         let storyboard = UIStoryboard(name: "ARView", bundle: nil)
         guard let nextVC = storyboard.instantiateViewController(withIdentifier: "ARViewController") as? ARViewController else {
             return
