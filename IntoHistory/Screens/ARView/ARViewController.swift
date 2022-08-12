@@ -59,7 +59,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         arscene.scene = scene
     }
 
-    @objc func tapped(recognizer : UITapGestureRecognizer){
+    @objc func tapped(recognizer: UITapGestureRecognizer){
         let sceneView = recognizer.view as! SCNView
         let touchLocation: CGPoint = recognizer.location(in: sceneView)
         let hitResults: [SCNHitTestResult] = sceneView.hitTest(touchLocation, options: [:])
