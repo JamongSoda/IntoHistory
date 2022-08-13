@@ -71,6 +71,7 @@ class HeroListViewController: UIViewController {
 }
 
 extension HeroListViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension HeroListViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     // CollectionView의 Section별로 보여줄 data 개수
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
