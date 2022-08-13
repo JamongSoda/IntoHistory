@@ -9,73 +9,75 @@ import UIKit
 
 class MainViewButton: UIView {
 
-    // MARK: - Property
+    // MARK: - View
 
     private let buttonShape: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.white
-        view.layer.cornerRadius = 10
-        return view
-    }()
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.backgroundColor = UIColor.white
+        $0.layer.cornerRadius = 10
+        return $0
+    }(UIView())
 
     let buttonTitle: UILabel = {
-        let title = UILabel()
-        title.font = UIFont.boldSystemFont(ofSize: 22)
-        return title
-    }()
+        $0.font = UIFont.boldSystemFont(ofSize: 22)
+        return $0
+    }(UILabel())
 
     let buttonSubtitle: UILabel = {
-        let subtitle = UILabel()
-        subtitle.font = UIFont.systemFont(ofSize: 16)
-        subtitle.text = "내용"
-        return subtitle
-    }()
+        $0.font = UIFont.systemFont(ofSize: 16)
+        $0.text = "내용"
+        return $0
+    }(UILabel())
 
-    lazy var labelStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [buttonSubtitle, buttonTitle])
-        stack.axis = .vertical
-        stack.alignment = .leading
-        stack.spacing = 5
-        return stack
-    }()
+    private lazy var labelStack: UIStackView = {
+        $0.axis = .vertical
+        $0.alignment = .leading
+        $0.spacing = 5
+        return $0
+    }(UIStackView(arrangedSubviews: [buttonSubtitle, buttonTitle]))
 
     lazy var buttonImage: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
-        return imageView
-    }()
+        $0.contentMode = .scaleAspectFit
+        return $0
+    }(UIImageView())
 
     // MARK: - init
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        render()
+        layout()
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        render()
+        layout()
     }
 
-    // MARK: - Layout
+    // MARK: - Method
 
-    private func render() {
+    private func layout() {
         self.addSubview(buttonShape)
-        NSLayoutConstraint.activate([
-            buttonShape.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            buttonShape.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            buttonShape.topAnchor.constraint(equalTo: self.topAnchor),
-            buttonShape.bottomAnchor.constraint(equalTo: self.bottomAnchor)
-        ])
+        buttonShape.anchor(
+            top: self.topAnchor,
+            left: self.leftAnchor,
+            bottom: self.bottomAnchor,
+            right: self.rightAnchor,
+            paddingTop: 0,
+            paddingLeft: 0,
+            paddingBottom: 0,
+            paddingRight: 0)
 
         self.addSubview(self.labelStack)
         labelStack.centerY(inView: buttonShape)
-        labelStack.anchor(left: buttonShape.leftAnchor, paddingLeft: 25)
+        labelStack.anchor(
+            left: buttonShape.leftAnchor,
+            paddingLeft: 25)
 
         self.addSubview(buttonImage)
         buttonImage.centerY(inView: buttonShape)
-        buttonImage.anchor(right: buttonShape.rightAnchor, paddingRight: 25)
+        buttonImage.anchor(
+            right: buttonShape.rightAnchor,
+            paddingRight: 25)
     }
 }
 
