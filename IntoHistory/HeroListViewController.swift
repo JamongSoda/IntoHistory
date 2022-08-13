@@ -7,80 +7,49 @@
 
 import UIKit
 
+struct ResistanceData {
+    let images = ["LockedHero.png", "LockedHero.png", "LockedHero.png", "LockedHero.png"]
+    let names = ["미뉴", "에디", "브라운", "노엘"]
+}
+
+struct WarriorData {
+    let images = ["LockedHero.png", "LockedHero.png", "LockedHero.png", "LockedHero.png"]
+    let names = ["메뉴", "에디에디가", "보라온", "갓노엘"]
+}
+
 class HeroListViewController: UIViewController {
     
-    let scrollView: UIScrollView = {
-        return $0
-    }(UIScrollView())
+    // MARK: - Property
     
-    let contentView: UIStackView = {
-        $0.axis = .vertical
-        $0.spacing = 30
-       return $0
-    }(UIStackView())
+    let resistanceData = ResistanceData()
+    let warriorData = WarriorData()
     
-    let descriptionSection: UIStackView = {
-        $0.setWidth(width: UIScreen.main.bounds.width - 32)
-        $0.backgroundColor = .white
-        $0.layer.cornerRadius = 16
-        $0.layer.shadowColor = UIColor.black.cgColor
-        $0.layer.shadowOpacity = 0.3
-        $0.layer.shadowOffset = CGSize(width: 4, height: 4)
-        $0.layer.shadowRadius = 20
-        $0.axis = .vertical
-        $0.spacing = 2
-        return $0
-    }(UIStackView())
+    // MARK: - View
     
-    let descriptionTitle: UILabel = {
-        $0.text = "숭고한 희생과 헌신 기억하겠습니다."
-        $0.textColor = .black
-        $0.font = UIFont.boldSystemFont(ofSize: 16)
+    let collectionView: UICollectionView = {
+        $0.backgroundColor = .basicBackground
         return $0
-    }(UILabel())
+    }(UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()))
     
-    let descriptionContent: UILabel = {
-        $0.text = "순국 선열과 호국영령의 숭고한 희생정신을 기리며 우리가 누리는 자유와 평화와 행복이, 가장 젊고 빛나는 시기에 자신의 모든 것을 조국에 바치신 순국선열과 호국영령의 희생과 헌신을 딛고 서 있는 것임을 잊지 않겠습니다"
-        $0.textColor = .black
-        $0.font = UIFont.systemFont(ofSize: 16)
-        $0.numberOfLines = 0
-        return $0
-    }(UILabel())
-    
-    let resistanceTitle: UILabel = {
-        $0.text = "순국 선열"
-        $0.textColor = .black
-        $0.font = UIFont.boldSystemFont(ofSize: 24)
-        return $0
-    }(UILabel())
-    
-    let warriorTitle: UILabel = {
-        $0.text = "호국영령"
-        $0.textColor = .black
-        $0.font = UIFont.boldSystemFont(ofSize: 24)
-        return $0
-    }(UILabel())
+    // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
-        view.addSubview(scrollView)
-        scrollView.addSubview(contentView)
-        contentView.addArrangedSubview(descriptionSection)
-        
-        descriptionSection.addArrangedSubview(descriptionTitle)
-        descriptionSection.addArrangedSubview(descriptionContent)
-        
-        contentView.addArrangedSubview(resistanceTitle)
-        contentView.addArrangedSubview(warriorTitle)
-        
-        configureUI()
+        attribute()
+        layout()
     }
     
-    func configureUI() {
-        
-        scrollView.anchor(
+    // MARK: - Method
+    
+    func attribute() {
+        view.backgroundColor = .basicBackground
+        setupCollectionView()
+    }
+    
+    func layout() {
+        view.addSubview(collectionView)
+        collectionView.anchor(
             top: view.safeAreaLayoutGuide.topAnchor,
             left: view.safeAreaLayoutGuide.leftAnchor,
             bottom: view.safeAreaLayoutGuide.bottomAnchor,
@@ -90,64 +59,101 @@ class HeroListViewController: UIViewController {
             paddingBottom: 0,
             paddingRight: 0
         )
-        
-        contentView.anchor(
-            top: scrollView.contentLayoutGuide.topAnchor,
-            left: scrollView.contentLayoutGuide.leftAnchor,
-            bottom: scrollView.contentLayoutGuide.bottomAnchor,
-            right: scrollView.contentLayoutGuide.rightAnchor,
-            paddingTop: 0,
-            paddingLeft: 0,
-            paddingBottom: 0,
-            paddingRight: 0
-        )
-        
-        let contentViewHeight = self.contentView.heightAnchor.constraint(greaterThanOrEqualTo: self.scrollView.heightAnchor)
-        contentViewHeight.priority = .defaultLow
-        contentViewHeight.isActive = true
-        
-        descriptionSection.anchor(
-            top: contentView.topAnchor,
-            left: contentView.leftAnchor,
-            bottom: resistanceTitle.topAnchor,
-            right: contentView.rightAnchor,
-            paddingTop: 20,
-            paddingLeft: 16,
-            paddingBottom: 30,
-            paddingRight: 16
-        )
-        
-        descriptionTitle.anchor(
-            top: descriptionSection.topAnchor,
-            left: descriptionSection.leftAnchor,
-            bottom: descriptionContent.topAnchor,
-            right: descriptionSection.rightAnchor,
-            paddingTop: 20,
-            paddingLeft: 14,
-            paddingBottom: 2,
-            paddingRight: 14
-        )
-        
-        descriptionContent.anchor(
-            top: descriptionTitle.bottomAnchor,
-            left: descriptionSection.leftAnchor,
-            bottom: descriptionSection.bottomAnchor,
-            right: descriptionSection.rightAnchor,
-            paddingTop: 2,
-            paddingLeft: 14,
-            paddingBottom: 20,
-            paddingRight: 14
-        )
-        
-        resistanceTitle.anchor(
-            bottom: warriorTitle.topAnchor,
-            paddingBottom: 30
-        )
+    }
+    
+    func setupCollectionView() {
+        collectionView.register(HeroListDescriptionCell.self, forCellWithReuseIdentifier: HeroListDescriptionCell.identifier)
+        collectionView.register(HeroListCell.self, forCellWithReuseIdentifier: HeroListCell.identifier)
+        collectionView.register(CollectionViewHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CollectionViewHeader.identifier)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+    }
+}
 
-        warriorTitle.anchor(
-            bottom: contentView.bottomAnchor,
-            paddingBottom: 30
-        )
+extension HeroListViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    // CollectionView의 Section별로 보여줄 data 개수
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if section == 1 {
+            return resistanceData.images.count
+        }
+        if section == 2 {
+            return warriorData.images.count
+        }
+        return 1
+    }
+    
+    // CollectionView의 Section별로 보여줄 cell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if indexPath.section == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeroListDescriptionCell.identifier, for: indexPath) as! HeroListDescriptionCell
+            return cell
+        } else if indexPath.section == 1 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeroListCell.identifier, for: indexPath) as! HeroListCell
+            cell.imageView.image = UIImage(named: resistanceData.images[indexPath.row])
+            cell.labelView.text = resistanceData.names[indexPath.row]
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeroListCell.identifier, for: indexPath) as! HeroListCell
+            cell.imageView.image = UIImage(named: warriorData.images[indexPath.row])
+            cell.labelView.text = warriorData.names[indexPath.row]
+            return cell
+        }
+    }
+    
+    // CollectionView의 cell 하나의 크기
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if indexPath.section == 0 {
+            return CGSize(width: UIScreen.main.bounds.width - 32, height: 150)
+        }
+        
+        let width = (collectionView.frame.width - 90) / 2
+        let height = width + 30
+        return CGSize(width: width, height: height)
+    }
+    
+    // CollectionView Cell간 상하 간격
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        if section == 0 {
+            return 20
+        }
+        return 40
+    }
+    
+    // CollectionView Cell간 좌우 간격
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        if section == 0 {
+            return 0
+        }
+        return 30
+    }
+    
+    // CollectionView Section 개수
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 3
+    }
+    
+    // CollectionView의 Header, Footer 지정
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionView.elementKindSectionHeader {
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CollectionViewHeader.identifier, for: indexPath) as! CollectionViewHeader
+            if indexPath.section == 1 {
+                header.labelView.text = "순국 선열"
+            } else {
+                header.labelView.text = "호국영령"
+            }
+            return header
+        }
+        return UICollectionReusableView()
+    }
+    
+    // CollectionView의 Header 크기 지정
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        if section == 0 {
+            return CGSize(width: 0, height: 0)
+        }
+        return CGSize(width: UIScreen.main.bounds.width, height: 22)
     }
 }
 
