@@ -16,6 +16,7 @@ class HeroListCell: UICollectionViewCell {
     // MARK: - View
     
     let imageView: UIImageView = {
+        $0.contentMode = .scaleAspectFit
         return $0
     }(UIImageView())
 
