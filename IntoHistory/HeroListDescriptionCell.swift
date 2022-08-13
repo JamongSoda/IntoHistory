@@ -20,7 +20,7 @@ class HeroListDescriptionCell: UICollectionViewCell {
         $0.backgroundColor = .white
         $0.layer.cornerRadius = 16
         $0.layer.shadowColor = UIColor.black.cgColor
-        $0.layer.shadowOpacity = 0.3
+        $0.layer.shadowOpacity = 0.1
         $0.layer.shadowOffset = CGSize(width: 4, height: 4)
         $0.layer.shadowRadius = 20
         $0.axis = .vertical
