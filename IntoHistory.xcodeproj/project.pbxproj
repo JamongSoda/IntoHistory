@@ -14,6 +14,9 @@
 		260F999C289D1B460010E258 /* IntoHistory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 260F999A289D1B460010E258 /* IntoHistory.xcdatamodeld */; };
 		260F999E289D1B470010E258 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 260F999D289D1B470010E258 /* Assets.xcassets */; };
 		260F99A1289D1B470010E258 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 260F999F289D1B470010E258 /* LaunchScreen.storyboard */; };
+		38E88C6E28A6428000B6634E /* TempButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E88C6D28A6428000B6634E /* TempButtonViewController.swift */; };
+		38E88C7028A642F600B6634E /* ARView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38E88C6F28A642F600B6634E /* ARView.storyboard */; };
+		38E88C7428A6477000B6634E /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E88C7328A6477000B6634E /* ARViewController.swift */; };
 		7539DC3959AA009030BA88E8 /* Pods_IntoHistory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5AB256B7E455FBDF91C78F0 /* Pods_IntoHistory.framework */; };
 		7B2C3E0628A3D85900BF197D /* AutoLayout+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2C3E0528A3D85900BF197D /* AutoLayout+Extension.swift */; };
 		7B2C3E0928A3D8FA00BF197D /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2C3E0828A3D8FA00BF197D /* Color+Extension.swift */; };
@@ -36,6 +39,9 @@
 		260F999D289D1B470010E258 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		260F99A0289D1B470010E258 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		260F99A2289D1B470010E258 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38E88C6D28A6428000B6634E /* TempButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempButtonViewController.swift; sourceTree = "<group>"; };
+		38E88C6F28A642F600B6634E /* ARView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ARView.storyboard; sourceTree = "<group>"; };
+		38E88C7328A6477000B6634E /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		437BF5BF00867FA43E5D2831 /* Pods-IntoHistory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntoHistory.release.xcconfig"; path = "Target Support Files/Pods-IntoHistory/Pods-IntoHistory.release.xcconfig"; sourceTree = "<group>"; };
 		7B2C3E0528A3D85900BF197D /* AutoLayout+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AutoLayout+Extension.swift"; sourceTree = "<group>"; };
 		7B2C3E0828A3D8FA00BF197D /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
@@ -83,6 +89,7 @@
 		260F9990289D1B460010E258 /* IntoHistory */ = {
 			isa = PBXGroup;
 			children = (
+				38E88C6828A6213400B6634E /* Screens */,
 				260F9991289D1B460010E258 /* AppDelegate.swift */,
 				260F9993289D1B460010E258 /* SceneDelegate.swift */,
 				260F9995289D1B460010E258 /* ViewController.swift */,
@@ -96,6 +103,32 @@
 				9828EC8428A600D300D0D82E /* Data */,
 			);
 			path = IntoHistory;
+			sourceTree = "<group>";
+		};
+		38E88C6828A6213400B6634E /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				38E88C6928A6213D00B6634E /* ARView */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		38E88C6928A6213D00B6634E /* ARView */ = {
+			isa = PBXGroup;
+			children = (
+				38E88C6C28A6427500B6634E /* SupportViews */,
+				38E88C7328A6477000B6634E /* ARViewController.swift */,
+			);
+			path = ARView;
+			sourceTree = "<group>";
+		};
+		38E88C6C28A6427500B6634E /* SupportViews */ = {
+			isa = PBXGroup;
+			children = (
+				38E88C6D28A6428000B6634E /* TempButtonViewController.swift */,
+				38E88C6F28A642F600B6634E /* ARView.storyboard */,
+			);
+			path = SupportViews;
 			sourceTree = "<group>";
 		};
 		7B2C3E0728A3D86200BF197D /* Extension */ = {
@@ -199,6 +232,7 @@
 			files = (
 				260F99A1289D1B470010E258 /* LaunchScreen.storyboard in Resources */,
 				260F999E289D1B470010E258 /* Assets.xcassets in Resources */,
+				38E88C7028A642F600B6634E /* ARView.storyboard in Resources */,
 				9828EC9028A600DF00D0D82E /* course_json.json in Resources */,
 				9828EC8F28A600DF00D0D82E /* person_json.json in Resources */,
 				260F9999289D1B460010E258 /* Main.storyboard in Resources */,
@@ -258,9 +292,11 @@
 				9828EC8E28A600DF00D0D82E /* LoadingPersonJSON.swift in Sources */,
 				7B2C3E0928A3D8FA00BF197D /* Color+Extension.swift in Sources */,
 				7B2C3E0628A3D85900BF197D /* AutoLayout+Extension.swift in Sources */,
+				38E88C6E28A6428000B6634E /* TempButtonViewController.swift in Sources */,
 				9828EC8D28A600DF00D0D82E /* LoadingCourseJSON.swift in Sources */,
 				260F9996289D1B460010E258 /* ViewController.swift in Sources */,
 				9828EC8B28A600DF00D0D82E /* PersonData.swift in Sources */,
+				38E88C7428A6477000B6634E /* ARViewController.swift in Sources */,
 				260F9992289D1B460010E258 /* AppDelegate.swift in Sources */,
 				260F9994289D1B460010E258 /* SceneDelegate.swift in Sources */,
 				9835250928A4FFDB002C2B20 /* NMapViewController.swift in Sources */,
@@ -412,7 +448,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = N6LML762WM;
+				DEVELOPMENT_TEAM = 82DRSFKFS9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IntoHistory/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "위치정보 권한이 필요합니다.2";
@@ -444,7 +480,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = N6LML762WM;
+				DEVELOPMENT_TEAM = 82DRSFKFS9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IntoHistory/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "위치정보 권한이 필요합니다.2";
