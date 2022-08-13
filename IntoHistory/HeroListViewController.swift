@@ -156,6 +156,7 @@ extension HeroListViewController: UICollectionViewDelegate, UICollectionViewData
         return CGSize(width: UIScreen.main.bounds.width, height: 22)
     }
     
+    // CollectionView Section의 내부 간격 조정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         if section == 0 {
             return UIEdgeInsets(top: 20, left: 0, bottom: 30, right: 0)
