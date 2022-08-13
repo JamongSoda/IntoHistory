@@ -71,7 +71,8 @@ class HeroListDescriptionCell: UICollectionViewCell {
             paddingLeft: 0,
             paddingBottom: 0,
             paddingRight: 0,
-            width: UIScreen.main.bounds.width - 32
+            width: UIScreen.main.bounds.width - 32,
+            height: 170
         )
         
         descriptionTitle.anchor(
@@ -86,8 +87,12 @@ class HeroListDescriptionCell: UICollectionViewCell {
         )
         
         descriptionContent.anchor(
+            left: descriptionSection.leftAnchor,
             bottom: descriptionSection.bottomAnchor,
+            right: descriptionSection.rightAnchor,
+            paddingLeft: 14,
             paddingBottom: 20,
+            paddingRight: 14,
             width: descriptionSection.frame.width - 28
         )
     }
