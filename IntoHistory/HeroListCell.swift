@@ -39,7 +39,7 @@ class HeroListCell: UICollectionViewCell {
     
     // MARK: - Method
 
-    func setupCell() {
+    priavte func setupCell() {
         addSubview(imageView)
         addSubview(labelView)
 

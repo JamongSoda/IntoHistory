@@ -42,12 +42,12 @@ class HeroListViewController: UIViewController {
     
     // MARK: - Method
     
-    func attribute() {
+    private func attribute() {
         view.backgroundColor = .basicBackground
         setupCollectionView()
     }
     
-    func layout() {
+    private func layout() {
         view.addSubview(collectionView)
         collectionView.anchor(
             top: view.safeAreaLayoutGuide.topAnchor,
@@ -61,7 +61,7 @@ class HeroListViewController: UIViewController {
         )
     }
     
-    func setupCollectionView() {
+    private func setupCollectionView() {
         collectionView.register(HeroListDescriptionCell.self, forCellWithReuseIdentifier: HeroListDescriptionCell.identifier)
         collectionView.register(HeroListCell.self, forCellWithReuseIdentifier: HeroListCell.identifier)
         collectionView.register(CollectionViewHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CollectionViewHeader.identifier)

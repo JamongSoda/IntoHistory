@@ -57,7 +57,7 @@ class HeroListDescriptionCell: UICollectionViewCell {
     
     // MARK: - Method
 
-    func setupCell() {
+    private func setupCell() {
         addSubview(descriptionSection)
         descriptionSection.addArrangedSubview(descriptionTitle)
         descriptionSection.addArrangedSubview(descriptionContent)
