@@ -86,7 +86,6 @@ extension HeroListViewController: UICollectionViewDataSource, UICollectionViewDe
     
     // CollectionView의 Section별로 보여줄 cell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         if indexPath.section == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeroListDescriptionCell.identifier, for: indexPath) as! HeroListDescriptionCell
             return cell
