@@ -15,6 +15,7 @@
 		260F999E289D1B470010E258 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 260F999D289D1B470010E258 /* Assets.xcassets */; };
 		260F99A1289D1B470010E258 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 260F999F289D1B470010E258 /* LaunchScreen.storyboard */; };
 		7539DC3959AA009030BA88E8 /* Pods_IntoHistory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5AB256B7E455FBDF91C78F0 /* Pods_IntoHistory.framework */; };
+		7B18C38628A784FA00BC0504 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B18C38528A784FA00BC0504 /* LocationService.swift */; };
 		7B2C3E0628A3D85900BF197D /* AutoLayout+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2C3E0528A3D85900BF197D /* AutoLayout+Extension.swift */; };
 		7B2C3E0928A3D8FA00BF197D /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2C3E0828A3D8FA00BF197D /* Color+Extension.swift */; };
 		9828EC8B28A600DF00D0D82E /* PersonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9828EC8528A600DF00D0D82E /* PersonData.swift */; };
@@ -37,6 +38,7 @@
 		260F99A0289D1B470010E258 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		260F99A2289D1B470010E258 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		437BF5BF00867FA43E5D2831 /* Pods-IntoHistory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntoHistory.release.xcconfig"; path = "Target Support Files/Pods-IntoHistory/Pods-IntoHistory.release.xcconfig"; sourceTree = "<group>"; };
+		7B18C38528A784FA00BC0504 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		7B2C3E0528A3D85900BF197D /* AutoLayout+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AutoLayout+Extension.swift"; sourceTree = "<group>"; };
 		7B2C3E0828A3D8FA00BF197D /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		9828EC8528A600DF00D0D82E /* PersonData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonData.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				260F9993289D1B460010E258 /* SceneDelegate.swift */,
 				260F9995289D1B460010E258 /* ViewController.swift */,
 				9835250828A4FFDB002C2B20 /* NMapViewController.swift */,
+				7B18C38528A784FA00BC0504 /* LocationService.swift */,
 				7B2C3E0728A3D86200BF197D /* Extension */,
 				260F9997289D1B460010E258 /* Main.storyboard */,
 				260F999D289D1B470010E258 /* Assets.xcassets */,
@@ -262,6 +265,7 @@
 				260F9996289D1B460010E258 /* ViewController.swift in Sources */,
 				9828EC8B28A600DF00D0D82E /* PersonData.swift in Sources */,
 				260F9992289D1B460010E258 /* AppDelegate.swift in Sources */,
+				7B18C38628A784FA00BC0504 /* LocationService.swift in Sources */,
 				260F9994289D1B460010E258 /* SceneDelegate.swift in Sources */,
 				9835250928A4FFDB002C2B20 /* NMapViewController.swift in Sources */,
 				9828EC8C28A600DF00D0D82E /* CourseData.swift in Sources */,
@@ -417,7 +421,7 @@
 				INFOPLIST_FILE = IntoHistory/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "위치정보 권한이 필요합니다.2";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "위치정보 권한이 필요합니다.";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "위치정보 권한이 필요합니다.3";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "IntoHistory uses your location to check you in on arrival.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -449,7 +453,7 @@
 				INFOPLIST_FILE = IntoHistory/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "위치정보 권한이 필요합니다.2";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "위치정보 권한이 필요합니다.";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "위치정보 권한이 필요합니다.3";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "IntoHistory uses your location to check you in on arrival.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
