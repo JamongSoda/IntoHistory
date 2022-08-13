@@ -155,6 +155,13 @@ extension HeroListViewController: UICollectionViewDelegate, UICollectionViewData
         }
         return CGSize(width: UIScreen.main.bounds.width, height: 22)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        if section == 0 {
+            return UIEdgeInsets(top: 20, left: 0, bottom: 30, right: 0)
+        }
+        return UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30)
+    }
 }
 
 enum DeviceType {
