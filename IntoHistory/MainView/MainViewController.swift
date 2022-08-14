@@ -12,13 +12,11 @@ class MainViewController: UIViewController {
     // MARK: - View
 
     private let scrollView: UIScrollView = {
-        $0.translatesAutoresizingMaskIntoConstraints = false
         $0.showsVerticalScrollIndicator = false
         return $0
     }(UIScrollView())
 
     private let contentView: UIView = {
-        $0.translatesAutoresizingMaskIntoConstraints = false
         return $0
     }(UIView())
 
