@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21G72" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="CourseEntity" representedClassName="CourseEntity" syncable="YES" codeGenerationType="class">
+    <entity name="CourseEntity" representedClassName="CourseEntity" syncable="YES">
         <attribute name="cid" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="courseDescription" optional="YES" attributeType="String"/>
         <attribute name="courseName" optional="YES" attributeType="String"/>
@@ -11,7 +11,7 @@
         <relationship name="courseToHero" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="HeroEntity" inverseName="heroToCourse" inverseEntity="HeroEntity"/>
         <relationship name="courseToPin" optional="YES" toMany="YES" minCount="1" deletionRule="Cascade" ordered="YES" destinationEntity="PinEntity" inverseName="pinToCourse" inverseEntity="PinEntity"/>
     </entity>
-    <entity name="HeroEntity" representedClassName="HeroEntity" syncable="YES" codeGenerationType="class">
+    <entity name="HeroEntity" representedClassName="HeroEntity" syncable="YES">
         <attribute name="heroDescription" optional="YES" attributeType="String"/>
         <attribute name="heroName" optional="YES" attributeType="String"/>
         <attribute name="hid" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
@@ -19,7 +19,7 @@
         <attribute name="type" optional="YES" attributeType="String"/>
         <relationship name="heroToCourse" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="CourseEntity" inverseName="courseToHero" inverseEntity="CourseEntity"/>
     </entity>
-    <entity name="PinEntity" representedClassName="PinEntity" syncable="YES" codeGenerationType="class">
+    <entity name="PinEntity" representedClassName="PinEntity" syncable="YES">
         <attribute name="isVisited" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="lat" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="lng" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
@@ -28,8 +28,8 @@
         <relationship name="pinToCourse" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CourseEntity" inverseName="courseToPin" inverseEntity="CourseEntity"/>
     </entity>
     <elements>
-        <element name="CourseEntity" positionX="-94.48046875" positionY="-99.671875" width="128" height="178"/>
-        <element name="PinEntity" positionX="131.69140625" positionY="-100.87890625" width="128" height="133"/>
-        <element name="HeroEntity" positionX="-96.11328125" positionY="96.9375" width="128" height="133"/>
+        <element name="CourseEntity" positionX="-94.48046875" positionY="-99.671875" width="128" height="164"/>
+        <element name="HeroEntity" positionX="-96.11328125" positionY="96.9375" width="128" height="119"/>
+        <element name="PinEntity" positionX="131.69140625" positionY="-100.87890625" width="128" height="119"/>
     </elements>
 </model>
