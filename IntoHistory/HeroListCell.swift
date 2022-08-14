@@ -41,6 +41,8 @@ class HeroListCell: UICollectionViewCell {
 
     private func setupCell() {
         addSubview(imageView)
+        addSubview(labelView)
+        
         imageView.anchor(
             top: topAnchor,
             left: leftAnchor,
@@ -52,7 +54,6 @@ class HeroListCell: UICollectionViewCell {
             paddingRight: 0
         )
         
-        addSubview(labelView)
         labelView.anchor(
             left: leftAnchor,
             bottom: bottomAnchor,

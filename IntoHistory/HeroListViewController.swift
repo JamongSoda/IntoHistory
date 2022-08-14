@@ -49,6 +49,7 @@ class HeroListViewController: UIViewController {
     
     private func layout() {
         view.addSubview(collectionView)
+        
         collectionView.anchor(
             top: view.safeAreaLayoutGuide.topAnchor,
             left: view.safeAreaLayoutGuide.leftAnchor,

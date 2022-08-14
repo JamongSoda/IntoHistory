@@ -66,16 +66,22 @@ class HeroDetailViewController: UIViewController {
     
     private func layout() {
         view.addSubview(popupShape)
+        
+        popupShape.addSubview(closeButton)
+        popupShape.addSubview(heroImage)
+        popupShape.addSubview(heroName)
+        popupShape.addSubview(heroDescription)
+        
         popupShape.anchor(
             left: view.leftAnchor,
             right: view.rightAnchor,
             paddingLeft: 20,
             paddingRight: 20
         )
+        
         popupShape.centerX(inView: view)
         popupShape.centerY(inView: view)
         
-        popupShape.addSubview(closeButton)
         closeButton.anchor(
             top: popupShape.topAnchor,
             left: popupShape.leftAnchor,
@@ -83,7 +89,6 @@ class HeroDetailViewController: UIViewController {
             paddingLeft: 25
         )
         
-        popupShape.addSubview(heroImage)
         heroImage.anchor(
             top: popupShape.topAnchor,
             left: popupShape.leftAnchor,
@@ -96,7 +101,6 @@ class HeroDetailViewController: UIViewController {
             height: 240
         )
         
-        popupShape.addSubview(heroName)
         heroName.anchor(
             left: popupShape.leftAnchor,
             bottom: heroDescription.topAnchor,
@@ -106,7 +110,6 @@ class HeroDetailViewController: UIViewController {
             paddingRight: 20
         )
         
-        popupShape.addSubview(heroDescription)
         heroDescription.anchor(
             left: popupShape.leftAnchor,
             bottom: popupShape.bottomAnchor,
