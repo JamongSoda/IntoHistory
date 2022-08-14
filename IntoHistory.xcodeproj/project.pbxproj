@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2600429028A8F51B000EDA7B /* CourseEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2600428A28A8F51B000EDA7B /* CourseEntity+CoreDataClass.swift */; };
+		2600429128A8F51B000EDA7B /* CourseEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2600428B28A8F51B000EDA7B /* CourseEntity+CoreDataProperties.swift */; };
+		2600429228A8F51B000EDA7B /* HeroEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2600428C28A8F51B000EDA7B /* HeroEntity+CoreDataClass.swift */; };
+		2600429328A8F51B000EDA7B /* HeroEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2600428D28A8F51B000EDA7B /* HeroEntity+CoreDataProperties.swift */; };
+		2600429428A8F51B000EDA7B /* PinEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2600428E28A8F51B000EDA7B /* PinEntity+CoreDataClass.swift */; };
+		2600429528A8F51B000EDA7B /* PinEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2600428F28A8F51B000EDA7B /* PinEntity+CoreDataProperties.swift */; };
 		260F9992289D1B460010E258 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260F9991289D1B460010E258 /* AppDelegate.swift */; };
 		260F9994289D1B460010E258 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260F9993289D1B460010E258 /* SceneDelegate.swift */; };
 		260F9996289D1B460010E258 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260F9995289D1B460010E258 /* ViewController.swift */; };
@@ -30,6 +36,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2600428A28A8F51B000EDA7B /* CourseEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CourseEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2600428B28A8F51B000EDA7B /* CourseEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CourseEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2600428C28A8F51B000EDA7B /* HeroEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HeroEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2600428D28A8F51B000EDA7B /* HeroEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HeroEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2600428E28A8F51B000EDA7B /* PinEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PinEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2600428F28A8F51B000EDA7B /* PinEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PinEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		260F998E289D1B460010E258 /* IntoHistory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntoHistory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		260F9991289D1B460010E258 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		260F9993289D1B460010E258 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,12 +111,26 @@
 				2694641328A65FD000485526 /* HeroListCell.swift */,
 				2694641828A6973C00485526 /* HeroListDescriptionCell.swift */,
 				26F01C4E28A3F57800D3FD88 /* HeroListViewController.swift */,
-				260F999A289D1B460010E258 /* Model.xcdatamodeld */,
+				26E728FF28A8F38C0091D10C /* Coredata */,
 				7B2C3E0728A3D86200BF197D /* Extension */,
 				9828EC8428A600D300D0D82E /* Data */,
 				9835250828A4FFDB002C2B20 /* NMapViewController.swift */,
 			);
 			path = IntoHistory;
+			sourceTree = "<group>";
+		};
+		26E728FF28A8F38C0091D10C /* Coredata */ = {
+			isa = PBXGroup;
+			children = (
+				2600428A28A8F51B000EDA7B /* CourseEntity+CoreDataClass.swift */,
+				2600428B28A8F51B000EDA7B /* CourseEntity+CoreDataProperties.swift */,
+				2600428C28A8F51B000EDA7B /* HeroEntity+CoreDataClass.swift */,
+				2600428D28A8F51B000EDA7B /* HeroEntity+CoreDataProperties.swift */,
+				2600428E28A8F51B000EDA7B /* PinEntity+CoreDataClass.swift */,
+				2600428F28A8F51B000EDA7B /* PinEntity+CoreDataProperties.swift */,
+				260F999A289D1B460010E258 /* Model.xcdatamodeld */,
+			);
+			path = Coredata;
 			sourceTree = "<group>";
 		};
 		7B2C3E0728A3D86200BF197D /* Extension */ = {
@@ -262,21 +288,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2600429428A8F51B000EDA7B /* PinEntity+CoreDataClass.swift in Sources */,
 				260F9992289D1B460010E258 /* AppDelegate.swift in Sources */,
 				260F9994289D1B460010E258 /* SceneDelegate.swift in Sources */,
+				2600429528A8F51B000EDA7B /* PinEntity+CoreDataProperties.swift in Sources */,
 				260F9996289D1B460010E258 /* ViewController.swift in Sources */,
 				260F999C289D1B460010E258 /* Model.xcdatamodeld in Sources */,
 				2694641428A65FD000485526 /* HeroListCell.swift in Sources */,
 				2694641928A6973C00485526 /* HeroListDescriptionCell.swift in Sources */,
 				2694641B28A7577300485526 /* CollectionViewHeader.swift in Sources */,
 				26F01C4F28A3F57800D3FD88 /* HeroListViewController.swift in Sources */,
+				2600429228A8F51B000EDA7B /* HeroEntity+CoreDataClass.swift in Sources */,
 				7B2C3E0928A3D8FA00BF197D /* Color+Extension.swift in Sources */,
 				7B2C3E0628A3D85900BF197D /* AutoLayout+Extension.swift in Sources */,
+				2600429328A8F51B000EDA7B /* HeroEntity+CoreDataProperties.swift in Sources */,
+				2600429028A8F51B000EDA7B /* CourseEntity+CoreDataClass.swift in Sources */,
 				9828EC8E28A600DF00D0D82E /* LoadingPersonJSON.swift in Sources */,
 				9828EC8D28A600DF00D0D82E /* LoadingCourseJSON.swift in Sources */,
 				9828EC8B28A600DF00D0D82E /* PersonData.swift in Sources */,
 				9828EC8C28A600DF00D0D82E /* CourseData.swift in Sources */,
 				9835250928A4FFDB002C2B20 /* NMapViewController.swift in Sources */,
+				2600429128A8F51B000EDA7B /* CourseEntity+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
