@@ -59,6 +59,10 @@ class HeroListDescriptionCell: UICollectionViewCell {
 
     private func setupCell() {
         addSubview(descriptionSection)
+        
+        descriptionSection.addArrangedSubview(descriptionTitle)
+        descriptionSection.addArrangedSubview(descriptionContent)
+        
         descriptionSection.anchor(
             top: superview?.topAnchor,
             left: superview?.leftAnchor,
@@ -72,7 +76,6 @@ class HeroListDescriptionCell: UICollectionViewCell {
             height: 170
         )
         
-        descriptionSection.addArrangedSubview(descriptionTitle)
         descriptionTitle.anchor(
             top: descriptionSection.topAnchor,
             left: descriptionSection.leftAnchor,
@@ -84,7 +87,6 @@ class HeroListDescriptionCell: UICollectionViewCell {
             paddingRight: 14
         )
         
-        descriptionSection.addArrangedSubview(descriptionContent)        
         descriptionContent.anchor(
             left: descriptionSection.leftAnchor,
             bottom: descriptionSection.bottomAnchor,

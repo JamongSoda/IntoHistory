@@ -36,6 +36,7 @@ class CollectionViewHeader: UICollectionReusableView {
 
     private func setupCell() {
         addSubview(labelView)
+        
         labelView.anchor(
             top: topAnchor,
             left: leftAnchor,
