@@ -53,8 +53,7 @@ class HeroDetailViewController: UIViewController {
     }
     
     private func attribute() {
-//        view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, a: 0.5)
-        view.backgroundColor = .gray
+        view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, a: 0.5)
     }
     
     private func layout() {
@@ -72,11 +71,8 @@ class HeroDetailViewController: UIViewController {
             paddingRight: 20
         )
         
-        popupShape.widthAnchor.constraint(greaterThanOrEqualTo: view.widthAnchor, multiplier: 0.6).isActive = true
-        popupShape.topAnchor.constraint(greaterThanOrEqualTo: view.topAnchor, constant: 40).isActive = true
-        popupShape.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: -40).isActive = true
-        popupShape.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
-        popupShape.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0).isActive = true
+        popupShape.centerX(inView: view)
+        popupShape.centerY(inView: view)
         
         closeButton.anchor(
             top: popupShape.topAnchor,
