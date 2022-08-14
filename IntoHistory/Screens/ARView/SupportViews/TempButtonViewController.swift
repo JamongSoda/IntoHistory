@@ -42,10 +42,10 @@ class TempButtonViewController: UIViewController {
 
     @objc func buttonDidTap(_ sender: Any) {
         let storyboard = UIStoryboard(name: "ARView", bundle: nil)
-        guard let nextVC = storyboard.instantiateViewController(withIdentifier: "ARViewController") as? ARViewController else {
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "ARViewController") as? ARViewController else {
             return
         }
-        self.present(nextVC, animated: true)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
