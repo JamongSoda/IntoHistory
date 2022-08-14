@@ -69,7 +69,8 @@ class HeroListViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
     }
-    private func loadHeroData(heroData: Person) {
+    
+    private func saveHeroData(heroData: Person) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         
@@ -92,7 +93,7 @@ class HeroListViewController: UIViewController {
         }
     }
     
-    private func fetchHeroData() {
+    private func loadHeroData() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         
