@@ -12,6 +12,10 @@ class LoadingPersonJson {
     @Published var person = [Person]()
     let personjson = "person_json"
     
+    init() {
+        loadPersonData()
+    }
+    
     func loadPersonData() {
         if let personJSONData = Bundle.main.url(forResource: personjson, withExtension: "json") {
             do {

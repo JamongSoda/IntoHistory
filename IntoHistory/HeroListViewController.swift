@@ -8,22 +8,13 @@
 import UIKit
 import CoreData
 
-struct ResistanceData {
-    let images = ["LockedHero.png", "LockedHero.png", "LockedHero.png", "LockedHero.png"]
-    let names = ["미뉴", "에디", "브라운", "노엘"]
-}
-
-struct WarriorData {
-    let images = ["LockedHero.png", "LockedHero.png", "LockedHero.png", "LockedHero.png"]
-    let names = ["메뉴", "에디에디가", "보라온", "갓노엘"]
-}
-
 class HeroListViewController: UIViewController {
     
     // MARK: - Property
-    
-    let resistanceData = ResistanceData()
-    let warriorData = WarriorData()
+
+    let personData = LoadingPersonJson().person
+    var resistanceData = [HeroEntity]()
+    var warriorData = [HeroEntity]()
     
     // MARK: - View
     
@@ -39,6 +30,7 @@ class HeroListViewController: UIViewController {
         
         attribute()
         layout()
+        loadHeroData()
     }
     
     // MARK: - Method
@@ -101,6 +93,11 @@ class HeroListViewController: UIViewController {
             let hero = try context.fetch(HeroEntity.fetchRequest()) as! [HeroEntity]
             hero.forEach {
                 print($0.heroName)
+                if $0.type == "독립운동" {
+                    resistanceData.append($0)
+                } else {
+                    warriorData.append($0)
+                }
             }
         } catch {
             print(error.localizedDescription)
@@ -114,10 +111,10 @@ extension HeroListViewController: UICollectionViewDataSource, UICollectionViewDe
     // CollectionView의 Section별로 보여줄 data 개수
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 1 {
-            return resistanceData.images.count
+            return resistanceData.count
         }
         if section == 2 {
-            return warriorData.images.count
+            return warriorData.count
         }
         return 1
     }
@@ -129,13 +126,13 @@ extension HeroListViewController: UICollectionViewDataSource, UICollectionViewDe
             return cell
         } else if indexPath.section == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeroListCell.identifier, for: indexPath) as! HeroListCell
-            cell.imageView.image = UIImage(named: resistanceData.images[indexPath.row])
-            cell.labelView.text = resistanceData.names[indexPath.row]
+            cell.imageView.image = UIImage(named: "LockedHero.png")
+            cell.labelView.text = resistanceData[indexPath.row].heroName
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeroListCell.identifier, for: indexPath) as! HeroListCell
-            cell.imageView.image = UIImage(named: warriorData.images[indexPath.row])
-            cell.labelView.text = warriorData.names[indexPath.row]
+            cell.imageView.image = UIImage(named: "LockedHero.png")
+            cell.labelView.text = warriorData[indexPath.row].heroName
             return cell
         }
     }
