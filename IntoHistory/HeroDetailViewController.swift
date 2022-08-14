@@ -9,7 +9,11 @@ import UIKit
 
 class HeroDetailViewController: UIViewController {
     
+    // MARK: - Property
+    
     let identifier = "HeroDetailViewController"
+    
+    // MARK: - View
     
     private let popupShape: UIView = {
         $0.backgroundColor = .white
@@ -44,6 +48,8 @@ class HeroDetailViewController: UIViewController {
         $0.numberOfLines = 0
         return $0
     }(UILabel())
+    
+    // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +57,8 @@ class HeroDetailViewController: UIViewController {
         attribute()
         layout()
     }
+    
+    // MARK: - Method
     
     private func attribute() {
         view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, a: 0.5)
