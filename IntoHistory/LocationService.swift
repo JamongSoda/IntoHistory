@@ -13,6 +13,8 @@ class LocationService: NSObject {
     
     static let shared = LocationService()
     var locationManager: CLLocationManager!
+    let courseData = LoadingCourseJSON().courses.map{$0.course_pins}
+    var arr = [(Double, Double)]()
     
     private override init() {
         super.init()
@@ -20,11 +22,11 @@ class LocationService: NSObject {
         locationManager.delegate = self
     }
     
-    func registLocation() {
-        let location = CLLocationCoordinate2D(latitude: 37.583262, longitude: 126.986834)
+    func registLocation(lat: Double , long: Double) {
+        let location = CLLocationCoordinate2D(latitude: lat, longitude: long)
         //CLLocationCoordinate2D : 위치의 위도와 경도를 사용해 위치 좌표를 만듦 /latitude = 위도,longitude = 경도
         
-        let region = CLCircularRegion(center: location, radius: 1.0, identifier: "id")
+        let region = CLCircularRegion(center: location, radius: 100.0, identifier: "id")
         //CLCircularRegion : 해당 좌표로부터 어느정도를 반경으로 잡을건지 설정 / 원형으로 반경을 잡음
         region.notifyOnExit = true
         region.notifyOnExit = true
@@ -46,7 +48,7 @@ class LocationService: NSObject {
         
         notificationCenter.getNotificationSettings{
             if $0.alertSetting == .enabled {
-            //alertSetting이 .enabled(활성화)된 경우 알림을 줌
+                //alertSetting이 .enabled(활성화)된 경우 알림을 줌
                 let content = UNMutableNotificationContent()
                 content.title = title
                 content.body = body
@@ -57,7 +59,7 @@ class LocationService: NSObject {
                 let request = UNNotificationRequest(identifier: "test-\(uuidString)", content: content, trigger: trigger)
                 //알림요청(예약)-> identifier: 알림을 구분할 수 있게해주는 식별자.. / content: 알림에 들어갈 내용 / 트리거: UserNotifications을 작동시킬 트리거
                 notificationCenter.add(request, withCompletionHandler: { (error) in
-                //예약한 알림을 센터에  추가하는 코드
+                    //예약한 알림을 센터에  추가하는 코드
                     if error != nil {
                         //에러..다루는 코드입력
                     }
@@ -65,7 +67,31 @@ class LocationService: NSObject {
                 
             }
         }
-        
+    }
+    
+    func loadCourseData() {
+        for i in 0..<courseData.count {
+            let pinx = courseData[i]?.map{ $0.pin_x }
+            let piny = courseData[i]?.map{ $0.pin_y }
+            
+            let countx = pinx?.count ?? 0
+            
+            for j in 0..<countx{
+                let tempx = pinx?[j] ?? 0.0
+                let tempy = piny?[j] ?? 0.0
+                
+                arr.append((tempx, tempy))
+            }
+        }
+    }
+    
+    func makenogifitation() {
+        self.loadCourseData()
+        for i in 0..<arr.count {
+            let lat = arr[i].0
+            let long = arr[i].1
+            registLocation(lat: lat, long: long)
+        }
     }
 }
 
@@ -80,7 +106,7 @@ extension LocationService: CLLocationManagerDelegate {
             locationManager.requestAlwaysAuthorization()
             // 사용자가 앱 실행 시에만 위치 추적 허용 -> 승인요청 띄우기 (우린 백그라운드에서도 추적해야해서)
         case .authorizedAlways:
-            registLocation()
+            makenogifitation()
             //항상 위치추적 허용 -> registLocation() 메서드 실행
         default:
             print("유효한 지역이 아님")
@@ -100,7 +126,7 @@ extension LocationService: CLLocationManagerDelegate {
             fireNotification("영웅의 길 정.복.완.료😎",body: "방문완료!")
         case .outside:
             print("나감")
-//            fireNotification("나감",body: "인녕히 가세요")
+            //            fireNotification("나감",body: "인녕히 가세요")
         case .unknown: break
         }
         // 해당 지역에 들어오고 나가면 프린트로 찍힘
