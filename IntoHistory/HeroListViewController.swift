@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 struct ResistanceData {
     let images = ["LockedHero.png", "LockedHero.png", "LockedHero.png", "LockedHero.png"]
@@ -67,6 +68,42 @@ class HeroListViewController: UIViewController {
         collectionView.register(CollectionViewHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CollectionViewHeader.identifier)
         collectionView.delegate = self
         collectionView.dataSource = self
+    }
+    private func loadHeroData(heroData: Person) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let heroEntity = NSEntityDescription.entity(forEntityName: "HeroEntity", in: context)
+        
+        if let heroEntity = heroEntity {
+            let hero = NSManagedObject(entity: heroEntity, insertInto: context)
+            hero.setValue(heroData.person_id, forKey: "hid")
+            hero.setValue(heroData.person_name, forKey: "heroName")
+            hero.setValue(heroData.person_type, forKey: "type")
+            hero.setValue(heroData.person_description, forKey: "heroDescription")
+            hero.setValue(false, forKey: "isCollected")
+            
+            do {
+                try context.save()
+                print("데이터 \(heroData.person_name)을(를) 새로 저장했습니다. 영웅 분류: \(heroData.person_type)")
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    private func fetchHeroData() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        do {
+            let hero = try context.fetch(HeroEntity.fetchRequest()) as! [HeroEntity]
+            hero.forEach {
+                print($0.heroName)
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 }
 
