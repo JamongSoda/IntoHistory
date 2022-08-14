@@ -10,7 +10,7 @@
 		260F9992289D1B460010E258 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260F9991289D1B460010E258 /* AppDelegate.swift */; };
 		260F9994289D1B460010E258 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260F9993289D1B460010E258 /* SceneDelegate.swift */; };
 		260F9996289D1B460010E258 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260F9995289D1B460010E258 /* ViewController.swift */; };
-		260F999C289D1B460010E258 /* IntoHistory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 260F999A289D1B460010E258 /* IntoHistory.xcdatamodeld */; };
+		260F999C289D1B460010E258 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 260F999A289D1B460010E258 /* Model.xcdatamodeld */; };
 		260F999E289D1B470010E258 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 260F999D289D1B470010E258 /* Assets.xcassets */; };
 		260F99A1289D1B470010E258 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 260F999F289D1B470010E258 /* LaunchScreen.storyboard */; };
 		2694641428A65FD000485526 /* HeroListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694641328A65FD000485526 /* HeroListCell.swift */; };
@@ -103,7 +103,7 @@
 				26C20BBF28A93C2B00E0CA12 /* NMapViewController.swift */,
 				2694641828A6973C00485526 /* HeroListDescriptionCell.swift */,
 				26F01C4E28A3F57800D3FD88 /* HeroListViewController.swift */,
-				260F999A289D1B460010E258 /* IntoHistory.xcdatamodeld */,
+				260F999A289D1B460010E258 /* Model.xcdatamodeld */,
 				7B2C3E0728A3D86200BF197D /* Extension */,
 				9828EC8428A600D300D0D82E /* Data */,
 			);
@@ -280,7 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				260F999C289D1B460010E258 /* IntoHistory.xcdatamodeld in Sources */,
+				260F999C289D1B460010E258 /* Model.xcdatamodeld in Sources */,
 				7B2C3E0928A3D8FA00BF197D /* Color+Extension.swift in Sources */,
 				7B2C3E0628A3D85900BF197D /* AutoLayout+Extension.swift in Sources */,
 				7B32F65628A6758E00F4CB48 /* MainViewButton.swift in Sources */,
@@ -508,13 +508,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		260F999A289D1B460010E258 /* IntoHistory.xcdatamodeld */ = {
+		260F999A289D1B460010E258 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				260F999B289D1B460010E258 /* IntoHistory.xcdatamodel */,
 			);
 			currentVersion = 260F999B289D1B460010E258 /* IntoHistory.xcdatamodel */;
-			path = IntoHistory.xcdatamodeld;
+			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
