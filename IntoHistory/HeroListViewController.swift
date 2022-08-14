@@ -72,7 +72,6 @@ class HeroListViewController: UIViewController {
 
 extension HeroListViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    // CollectionView의 Section별로 보여줄 data 개수
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 1 {
             return resistanceData.images.count
@@ -83,7 +82,6 @@ extension HeroListViewController: UICollectionViewDataSource, UICollectionViewDe
         return 1
     }
     
-    // CollectionView의 Section별로 보여줄 cell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeroListDescriptionCell.identifier, for: indexPath) as! HeroListDescriptionCell
@@ -101,7 +99,6 @@ extension HeroListViewController: UICollectionViewDataSource, UICollectionViewDe
         }
     }
     
-    // CollectionView의 cell 하나의 크기
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section == 0 {
             return CGSize(width: UIScreen.main.bounds.width - 32, height: 170)
@@ -112,7 +109,6 @@ extension HeroListViewController: UICollectionViewDataSource, UICollectionViewDe
         return CGSize(width: width, height: height)
     }
     
-    // CollectionView Cell간 상하 간격
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         if section == 0 {
             return 20
@@ -120,7 +116,6 @@ extension HeroListViewController: UICollectionViewDataSource, UICollectionViewDe
         return 40
     }
     
-    // CollectionView Cell간 좌우 간격
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         if section == 0 {
             return 0
@@ -128,12 +123,10 @@ extension HeroListViewController: UICollectionViewDataSource, UICollectionViewDe
         return 30
     }
     
-    // CollectionView Section 개수
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 3
     }
     
-    // CollectionView의 Header, Footer 지정
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CollectionViewHeader.identifier, for: indexPath) as! CollectionViewHeader
@@ -147,7 +140,6 @@ extension HeroListViewController: UICollectionViewDataSource, UICollectionViewDe
         return UICollectionReusableView()
     }
     
-    // CollectionView의 Header 크기 지정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         if section == 0 {
             return CGSize(width: 0, height: 0)
@@ -155,7 +147,6 @@ extension HeroListViewController: UICollectionViewDataSource, UICollectionViewDe
         return CGSize(width: UIScreen.main.bounds.width, height: 22)
     }
     
-    // CollectionView Section의 내부 간격 조정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         if section == 0 {
             return UIEdgeInsets(top: 20, left: 0, bottom: 30, right: 0)
