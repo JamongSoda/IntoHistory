@@ -30,6 +30,7 @@ class DetailCourseViewController: UIViewController {
         navigationController?.navigationBar.backgroundColor = .white
 
         attribute()
+        setCollectionView()
 
         detailCourseView.delegate = self
         detailCourseView.dataSource = self
@@ -44,7 +45,6 @@ class DetailCourseViewController: UIViewController {
 
     private func attribute() {
         self.view.backgroundColor = UIColor.basicBackground
-        setCollectionView()
     }
 
     private func setCollectionView() {
@@ -87,11 +87,6 @@ extension DetailCourseViewController:  UICollectionViewDelegate, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
          return UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0)
-    }
-
-    // 여기서부터 헤더
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
     }
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
