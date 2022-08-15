@@ -79,7 +79,6 @@ class DetailCourseCell: UICollectionViewCell {
             left: leftAnchor,
             bottom: bottomAnchor,
             right: rightAnchor
-//            paddingBottom: 10
         )
         
         pinImage.anchor(
@@ -126,6 +125,7 @@ class DetailCourseCell: UICollectionViewCell {
             .setContentHuggingPriority(UILayoutPriority(251),
                                        for: NSLayoutConstraint.Axis.horizontal
             )
+
         hStackView
             .setContentCompressionResistancePriority(UILayoutPriority(500),
                                                      for: NSLayoutConstraint.Axis.horizontal
