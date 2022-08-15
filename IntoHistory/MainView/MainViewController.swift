@@ -205,11 +205,9 @@ class MainViewController: UIViewController {
     private func saveJSONData() {
         for cntCourse in 0..<loadCourseJSON.count {
             saveCourseData(courseData: loadCourseJSON[cntCourse])
-            print(loadCourseJSON[cntCourse])
             
             for cntPin in 0..<loadCourseJSON[cntCourse].course_pins!.count {
                 savePinData(pinData: loadCourseJSON[cntCourse].course_pins![cntPin])
-                print(loadCourseJSON[cntCourse].course_pins![cntPin])
             }
             saveHeroData(heroData: loadCourseJSON[cntCourse].related_person!)
         }
@@ -233,7 +231,6 @@ class MainViewController: UIViewController {
             
             do {
                 try context.save()
-                print("코스 \(courseData.title)을 저장했습니다.")
             } catch {
                 print(error.localizedDescription)
             }
@@ -257,7 +254,6 @@ class MainViewController: UIViewController {
             
             do {
                 try context.save()
-                print("핀 \(pinData.pin_title)을 저장했습니다.")
             } catch {
                 print(error.localizedDescription)
             }
@@ -281,7 +277,6 @@ class MainViewController: UIViewController {
             
             do {
                 try context.save()
-                print("영웅 \(heroData.person_name)을 저장했습니다.")
             } catch {
                 print(error.localizedDescription)
             }
