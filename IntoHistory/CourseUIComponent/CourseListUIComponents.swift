@@ -33,14 +33,14 @@ class CourseListUIComponents: UIView {
     }(UIImageView())
     
     let courseCellLineImage1: UIImageView = {
-        $0.image = UIImage(named: ImageLiteral.courseCellLine1)
+        $0.image = UIImage(named: ImageLiteral.courseCellLine)
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.contentMode = .scaleAspectFit
         return $0
     }(UIImageView())
     
     let courseCellLineImage2: UIImageView = {
-        $0.image = UIImage(named: ImageLiteral.courseCellLine1)
+        $0.image = UIImage(named: ImageLiteral.courseCellLine)
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.contentMode = .scaleAspectFit
         return $0
