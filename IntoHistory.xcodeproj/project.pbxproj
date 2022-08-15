@@ -33,12 +33,12 @@
 		9828EC8C28A600DF00D0D82E /* CourseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9828EC8628A600DF00D0D82E /* CourseData.swift */; };
 		9828EC8D28A600DF00D0D82E /* LoadingCourseJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9828EC8728A600DF00D0D82E /* LoadingCourseJSON.swift */; };
 		9828EC8E28A600DF00D0D82E /* LoadingPersonJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9828EC8828A600DF00D0D82E /* LoadingPersonJSON.swift */; };
-		9828EC9028A600DF00D0D82E /* course_json.json in Resources */ = {isa = PBXBuildFile; fileRef = 9828EC8A28A600DF00D0D82E /* course_json.json */; };
 		9828EC9628A667AA00D0D82E /* ImageLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9828EC9528A667AA00D0D82E /* ImageLiteral.swift */; };
 		9828EC9828A69F7B00D0D82E /* CourseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9828EC9728A69F7B00D0D82E /* CourseListViewController.swift */; };
 		9835250928A4FFDB002C2B20 /* NMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9835250828A4FFDB002C2B20 /* NMapViewController.swift */; };
 		9847904C28A96D8500FC5995 /* CourseListUIComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9847904B28A96D8500FC5995 /* CourseListUIComponents.swift */; };
 		9847905128AA0CC700FC5995 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9847905028AA0CC700FC5995 /* UIView+Extension.swift */; };
+		9847905428AA3A2600FC5995 /* course_json.json in Resources */ = {isa = PBXBuildFile; fileRef = 9828EC8A28A600DF00D0D82E /* course_json.json */; };
 		9877CF1728A7CD3400CC2D5B /* CourseListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9877CF1628A7CD3400CC2D5B /* CourseListCell.swift */; };
 		9877CF1928A9205400CC2D5B /* DetailCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9877CF1828A9205400CC2D5B /* DetailCourseViewController.swift */; };
 		9877CF1B28A9206F00CC2D5B /* DetailCourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9877CF1A28A9206F00CC2D5B /* DetailCourseCell.swift */; };
@@ -79,9 +79,9 @@
 		9828EC9528A667AA00D0D82E /* ImageLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiteral.swift; sourceTree = "<group>"; };
 		9828EC9728A69F7B00D0D82E /* CourseListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseListViewController.swift; sourceTree = "<group>"; };
 		9835250828A4FFDB002C2B20 /* NMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMapViewController.swift; sourceTree = "<group>"; };
+		9847904B28A96D8500FC5995 /* CourseListUIComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListUIComponents.swift; sourceTree = "<group>"; };
 		9847905028AA0CC700FC5995 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		9877CF1628A7CD3400CC2D5B /* CourseListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListCell.swift; sourceTree = "<group>"; };
-		9847904B28A96D8500FC5995 /* CourseListUIComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListUIComponents.swift; sourceTree = "<group>"; };
 		9877CF1828A9205400CC2D5B /* DetailCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCourseViewController.swift; sourceTree = "<group>"; };
 		9877CF1A28A9206F00CC2D5B /* DetailCourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCourseCell.swift; sourceTree = "<group>"; };
 		9877CF1C28A9336200CC2D5B /* DetailCourseHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCourseHeader.swift; sourceTree = "<group>"; };
@@ -311,7 +311,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				264B547228AA1C9B00726AB0 /* course_json.json in Resources */,
+				9847905428AA3A2600FC5995 /* course_json.json in Resources */,
 				264B547328AA1C9B00726AB0 /* person_json.json in Resources */,
 				260F99A1289D1B470010E258 /* LaunchScreen.storyboard in Resources */,
 				260F999E289D1B470010E258 /* Assets.xcassets in Resources */,
@@ -371,6 +371,7 @@
 				9828EC9628A667AA00D0D82E /* ImageLiteral.swift in Sources */,
 				7B2C3E0928A3D8FA00BF197D /* Color+Extension.swift in Sources */,
 				26272A3B28A9E65D0097B19E /* CourseEntity+CoreDataClass.swift in Sources */,
+				260F999C289D1B460010E258 /* IntoHistory.xcdatamodeld in Sources */,
 				9877CF1728A7CD3400CC2D5B /* CourseListCell.swift in Sources */,
 				9847905128AA0CC700FC5995 /* UIView+Extension.swift in Sources */,
 				9877CF1B28A9206F00CC2D5B /* DetailCourseCell.swift in Sources */,
@@ -381,7 +382,6 @@
 				9847904C28A96D8500FC5995 /* CourseListUIComponents.swift in Sources */,
 				9828EC8B28A600DF00D0D82E /* PersonData.swift in Sources */,
 				260F9992289D1B460010E258 /* AppDelegate.swift in Sources */,
-				26C20BC028A93C2B00E0CA12 /* NMapViewController.swift in Sources */,
 				260F9994289D1B460010E258 /* SceneDelegate.swift in Sources */,
 				2694641428A65FD000485526 /* HeroListCell.swift in Sources */,
 				26272A3F28A9E65D0097B19E /* PinEntity+CoreDataClass.swift in Sources */,
@@ -539,7 +539,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = F2SSSA5NRF;
+				DEVELOPMENT_TEAM = N6LML762WM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IntoHistory/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -567,7 +567,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = F2SSSA5NRF;
+				DEVELOPMENT_TEAM = N6LML762WM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IntoHistory/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
