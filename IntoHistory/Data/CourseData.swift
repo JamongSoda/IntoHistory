@@ -17,10 +17,11 @@ struct Courses: Codable {
 struct CoursePins: Codable {
     let pin_id: Int?
     let pin_title: String?
+    let pin_address: String?
     let pin_x, pin_y: Double?
 }
 
 struct RelatedPerson: Codable {
     let person_id: Int?
-    let person_name, person_type, person_description: String?
+    let person_name, person_type, person_image, person_description: String?
 }
