@@ -66,11 +66,7 @@ class HeroDetailViewController: UIViewController {
     
     private func layout() {
         view.addSubview(popupShape)
-        
-        popupShape.addSubview(closeButton)
-        popupShape.addSubview(heroImage)
-        popupShape.addSubview(heroName)
-        popupShape.addSubview(heroDescription)
+        [closeButton, heroImage, heroName, heroDescription].forEach { popupShape.addSubview($0) }
         
         popupShape.anchor(
             left: view.leftAnchor,
