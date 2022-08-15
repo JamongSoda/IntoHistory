@@ -26,7 +26,7 @@ class DetailCourseHeader: UICollectionReusableView {
     }(UIStackView())
     
     let courseListDescription: UILabel = {
-        $0.text = "안녕하세요 에디입니다.안녕하세요 에디입니다.안녕하세요 에디입니다.안녕하세요 에디입니다."
+        $0.text = "우리나라를 지킨 영웅들의 장소를 알아봅시다."
         $0.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         $0.numberOfLines = 0
         return $0
@@ -63,7 +63,6 @@ class DetailCourseHeader: UICollectionReusableView {
             paddingLeft: 35,
             paddingRight: 35
         )
-        uiComponent.bottomAnchor.constraint(greaterThanOrEqualTo: courseListDescription.topAnchor, constant: 20).isActive = true
 
         uiComponent.courseListTitle.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         uiComponent.courseListRouteText.font = UIFont.systemFont(ofSize: 14, weight: .light)

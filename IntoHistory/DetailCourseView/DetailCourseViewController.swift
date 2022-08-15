@@ -101,6 +101,7 @@ extension DetailCourseViewController:  UICollectionViewDelegate, UICollectionVie
             header.uiComponent.courseListRouteText.text = courseJSONLoader[indexPath.row].transportation
             header.uiComponent.courseListTimeText.text = courseJSONLoader[indexPath.row].time
             header.uiComponent.courseListRegionText.text = courseJSONLoader[indexPath.row].region
+            header.courseListDescription.text = courseJSONLoader[indexPath.row].description
             return header
         }
         return UICollectionReusableView()
