@@ -44,4 +44,5 @@ enum ImageLiteral {
     static var courseCellPin = "Pin"
     static var courseCellRoute = "Route"
     static var courseCellTime = "Time"
+
 }
