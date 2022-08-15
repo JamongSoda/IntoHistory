@@ -10,7 +10,7 @@ import Foundation
 struct Courses: Codable {
     let id: Int?
     let type, title, region, transportation, time, description: String?
-    let course_pins: [CoursePins]?
+    let course_pins: [CoursePins]
     let related_person: RelatedPerson?
 }
 
@@ -28,17 +28,17 @@ struct RelatedPerson: Codable {
 enum SelectedTypes: Int {
 
     case one = 1
-    case two
-    case three
-    case four
-    case five
-    case six
-    case seven
-    case eight
-    case nine
-    case ten
-    case eleven
-    case twelve
+    case two = 2
+    case three = 3
+    case four = 4
+    case five = 5
+    case six = 6
+    case seven = 7
+    case eight = 8
+    case nine = 9
+    case ten = 10
+    case eleven = 11
+    case twelve = 12
 
     func selectedPinsImage(isSelecting: Bool) -> String {
         if isSelecting {
