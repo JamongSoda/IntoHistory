@@ -13,6 +13,8 @@
 		260F999C289D1B460010E258 /* IntoHistory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 260F999A289D1B460010E258 /* IntoHistory.xcdatamodeld */; };
 		260F999E289D1B470010E258 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 260F999D289D1B470010E258 /* Assets.xcassets */; };
 		260F99A1289D1B470010E258 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 260F999F289D1B470010E258 /* LaunchScreen.storyboard */; };
+		264B547228AA1C9B00726AB0 /* course_json.json in Resources */ = {isa = PBXBuildFile; fileRef = 9828EC8A28A600DF00D0D82E /* course_json.json */; };
+		264B547328AA1C9B00726AB0 /* person_json.json in Resources */ = {isa = PBXBuildFile; fileRef = 9828EC8928A600DF00D0D82E /* person_json.json */; };
 		2694641428A65FD000485526 /* HeroListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694641328A65FD000485526 /* HeroListCell.swift */; };
 		2694641928A6973C00485526 /* HeroListDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694641828A6973C00485526 /* HeroListDescriptionCell.swift */; };
 		2694641B28A7577300485526 /* CollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694641A28A7577300485526 /* CollectionViewHeader.swift */; };
@@ -226,6 +228,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				264B547228AA1C9B00726AB0 /* course_json.json in Resources */,
+				264B547328AA1C9B00726AB0 /* person_json.json in Resources */,
 				260F99A1289D1B470010E258 /* LaunchScreen.storyboard in Resources */,
 				260F999E289D1B470010E258 /* Assets.xcassets in Resources */,
 			);
