@@ -206,8 +206,8 @@ class MainViewController: UIViewController {
         for cntCourse in 0..<loadCourseJSON.count {
             saveCourseData(courseData: loadCourseJSON[cntCourse])
             
-            for cntPin in 0..<loadCourseJSON[cntCourse].course_pins!.count {
-                savePinData(pinData: loadCourseJSON[cntCourse].course_pins![cntPin])
+            for cntPin in 0..<loadCourseJSON[cntCourse].course_pins.count {
+                savePinData(pinData: loadCourseJSON[cntCourse].course_pins[cntPin])
             }
             saveHeroData(heroData: loadCourseJSON[cntCourse].related_person!)
         }
