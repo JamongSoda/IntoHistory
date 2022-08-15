@@ -87,6 +87,18 @@ class CourseListUIComponents: UIView {
         return $0
     }(UIStackView())
     
+    // MARK: - Init
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        layout()
+        setupView()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("not support coder")
+    }
+    
     // MARK: - Method
     
     func layout() {
@@ -194,14 +206,5 @@ class CourseListUIComponents: UIView {
             )
         
         hStackViewInside.setContentHuggingPriority(UILayoutPriority(500), for: NSLayoutConstraint.Axis.vertical)
-    }
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        layout()
-        setupView()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("not support coder")
     }
 }
