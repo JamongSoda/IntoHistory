@@ -13,7 +13,6 @@
 		260F999C289D1B460010E258 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 260F999A289D1B460010E258 /* Model.xcdatamodeld */; };
 		260F999E289D1B470010E258 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 260F999D289D1B470010E258 /* Assets.xcassets */; };
 		260F99A1289D1B470010E258 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 260F999F289D1B470010E258 /* LaunchScreen.storyboard */; };
-		264B547228AA1C9B00726AB0 /* course_json.json in Resources */ = {isa = PBXBuildFile; fileRef = 9828EC8A28A600DF00D0D82E /* course_json.json */; };
 		264B547328AA1C9B00726AB0 /* person_json.json in Resources */ = {isa = PBXBuildFile; fileRef = 9828EC8928A600DF00D0D82E /* person_json.json */; };
 		26272A3B28A9E65D0097B19E /* CourseEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26272A3528A9E65D0097B19E /* CourseEntity+CoreDataClass.swift */; };
 		26272A3C28A9E65D0097B19E /* CourseEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26272A3628A9E65D0097B19E /* CourseEntity+CoreDataProperties.swift */; };
@@ -21,11 +20,9 @@
 		26272A3E28A9E65D0097B19E /* HeroEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26272A3828A9E65D0097B19E /* HeroEntity+CoreDataProperties.swift */; };
 		26272A3F28A9E65D0097B19E /* PinEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26272A3928A9E65D0097B19E /* PinEntity+CoreDataClass.swift */; };
 		26272A4028A9E65D0097B19E /* PinEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26272A3A28A9E65D0097B19E /* PinEntity+CoreDataProperties.swift */; };
-		26272A3328A9DF2F0097B19E /* UIViewContorller+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26272A3228A9DF2F0097B19E /* UIViewContorller+Extension.swift */; };
 		2694641428A65FD000485526 /* HeroListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694641328A65FD000485526 /* HeroListCell.swift */; };
 		2694641928A6973C00485526 /* HeroListDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694641828A6973C00485526 /* HeroListDescriptionCell.swift */; };
 		2694641B28A7577300485526 /* CollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694641A28A7577300485526 /* CollectionViewHeader.swift */; };
-		26C20BC028A93C2B00E0CA12 /* NMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C20BBF28A93C2B00E0CA12 /* NMapViewController.swift */; };
 		26AD066128A7B1A7008A4169 /* HeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AD066028A7B1A7008A4169 /* HeroDetailViewController.swift */; };
 		26F01C4F28A3F57800D3FD88 /* HeroListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F01C4E28A3F57800D3FD88 /* HeroListViewController.swift */; };
 		7539DC3959AA009030BA88E8 /* Pods_IntoHistory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5AB256B7E455FBDF91C78F0 /* Pods_IntoHistory.framework */; };
@@ -37,6 +34,16 @@
 		9828EC8C28A600DF00D0D82E /* CourseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9828EC8628A600DF00D0D82E /* CourseData.swift */; };
 		9828EC8D28A600DF00D0D82E /* LoadingCourseJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9828EC8728A600DF00D0D82E /* LoadingCourseJSON.swift */; };
 		9828EC8E28A600DF00D0D82E /* LoadingPersonJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9828EC8828A600DF00D0D82E /* LoadingPersonJSON.swift */; };
+		9828EC9628A667AA00D0D82E /* ImageLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9828EC9528A667AA00D0D82E /* ImageLiteral.swift */; };
+		9828EC9828A69F7B00D0D82E /* CourseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9828EC9728A69F7B00D0D82E /* CourseListViewController.swift */; };
+		9835250928A4FFDB002C2B20 /* NMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9835250828A4FFDB002C2B20 /* NMapViewController.swift */; };
+		9847904C28A96D8500FC5995 /* CourseListUIComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9847904B28A96D8500FC5995 /* CourseListUIComponents.swift */; };
+		9847905128AA0CC700FC5995 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9847905028AA0CC700FC5995 /* UIView+Extension.swift */; };
+		9847905428AA3A2600FC5995 /* course_json.json in Resources */ = {isa = PBXBuildFile; fileRef = 9828EC8A28A600DF00D0D82E /* course_json.json */; };
+		9877CF1728A7CD3400CC2D5B /* CourseListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9877CF1628A7CD3400CC2D5B /* CourseListCell.swift */; };
+		9877CF1928A9205400CC2D5B /* DetailCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9877CF1828A9205400CC2D5B /* DetailCourseViewController.swift */; };
+		9877CF1B28A9206F00CC2D5B /* DetailCourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9877CF1A28A9206F00CC2D5B /* DetailCourseCell.swift */; };
+		9877CF1D28A9336200CC2D5B /* DetailCourseHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9877CF1C28A9336200CC2D5B /* DetailCourseHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,11 +62,9 @@
 		26272A3828A9E65D0097B19E /* HeroEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HeroEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		26272A3928A9E65D0097B19E /* PinEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PinEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		26272A3A28A9E65D0097B19E /* PinEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PinEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		26272A3228A9DF2F0097B19E /* UIViewContorller+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewContorller+Extension.swift"; sourceTree = "<group>"; };
 		2694641328A65FD000485526 /* HeroListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroListCell.swift; sourceTree = "<group>"; };
 		2694641828A6973C00485526 /* HeroListDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroListDescriptionCell.swift; sourceTree = "<group>"; };
 		2694641A28A7577300485526 /* CollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewHeader.swift; sourceTree = "<group>"; };
-		26C20BBF28A93C2B00E0CA12 /* NMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMapViewController.swift; sourceTree = "<group>"; };
 		26AD066028A7B1A7008A4169 /* HeroDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailViewController.swift; sourceTree = "<group>"; };
 		26F01C4E28A3F57800D3FD88 /* HeroListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroListViewController.swift; sourceTree = "<group>"; };
 		31444BDF2B6EE4561E242759 /* Pods-IntoHistory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntoHistory.release.xcconfig"; path = "Target Support Files/Pods-IntoHistory/Pods-IntoHistory.release.xcconfig"; sourceTree = "<group>"; };
@@ -73,6 +78,15 @@
 		9828EC8828A600DF00D0D82E /* LoadingPersonJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingPersonJSON.swift; sourceTree = "<group>"; };
 		9828EC8928A600DF00D0D82E /* person_json.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = person_json.json; sourceTree = "<group>"; };
 		9828EC8A28A600DF00D0D82E /* course_json.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = course_json.json; sourceTree = "<group>"; };
+		9828EC9528A667AA00D0D82E /* ImageLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiteral.swift; sourceTree = "<group>"; };
+		9828EC9728A69F7B00D0D82E /* CourseListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseListViewController.swift; sourceTree = "<group>"; };
+		9835250828A4FFDB002C2B20 /* NMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMapViewController.swift; sourceTree = "<group>"; };
+		9847904B28A96D8500FC5995 /* CourseListUIComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListUIComponents.swift; sourceTree = "<group>"; };
+		9847905028AA0CC700FC5995 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		9877CF1628A7CD3400CC2D5B /* CourseListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListCell.swift; sourceTree = "<group>"; };
+		9877CF1828A9205400CC2D5B /* DetailCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCourseViewController.swift; sourceTree = "<group>"; };
+		9877CF1A28A9206F00CC2D5B /* DetailCourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCourseCell.swift; sourceTree = "<group>"; };
+		9877CF1C28A9336200CC2D5B /* DetailCourseHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCourseHeader.swift; sourceTree = "<group>"; };
 		D5AB256B7E455FBDF91C78F0 /* Pods_IntoHistory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntoHistory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -113,12 +127,17 @@
 				260F9991289D1B460010E258 /* AppDelegate.swift */,
 				260F9993289D1B460010E258 /* SceneDelegate.swift */,
 				260F9995289D1B460010E258 /* ViewController.swift */,
+				9835250828A4FFDB002C2B20 /* NMapViewController.swift */,
+				9847904E28A9781300FC5995 /* CourseListView */,
+				9847904D28A9780E00FC5995 /* DetailCourseView */,
+				9847904F28A9782100FC5995 /* CourseUIComponent */,
+				9828EC9428A6679900D0D82E /* Literal */,
+				260F9997289D1B460010E258 /* Main.storyboard */,
 				260F999D289D1B470010E258 /* Assets.xcassets */,
 				260F999F289D1B470010E258 /* LaunchScreen.storyboard */,
 				260F99A2289D1B470010E258 /* Info.plist */,
 				2694641A28A7577300485526 /* CollectionViewHeader.swift */,
 				2694641328A65FD000485526 /* HeroListCell.swift */,
-				26C20BBF28A93C2B00E0CA12 /* NMapViewController.swift */,
 				2694641828A6973C00485526 /* HeroListDescriptionCell.swift */,
 				26272A3428A9E5850097B19E /* Coredata */,
 				26F01C4E28A3F57800D3FD88 /* HeroListViewController.swift */,
@@ -157,7 +176,7 @@
 			children = (
 				7B2C3E0528A3D85900BF197D /* AutoLayout+Extension.swift */,
 				7B2C3E0828A3D8FA00BF197D /* Color+Extension.swift */,
-				26272A3228A9DF2F0097B19E /* UIViewContorller+Extension.swift */,
+				9847905028AA0CC700FC5995 /* UIView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -190,6 +209,41 @@
 				9828EC8528A600DF00D0D82E /* PersonData.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		9828EC9428A6679900D0D82E /* Literal */ = {
+			isa = PBXGroup;
+			children = (
+				9828EC9528A667AA00D0D82E /* ImageLiteral.swift */,
+			);
+			path = Literal;
+			sourceTree = "<group>";
+		};
+		9847904D28A9780E00FC5995 /* DetailCourseView */ = {
+			isa = PBXGroup;
+			children = (
+				9877CF1828A9205400CC2D5B /* DetailCourseViewController.swift */,
+				9877CF1C28A9336200CC2D5B /* DetailCourseHeader.swift */,
+				9877CF1A28A9206F00CC2D5B /* DetailCourseCell.swift */,
+			);
+			path = DetailCourseView;
+			sourceTree = "<group>";
+		};
+		9847904E28A9781300FC5995 /* CourseListView */ = {
+			isa = PBXGroup;
+			children = (
+				9828EC9728A69F7B00D0D82E /* CourseListViewController.swift */,
+				9877CF1628A7CD3400CC2D5B /* CourseListCell.swift */,
+			);
+			path = CourseListView;
+			sourceTree = "<group>";
+		};
+		9847904F28A9782100FC5995 /* CourseUIComponent */ = {
+			isa = PBXGroup;
+			children = (
+				9847904B28A96D8500FC5995 /* CourseListUIComponents.swift */,
+			);
+			path = CourseUIComponent;
 			sourceTree = "<group>";
 		};
 		D248856CD8D1AB8367A7B5B7 /* Frameworks */ = {
@@ -260,7 +314,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				264B547228AA1C9B00726AB0 /* course_json.json in Resources */,
+				9847905428AA3A2600FC5995 /* course_json.json in Resources */,
 				264B547328AA1C9B00726AB0 /* person_json.json in Resources */,
 				260F99A1289D1B470010E258 /* LaunchScreen.storyboard in Resources */,
 				260F999E289D1B470010E258 /* Assets.xcassets in Resources */,
@@ -317,13 +371,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				260F999C289D1B460010E258 /* Model.xcdatamodeld in Sources */,
+				9828EC9628A667AA00D0D82E /* ImageLiteral.swift in Sources */,
 				7B2C3E0928A3D8FA00BF197D /* Color+Extension.swift in Sources */,
 				26272A3B28A9E65D0097B19E /* CourseEntity+CoreDataClass.swift in Sources */,
+				260F999C289D1B460010E258 /* IntoHistory.xcdatamodeld in Sources */,
+				9877CF1728A7CD3400CC2D5B /* CourseListCell.swift in Sources */,
+				9847905128AA0CC700FC5995 /* UIView+Extension.swift in Sources */,
+				9877CF1B28A9206F00CC2D5B /* DetailCourseCell.swift in Sources */,
 				7B2C3E0628A3D85900BF197D /* AutoLayout+Extension.swift in Sources */,
 				7B32F65628A6758E00F4CB48 /* MainViewButton.swift in Sources */,
 				260F9996289D1B460010E258 /* ViewController.swift in Sources */,
+				9877CF1928A9205400CC2D5B /* DetailCourseViewController.swift in Sources */,
+				9847904C28A96D8500FC5995 /* CourseListUIComponents.swift in Sources */,
+				9828EC8B28A600DF00D0D82E /* PersonData.swift in Sources */,
 				260F9992289D1B460010E258 /* AppDelegate.swift in Sources */,
-				26C20BC028A93C2B00E0CA12 /* NMapViewController.swift in Sources */,
 				260F9994289D1B460010E258 /* SceneDelegate.swift in Sources */,
 				26272A3F28A9E65D0097B19E /* PinEntity+CoreDataClass.swift in Sources */,
 				2694641928A6973C00485526 /* HeroListDescriptionCell.swift in Sources */,
@@ -338,9 +399,11 @@
 				26272A3C28A9E65D0097B19E /* CourseEntity+CoreDataProperties.swift in Sources */,
 				26272A3D28A9E65D0097B19E /* HeroEntity+CoreDataClass.swift in Sources */,
 				9828EC8B28A600DF00D0D82E /* PersonData.swift in Sources */,
+				9835250928A4FFDB002C2B20 /* NMapViewController.swift in Sources */,
+				9828EC9828A69F7B00D0D82E /* CourseListViewController.swift in Sources */,
+				9877CF1D28A9336200CC2D5B /* DetailCourseHeader.swift in Sources */,
 				9828EC8C28A600DF00D0D82E /* CourseData.swift in Sources */,
 				7B2C3E0B28A3DDD300BF197D /* MainViewController.swift in Sources */,
-				26272A3328A9DF2F0097B19E /* UIViewContorller+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,7 +543,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = F2SSSA5NRF;
+				DEVELOPMENT_TEAM = N6LML762WM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IntoHistory/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -508,7 +571,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = F2SSSA5NRF;
+				DEVELOPMENT_TEAM = N6LML762WM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IntoHistory/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
