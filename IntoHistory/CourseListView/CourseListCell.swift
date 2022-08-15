@@ -20,7 +20,7 @@ class CourseListCell: UICollectionViewCell {
 
     // MARK: - View
 
-    let resistanceCourseImage: UIImageView = {
+    let HeroCourseImage: UIImageView = {
         $0.image = UIImage(named: ImageLiteral.resistanceCourse)
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.contentMode = .scaleAspectFit
@@ -50,10 +50,8 @@ class CourseListCell: UICollectionViewCell {
     private func layout() {
 
         addSubview(hStackViewOutside)
-        hStackViewOutside.addArrangedSubview(resistanceCourseImage)
+        hStackViewOutside.addArrangedSubview(HeroCourseImage)
         hStackViewOutside.addArrangedSubview(uiComponent)
-        
-        hStackViewOutside.uiViewShadow(backgroundView: hStackViewOutside)
     }
 
     func setupCell() {
@@ -64,7 +62,7 @@ class CourseListCell: UICollectionViewCell {
             right: rightAnchor
         )
 
-        resistanceCourseImage.anchor(
+        HeroCourseImage.anchor(
             top: hStackViewOutside.topAnchor,
             left: hStackViewOutside.leftAnchor,
             bottom: hStackViewOutside.bottomAnchor,
@@ -76,7 +74,10 @@ class CourseListCell: UICollectionViewCell {
             height: 90
         )
 
-        resistanceCourseImage.centerY(inView: hStackViewOutside)
+        
+        hStackViewOutside.uiViewShadow(backgroundView: hStackViewOutside)
+        
+        HeroCourseImage.centerY(inView: hStackViewOutside)
 
         uiComponent.centerY(inView: hStackViewOutside)
     }

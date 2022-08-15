@@ -60,10 +60,10 @@ extension CourseListViewController: UICollectionViewDelegate, UICollectionViewDa
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CourseListCell.identifier, for: indexPath) as! CourseListCell
 
         if courseJSONLoader[indexPath.row].type == "독립운동" {
-            cell.resistanceCourseImage.image = UIImage(named: ImageLiteral.resistanceCourse)
+            cell.HeroCourseImage.image = UIImage(named: ImageLiteral.resistanceCourse)
 
         } else {
-            cell.resistanceCourseImage.image = UIImage(named: ImageLiteral.warriorCourse)
+            cell.HeroCourseImage.image = UIImage(named: ImageLiteral.warriorCourse)
         }
         cell.uiComponent.courseListTitle.text = courseJSONLoader[indexPath.row].title
         cell.uiComponent.courseListRegionText.text = courseJSONLoader[indexPath.row].region
@@ -88,13 +88,3 @@ extension CourseListViewController: UICollectionViewDelegate, UICollectionViewDa
         return UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
     }
 }
-//
-//#if canImport(SwiftUI) && DEBUG
-//import SwiftUI
-//
-//struct HeroDetailViewController_Preview: PreviewProvider {
-//    static var previews: some View {
-//        HeroDetailViewController().showPreview(.iPhone13)
-//    }
-//}
-//#endif
