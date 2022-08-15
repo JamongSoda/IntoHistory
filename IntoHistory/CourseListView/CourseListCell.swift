@@ -50,7 +50,7 @@ class CourseListCell: UICollectionViewCell {
     private func layout() {
 
         addSubview(hStackView)
-        hStackView.addArrangedSubview(HeroCourseImage)
+        hStackView.addArrangedSubview(heroCourseImage)
         hStackView.addArrangedSubview(uiComponent)
     }
 
@@ -62,7 +62,7 @@ class CourseListCell: UICollectionViewCell {
             right: rightAnchor
         )
 
-        HeroCourseImage.anchor(
+        heroCourseImage.anchor(
             top: hStackView.topAnchor,
             left: hStackView.leftAnchor,
             bottom: hStackView.bottomAnchor,
@@ -77,7 +77,7 @@ class CourseListCell: UICollectionViewCell {
         
         hStackView.uiViewShadow(backgroundView: hStackView)
         
-        HeroCourseImage.centerY(inView: hStackView)
+        heroCourseImage.centerY(inView: hStackView)
 
         uiComponent.centerY(inView: hStackView)
     }
