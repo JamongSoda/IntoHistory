@@ -62,7 +62,6 @@ class DetailCourseViewController: UIViewController {
 
 extension DetailCourseViewController:  UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    // Cell
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return courseJSONLoader[0].course_pins.count
     }
