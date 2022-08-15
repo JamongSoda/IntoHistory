@@ -27,7 +27,7 @@ class CourseListCell: UICollectionViewCell {
         return $0
     }(UIImageView())
     
-    let hStackViewOutside: UIStackView = {
+    let hStackView: UIStackView = {
         $0.axis = .horizontal
         $0.backgroundColor = .white
         return $0
@@ -49,13 +49,13 @@ class CourseListCell: UICollectionViewCell {
 
     private func layout() {
 
-        addSubview(hStackViewOutside)
-        hStackViewOutside.addArrangedSubview(HeroCourseImage)
-        hStackViewOutside.addArrangedSubview(uiComponent)
+        addSubview(hStackView)
+        hStackView.addArrangedSubview(HeroCourseImage)
+        hStackView.addArrangedSubview(uiComponent)
     }
 
     func setupCell() {
-        hStackViewOutside.anchor(
+        hStackView.anchor(
             top: topAnchor,
             left: leftAnchor,
             bottom: bottomAnchor,
@@ -63,9 +63,9 @@ class CourseListCell: UICollectionViewCell {
         )
 
         HeroCourseImage.anchor(
-            top: hStackViewOutside.topAnchor,
-            left: hStackViewOutside.leftAnchor,
-            bottom: hStackViewOutside.bottomAnchor,
+            top: hStackView.topAnchor,
+            left: hStackView.leftAnchor,
+            bottom: hStackView.bottomAnchor,
             right: uiComponent.leftAnchor,
             paddingLeft: 20,
             paddingBottom: 20,
@@ -75,10 +75,10 @@ class CourseListCell: UICollectionViewCell {
         )
 
         
-        hStackViewOutside.uiViewShadow(backgroundView: hStackViewOutside)
+        hStackView.uiViewShadow(backgroundView: hStackView)
         
-        HeroCourseImage.centerY(inView: hStackViewOutside)
+        HeroCourseImage.centerY(inView: hStackView)
 
-        uiComponent.centerY(inView: hStackViewOutside)
+        uiComponent.centerY(inView: hStackView)
     }
 }

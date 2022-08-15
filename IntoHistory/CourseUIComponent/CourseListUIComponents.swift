@@ -81,7 +81,7 @@ class CourseListUIComponents: UIView {
         return $0
     }(UIStackView())
     
-    let hStackViewInside: UIStackView = {
+    let hStackView: UIStackView = {
         $0.axis = .horizontal
         $0.spacing = 5
         return $0
@@ -104,16 +104,16 @@ class CourseListUIComponents: UIView {
     func layout() {
         addSubview(vStackView)
         vStackView.addArrangedSubview(courseListTitle)
-        vStackView.addArrangedSubview(hStackViewInside)
+        vStackView.addArrangedSubview(hStackView)
         
-        hStackViewInside.addArrangedSubview(courseCellPinImage)
-        hStackViewInside.addArrangedSubview(courseListRegionText)
-        hStackViewInside.addArrangedSubview(courseCellLineImage1)
-        hStackViewInside.addArrangedSubview(courseCellRouteImage)
-        hStackViewInside.addArrangedSubview(courseListRouteText)
-        hStackViewInside.addArrangedSubview(courseCellLineImage2)
-        hStackViewInside.addArrangedSubview(courseCellTimeImage)
-        hStackViewInside.addArrangedSubview(courseListTimeText)
+        hStackView.addArrangedSubview(courseCellPinImage)
+        hStackView.addArrangedSubview(courseListRegionText)
+        hStackView.addArrangedSubview(courseCellLineImage1)
+        hStackView.addArrangedSubview(courseCellRouteImage)
+        hStackView.addArrangedSubview(courseListRouteText)
+        hStackView.addArrangedSubview(courseCellLineImage2)
+        hStackView.addArrangedSubview(courseCellTimeImage)
+        hStackView.addArrangedSubview(courseListTimeText)
     }
     
     func setupView() {
@@ -131,11 +131,11 @@ class CourseListUIComponents: UIView {
         courseListTitle.anchor(
             top: vStackView.topAnchor,
             left: vStackView.leftAnchor,
-            bottom: hStackViewInside.topAnchor,
+            bottom: hStackView.topAnchor,
             right: vStackView.rightAnchor
         )
         
-        hStackViewInside.anchor(
+        hStackView.anchor(
             left: vStackView.leftAnchor,
             bottom: vStackView.bottomAnchor,
             right: vStackView.rightAnchor
@@ -205,6 +205,6 @@ class CourseListUIComponents: UIView {
                                                      for: NSLayoutConstraint.Axis.horizontal
             )
         
-        hStackViewInside.setContentHuggingPriority(UILayoutPriority(500), for: NSLayoutConstraint.Axis.vertical)
+        hStackView.setContentHuggingPriority(UILayoutPriority(500), for: NSLayoutConstraint.Axis.vertical)
     }
 }
