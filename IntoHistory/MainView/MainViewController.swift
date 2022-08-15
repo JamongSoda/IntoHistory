@@ -13,7 +13,6 @@ class MainViewController: UIViewController {
     // MARK: - Property
     
     let loadCourseJSON = LoadingCourseJSON().courses
-    let loadPersonJSON = LoadingPersonJson().person
 
     // MARK: - View
 
