@@ -14,11 +14,12 @@ class CourseListCell: UICollectionViewCell {
     static let identifier = "courseListCell"
     static let courseJSONLoader = LoadingCourseJSON().courses
 
+    // MARK: - View
+    
     let uiComponent: CourseListUIComponents = {
         return $0
     }(CourseListUIComponents())
 
-    // MARK: - View
 
     let heroCourseImage: UIImageView = {
         $0.image = UIImage(named: ImageLiteral.resistanceCourse)

@@ -14,11 +14,11 @@ class DetailCourseHeader: UICollectionReusableView {
     
     static let identifier = "DetailCourseHeader"
 
+    // MARK: - View
+    
     let uiComponent: CourseListUIComponents = {
         return $0
     }(CourseListUIComponents())
-
-    // MARK: - View
 
     let vStackView: UIStackView = {
         $0.axis = .vertical
