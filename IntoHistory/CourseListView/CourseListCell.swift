@@ -20,7 +20,7 @@ class CourseListCell: UICollectionViewCell {
 
     // MARK: - View
 
-    let HeroCourseImage: UIImageView = {
+    let heroCourseImage: UIImageView = {
         $0.image = UIImage(named: ImageLiteral.resistanceCourse)
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.contentMode = .scaleAspectFit
