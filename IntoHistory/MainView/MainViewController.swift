@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import CoreData
 
 class MainViewController: UIViewController {
+    let loadCourseJSON = LoadingCourseJSON().courses
+    let loadPersonJSON = LoadingPersonJson().person
 
     // MARK: - View
 
@@ -197,7 +200,94 @@ class MainViewController: UIViewController {
     }
     
     private func saveJSONData() {
-        // 앱을 첫 실행할 때 제이슨 데이터를 저장하는 로직을 구현해야 합니다.
+        for cntCourse in 0..<loadCourseJSON.count {
+            saveCourseData(courseData: loadCourseJSON[cntCourse])
+            print(loadCourseJSON[cntCourse])
+            
+            for cntPin in 0..<loadCourseJSON[cntCourse].course_pins!.count {
+                savePinData(pinData: loadCourseJSON[cntCourse].course_pins![cntPin])
+                print(loadCourseJSON[cntCourse].course_pins![cntPin])
+            }
+        }
+        
+        for cntHero in 0..<loadPersonJSON.count {
+            saveHeroData(heroData: loadPersonJSON[cntHero])
+            print(loadPersonJSON[cntHero])
+        }
+    }
+    
+    private func saveCourseData(courseData: Courses) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let courseEntity = NSEntityDescription.entity(forEntityName: "CourseEntity", in: context)
+        
+        if let courseEntity = courseEntity {
+            let course = NSManagedObject(entity: courseEntity, insertInto: context)
+            course.setValue(courseData.id, forKey: "cid")
+            course.setValue(courseData.title, forKey: "courseName")
+            course.setValue(courseData.description, forKey: "courseDescription")
+            course.setValue(courseData.region, forKey: "region")
+            course.setValue(courseData.transportation, forKey: "transportation")
+            course.setValue(courseData.time, forKey: "time")
+            course.setValue(false, forKey: "isClear")
+            
+            do {
+                try context.save()
+                print("코스 \(courseData.title)을 저장했습니다.")
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    private func savePinData(pinData: CoursePins) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let pinEntity = NSEntityDescription.entity(forEntityName: "PinEntity", in: context)
+        
+        if let pinEntity = pinEntity {
+            let pin = NSManagedObject(entity: pinEntity, insertInto: context)
+            pin.setValue(pinData.pin_id, forKey: "pid")
+            pin.setValue(pinData.pin_title, forKey: "pinName")
+            pin.setValue("임시 주소", forKey: "address")
+            pin.setValue(pinData.pin_x, forKey: "lat")
+            pin.setValue(pinData.pin_y, forKey: "lng")
+            pin.setValue(false, forKey: "isVisited")
+            
+            do {
+                try context.save()
+                print("핀 \(pinData.pin_title)을 저장했습니다.")
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    private func saveHeroData(heroData: Person) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let heroEntity = NSEntityDescription.entity(forEntityName: "HeroEntity", in: context)
+        
+        if let heroEntity = heroEntity {
+            let hero = NSManagedObject(entity: heroEntity, insertInto: context)
+            hero.setValue(heroData.person_id, forKey: "hid")
+            hero.setValue(heroData.person_name, forKey: "heroName")
+            hero.setValue("NoImageHero.png", forKey: "image")
+            hero.setValue(heroData.person_type, forKey: "type")
+            hero.setValue(heroData.person_description, forKey: "heroDescription")
+            hero.setValue(false, forKey: "isCollected")
+            
+            do {
+                try context.save()
+                print("영웅 \(heroData.person_name)을 저장했습니다.")
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
     }
 }
 
