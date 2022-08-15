@@ -8,10 +8,6 @@
 import UIKit
 
 class MainViewController: UIViewController {
-    
-    // MARK: - Property
-    
-    let isFirstLaunch = UserDefaults.standard.bool(forKey: "isFirstLaunch")
 
     // MARK: - View
 
@@ -73,7 +69,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if isFirstLaunch {
+        if !UserDefaults.standard.bool(forKey: "isFirstLaunch") {
             
             saveJSONData()
             UserDefaults.standard.set(true, forKey: "isFirstLaunch")
