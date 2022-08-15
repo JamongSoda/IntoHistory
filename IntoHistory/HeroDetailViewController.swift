@@ -61,7 +61,7 @@ class HeroDetailViewController: UIViewController {
     // MARK: - Method
     
     private func attribute() {
-        view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, a: 0.5)
+        view.backgroundColor = .popupDim
     }
     
     private func layout() {
