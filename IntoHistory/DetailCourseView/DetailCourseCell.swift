@@ -123,13 +123,11 @@ class DetailCourseCell: UICollectionViewCell {
         
         pinImage
             .setContentHuggingPriority(UILayoutPriority(251),
-                                       for: NSLayoutConstraint.Axis.horizontal
-            )
+                                       for: NSLayoutConstraint.Axis.horizontal)
 
         hStackView
             .setContentCompressionResistancePriority(UILayoutPriority(500),
-                                                     for: NSLayoutConstraint.Axis.horizontal
-            )
+                                                     for: NSLayoutConstraint.Axis.horizontal)
     }
 }
 
