@@ -212,11 +212,7 @@ class MainViewController: UIViewController {
                 savePinData(pinData: loadCourseJSON[cntCourse].course_pins![cntPin])
                 print(loadCourseJSON[cntCourse].course_pins![cntPin])
             }
-        }
-        
-        for cntHero in 0..<loadPersonJSON.count {
-            saveHeroData(heroData: loadPersonJSON[cntHero])
-            print(loadPersonJSON[cntHero])
+            saveHeroData(heroData: loadCourseJSON[cntCourse].related_person!)
         }
     }
     
@@ -269,7 +265,7 @@ class MainViewController: UIViewController {
         }
     }
     
-    private func saveHeroData(heroData: Person) {
+    private func saveHeroData(heroData: RelatedPerson) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         
