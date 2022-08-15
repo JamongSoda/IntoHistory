@@ -9,6 +9,9 @@ import UIKit
 import CoreData
 
 class MainViewController: UIViewController {
+    
+    // MARK: - Property
+    
     let loadCourseJSON = LoadingCourseJSON().courses
     let loadPersonJSON = LoadingPersonJson().person
 
@@ -77,6 +80,7 @@ class MainViewController: UIViewController {
             saveJSONData()
             UserDefaults.standard.set(true, forKey: "isFirstLaunch")
         }
+        loadJSONData()
         
         attribute()
         layout()
@@ -288,6 +292,30 @@ class MainViewController: UIViewController {
             }
         }
     }
+    
+    private func loadJSONData() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        do {
+            let course = try context.fetch(CourseEntity.fetchRequest()) as! [CourseEntity]
+            let pin = try context.fetch(PinEntity.fetchRequest()) as! [PinEntity]
+            let hero = try context.fetch(HeroEntity.fetchRequest()) as! [HeroEntity]
+            
+            course.forEach {
+                print($0.courseName)
+            }
+            
+            pin.forEach {
+                print($0.pinName)
+            }
+
+            hero.forEach {
+                print($0.heroName)
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 }
 
