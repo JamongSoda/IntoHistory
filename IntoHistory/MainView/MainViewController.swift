@@ -8,6 +8,10 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    
+    // MARK: - Property
+    
+    let isFirstLaunch = UserDefaults.standard.bool(forKey: "isFirstLaunch")
 
     // MARK: - View
 
@@ -68,6 +72,13 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if isFirstLaunch {
+            
+            saveJSONData()
+            UserDefaults.standard.set(true, forKey: "isFirstLaunch")
+        }
+        
         attribute()
         layout()
     }
@@ -187,6 +198,10 @@ class MainViewController: UIViewController {
     @objc func tapHeroButton(_ sender: UITapGestureRecognizer) {
         let vc = ViewController()
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func saveJSONData() {
+        // 앱을 첫 실행할 때 제이슨 데이터를 저장하는 로직을 구현해야 합니다.
     }
 }
 
