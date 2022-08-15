@@ -11,7 +11,11 @@ import UIKit
 class LoadingCourseJSON {
     @Published var courses = [Courses]()
     let courseJSON = "course_json"
-    
+
+    init() {
+        loadCourseData()
+    }
+
     func loadCourseData() {
         if let courseJSONData = Bundle.main.url(forResource: courseJSON, withExtension: "json") {
             do {
