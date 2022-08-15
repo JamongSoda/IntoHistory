@@ -11,70 +11,70 @@
             {
                 "pin_id": 101,
                 "pin_title": "중앙고보 숙직실 터",
-                "pin_address": "",
+                "pin_address": "서울특별시 종로구 창덕궁7길 20-1",
                 "pin_x": 37.583262,
                 "pin_y": 126.986834
             },
             {
                 "pin_id": 102,
                 "pin_title": "유심사",
-                "pin_address": "",
+                "pin_address": "서울특별시 종로구 계동 43번지",
                 "pin_x": 37.581491,
                 "pin_y": 126.986977
             },
             {
                 "pin_id": 103,
                 "pin_title": "3·1운동 단일화 합의 장소",
-                "pin_address": "",
+                "pin_address": "서울특별시 종로구 계동 계동길 84-6",
                 "pin_x": 37.580822,
                 "pin_y": 126.987194
             },
             {
                 "pin_id": 104,
                 "pin_title": "손병희 집터",
-                "pin_address": "",
+                "pin_address": "서울특별시 종로구 가회동 북촌로 39",
                 "pin_x": 37.580305,
                 "pin_y": 126.984821
             },
             {
                 "pin_id": 105,
                 "pin_title": "김승희 집터",
-                "pin_address": "",
+                "pin_address": "서울특별시 종로구 삼청동 북촌로5길 62",
                 "pin_x": 37.579880,
                 "pin_y": 126.981553
             },
             {
                 "pin_id": 106,
                 "pin_title": "옛 천도교 중앙총부 터",
-                "pin_address": "",
+                "pin_address": "서울특별시 종로구 송현동 율곡로3길 49",
                 "pin_x": 37.577674,
                 "pin_y": 126.981993
             },
             {
                 "pin_id": 107,
                 "pin_title": "보성사 터",
-                "pin_address": "",
+                "pin_address": "서울특별시, 종로구, 수송동 우정국로 55",
                 "pin_x": 37.573782,
                 "pin_y": 126.981845
             },
             {
                 "pin_id": 108,
                 "pin_title": "태화관 터",
-                "pin_address": "",
+                "pin_address": "서울특별시 종로구 194-27, 태화빌딩, 802호",
                 "pin_x": 37.571905,
                 "pin_y": 126.984782
             },
             {
                 "pin_id": 109,
                 "pin_title": "승동교회",
-                "pin_address": "",
+                "pin_address": "서울특별시 종로구 인사동3길",
                 "pin_x": 37.571613,
                 "pin_y": 126.986056
             },
             {
                 "pin_id": 110,
                 "pin_title": "탑골공원",
-                "pin_address": "",
+                "pin_address": "서울특별시 종로구 종로 99",
                 "pin_x": 37.571105,
                 "pin_y": 126.988297
             }
@@ -99,42 +99,35 @@
             {
                 "pin_id": 201,
                 "pin_title": "대한문 앞 3·1운동 만세시위지",
-                "pin_address": "",
+                "pin_address": "서울특별시 중구 태평로2가 세종대로 99",
                 "pin_x": 37.565010,
                 "pin_y": 126.976570
             },
             {
                 "pin_id": 202,
                 "pin_title": "배제학당 기숙사 터, 정동교회 이필주 사택 터",
-                "pin_address": "",
+                "pin_address": "서울특별시 중구 정동 34-5 배재정동빌딩 A동 LL층 11",
                 "pin_x": 37.563262,
                 "pin_y": 126.972430
             },
             {
                 "pin_id": 203,
-                "pin_title": "삼문출판사 터",
-                "pin_address": "",
+                "pin_title": "삼문출판사 터, 경운궁 중명전",
+                "pin_address": "서울특별시 중구 서소문로11길 19",
                 "pin_x": 37.563961,
                 "pin_y": 126.972598
             },
             {
                 "pin_id": 204,
-                "pin_title": "경운궁 중명전",
-                "pin_address": "",
-                "pin_x": 37.563961,
-                "pin_y": 126.972598
-            },
-            {
-                "pin_id": 205,
                 "pin_title": "손탁호텔 터",
-                "pin_address": "",
+                "pin_address": "서울특별시 중구 정동 32-6",
                 "pin_x": 37.565955,
                 "pin_y": 126.970438
             },
             {
-                "pin_id": 206,
+                "pin_id": 205,
                 "pin_title": "옛 러시아 공사관",
-                "pin_address": "",
+                "pin_address": "서울특별시 중구 정동 15-1",
                 "pin_x": 37.567966,
                 "pin_y": 126.971435
             }
@@ -159,28 +152,28 @@
             {
                 "pin_id": 301,
                 "pin_title": "조선헌병대사령부 터",
-                "pin_address": "",
-                "pin_x": 35.147977,
-                "pin_y": 126.917474
+                "pin_address": "서울특별시 중구 퇴계로34길 28",
+                "pin_x": 37.559254,
+                "pin_y": 126.994479
             },
             {
                 "pin_id": 302,
                 "pin_title": "남산일본공사관-통감관저 터",
-                "pin_address": "",
+                "pin_address": "서울특별시 중구 퇴계로26가길 6",
                 "pin_x": 37.558942,
                 "pin_y": 126.990187
             },
             {
                 "pin_id": 303,
                 "pin_title": "김익상 의거지-남산조선총독부",
-                "pin_address": "",
+                "pin_address": "서울특별시 중구 필동 2-1",
                 "pin_x": 37.559098,
                 "pin_y": 126.990220
             },
             {
                 "pin_id": 304,
                 "pin_title": "조선신궁 터",
-                "pin_address": "",
+                "pin_address": "서울특별시 용산구 후암동",
                 "pin_x": 37.553850,
                 "pin_y": 126.982672
             }
@@ -205,63 +198,63 @@
             {
                 "pin_id": 401,
                 "pin_title": "부산항-부두노동자 파업투쟁지(부산세관박물관)",
-                "pin_address": "",
+                "pin_address": "부산광역시 중구 충장대로 20",
                 "pin_x": 35.104840,
                 "pin_y": 129.038754
             },
             {
                 "pin_id": 402,
                 "pin_title": "40계단",
-                "pin_address": "",
+                "pin_address": "부산광역시 중구 40계단길",
                 "pin_x": 35.103921,
                 "pin_y": 129.034713
             },
             {
                 "pin_id": 403,
                 "pin_title": "백산상회 터(백산기념관)",
-                "pin_address": "",
+                "pin_address": "부산광역시 중구 백산길",
                 "pin_x": 35.101928,
                 "pin_y": 129.034598
             },
             {
                 "pin_id": 404,
                 "pin_title": "옛 부산경찰서-박재혁 의거지",
-                "pin_address": "",
+                "pin_address": "부산광역시 중구 광복로85번길",
                 "pin_x": 35.099524,
                 "pin_y": 129.034798
             },
             {
                 "pin_id": 405,
                 "pin_title": "용두산공원(용두산신사)",
-                "pin_address": "",
+                "pin_address": "부산광역시 중구 용두산길 37-30",
                 "pin_x": 35.100679,
                 "pin_y": 129.032309
             },
             {
                 "pin_id": 406,
                 "pin_title": "동양척식주식회사부산지점(부산근대역사관)",
-                "pin_address": "",
+                "pin_address": "부산광역시 중구 대청동 24-2",
                 "pin_x": 35.102630,
                 "pin_y": 129.031184
             },
             {
                 "pin_id": 407,
                 "pin_title": "보수동 책방골목",
-                "pin_address": "",
+                "pin_address": "부산광역시 중구 보수동 137-3",
                 "pin_x": 35.103093,
                 "pin_y": 129.027481
             },
             {
                 "pin_id": 408,
                 "pin_title": "옛 경상남도청(동아대학교 박물관)",
-                "pin_address": "",
+                "pin_address": "부산광역시 서구 구덕로 225 동아대학교 부민캠퍼스 종합강의동 BA 아세안연구소 1410호",
                 "pin_x": 35.104190,
                 "pin_y": 129.019130
             },
             {
                 "pin_id": 409,
                 "pin_title": "옛 경상남도지사 관사(임시수도 기념관)",
-                "pin_address": "",
+                "pin_address": "부산광역시 서구 임시수도기념로 45",
                 "pin_x": 35.103496,
                 "pin_y": 129.017359
             }
@@ -286,42 +279,42 @@
             {
                 "pin_id": 501,
                 "pin_title": "서상돈 집",
-                "pin_address": "",
+                "pin_address": "대구광역시 중구 성내2동 88-1",
                 "pin_x": 35.867245,
                 "pin_y": 128.588255
             },
             {
                 "pin_id": 502,
                 "pin_title": "이상정 집",
-                "pin_address": "",
+                "pin_address": "대구광역시 중구 성내2동 90",
                 "pin_x": 35.867413,
                 "pin_y": 128.588604
             },
             {
                 "pin_id": 503,
                 "pin_title": "진골목",
-                "pin_address": "",
+                "pin_address": "대구광역시 중구 진골목길",
                 "pin_x": 35.868781,
                 "pin_y": 128.592763
             },
             {
                 "pin_id": 504,
                 "pin_title": "조선식산은행 대구지점(대구근대역사관)",
-                "pin_address": "",
+                "pin_address": "대구광역시 중구 성내2동 33",
                 "pin_x": 35.871760,
                 "pin_y": 128.591161
             },
             {
                 "pin_id": 505,
                 "pin_title": "조선은행 대구지점 터 - 장진홍 의거지",
-                "pin_address": "",
+                "pin_address": "대구광역시 중구 포정동 58번지",
                 "pin_x": 35.871734,
                 "pin_y": 128.593783
             },
             {
                 "pin_id": 506,
                 "pin_title": "국채보상운동기념공원",
-                "pin_address": "",
+                "pin_address": "대구광역시 중구 동인동2가 42번지",
                 "pin_x": 35.868900,
                 "pin_y": 128.601707
             }
@@ -346,56 +339,56 @@
             {
                 "pin_id": 601,
                 "pin_title": "광주고등보통학교 광주학생운동시위지(광주학생독립운동기념역사관)",
-                "pin_address": "",
+                "pin_address": "광주광역시 북구 누문동 144",
                 "pin_x": 35.152743,
                 "pin_y": 126.908260
             },
             {
                 "pin_id": 602,
                 "pin_title": "옛 광주역 터 광주학생운동 시위지",
-                "pin_address": "",
+                "pin_address": "광주광역시 동구 대인동 324-9",
                 "pin_x": 35.154346,
                 "pin_y": 126.914769
             },
             {
                 "pin_id": 603,
                 "pin_title": "광주여자고등보통학교 광주학생운동 시위지",
-                "pin_address": "",
+                "pin_address": "광주광역시 동구 충장동 39-12",
                 "pin_x": 35.151338,
                 "pin_y": 126.920566
             },
             {
                 "pin_id": 604,
                 "pin_title": "광주 토교 터 광주학생운동 시위지",
-                "pin_address": "",
+                "pin_address": "광주광역시 동구 충장동 324-9",
                 "pin_x": 35.154573,
                 "pin_y": 126.914704
             },
             {
                 "pin_id": 605,
                 "pin_title": "김기권 문방구점 터-광주학생운동 준비지",
-                "pin_address": "",
+                "pin_address": "광주광역시 동구 금남로3가",
                 "pin_x": 35.149590,
                 "pin_y": 126.915621
             },
             {
                 "pin_id": 606,
                 "pin_title": "옛 광주경찰서 터",
-                "pin_address": "",
+                "pin_address": "광주광역시 동구 금남로2가 35",
                 "pin_x": 35.149590,
                 "pin_y": 126.917474
             },
             {
                 "pin_id": 607,
                 "pin_title": "일본군 주둔지 터",
-                "pin_address": "",
+                "pin_address": "광주광역시 동구 서남동 문화전당로 38 문화정보원B2",
                 "pin_x": 35.146774,
                 "pin_y": 126.920240
             },
             {
                 "pin_id": 608,
                 "pin_title": "옛 전라남도청",
-                "pin_address": "",
+                "pin_address": "전라북도 군산시 구암동 334",
                 "pin_x": 35.984918,
                 "pin_y": 126.741999
             }
@@ -420,56 +413,56 @@
             {
                 "pin_id": 701,
                 "pin_title": "독립기념관",
-                "pin_address": "",
+                "pin_address": "충청남도 천안시 동남구 목천읍 남화리 250-3",
                 "pin_x": 36.783291,
                 "pin_y": 127.223215
             },
             {
                 "pin_id": 702,
                 "pin_title": "이동녕 생가",
-                "pin_address": "",
+                "pin_address": "충청남도 천안시 동남구 목천읍 동리 79-2",
                 "pin_x": 36.790474,
                 "pin_y": 127.239407
             },
             {
                 "pin_id": 703,
                 "pin_title": "아우내장터 3·1운동 만세시위지(아우내 독립만세기념공원)",
-                "pin_address": "",
+                "pin_address": "충청남도 천안시 동남구 병천면 병천리 288",
                 "pin_x": 36.759525,
                 "pin_y": 127.296426
             },
             {
                 "pin_id": 704,
                 "pin_title": "조병옥 생가",
-                "pin_address": "",
+                "pin_address": "충청남도 천안시 동남구 병천면 유관순길 243-6",
                 "pin_x": 36.752224,
                 "pin_y": 127.314733
             },
             {
                 "pin_id": 705,
                 "pin_title": "지령리 교회 터-아우내 3·1운동 만세시위 준비지",
-                "pin_address": "",
+                "pin_address": "충청남도 천안시 동남구 병천면 용두리 338-6",
                 "pin_x": 36.757413,
                 "pin_y": 127.316571
             },
             {
                 "pin_id": 706,
                 "pin_title": "유관순 생가",
-                "pin_address": "",
+                "pin_address": "충청남도 천안시 동남구 병천면 유관순생가길 18-2",
                 "pin_x": 36.757440,
                 "pin_y": 127.316898
             },
             {
                 "pin_id": 707,
                 "pin_title": "유관순 기념관",
-                "pin_address": "",
+                "pin_address": "충청남도 천안시 동남구 병천면 탑원리 252",
                 "pin_x": 36.759580,
                 "pin_y": 127.307478
             },
             {
                 "pin_id": 708,
                 "pin_title": "병천 매봉산 봉화지",
-                "pin_address": "",
+                "pin_address": "충청남도 천안시 동남구 병천면 유관순길 38",
                 "pin_x": 36.759164,
                 "pin_y": 127.308513
             }
@@ -494,91 +487,91 @@
             {
                 "pin_id": 801,
                 "pin_title": "이남규 집",
-                "pin_address": "",
+                "pin_address": "충청남도 예산군 대술면 상항리",
                 "pin_x": 36.667525,
                 "pin_y": 126.924735
             },
             {
                 "pin_id": 802,
                 "pin_title": "김한종 생가",
-                "pin_address": "",
+                "pin_address": "충청남도 예산군 광시면 신흥리 70",
                 "pin_x": 36.566730,
                 "pin_y": 126.833249
             },
             {
                 "pin_id": 803,
                 "pin_title": "광수장터-홍주의병 창의지",
-                "pin_address": "",
+                "pin_address": "충청남도 예산군 광시면 예당로 138",
                 "pin_x": 36.546750,
                 "pin_y": 126.775167
             },
             {
                 "pin_id": 804,
                 "pin_title": "최익현 묘",
-                "pin_address": "",
+                "pin_address": "충청남도 예산군 광시면 관음리",
                 "pin_x": 36.573597,
                 "pin_y": 126.784379
             },
             {
                 "pin_id": 805,
                 "pin_title": "대흥공립보통학교 학생운동지",
-                "pin_address": "",
+                "pin_address": "충청남도 예산군 대흥면 동서리 91",
                 "pin_x": 36.607154,
                 "pin_y": 126.789830
             },
             {
                 "pin_id": 806,
                 "pin_title": "금마 3·1운동 만세시위지",
-                "pin_address": "",
+                "pin_address": "충청남도 홍성군 금마면 가산리 472-1",
                 "pin_x": 36.627005,
                 "pin_y": 126.735770
             },
             {
                 "pin_id": 807,
                 "pin_title": "홍주성(홍주의병 전투지)",
-                "pin_address": "",
+                "pin_address": "충청남도 홍성군 홍성읍 오관리 98",
                 "pin_x": 36.600208,
                 "pin_y": 126.661187
             },
             {
                 "pin_id": 808,
                 "pin_title": "홍주의사총",
-                "pin_address": "",
+                "pin_address": "충청남도 홍성군 홍성읍 의사로 79",
                 "pin_x": 36.605150,
                 "pin_y": 126.671033
             },
             {
                 "pin_id": 809,
                 "pin_title": "한용운 생가",
-                "pin_address": "",
+                "pin_address": "충청남도 홍성군 결성면 성곡리 492",
                 "pin_x": 36.562797,
                 "pin_y": 126.553616
             },
             {
                 "pin_id": 810,
                 "pin_title": "김좌진 생가",
-                "pin_address": "",
+                "pin_address": "충청남도 홍성군 갈산면 행산리 330-1",
                 "pin_x": 36.597613,
                 "pin_y": 126.547178
             },
             {
                 "pin_id": 811,
                 "pin_title": "유봉길사적지(광현당 - 윤봉길 생가)",
-                "pin_address": "",
+                "pin_address": "충청남도 예산군 덕산면 시량리 180-1",
                 "pin_x": 36.683932,
                 "pin_y": 126.653587
             },
             {
                 "pin_id": 812,
                 "pin_title": "유봉길사적지(저한당 - 윤봉길 성장가)",
-                "pin_address": "",
+                "pin_address": "충청남도 예산군 덕산면 시량리 135",
                 "pin_x": 36.685377,
                 "pin_y": 126.652235
             },
             {
                 "pin_id": 813,
                 "pin_title": "유봉길사적지(부흥원 - 윤봉길 활동지)",
-                "pin_address": "",
+                "pin_address": "충청남도 예산군 덕산면 시량리 16-2",
                 "pin_x": 36.683295,
                 "pin_y": 126.655175
             }
@@ -603,42 +596,42 @@
             {
                 "pin_id": 901,
                 "pin_title": "미아리 전투지",
-                "pin_address": "",
+                "pin_address": "서울특별시 강북구 송천동 864-14",
                 "pin_x": 37.613226,
                 "pin_y": 127.029914
             },
             {
                 "pin_id": 902,
                 "pin_title": "길음교 전투지",
-                "pin_address": "",
+                "pin_address": "서울특별시 성북구 돈암1동 26-2",
                 "pin_x": 37.601501,
                 "pin_y": 127.022140
             },
             {
                 "pin_id": 903,
                 "pin_title": "애국인사납북로-미아리고개",
-                "pin_address": "",
+                "pin_address": "서울특별시 성북구 돈암1동 48-80",
                 "pin_x": 37.598190,
                 "pin_y": 127.020926
             },
             {
                 "pin_id": 904,
                 "pin_title": "미 제8군사령부 터 - 동숭동",
-                "pin_address": "",
+                "pin_address": "서울특별시 종로구 동숭동 1-130",
                 "pin_x": 37.580187,
                 "pin_y": 127.003086
             },
             {
                 "pin_id": 905,
                 "pin_title": "미 제5공군 사령부 터",
-                "pin_address": "",
+                "pin_address": "서울특별시 종로구 대학로 103",
                 "pin_x": 37.580708,
                 "pin_y": 126.999439
             },
             {
                 "pin_id": 906,
                 "pin_title": "국군 부상병 피학살지 - 국군병원",
-                "pin_address": "",
+                "pin_address": "서울특별시 종로구 연건동 28",
                 "pin_x": 37.579447,
                 "pin_y": 126.999038
             }
@@ -663,49 +656,49 @@
             {
                 "pin_id": 1001,
                 "pin_title": "서울역 시가전 터",
-                "pin_address": "",
+                "pin_address": "서울특별시 중구 봉래동2가 122-21",
                 "pin_x": 37.554663,
                 "pin_y": 126.971179
             },
             {
                 "pin_id": 1002,
                 "pin_title": "숭례문",
-                "pin_address": "",
+                "pin_address": "서울특별시 중구 세종대로 40",
                 "pin_x": 37.559978,
                 "pin_y": 126.975300
             },
             {
                 "pin_id": 1003,
                 "pin_title": "휴전반대 궐기대회지 덕수궁",
-                "pin_address": "",
+                "pin_address": "서울특별시 중구 세종대로 99",
                 "pin_x": 37.565803,
                 "pin_y": 126.975151
             },
             {
                 "pin_id": 1004,
                 "pin_title": "옛 주한미국 대사관 터",
-                "pin_address": "",
+                "pin_address": "서울 중구 을지로 1가 180",
                 "pin_x": 36.565874,
                 "pin_y": 126.980323
             },
             {
                 "pin_id": 1005,
                 "pin_title": "애국인사 구금지",
-                "pin_address": "",
+                "pin_address": "서울특별시 중구 다동 33번지",
                 "pin_x": 37.568493,
                 "pin_y": 126.980730
             },
             {
                 "pin_id": 1006,
                 "pin_title": "서울지구 병사구 사령부 터",
-                "pin_address": "",
+                "pin_address": "서울특별시 종로구 종로5길 7",
                 "pin_x": 37.570620,
                 "pin_y": 126.980561
             },
             {
                 "pin_id": 1007,
                 "pin_title": "서울 환도식 터",
-                "pin_address": "",
+                "pin_address": "서울특별시 종로구 효자로",
                 "pin_x": 37.579617,
                 "pin_y": 126.974852
             }
@@ -730,28 +723,28 @@
             {
                 "pin_id": 1101,
                 "pin_title": "노량진 전투지",
-                "pin_address": "",
+                "pin_address": "서울특별시 동작구 본동 314",
                 "pin_x": 37.514294,
                 "pin_y": 126.949768
             },
             {
                 "pin_id": 1102,
                 "pin_title": "한강인도교 폭파지",
-                "pin_address": "",
+                "pin_address": "서울특별시 용산구 이촌동 304-11",
                 "pin_x":  37.517512,
                 "pin_y": 126.958859
             },
             {
                 "pin_id": 1103,
                 "pin_title": "전쟁 당시 철도수송본부 터",
-                "pin_address": "",
+                "pin_address": "서울특별시 용산구 한강로3가 40-999",
                 "pin_x": 37.526581,
                 "pin_y": 126.959675
             },
             {
                 "pin_id": 1104,
                 "pin_title": "옛 국방부 터",
-                "pin_address": "",
+                "pin_address": "서울특별시 중구 을지로 35",
                 "pin_x": 37.566449,
                 "pin_y": 126.981850
                 
@@ -759,7 +752,7 @@
             {
                 "pin_id": 1105,
                 "pin_title": "옛 육군본부 터(전쟁기념관)",
-                "pin_address": "",
+                "pin_address": "서울특별시 용산구 용산동1가 8",
                 "pin_x": 37.536313,
                 "pin_y": 126.977139
             }
@@ -784,49 +777,49 @@
             {
                 "pin_id": 1201,
                 "pin_title": "인천상륙작전 기념관",
-                "pin_address": "",
+                "pin_address": "인천광역시 연수구 옥련동 525",
                 "pin_x": 37.419589,
                 "pin_y": 126.654299
             },
             {
                 "pin_id": 1202,
                 "pin_title": "자유공원",
-                "pin_address": "",
+                "pin_address": "인천광역시 중구 자유공원남로 25",
                 "pin_x": 37.475392,
                 "pin_y": 126.621740
             },
             {
                 "pin_id": 1203,
                 "pin_title": "적색해안 상륙지",
-                "pin_address": "",
+                "pin_address": "인천광역시 중구 북성동 월미문화로",
                 "pin_x":  37.476489,
                 "pin_y": 126.597791
             },
             {
                 "pin_id": 1204,
                 "pin_title": "해군 2함대 주둔지",
-                "pin_address": "",
+                "pin_address": "인천광역시 중구 북성동 월미로",
                 "pin_x": 37.476468,
                 "pin_y": 126.603315
             },
             {
                 "pin_id": 1205,
                 "pin_title": "UDU 충혼탑",
-                "pin_address": "",
+                "pin_address": "인천광역시 중구 북성동 97-6",
                 "pin_x": 37.476905,
                 "pin_y": 126.603330
             },
             {
                 "pin_id": 1206,
                 "pin_title": "월미전망대",
-                "pin_address": "",
+                "pin_address": "인천광역시 중구 북성동 월미문화로",
                 "pin_x": 37.476493,
                 "pin_y": 126.597785
             },
             {
                 "pin_id": 1207,
                 "pin_title": "녹색해안 상륙지(한국이민사 박물관)",
-                "pin_address": "",
+                "pin_address": "인천광역시 중구 북성동 102-2",
                 "pin_x": 37.470050,
                 "pin_y": 126.600145
             }
@@ -851,49 +844,49 @@
             {
                 "pin_id": 1301,
                 "pin_title": "왜관지구 전적기념관",
-                "pin_address": "",
+                "pin_address": "경상북도 칠곡군 석적읍 석적로 226",
                 "pin_x": 36.018950,
                 "pin_y": 128.403194
             },
             {
                 "pin_id": 1302,
                 "pin_title": "왜관교 전투지",
-                "pin_address": "",
+                "pin_address": "경상북도 칠곡군 왜관읍 석전리 807-1",
                 "pin_x": 36.000085,
                 "pin_y": 128.396435
             },
             {
                 "pin_id": 1303,
                 "pin_title": "작오산 전투지",
-                "pin_address": "",
+                "pin_address": "경상북도 칠곡군 석적읍 중지리 산39-1",
                 "pin_x": 36.012552,
                 "pin_y": 128.411540
             },
             {
                 "pin_id": 1304,
                 "pin_title": "수암산 전투지",
-                "pin_address": "",
+                "pin_address": "칠곡군 숲데미산",
                 "pin_x": 36.058566,
                 "pin_y": 128.441480
             },
             {
                 "pin_id": 1305,
                 "pin_title": "유학산 전투지",
-                "pin_address": "",
+                "pin_address": "칠곡군 유학산",
                 "pin_x": 36.064407,
                 "pin_y": 128.510338
             },
             {
                 "pin_id": 1306,
                 "pin_title": "다부동 전투지(다부동 전적기념관)",
-                "pin_address": "",
+                "pin_address": "경상북도 칠곡군 가산면 호국로 1486",
                 "pin_x": 36.046652,
                 "pin_y": 128.517656
             },
             {
                 "pin_id": 1307,
                 "pin_title": "동명초등학교 전투지",
-                "pin_address": "",
+                "pin_address": "경상북도 칠곡군 동명면 금암리 302-4",
                 "pin_x": 35.986668,
                 "pin_y": 128.554524
             }
@@ -918,35 +911,35 @@
             {
                 "pin_id": 1401,
                 "pin_title": "베트남 참전용사 만남의 장",
-                "pin_address": "",
+                "pin_address": "강원도 화천군 간동면 오음리 112",
                 "pin_x": 38.053634,
                 "pin_y": 127.832474
             },
             {
                 "pin_id": 1402,
                 "pin_title": "화천 파로호 전투지(파로호 안보전시관)",
-                "pin_address": "",
+                "pin_address": "강원도 화천군 간동면 구만리",
                 "pin_x": 38.094949,
                 "pin_y": 127.771505
             },
             {
                 "pin_id": 1403,
                 "pin_title": "화천 643고지 전투지",
-                "pin_address": "",
+                "pin_address": "강원도 화천군 화천읍 대이리 8",
                 "pin_x": 38.109603,
                 "pin_y": 127.759793
             },
             {
                 "pin_id": 1404,
                 "pin_title": "화천댐",
-                "pin_address": "",
+                "pin_address": "강원도 화천군 간동면 구만리 1252-2",
                 "pin_x": 36.058566,
                 "pin_y": 128.441480
             },
             {
                 "pin_id": 1405,
                 "pin_title": "평화의 댐",
-                "pin_address": "",
+                "pin_address": "강원도 화천군 화천읍 동촌리 산321-4",
                 "pin_x": 38.212046,
                 "pin_y": 127.847732
             }
@@ -971,35 +964,35 @@
             {
                 "pin_id": 1501,
                 "pin_title": "양구 피의능선 전투지",
-                "pin_address": "",
+                "pin_address": "강원도 양구군 동면 월운리 산46",
                 "pin_x": 38.221029,
                 "pin_y": 128.040541
             },
             {
                 "pin_id": 1502,
                 "pin_title": "양구 펀치볼 전투지",
-                "pin_address": "",
+                "pin_address": "강원도 양구군 해안면 후리 621",
                 "pin_x": 38.290114,
                 "pin_y": 128.145232
             },
             {
                 "pin_id": 1503,
                 "pin_title": "양구 통일관, 양구 전쟁기념관",
-                "pin_address": "",
+                "pin_address": "강원 양구군 해안면 후리 통일관 622번지",
                 "pin_x": 38.289993,
                 "pin_y": 128.145178
             },
             {
                 "pin_id": 1504,
                 "pin_title": "양구 제4땅굴",
-                "pin_address": "",
+                "pin_address": "강원도 양구군 해안면 땅굴로 454",
                 "pin_x": 38.319503,
                 "pin_y": 128.110520
             },
             {
                 "pin_id": 1505,
                 "pin_title": "을지전망대",
-                "pin_address": "",
+                "pin_address": "강원도 양구군 해안면 후리 621",
                 "pin_x": 38.290113,
                 "pin_y": 128.145240
             }
@@ -1024,42 +1017,42 @@
             {
                 "pin_id": 1601,
                 "pin_title": "건봉사-정남용 활동지",
-                "pin_address": "",
+                "pin_address": "강원도 고성군 거진읍 냉천리 38-1",
                 "pin_x": 38.402527,
                 "pin_y": 128.378438
             },
             {
                 "pin_id": 1602,
                 "pin_title": "김일성 별장(일명 화진포의 성, 역사안보 전시관)",
-                "pin_address": "",
+                "pin_address": "강원도 고성군 거진읍 화진포길 280",
                 "pin_x": 38.472451,
                 "pin_y": 128.443026
             },
             {
                 "pin_id": 1603,
                 "pin_title": "이기붕 별장(역사안보 전시관)",
-                "pin_address": "",
+                "pin_address": "강원도 고성군 거진읍 화진포길",
                 "pin_x": 38.473391,
                 "pin_y": 128.441601
             },
             {
                 "pin_id": 1604,
                 "pin_title": "이승만 별장(이승만대통령 화진포기념관)",
-                "pin_address": "",
+                "pin_address": "강원도 고성군 현내면 이승만별장길 33",
                 "pin_x": 38.471010,
                 "pin_y": 128.435797
             },
             {
                 "pin_id": 1605,
                 "pin_title": "DMZ박물관",
-                "pin_address": "",
+                "pin_address": "강원도 고성군 현내면 통일전망대로 369",
                 "pin_x": 38.576624,
                 "pin_y": 128.382920
             },
             {
                 "pin_id": 1606,
                 "pin_title": "통일전망대",
-                "pin_address": "",
+                "pin_address": "강원도 고성군 현내면 금강산로 481",
                 "pin_x": 38.514598,
                 "pin_y": 128.416830
             }
@@ -1084,35 +1077,35 @@
             {
                 "pin_id": 1701,
                 "pin_title": "김상옥 집터",
-                "pin_address": "",
+                "pin_address": "서울특별시 종로구 종로 294",
                 "pin_x": 37.571259,
                 "pin_y": 127.010755
             },
             {
                 "pin_id": 1702,
                 "pin_title": "김상옥 활동지 - 동대문교회 터(현 동대문 성곽공원)",
-                "pin_address": "",
+                "pin_address": "서울특별시 종로구 창신2동 622-84",
                 "pin_x": 37.577943,
                 "pin_y": 127.008450
             },
             {
                 "pin_id": 1703,
                 "pin_title": "김상옥 순국지",
-                "pin_address": "",
+                "pin_address": "서울특별시 종로구 대학로 46 3층",
                 "pin_x": 37.574492,
                 "pin_y": 127.002174
             },
             {
                 "pin_id": 1704,
                 "pin_title": "경성제국대학교 본관",
-                "pin_address": "",
+                "pin_address": "서울특별시 종로구 동숭동 1-130",
                 "pin_x": 37.580165,
                 "pin_y": 127.003084
             },
             {
                 "pin_id": 1705,
                 "pin_title": "마로니에공원 김상옥 동상",
-                "pin_address": "",
+                "pin_address": "서울특별시 종로구 동숭길",
                 "pin_x": 37.580649,
                 "pin_y": 127.003104
             }
@@ -1137,42 +1130,42 @@
             {
                 "pin_id": 1801,
                 "pin_title": "대전역",
-                "pin_address": "",
+                "pin_address": "대전광역시 정동 대전역",
                 "pin_x": 36.332132,
                 "pin_y": 127.434486
             },
             {
                 "pin_id": 1802,
                 "pin_title": "옛 조선식산은행 대전지점",
-                "pin_address": "",
+                "pin_address": "대전광역시 동구 중앙동 중앙로 198",
                 "pin_x": 36.330424,
                 "pin_y": 127.431139
             },
             {
                 "pin_id": 1803,
                 "pin_title": "옛 동양척식주시회사 대전지점",
-                "pin_address": "",
+                "pin_address": "대전광역시 동구 신인동 74-1",
                 "pin_x": 36.3325642,
                 "pin_y": 127.435499
             },
             {
                 "pin_id": 1804,
                 "pin_title": "공주지방법원 대전지청 터",
-                "pin_address": "",
+                "pin_address": "충청남도 공주시 반죽동 332",
                 "pin_x": 36.454253,
                 "pin_y": 127.120653
             },
             {
                 "pin_id": 1805,
                 "pin_title": "충청남도청",
-                "pin_address": "",
+                "pin_address": "충청남도 공주시 반죽동 322-1",
                 "pin_x": 36.452642,
                 "pin_y": 127.119692
             },
             {
                 "pin_id": 1806,
                 "pin_title": "옛 대전형무소 터",
-                "pin_address": "",
+                "pin_address": "대전광역시 중구 목동 48-2",
                 "pin_x": 36.337290,
                 "pin_y": 127.410192
             }
@@ -1197,35 +1190,35 @@
             {
                 "pin_id": 1901,
                 "pin_title": "안창리 의병 봉기지",
-                "pin_address": "",
+                "pin_address": "강원도 원주시 지정면 안창리 546-1",
                 "pin_x": 37.343662,
                 "pin_y": 127.818729
             },
             {
                 "pin_id": 1902,
                 "pin_title": "의병뜰 의병 주둔지",
-                "pin_address": "",
+                "pin_address": "강원도 원주시 호저면 무장리 512",
                 "pin_x": 37.404118,
                 "pin_y": 127.888218
             },
             {
                 "pin_id": 1903,
                 "pin_title": "윤기영 집터",
-                "pin_address": "",
+                "pin_address": "강원도 원주시 호저면 무장리 763",
                 "pin_x": 37.399354,
                 "pin_y": 127.893862
             },
             {
                 "pin_id": 1904,
                 "pin_title": "원주진위대 터",
-                "pin_address": "",
+                "pin_address": "강원도 원주시 원일로 77",
                 "pin_x": 37.347933,
                 "pin_y": 127.950382
             },
             {
                 "pin_id": 1905,
                 "pin_title": "원주진위대 전투지 - 원주우편취급소 터",
-                "pin_address": "",
+                "pin_address": "강원도 원주시 원일로 77",
                 "pin_x": 37.347933,
                 "pin_y": 127.950382
             }
@@ -1250,70 +1243,70 @@
             {
                 "pin_id": 2001,
                 "pin_title": "조선은행 군산지점",
-                "pin_address": "",
+                "pin_address": "전라북도 군산시 장미동 해망로 214",
                 "pin_x": 35.989245,
                 "pin_y": 126.714248
             },
             {
                 "pin_id": 2002,
                 "pin_title": "군산항 미곡야적장",
-                "pin_address": "",
+                "pin_address": "전라북도 군산시 월명동 구영7길 5",
                 "pin_x": 35.984338,
                 "pin_y": 126.708510
             },
             {
                 "pin_id": 2003,
                 "pin_title": "나가사키[長崎] 18은행 군산지점",
-                "pin_address": "",
+                "pin_address": "전라북도 군산시 해망로 230",
                 "pin_x": 35.989891,
                 "pin_y": 126.712794
             },
             {
                 "pin_id": 2004,
                 "pin_title": "군산근대역사박물관",
-                "pin_address": "",
+                "pin_address": "전라북도 군산시 해망로 240",
                 "pin_x": 35.990727,
                 "pin_y": 126.712013
             },
             {
                 "pin_id": 2005,
                 "pin_title": "옛 군산세관 본관",
-                "pin_address": "",
+                "pin_address": "전라북도 군산시 해망로 244-7",
                 "pin_x": 35.991033,
                 "pin_y": 126.711266
             },
             {
                 "pin_id": 2006,
                 "pin_title": "월명공원",
-                "pin_address": "",
+                "pin_address": "전라북도 군산시 해망동 월명공원1길 48",
                 "pin_x": 35.990097,
                 "pin_y": 126.702643
             },
             {
                 "pin_id": 2007,
                 "pin_title": "옛 군산경찰서 터 - 3·1운동 만세시위지",
-                "pin_address": "",
+                "pin_address": "전라북도 군산시 중앙로1가 17-1",
                 "pin_x": 35.985934,
                 "pin_y": 126.713630
             },
             {
                 "pin_id": 2008,
                 "pin_title": "옛 구암교회 3·1운동 근거지",
-                "pin_address": "",
+                "pin_address": "전라북도 군산시 구암동 334",
                 "pin_x": 35.984918,
                 "pin_y": 126.741999
             },
             {
                 "pin_id": 2009,
                 "pin_title": "구마모토농장",
-                "pin_address": "",
+                "pin_address": "전라북도 정읍시 신태인읍 화호2길 16",
                 "pin_x": 35.717427,
                 "pin_y": 126.833456
             },
             {
                 "pin_id": 2010,
                 "pin_title": "시마타니농장",
-                "pin_address": "",
+                "pin_address": "전라북도 군산시 개정면 발산리 45-9",
                 "pin_x": 35.959472,
                 "pin_y": 126.796094
             }
@@ -1338,49 +1331,49 @@
             {
                 "pin_id": 2101,
                 "pin_title": "우당기념관",
-                "pin_address": "",
+                "pin_address": "지하1층 36 KR 서울특별시 중구 서울 중구 퇴계로26길 이회영기념관(버스정류장 옆)",
                 "pin_x": 37.559559,
                 "pin_y": 126.989365
             },
             {
                 "pin_id": 2102,
                 "pin_title": "이상 집터",
-                "pin_address": "",
+                "pin_address": "서울특별시 종로구 청운효자동 153-1",
                 "pin_x": 37.578636,
                 "pin_y": 126.970850
             },
             {
                 "pin_id": 2103,
                 "pin_title": "김가진 집터",
-                "pin_address": "",
+                "pin_address": "서울특별시 종로구 자하문로 13-1",
                 "pin_x": 37.577215,
                 "pin_y": 126.972076
             },
             {
                 "pin_id": 2104,
                 "pin_title": "한성오 집터-국민대회/한성정부 준비 거점",
-                "pin_address": "",
+                "pin_address": "서울특별시 종로구 내자동 75-4",
                 "pin_x": 37.575748,
                 "pin_y": 126.972114
             },
             {
                 "pin_id": 2105,
                 "pin_title": "오화영 사택 터",
-                "pin_address": "",
+                "pin_address": "서울특별시 종로구 사직로8길 48",
                 "pin_x": 37.573779,
                 "pin_y": 126.973801
             },
             {
                 "pin_id": 2106,
                 "pin_title": "정인보 집터",
-                "pin_address": "",
+                "pin_address": "서울특별시 종로구 내수동 167번지",
                 "pin_x": 37.572676,
                 "pin_y": 126.973205
             },
             {
                 "pin_id": 2107,
                 "pin_title": "주시경 마당  *지도의 초록색 선은 보조 경로",
-                "pin_address": "",
+                "pin_address": "서울특별시 종로구 당주동 109-1",
                 "pin_x": 37.572127,
                 "pin_y": 126.973182
             }
@@ -1405,35 +1398,35 @@
             {
                 "pin_id": 2201,
                 "pin_title": "대전보훈공원",
-                "pin_address": "",
+                "pin_address": "대전광역시 중구 사정동 200",
                 "pin_x": 36.300254,
                 "pin_y": 127.401042
             },
             {
                 "pin_id": 2202,
                 "pin_title": "충청남도청 - 전시 정부청사",
-                "pin_address": "",
+                "pin_address": "대전광역시 중구 대흥동 452-3번지 선화동383동 0 대림빌딩 C-나-56",
                 "pin_x": 36.327014,
                 "pin_y": 127.421491
             },
             {
                 "pin_id": 2203,
                 "pin_title": "대전형무소 터",
-                "pin_address": "",
+                "pin_address": "대전광역시 중구 목동 48-2",
                 "pin_x": 36.337328,
                 "pin_y": 127.410188
             },
             {
                 "pin_id": 2204,
                 "pin_title": "대전비행장 터",
-                "pin_address": "",
+                "pin_address": "대전광역시 서구 탄방동 589",
                 "pin_x": 36.348081,
                 "pin_y": 127.384838
             },
             {
                 "pin_id": 2205,
                 "pin_title": "대전현충원",
-                "pin_address": "",
+                "pin_address": "대전광역시 유성구 현충원로",
                 "pin_x": 36.363257,
                 "pin_y": 127.299209
             }
@@ -1458,49 +1451,49 @@
             {
                 "pin_id": 2301,
                 "pin_title": "제주전쟁역사평화박물관",
-                "pin_address": "",
+                "pin_address": "제주특별자치도 제주시 한경면 청수리 1166",
                 "pin_x": 33.305602,
                 "pin_y": 126.249370
             },
             {
                 "pin_id": 2302,
                 "pin_title": "옛 육군 제1훈련소",
-                "pin_address": "",
+                "pin_address": "제주특별자치도 서귀포시 대정읍 상모리 3370",
                 "pin_x": 33.229582,
                 "pin_y": 126.263985
             },
             {
                 "pin_id": 2303,
                 "pin_title": "남제주 강병대교회",
-                "pin_address": "",
+                "pin_address": "제주특별자치도 서귀포시 대정읍 상모리",
                 "pin_x": 33.226591,
                 "pin_y": 126.257431
             },
             {
                 "pin_id": 2304,
                 "pin_title": "모슬포 포로수용소",
-                "pin_address": "",
+                "pin_address": "제주특별자치도 서귀포시 대정읍 하모리 112",
                 "pin_x":  33.199076,
                 "pin_y": 126.266624
             },
             {
                 "pin_id": 2305,
                 "pin_title": "알뜨르 비행장",
-                "pin_address": "",
+                "pin_address": "제주특별자치도 서귀포시 대정읍 상모리 440",
                 "pin_x": 33.211586,
                 "pin_y": 126.283884
             },
             {
                 "pin_id": 2306,
                 "pin_title": "법정사 터-1918년 법정사항일운동 발생지",
-                "pin_address": "",
+                "pin_address": "제주특별자치도 서귀포시 도순동 1100로",
                 "pin_x": 33.308314,
                 "pin_y": 126.472628
             },
             {
                 "pin_id": 2307,
                 "pin_title": "서귀포 천주교 항일운동지",
-                "pin_address": "",
+                "pin_address": "제주특별자치도 서귀포시 송산동 586-1",
                 "pin_x":  33.244179,
                 "pin_y": 126.563039
             }
