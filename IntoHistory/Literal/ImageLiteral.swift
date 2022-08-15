@@ -39,8 +39,7 @@ enum ImageLiteral {
     // MARK: CourseListView Image Set
     static var resistanceCourse = "CourseResistances"
     static var warriorCourse = "CourseWarriors"
-    static var courseCellLine1 = "Line"
-    static var courseCellLine2 = "Line"
+    static var courseCellLine = "Line"
     static var courseCellPin = "Pin"
     static var courseCellRoute = "Route"
     static var courseCellTime = "Time"
