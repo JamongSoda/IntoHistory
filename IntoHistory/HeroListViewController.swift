@@ -96,11 +96,13 @@ extension HeroListViewController: UICollectionViewDataSource, UICollectionViewDe
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeroListCell.identifier, for: indexPath) as! HeroListCell
             cell.imageView.image = UIImage(named: resistanceData.images[indexPath.row])
             cell.labelView.text = resistanceData.names[indexPath.row]
+            cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapHeroCell(_:))))
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeroListCell.identifier, for: indexPath) as! HeroListCell
             cell.imageView.image = UIImage(named: warriorData.images[indexPath.row])
             cell.labelView.text = warriorData.names[indexPath.row]
+            cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapHeroCell(_:))))
             return cell
         }
     }
@@ -158,5 +160,11 @@ extension HeroListViewController: UICollectionViewDataSource, UICollectionViewDe
             return UIEdgeInsets(top: 20, left: 0, bottom: 30, right: 0)
         }
         return UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30)
+    }
+
+    @objc func tapHeroCell(_ sender: UITapGestureRecognizer) {
+        let popupVC = HeroDetailViewController()
+        popupVC.modalPresentationStyle = .overFullScreen
+        present(popupVC, animated: false, completion: nil)
     }
 }
