@@ -60,10 +60,10 @@ extension CourseListViewController: UICollectionViewDelegate, UICollectionViewDa
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CourseListCell.identifier, for: indexPath) as! CourseListCell
 
         if courseJSONLoader[indexPath.row].type == "독립운동" {
-            cell.HeroCourseImage.image = UIImage(named: ImageLiteral.resistanceCourse)
+            cell.heroCourseImage.image = UIImage(named: ImageLiteral.resistanceCourse)
 
         } else {
-            cell.HeroCourseImage.image = UIImage(named: ImageLiteral.warriorCourse)
+            cell.heroCourseImage.image = UIImage(named: ImageLiteral.warriorCourse)
         }
         cell.uiComponent.courseListTitle.text = courseJSONLoader[indexPath.row].title
         cell.uiComponent.courseListRegionText.text = courseJSONLoader[indexPath.row].region
@@ -72,18 +72,16 @@ extension CourseListViewController: UICollectionViewDelegate, UICollectionViewDa
         return cell
     }
     
-    // Cell 간 상하 간격
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 20
     }
     
-    // Cell 사이즈
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = UIScreen.main.bounds.width - 32
         let cellHeight = 130
         return CGSize(width: Int(width), height: Int(cellHeight))
     }
-    // 상하좌우 간격
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
     }
