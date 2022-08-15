@@ -56,6 +56,7 @@ class HeroDetailViewController: UIViewController {
 
         attribute()
         layout()
+        setButtonGesture()
     }
     
     // MARK: - Method
@@ -114,6 +115,16 @@ class HeroDetailViewController: UIViewController {
             paddingBottom: 60,
             paddingRight: 20
         )
+    }
+    
+    private func setButtonGesture() {
+        let tapCloseButton = UITapGestureRecognizer(target: self, action: #selector(self.tapCloseButton(_:)))
+        closeButton.addGestureRecognizer(tapCloseButton)
+        closeButton.isUserInteractionEnabled = true
+    }
+    
+    @objc func tapCloseButton(_ sender: UITapGestureRecognizer) {
+        self.dismiss(animated: false, completion: nil)
     }
 }
 
