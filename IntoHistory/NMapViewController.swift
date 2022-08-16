@@ -43,8 +43,8 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
                 image: UIImage(imageLiteralResourceName: SelectedTypes(rawValue: pinNum + 1)?
                         .selectedPinsImage(isSelecting: false) ?? ""))
             marker.position = NMGLatLng(
-                lat: courseJSONLoader[1].course_pins[pinNum].pin_x ?? 0,
-                lng: courseJSONLoader[1].course_pins[pinNum].pin_y ?? 0
+                lat: courseJSONLoader[1].course_pins[pinNum].pin_x,
+                lng: courseJSONLoader[1].course_pins[pinNum].pin_y
             )
             marker.mapView = naverMapView.mapView
         }
