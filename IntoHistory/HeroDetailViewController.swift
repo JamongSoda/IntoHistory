@@ -21,6 +21,10 @@ class HeroDetailViewController: UIViewController {
         return $0
     }(UIView())
     
+    private let scrollView: UIScrollView = {
+        return $0
+    }(UIScrollView())
+    
     private let closeButton: UIImageView = {
         let configuration = UIImage.SymbolConfiguration(pointSize: 20)
         $0.image = UIImage(systemName: "xmark", withConfiguration: configuration)
@@ -42,7 +46,7 @@ class HeroDetailViewController: UIViewController {
     }(UILabel())
     
     private let heroDescription: UILabel = {
-        $0.text = "1968년 1.21사태 당시 무장공비 31명이 청와대를 습격하자 이를 추적하는 가운데 펼쳐진 포위작전 중 적의 습격으로 전사하였다."
+        $0.text = "1968년 1.21사태 당시 무장공비 31명이 청와대를 습격하자 이를 추적하는 가운데 펼쳐진 포위작전 중 적의 습격으로 전사하였다.\n1968년 1.21사태 당시 무장공비 31명이 청와대를 습격하자 이를 추적하는 가운데 펼쳐진 포위작전 중 적의 습격으로 전사하였다.\n1968년 1.21사태 당시 무장공비 31명이 청와대를 습격하자 이를 추적하는 가운데 펼쳐진 포위작전 중 적의 습격으로 전사하였다.\n1968년 1.21사태 당시 무장공비 31명이 청와대를 습격하자 이를 추적하는 가운데 펼쳐진 포위작전 중 적의 습격으로 전사하였다.\n1968년 1.21사태 당시 무장공비 31명이 청와대를 습격하자 이를 추적하는 가운데 펼쳐진 포위작전 중 적의 습격으로 전사하였다.\n1968년 1.21사태 당시 무장공비 31명이 청와대를 습격하자 이를 추적하는 가운데 펼쳐진 포위작전 중 적의 습격으로 전사하였다.\n1968년 1.21사태 당시 무장공비 31명이 청와대를 습격하자 이를 추적하는 가운데 펼쳐진 포위작전 중 적의 습격으로 전사하였다.\n1968년 1.21사태 당시 무장공비 31명이 청와대를 습격하자 이를 추적하는 가운데 펼쳐진 포위작전 중 적의 습격으로 전사하였다.\n1968년 1.21사태 당시 무장공비 31명이 청와대를 습격하자 이를 추적하는 가운데 펼쳐진 포위작전 중 적의 습격으로 전사하였다.\n1968년 1.21사태 당시 무장공비 31명이 청와대를 습격하자 이를 추적하는 가운데 펼쳐진 포위작전 중 적의 습격으로 전사하였다.\n1968년 1.21사태 당시 무장공비 31명이 청와대를 습격하자 이를 추적하는 가운데 펼쳐진 포위작전 중 적의 습격으로 전사하였다."
         $0.font = UIFont.systemFont(ofSize: 17)
         $0.textAlignment = .center
         $0.numberOfLines = 0
@@ -53,6 +57,10 @@ class HeroDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        coreDataManager.loadOneHeroData()
+        heroImage.image = UIImage(named: coreDataManager.oneHero.image)
+        heroName.text = coreDataManager.oneHero.heroName
+        heroDescription.text = coreDataManager.oneHero.heroDescription
 
         attribute()
         layout()
@@ -67,17 +75,34 @@ class HeroDetailViewController: UIViewController {
     
     private func layout() {
         view.addSubview(popupShape)
-        [closeButton, heroImage, heroName, heroDescription].forEach { popupShape.addSubview($0) }
+        
+        popupShape.addSubview(scrollView)
+        popupShape.addSubview(closeButton)
+        
+        [heroImage, heroName, heroDescription].forEach { scrollView.addSubview($0) }
         
         popupShape.anchor(
-            left: view.leftAnchor,
-            right: view.rightAnchor,
+            top: view.safeAreaLayoutGuide.topAnchor,
+            left: view.safeAreaLayoutGuide.leftAnchor,
+            bottom: view.safeAreaLayoutGuide.bottomAnchor,
+            right: view.safeAreaLayoutGuide.rightAnchor,
+            paddingTop: UIScreen.main.bounds.height * 0.1,
             paddingLeft: 20,
+            paddingBottom: UIScreen.main.bounds.height * 0.1,
             paddingRight: 20
         )
         
         popupShape.centerX(inView: view)
         popupShape.centerY(inView: view)
+        
+        scrollView.anchor(
+            top: popupShape.topAnchor,
+            left: popupShape.leftAnchor,
+            bottom: popupShape.bottomAnchor,
+            right: popupShape.rightAnchor,
+            paddingTop: 55,
+            paddingBottom: 20
+        )
         
         closeButton.anchor(
             top: popupShape.topAnchor,
@@ -87,30 +112,32 @@ class HeroDetailViewController: UIViewController {
         )
         
         heroImage.anchor(
-            top: popupShape.topAnchor,
-            left: popupShape.leftAnchor,
+            top: scrollView.topAnchor,
+            left: scrollView.leftAnchor,
             bottom: heroName.topAnchor,
-            right: popupShape.rightAnchor,
+            right: scrollView.rightAnchor,
             paddingTop: 40,
-            paddingLeft: 55,
+            paddingLeft: 20,
             paddingBottom: 40,
-            paddingRight: 55,
+            paddingRight: 20,
             height: 240
         )
         
+        heroImage.centerX(inView: scrollView)
+        
         heroName.anchor(
-            left: popupShape.leftAnchor,
+            left: scrollView.leftAnchor,
             bottom: heroDescription.topAnchor,
-            right: popupShape.rightAnchor,
+            right: scrollView.rightAnchor,
             paddingLeft: 20,
             paddingBottom: 20,
             paddingRight: 20
         )
         
         heroDescription.anchor(
-            left: popupShape.leftAnchor,
-            bottom: popupShape.bottomAnchor,
-            right: popupShape.rightAnchor,
+            left: scrollView.leftAnchor,
+            bottom: scrollView.bottomAnchor,
+            right: scrollView.rightAnchor,
             paddingLeft: 20,
             paddingBottom: 60,
             paddingRight: 20
