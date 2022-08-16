@@ -48,7 +48,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         let scene = SCNScene()
         let sphere = SCNSphere(radius: 0.2)
         // TODO: - 이미지 변경
-        sphere.firstMaterial?.diffuse.contents = UIImage(named: "testImage.jpg")
+        sphere.firstMaterial?.diffuse.contents = UIImage(named: "heroBallImage.png")
 
         let sphereNode = SCNNode(geometry: sphere)
         sphereNode.position = SCNVector3(0.5, 0.1, -1)

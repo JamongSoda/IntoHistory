@@ -14,6 +14,7 @@
 		260F999C289D1B460010E258 /* IntoHistory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 260F999A289D1B460010E258 /* IntoHistory.xcdatamodeld */; };
 		260F999E289D1B470010E258 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 260F999D289D1B470010E258 /* Assets.xcassets */; };
 		260F99A1289D1B470010E258 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 260F999F289D1B470010E258 /* LaunchScreen.storyboard */; };
+		38DE9B5728AC2BD600C2B001 /* heroBallImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 38DE9B5628AC2BD600C2B001 /* heroBallImage.png */; };
 		38E88C6E28A6428000B6634E /* TempButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E88C6D28A6428000B6634E /* TempButtonViewController.swift */; };
 		38E88C7028A642F600B6634E /* ARView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38E88C6F28A642F600B6634E /* ARView.storyboard */; };
 		38E88C7428A6477000B6634E /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E88C7328A6477000B6634E /* ARViewController.swift */; };
@@ -39,6 +40,7 @@
 		260F999D289D1B470010E258 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		260F99A0289D1B470010E258 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		260F99A2289D1B470010E258 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38DE9B5628AC2BD600C2B001 /* heroBallImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heroBallImage.png; sourceTree = "<group>"; };
 		38E88C6D28A6428000B6634E /* TempButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempButtonViewController.swift; sourceTree = "<group>"; };
 		38E88C6F28A642F600B6634E /* ARView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ARView.storyboard; sourceTree = "<group>"; };
 		38E88C7328A6477000B6634E /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 		38E88C6928A6213D00B6634E /* ARView */ = {
 			isa = PBXGroup;
 			children = (
+				38DE9B5628AC2BD600C2B001 /* heroBallImage.png */,
 				38E88C6C28A6427500B6634E /* SupportViews */,
 				38E88C7328A6477000B6634E /* ARViewController.swift */,
 			);
@@ -233,6 +236,7 @@
 				260F99A1289D1B470010E258 /* LaunchScreen.storyboard in Resources */,
 				260F999E289D1B470010E258 /* Assets.xcassets in Resources */,
 				38E88C7028A642F600B6634E /* ARView.storyboard in Resources */,
+				38DE9B5728AC2BD600C2B001 /* heroBallImage.png in Resources */,
 				9828EC9028A600DF00D0D82E /* course_json.json in Resources */,
 				9828EC8F28A600DF00D0D82E /* person_json.json in Resources */,
 				260F9999289D1B460010E258 /* Main.storyboard in Resources */,
