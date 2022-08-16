@@ -107,14 +107,14 @@ extension HeroListViewController: UICollectionViewDataSource, UICollectionViewDe
             return cell
         } else if indexPath.section == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeroListCell.identifier, for: indexPath) as! HeroListCell
-            cell.imageView.image = UIImage(named: resistanceData.images[indexPath.row])
-            cell.labelView.text = resistanceData.names[indexPath.row]
+            cell.imageView.image = UIImage(named: resistances[indexPath.row].image)
+            cell.labelView.text = resistances[indexPath.row].heroName
             cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapHeroCell(_:))))
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeroListCell.identifier, for: indexPath) as! HeroListCell
-            cell.imageView.image = UIImage(named: warriorData.images[indexPath.row])
-            cell.labelView.text = warriorData.names[indexPath.row]
+            cell.imageView.image = UIImage(named: warriors[indexPath.row].image)
+            cell.labelView.text = warriors[indexPath.row].heroName
             cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapHeroCell(_:))))
             return cell
         }
