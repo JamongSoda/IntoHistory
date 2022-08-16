@@ -11,8 +11,6 @@ class DetailCourseCell: UICollectionViewCell {
     
     // MARK: - Property
     
-    static let courseJSONLoader = LoadingCourseJSON().courses
-    
     static let identifier = "detailCourseCell"
 
     // MARK: - View

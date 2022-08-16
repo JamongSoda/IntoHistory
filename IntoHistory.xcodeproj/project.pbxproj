@@ -13,13 +13,13 @@
 		260F999C289D1B460010E258 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 260F999A289D1B460010E258 /* Model.xcdatamodeld */; };
 		260F999E289D1B470010E258 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 260F999D289D1B470010E258 /* Assets.xcassets */; };
 		260F99A1289D1B470010E258 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 260F999F289D1B470010E258 /* LaunchScreen.storyboard */; };
-		264B547328AA1C9B00726AB0 /* person_json.json in Resources */ = {isa = PBXBuildFile; fileRef = 9828EC8928A600DF00D0D82E /* person_json.json */; };
 		26272A3B28A9E65D0097B19E /* CourseEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26272A3528A9E65D0097B19E /* CourseEntity+CoreDataClass.swift */; };
 		26272A3C28A9E65D0097B19E /* CourseEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26272A3628A9E65D0097B19E /* CourseEntity+CoreDataProperties.swift */; };
 		26272A3D28A9E65D0097B19E /* HeroEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26272A3728A9E65D0097B19E /* HeroEntity+CoreDataClass.swift */; };
 		26272A3E28A9E65D0097B19E /* HeroEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26272A3828A9E65D0097B19E /* HeroEntity+CoreDataProperties.swift */; };
 		26272A3F28A9E65D0097B19E /* PinEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26272A3928A9E65D0097B19E /* PinEntity+CoreDataClass.swift */; };
 		26272A4028A9E65D0097B19E /* PinEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26272A3A28A9E65D0097B19E /* PinEntity+CoreDataProperties.swift */; };
+		264B547328AA1C9B00726AB0 /* person_json.json in Resources */ = {isa = PBXBuildFile; fileRef = 9828EC8928A600DF00D0D82E /* person_json.json */; };
 		2694641428A65FD000485526 /* HeroListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694641328A65FD000485526 /* HeroListCell.swift */; };
 		2694641928A6973C00485526 /* HeroListDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694641828A6973C00485526 /* HeroListDescriptionCell.swift */; };
 		2694641B28A7577300485526 /* CollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694641A28A7577300485526 /* CollectionViewHeader.swift */; };
@@ -132,7 +132,6 @@
 				9847904D28A9780E00FC5995 /* DetailCourseView */,
 				9847904F28A9782100FC5995 /* CourseUIComponent */,
 				9828EC9428A6679900D0D82E /* Literal */,
-				260F9997289D1B460010E258 /* Main.storyboard */,
 				260F999D289D1B470010E258 /* Assets.xcassets */,
 				260F999F289D1B470010E258 /* LaunchScreen.storyboard */,
 				260F99A2289D1B470010E258 /* Info.plist */,
@@ -374,7 +373,7 @@
 				9828EC9628A667AA00D0D82E /* ImageLiteral.swift in Sources */,
 				7B2C3E0928A3D8FA00BF197D /* Color+Extension.swift in Sources */,
 				26272A3B28A9E65D0097B19E /* CourseEntity+CoreDataClass.swift in Sources */,
-				260F999C289D1B460010E258 /* IntoHistory.xcdatamodeld in Sources */,
+				260F999C289D1B460010E258 /* Model.xcdatamodeld in Sources */,
 				9877CF1728A7CD3400CC2D5B /* CourseListCell.swift in Sources */,
 				9847905128AA0CC700FC5995 /* UIView+Extension.swift in Sources */,
 				9877CF1B28A9206F00CC2D5B /* DetailCourseCell.swift in Sources */,
