@@ -72,11 +72,13 @@ class MainViewController: UIViewController {
         
         if !UserDefaults.standard.bool(forKey: "isFirstLaunch") {
             
-            saveJSONData()
+            coreDataManager.saveJSONData()
             UserDefaults.standard.set(true, forKey: "isFirstLaunch")
         }
-        loadJSONData()
-        
+        coreDataManager.loadCourseData()
+        coreDataManager.loadPinData()
+        coreDataManager.loadHeroData()
+
         attribute()
         layout()
     }
