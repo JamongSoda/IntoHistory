@@ -107,13 +107,15 @@ extension HeroListViewController: UICollectionViewDataSource, UICollectionViewDe
             return cell
         } else if indexPath.section == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeroListCell.identifier, for: indexPath) as! HeroListCell
-            cell.imageView.image = UIImage(named: resistances[indexPath.row].isCollected ? resistances[indexPath.row].image : ImageLiteral.lockedHero)
+            cell.imageView.image = UIImage(named: resistances[indexPath.row].image)
             cell.labelView.text = resistances[indexPath.row].heroName
+            cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapHeroCell(_:))))
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeroListCell.identifier, for: indexPath) as! HeroListCell
-            cell.imageView.image = UIImage(named: warriors[indexPath.row].isCollected ? warriors[indexPath.row].image : ImageLiteral.lockedHero)
+            cell.imageView.image = UIImage(named: warriors[indexPath.row].image)
             cell.labelView.text = warriors[indexPath.row].heroName
+            cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapHeroCell(_:))))
             return cell
         }
     }
@@ -171,5 +173,11 @@ extension HeroListViewController: UICollectionViewDataSource, UICollectionViewDe
             return UIEdgeInsets(top: 20, left: 0, bottom: 30, right: 0)
         }
         return UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30)
+    }
+
+    @objc func tapHeroCell(_ sender: UITapGestureRecognizer) {
+        let popupVC = HeroDetailViewController()
+        popupVC.modalPresentationStyle = .overFullScreen
+        present(popupVC, animated: false, completion: nil)
     }
 }
