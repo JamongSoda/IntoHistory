@@ -208,4 +208,17 @@ class CoreDataManager {
         }
     }
     
+    func updatePinIsVisited(pin: NSManagedObject) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        pin.setValue(true, forKey: "isVisited")
+        
+        do {
+            try context.save()
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
 }
