@@ -198,7 +198,7 @@ class MainViewController: UIViewController {
     }
 
     @objc func tapHeroButton(_ sender: UITapGestureRecognizer) {
-        let vc = ViewController()
+        let vc = HeroListViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
     
