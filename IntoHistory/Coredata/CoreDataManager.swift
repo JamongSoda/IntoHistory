@@ -194,4 +194,18 @@ class CoreDataManager {
             print(error.localizedDescription)
         }
     }
+    
+    func updateCourseIsClear(course: NSManagedObject) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        course.setValue(true, forKey: "isClear")
+        
+        do {
+            try context.save()
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
 }
