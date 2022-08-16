@@ -198,7 +198,7 @@ class MainViewController: UIViewController {
     }
 
     @objc func tapHeroButton(_ sender: UITapGestureRecognizer) {
-        let vc = ViewController()
+        let vc = HeroListViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -209,7 +209,7 @@ class MainViewController: UIViewController {
             for cntPin in 0..<loadCourseJSON[cntCourse].course_pins.count {
                 savePinData(pinData: loadCourseJSON[cntCourse].course_pins[cntPin])
             }
-            saveHeroData(heroData: loadCourseJSON[cntCourse].related_person!)
+            saveHeroData(heroData: loadCourseJSON[cntCourse].related_person)
         }
     }
     
