@@ -17,12 +17,12 @@ extension CourseEntity {
     }
 
     @NSManaged public var cid: Int16
-    @NSManaged public var courseDescription: String?
-    @NSManaged public var courseName: String?
+    @NSManaged public var courseDescription: String
+    @NSManaged public var courseName: String
     @NSManaged public var isClear: Bool
-    @NSManaged public var region: String?
-    @NSManaged public var time: String?
-    @NSManaged public var transportation: String?
+    @NSManaged public var region: String
+    @NSManaged public var time: String
+    @NSManaged public var transportation: String
     @NSManaged public var coureseToPin: NSOrderedSet?
     @NSManaged public var courseToHero: HeroEntity?
 
