@@ -39,12 +39,12 @@ class MainViewController: UIViewController {
         return $0
     }(UIImageView())
 
-    // TODO: - 추후에 날짜별로 라벨 텍스트가 바뀌도록 하는 로직 구현 예정
     private lazy var blackboardLabel: UILabel = {
         $0.numberOfLines = 0
         $0.text = ""
         $0.textColor = .white
-        $0.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        $0.textAlignment = .center
+        $0.font = UIFont.systemFont(ofSize: 25, weight: .bold)
         return $0
     }(UILabel())
 
@@ -81,6 +81,8 @@ class MainViewController: UIViewController {
         }
         loadJSONData()
         
+        changeBlackBoardLabelText()
+
         attribute()
         layout()
     }
@@ -145,6 +147,12 @@ class MainViewController: UIViewController {
         contentView.addSubview(blackboardLabel)
         blackboardLabel.centerX(inView: blackboardImage)
         blackboardLabel.centerY(inView: blackboardImage)
+        blackboardLabel.anchor(
+            left: blackboardImage.leftAnchor,
+            right: blackboardImage.rightAnchor,
+            paddingLeft: 16,
+            paddingRight: 16
+        )
 
         contentView.addSubview(buttonAreaBackground)
         buttonAreaBackground.anchor(
