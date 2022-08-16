@@ -8,6 +8,7 @@
 import Foundation
 import CoreLocation
 import UserNotifications
+import UIKit
 
 class LocationService: NSObject {
     
@@ -69,24 +70,44 @@ class LocationService: NSObject {
         }
     }
     
-    func loadCourseData() {
-        for i in 0..<courseData.count {
-            let pinx = courseData[i]?.map{ $0.pin_x }
-            let piny = courseData[i]?.map{ $0.pin_y }
-            
-            let countx = pinx?.count ?? 0
-            
-            for j in 0..<countx{
-                let tempx = pinx?[j] ?? 0.0
-                let tempy = piny?[j] ?? 0.0
-                
-                arr.append((tempx, tempy))
-            }
-        }
-    }
-    
+//    func loadCourseData() {
+//        for i in 0..<courseData.count {
+//            let pinx = courseData[i].map{ $0.pin_x }
+//            let piny = courseData[i].map{ $0.pin_y }
+//
+//            let countx = pinx.count
+//
+//            for j in 0..<countx{
+//                let tempx = pinx[j] ?? 0.0
+//                let tempy = piny[j] ?? 0.0
+//
+//                arr.append((tempx, tempy))
+//            }
+//        }
+//    }
+
+    // MARK: - load json
+
+    private func loadJSONData() {
+          let appDelegate = UIApplication.shared.delegate as! AppDelegate
+          let context = appDelegate.persistentContainer.viewContext
+
+          do {
+              let course = try context.fetch(CourseEntity.fetchRequest()) as! [CourseEntity]
+              let pin = try context.fetch(PinEntity.fetchRequest()) as! [PinEntity]
+              let hero = try context.fetch(HeroEntity.fetchRequest()) as! [HeroEntity]
+
+              pin.forEach {
+                  arr.append(($0.lat,$0.lng))
+              }
+
+          } catch {
+              print(error.localizedDescription)
+          }
+      }
+
     func makenogifitation() {
-        self.loadCourseData()
+        self.loadJSONData()
         for i in 0..<arr.count {
             let lat = arr[i].0
             let long = arr[i].1
@@ -96,6 +117,7 @@ class LocationService: NSObject {
 }
 
 extension LocationService: CLLocationManagerDelegate {
+
     func requestAlwaysLocation() {
         switch locationManager.authorizationStatus {
             //authorizationStatus : 앱이 위치서비스를 사용할 권한이 있는지 여부를 나타내는 값
@@ -122,15 +144,23 @@ extension LocationService: CLLocationManagerDelegate {
         // delegate에게 해당 지역의 상태를 알려주는 메소드
         switch state {
         case .inside:
-            print("들어옴")
-            fireNotification("영웅의 길 정.복.완.료😎",body: "방문완료!")
+            print("들어옴\(region)")
+            fireNotification("영웅의 길 정.복.완.료😎",body: "방문완료!\(region)")
         case .outside:
-            print("나감")
-            //            fireNotification("나감",body: "인녕히 가세요")
+            let a = 1
+//            print("\(region)나감")
+//                        fireNotification("나감",body: "인녕히 가세요")
         case .unknown: break
         }
         // 해당 지역에 들어오고 나가면 프린트로 찍힘
         
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            print("위도: \(location.coordinate.latitude)")
+            print("경도: \(location.coordinate.longitude)")
+        }
     }
     
 }
