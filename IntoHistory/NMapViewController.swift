@@ -140,7 +140,7 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
             
             // MARK: - 마커 위치
             
-            marker.position = NMGLatLng(
+            markers[pinNum].position = NMGLatLng(
                 lat: courseJSONLoader[1].course_pins[pinNum].pin_x,
                 lng: courseJSONLoader[1].course_pins[pinNum].pin_y
             )
