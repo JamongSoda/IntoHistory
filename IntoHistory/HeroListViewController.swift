@@ -6,23 +6,14 @@
 //
 
 import UIKit
-
-struct ResistanceData {
-    let images = ["LockedHero.png", "LockedHero.png", "LockedHero.png", "LockedHero.png"]
-    let names = ["미뉴", "에디", "브라운", "노엘"]
-}
-
-struct WarriorData {
-    let images = ["LockedHero.png", "LockedHero.png", "LockedHero.png", "LockedHero.png"]
-    let names = ["메뉴", "에디에디가", "보라온", "갓노엘"]
-}
+import CoreData
 
 class HeroListViewController: UIViewController {
     
     // MARK: - Property
     
-    let resistanceData = ResistanceData()
-    let warriorData = WarriorData()
+    var resistances = [HeroEntity]()
+    var warriors = [HeroEntity]()
     
     // MARK: - View
     
@@ -35,6 +26,7 @@ class HeroListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadHeroList()
         
         attribute()
         layout()
@@ -54,7 +46,7 @@ class HeroListViewController: UIViewController {
         collectionView.anchor(
             top: view.safeAreaLayoutGuide.topAnchor,
             left: view.safeAreaLayoutGuide.leftAnchor,
-            bottom: view.safeAreaLayoutGuide.bottomAnchor,
+            bottom: view.bottomAnchor,
             right: view.safeAreaLayoutGuide.rightAnchor,
             paddingTop: 0,
             paddingLeft: 0,
@@ -65,6 +57,7 @@ class HeroListViewController: UIViewController {
     
     private func setupNavigationTitle() {
         navigationController?.navigationBar.topItem?.title = "호국 선열"
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
     
     private func setupCollectionView() {
@@ -74,16 +67,36 @@ class HeroListViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
     }
+    
+    private func loadHeroList() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        do {
+            let hero = try context.fetch(HeroEntity.fetchRequest()) as! [HeroEntity]
+            
+            hero.forEach {
+                if $0.type == "독립운동" {
+                    resistances.append($0)
+                } else {
+                    warriors.append($0)
+                }
+            }
+            
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
 }
 
 extension HeroListViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 1 {
-            return resistanceData.images.count
+            return resistances.count
         }
         if section == 2 {
-            return warriorData.images.count
+            return warriors.count
         }
         return 1
     }
@@ -94,13 +107,15 @@ extension HeroListViewController: UICollectionViewDataSource, UICollectionViewDe
             return cell
         } else if indexPath.section == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeroListCell.identifier, for: indexPath) as! HeroListCell
-            cell.imageView.image = UIImage(named: resistanceData.images[indexPath.row])
-            cell.labelView.text = resistanceData.names[indexPath.row]
+            cell.imageView.image = UIImage(named: resistances[indexPath.row].image)
+            cell.labelView.text = resistances[indexPath.row].heroName
+            cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapHeroCell(_:))))
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeroListCell.identifier, for: indexPath) as! HeroListCell
-            cell.imageView.image = UIImage(named: warriorData.images[indexPath.row])
-            cell.labelView.text = warriorData.names[indexPath.row]
+            cell.imageView.image = UIImage(named: warriors[indexPath.row].image)
+            cell.labelView.text = warriors[indexPath.row].heroName
+            cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapHeroCell(_:))))
             return cell
         }
     }
@@ -126,7 +141,7 @@ extension HeroListViewController: UICollectionViewDataSource, UICollectionViewDe
         if section == 0 {
             return 0
         }
-        return 30
+        return 15
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -158,5 +173,11 @@ extension HeroListViewController: UICollectionViewDataSource, UICollectionViewDe
             return UIEdgeInsets(top: 20, left: 0, bottom: 30, right: 0)
         }
         return UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30)
+    }
+
+    @objc func tapHeroCell(_ sender: UITapGestureRecognizer) {
+        let popupVC = HeroDetailViewController()
+        popupVC.modalPresentationStyle = .overFullScreen
+        present(popupVC, animated: false, completion: nil)
     }
 }

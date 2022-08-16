@@ -8,6 +8,7 @@
 import Foundation
 
 enum ImageLiteral {
+    
     // TODO: 선택된 마커(핀) -> 방문 시 visitedPinOne
     static var pinOne = "SelectedNo1"
     static var pinTwo = "SelectedNo2"
@@ -36,11 +37,16 @@ enum ImageLiteral {
     static var markerEleven = "NormalNo11"
     static var markerTwelve = "NormalNo12"
     
-    // MARK: CourseListView Image Set
+    // MARK: - CourseListView Image Set
+    
     static var resistanceCourse = "CourseResistances"
     static var warriorCourse = "CourseWarriors"
     static var courseCellLine = "Line"
     static var courseCellPin = "Pin"
     static var courseCellRoute = "Route"
     static var courseCellTime = "Time"
+    
+    // MARK: - HeroList LockedHero Image
+    
+    static var lockedHero = "LockedHero"
 }
