@@ -13,6 +13,7 @@ import UIKit
 class CoreDataManager {
     
     @Published var courses = [CourseEntity]()
+    @Published var pins = [PinEntity]()
     let loadCourseJSON = LoadingCourseJSON().courses
     
     func saveJSONData() {
@@ -105,6 +106,21 @@ class CoreDataManager {
             
             course.forEach {
                 courses.append($0)
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func loadPinData() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        do {
+            let pin = try context.fetch(PinEntity.fetchRequest()) as! [PinEntity]
+            
+            pin.forEach {
+                pins.append($0)
             }
         } catch {
             print(error.localizedDescription)
