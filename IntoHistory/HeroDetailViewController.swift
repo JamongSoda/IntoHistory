@@ -13,6 +13,8 @@ class HeroDetailViewController: UIViewController {
     
     let identifier = "HeroDetailViewController"
     
+    var heroArray: HeroEntity?
+    
     // MARK: - View
     
     private let popupShape: UIView = {
@@ -61,10 +63,12 @@ class HeroDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        coreDataManager.loadOneHeroData()
-        heroImage.image = UIImage(named: coreDataManager.oneHero.image)
-        heroName.text = coreDataManager.oneHero.heroName
-        heroDescription.text = coreDataManager.oneHero.heroDescription
+        
+        guard let heroArray = self.heroArray else { return }
+        self.heroImage.image = UIImage(named: heroArray.image)
+        self.heroName.text = heroArray.heroName
+        self.heroDescription.text = heroArray.heroDescription
+
 
         attribute()
         layout()

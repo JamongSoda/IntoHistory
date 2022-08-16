@@ -21,7 +21,6 @@ class HeroListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         attribute()
         layout()
     }
@@ -86,22 +85,12 @@ extension HeroListViewController: UICollectionViewDataSource, UICollectionViewDe
             cell.imageView.image = UIImage(named: coreDataManager.resistances[indexPath.row].isCollected ? coreDataManager.resistances[indexPath.row].image : ImageLiteral.lockedHero)
             cell.labelView.text = coreDataManager.resistances[indexPath.row].isCollected ? coreDataManager.resistances[indexPath.row].heroName : "대한민국의 영웅"
             
-            if coreDataManager.resistances[indexPath.row].isCollected {
-                coreDataManager.heroID = Int(coreDataManager.resistances[indexPath.row].hid)
-                cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapHeroCell(_:))))
-            }
-            
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeroListCell.identifier, for: indexPath) as! HeroListCell
             
             cell.imageView.image = UIImage(named: coreDataManager.warriors[indexPath.row].isCollected ? coreDataManager.warriors[indexPath.row].image : ImageLiteral.lockedHero)
             cell.labelView.text = coreDataManager.warriors[indexPath.row].isCollected ? coreDataManager.warriors[indexPath.row].heroName : "대한민국의 영웅"
-            
-            if coreDataManager.warriors[indexPath.row].isCollected {
-                coreDataManager.heroID = Int(coreDataManager.warriors[indexPath.row].hid)
-                cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapHeroCell(_:))))
-            }
             
             return cell
         }
@@ -161,10 +150,24 @@ extension HeroListViewController: UICollectionViewDataSource, UICollectionViewDe
         }
         return UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30)
     }
-
-    @objc func tapHeroCell(_ sender: UITapGestureRecognizer) {
-        let popupVC = HeroDetailViewController()
-        popupVC.modalPresentationStyle = .overFullScreen
-        present(popupVC, animated: false, completion: nil)
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section == 1 {
+            if coreDataManager.resistances[indexPath.row].isCollected {
+                let heroArray = coreDataManager.resistances[indexPath.row]
+                let popupVC = HeroDetailViewController()
+                popupVC.heroArray = heroArray
+                popupVC.modalPresentationStyle = .overFullScreen
+                present(popupVC, animated: false, completion: nil)
+            }
+        } else if indexPath.section == 2 {
+            if coreDataManager.warriors[indexPath.row].isCollected {
+                let heroArray = coreDataManager.warriors[indexPath.row]
+                let popupVC = HeroDetailViewController()
+                popupVC.heroArray = heroArray
+                popupVC.modalPresentationStyle = .overFullScreen
+                present(popupVC, animated: false, completion: nil)
+            }
+        }
     }
 }
