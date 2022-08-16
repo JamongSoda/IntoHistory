@@ -25,7 +25,7 @@ class LocationService: NSObject {
     
     func registLocation(lat: Double , long: Double) {
         let location = CLLocationCoordinate2D(latitude: lat, longitude: long)
-        let region = CLCircularRegion(center: location, radius: 100.0, identifier: "id")
+        let region = CLCircularRegion(center: location, radius: 100.0, identifier: "id\(location)")
         region.notifyOnExit = true
         region.notifyOnExit = true
 
