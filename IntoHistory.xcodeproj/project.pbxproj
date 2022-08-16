@@ -30,7 +30,6 @@
 		7B2C3E0928A3D8FA00BF197D /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2C3E0828A3D8FA00BF197D /* Color+Extension.swift */; };
 		7B2C3E0B28A3DDD300BF197D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2C3E0A28A3DDD300BF197D /* MainViewController.swift */; };
 		7B32F65628A6758E00F4CB48 /* MainViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B32F65528A6758E00F4CB48 /* MainViewButton.swift */; };
-		7B6EB52428AB781700AB3CDC /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6EB52328AB781700AB3CDC /* DataViewController.swift */; };
 		9828EC8C28A600DF00D0D82E /* CourseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9828EC8628A600DF00D0D82E /* CourseData.swift */; };
 		9828EC8D28A600DF00D0D82E /* LoadingCourseJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9828EC8728A600DF00D0D82E /* LoadingCourseJSON.swift */; };
 		9828EC9628A667AA00D0D82E /* ImageLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9828EC9528A667AA00D0D82E /* ImageLiteral.swift */; };
@@ -72,7 +71,6 @@
 		7B2C3E0828A3D8FA00BF197D /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		7B2C3E0A28A3DDD300BF197D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7B32F65528A6758E00F4CB48 /* MainViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewButton.swift; sourceTree = "<group>"; };
-		7B6EB52328AB781700AB3CDC /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
 		9828EC8628A600DF00D0D82E /* CourseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseData.swift; sourceTree = "<group>"; };
 		9828EC8728A600DF00D0D82E /* LoadingCourseJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingCourseJSON.swift; sourceTree = "<group>"; };
 		9828EC8A28A600DF00D0D82E /* course_json.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = course_json.json; sourceTree = "<group>"; };
@@ -182,7 +180,6 @@
 		7B32F65128A674A600F4CB48 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
-				7B6EB52328AB781700AB3CDC /* DataViewController.swift */,
 				7B2C3E0A28A3DDD300BF197D /* MainViewController.swift */,
 				7B32F65428A6750800F4CB48 /* support Views */,
 			);
@@ -375,7 +372,6 @@
 				9877CF1B28A9206F00CC2D5B /* DetailCourseCell.swift in Sources */,
 				7B2C3E0628A3D85900BF197D /* AutoLayout+Extension.swift in Sources */,
 				7B32F65628A6758E00F4CB48 /* MainViewButton.swift in Sources */,
-				7B6EB52428AB781700AB3CDC /* DataViewController.swift in Sources */,
 				260F9996289D1B460010E258 /* ViewController.swift in Sources */,
 				9877CF1928A9205400CC2D5B /* DetailCourseViewController.swift in Sources */,
 				9847904C28A96D8500FC5995 /* CourseListUIComponents.swift in Sources */,

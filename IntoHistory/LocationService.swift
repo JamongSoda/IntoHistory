@@ -83,7 +83,7 @@ class LocationService: NSObject {
           }
       }
 
-    func makenogifitation() {
+    func makeNotification() {
         self.loadJSONData()
         for i in 0..<arr.count {
             let lat = arr[i].0
@@ -130,7 +130,7 @@ extension LocationService: CLLocationManagerDelegate {
         case .authorizedWhenInUse:
             locationManager.requestAlwaysAuthorization()
         case .authorizedAlways:
-            makenogifitation()
+            makeNotification()
         default:
             print("유효한 지역이 아님")
         }
