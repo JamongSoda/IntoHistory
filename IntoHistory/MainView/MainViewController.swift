@@ -331,7 +331,7 @@ class MainViewController: UIViewController {
         // 공휴일에있으면= 특정문구, 평소 = 역사정보, notification = noti 내용
         let currentDate = checkDate()
         if Holiday(rawValue: currentDate) == nil {
-            blackboardLabel.text = "안어ㅣㅏㅓㄴㅁ아ㅓ리만어"
+            blackboardLabel.text = historyInfoArray.randomElement()
         } else {
             let type = Holiday(rawValue: currentDate)
             blackboardLabel.text = type!.boardContent

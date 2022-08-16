@@ -5,6 +5,12 @@
 //  Created by LeeJiSoo on 2022/08/17.
 //
 
+let historyInfoArray = ["419혁명은 1960년 3월 부정선거로 일어난 사건이에요. 꼭 기억해주세요!",
+                        "백범김구선생님은 ~~~",
+                        "'의사'와 '열사'의 차이를 아시나요?",
+                        "안중근의사는 ~~ ",
+                        "유관순 열사는 !~"]
+
 enum Holiday: String {
     case samiljeol = "0301" // 31절
     case hyukmeong419 = "0419" // 419혁명
@@ -13,7 +19,7 @@ enum Holiday: String {
     case minju610 = "0610" // 610민주화운동
     case koreawar = "0625" // 625
     case jaehunjul = "0717" // 제헌절
-    case gwangbokjul = "0816" // 광복절
+    case gwangbokjul = "0815" // 광복절
     case militarynal = "1001" // 국군의날
     case gaechunjul = "1003"  // 개천절
     case hanguelnal = "1009"  // 한글날
