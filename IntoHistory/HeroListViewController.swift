@@ -10,11 +10,6 @@ import CoreData
 
 class HeroListViewController: UIViewController {
     
-    // MARK: - Property
-    
-    var resistances = [HeroEntity]()
-    var warriors = [HeroEntity]()
-    
     // MARK: - View
     
     let collectionView: UICollectionView = {
@@ -66,26 +61,6 @@ class HeroListViewController: UIViewController {
         collectionView.register(CollectionViewHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CollectionViewHeader.identifier)
         collectionView.delegate = self
         collectionView.dataSource = self
-    }
-    
-    private func loadHeroList() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        
-        do {
-            let hero = try context.fetch(HeroEntity.fetchRequest()) as! [HeroEntity]
-            
-            hero.forEach {
-                if $0.type == "독립운동" {
-                    resistances.append($0)
-                } else {
-                    warriors.append($0)
-                }
-            }
-            
-        } catch {
-            print(error.localizedDescription)
-        }
     }
 }
 
