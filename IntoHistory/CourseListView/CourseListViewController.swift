@@ -6,13 +6,16 @@
 //
 
 import UIKit
+import CoreData
+import SwiftUI
 
 class CourseListViewController: UIViewController {
 
     // MARK: - Property
 
-    private let courseJSONLoader = LoadingCourseJSON().courses
-
+    var courseEntity = [CourseEntity]()
+    var heroEntity = [HeroEntity]()
+    
     // MARK: - View
     
     let collectionView: UICollectionView = {
@@ -28,6 +31,7 @@ class CourseListViewController: UIViewController {
         navigationController?.navigationBar.topItem?.title = "역사 탐방"
         view.backgroundColor = .basicBackground
         setCollectionView()
+        loadCourseData()
 
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -53,22 +57,25 @@ class CourseListViewController: UIViewController {
 extension CourseListViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return courseJSONLoader.count
+        return courseEntity.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CourseListCell.identifier, for: indexPath) as! CourseListCell
 
-        if courseJSONLoader[indexPath.row].type == "독립운동" {
+        if heroEntity[indexPath.row].type == "독립운동" {
             cell.heroCourseImage.image = UIImage(named: ImageLiteral.resistanceCourse)
 
         } else {
             cell.heroCourseImage.image = UIImage(named: ImageLiteral.warriorCourse)
         }
-        cell.uiComponent.courseListTitle.text = courseJSONLoader[indexPath.row].title
-        cell.uiComponent.courseListRegionText.text = courseJSONLoader[indexPath.row].region
-        cell.uiComponent.courseListTimeText.text = courseJSONLoader[indexPath.row].time
-        cell.uiComponent.courseListRouteText.text = courseJSONLoader[indexPath.row].transportation
+        cell.uiComponent.courseListTitle.text = courseEntity[indexPath.row].courseName
+        cell.uiComponent.courseListRegionText.text = courseEntity[indexPath.row].region
+        cell.uiComponent.courseListTimeText.text = courseEntity[indexPath.row].time
+        cell.uiComponent.courseListRouteText.text = courseEntity[indexPath.row].transportation
+        
+        cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapCourseListCell(_:))))
+//        cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(changedText(_:))))
         return cell
     }
     
@@ -84,5 +91,33 @@ extension CourseListViewController: UICollectionViewDelegate, UICollectionViewDa
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
+    }
+    
+    @objc func tapCourseListCell(_ sender: UITapGestureRecognizer) {
+        let detailCourseVC = DetailCourseViewController()
+        navigationController?.pushViewController(detailCourseVC, animated: true)
+    }
+    
+//    @objc func changedText(_ sender: UITapGestureRecognizer) {
+//
+//    }
+    
+    private func loadCourseData() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        do {
+            let course = try context.fetch(CourseEntity.fetchRequest()) as! [CourseEntity]
+            let hero = try context.fetch(HeroEntity.fetchRequest()) as! [HeroEntity]
+            course.forEach {
+                courseEntity.append($0)
+            }
+            hero.forEach{
+                heroEntity.append($0)
+            }
+            
+        } catch {
+            print("error")
+        }
     }
 }
