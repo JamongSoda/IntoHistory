@@ -67,7 +67,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         if !hitResults.isEmpty {
             let node = hitResults[0].node
 
-            // TODO: - 화면 전환 코드
+            // TODO: - 미뉴가 만든 팝업 present + 밑에 버튼 놔야할듯? ("돌아가기")이런거,,
             self.presentingViewController?.dismiss(animated: true, completion: nil)
         }
     }
