@@ -11,6 +11,8 @@ import UIKit
 
 
 class CoreDataManager {
+    
+    @Published var courses = [CourseEntity]()
     let loadCourseJSON = LoadingCourseJSON().courses
     
     func saveJSONData() {
@@ -94,4 +96,19 @@ class CoreDataManager {
         }
     }
 
+    func loadCourseData() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        do {
+            let course = try context.fetch(CourseEntity.fetchRequest()) as! [CourseEntity]
+            
+            course.forEach {
+                courses.append($0)
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
 }
