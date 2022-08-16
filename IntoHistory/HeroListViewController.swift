@@ -139,7 +139,7 @@ extension HeroListViewController: UICollectionViewDataSource, UICollectionViewDe
         if section == 0 {
             return 0
         }
-        return 30
+        return 15
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
