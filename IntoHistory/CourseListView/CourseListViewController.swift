@@ -75,7 +75,6 @@ extension CourseListViewController: UICollectionViewDelegate, UICollectionViewDa
         cell.uiComponent.courseListRouteText.text = courseEntity[indexPath.row].transportation
         
         cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapCourseListCell(_:))))
-//        cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(changedText(_:))))
         return cell
     }
     
@@ -97,10 +96,6 @@ extension CourseListViewController: UICollectionViewDelegate, UICollectionViewDa
         let detailCourseVC = DetailCourseViewController()
         navigationController?.pushViewController(detailCourseVC, animated: true)
     }
-    
-//    @objc func changedText(_ sender: UITapGestureRecognizer) {
-//
-//    }
     
     private func loadCourseData() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
