@@ -21,7 +21,6 @@ class HeroListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        coreDataManager.loadHeroData()
         
         attribute()
         layout()
@@ -31,6 +30,7 @@ class HeroListViewController: UIViewController {
     
     private func attribute() {
         view.backgroundColor = .basicBackground
+        
         setupNavigationTitle()
         setupCollectionView()
     }
@@ -82,7 +82,6 @@ extension HeroListViewController: UICollectionViewDataSource, UICollectionViewDe
             return cell
         } else if indexPath.section == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeroListCell.identifier, for: indexPath) as! HeroListCell
-            
             
             cell.imageView.image = UIImage(named: coreDataManager.resistances[indexPath.row].isCollected ? coreDataManager.resistances[indexPath.row].image : ImageLiteral.lockedHero)
             cell.labelView.text = coreDataManager.resistances[indexPath.row].isCollected ? coreDataManager.resistances[indexPath.row].heroName : "대한민국의 영웅"
