@@ -8,7 +8,6 @@ import CoreLocation
 import UIKit
 
 import NMapsMap
-//import SwiftUI
 	
 class NMapViewController: UIViewController, CLLocationManagerDelegate {
 
