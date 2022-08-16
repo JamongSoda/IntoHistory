@@ -111,7 +111,10 @@ extension HeroListViewController: UICollectionViewDataSource, UICollectionViewDe
             cell.imageView.image = UIImage(named: resistances[indexPath.row].isCollected ? resistances[indexPath.row].image : ImageLiteral.lockedHero)
             cell.labelView.text = resistances[indexPath.row].isCollected ? resistances[indexPath.row].heroName : "대한민국의 영웅"
             
-            cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapHeroCell(_:))))
+            if resistances[indexPath.row].isCollected {
+                cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapHeroCell(_:))))
+            }
+            
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeroListCell.identifier, for: indexPath) as! HeroListCell
@@ -119,7 +122,10 @@ extension HeroListViewController: UICollectionViewDataSource, UICollectionViewDe
             cell.imageView.image = UIImage(named: warriors[indexPath.row].isCollected ? warriors[indexPath.row].image : ImageLiteral.lockedHero)
             cell.labelView.text = warriors[indexPath.row].isCollected ? warriors[indexPath.row].heroName : "대한민국의 영웅"
             
-            cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapHeroCell(_:))))
+            if warriors[indexPath.row].isCollected {
+                cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapHeroCell(_:))))
+            }
+            
             return cell
         }
     }
