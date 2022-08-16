@@ -152,9 +152,9 @@ extension HeroListViewController: UICollectionViewDataSource, UICollectionViewDe
         if kind == UICollectionView.elementKindSectionHeader {
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CollectionViewHeader.identifier, for: indexPath) as! CollectionViewHeader
             if indexPath.section == 1 {
-                header.labelView.text = "순국 선열"
+                header.labelView.text = "독립운동가"
             } else {
-                header.labelView.text = "호국영령"
+                header.labelView.text = "전쟁영웅"
             }
             return header
         }
