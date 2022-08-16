@@ -21,7 +21,11 @@ class CoreDataManager {
     @Published var resistances = [HeroEntity]()
     @Published var warriors = [HeroEntity]()
     
+    @Published var oneHero = HeroEntity()
+    
     @Published var courseID = 0
+    @Published var heroID = 0
+    
     let loadCourseJSON = LoadingCourseJSON().courses
     
     func saveJSONData() {
@@ -172,4 +176,21 @@ class CoreDataManager {
         }
     }
     
+    func loadOneHeroData() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        do {
+            let hero = try context.fetch(HeroEntity.fetchRequest()) as! [HeroEntity]
+            
+            hero.forEach {
+                if $0.hid == heroID {
+                    oneHero = $0
+                    print("Hid: \($0.hid) heroID: \(heroID)")
+                }
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
 }
