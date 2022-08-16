@@ -58,4 +58,28 @@ class CoreDataManager {
             }
         }
     }
+    
+    func saveHeroData(heroData: RelatedPerson) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let heroEntity = NSEntityDescription.entity(forEntityName: "HeroEntity", in: context)
+        
+        if let heroEntity = heroEntity {
+            let hero = NSManagedObject(entity: heroEntity, insertInto: context)
+            hero.setValue(heroData.person_id, forKey: "hid")
+            hero.setValue(heroData.person_name, forKey: "heroName")
+            hero.setValue(heroData.person_image, forKey: "image")
+            hero.setValue(heroData.person_type, forKey: "type")
+            hero.setValue(heroData.person_description, forKey: "heroDescription")
+            hero.setValue(false, forKey: "isCollected")
+            
+            do {
+                try context.save()
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
+
 }
