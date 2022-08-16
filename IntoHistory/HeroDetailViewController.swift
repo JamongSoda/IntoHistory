@@ -127,12 +127,3 @@ class HeroDetailViewController: UIViewController {
         self.dismiss(animated: false, completion: nil)
     }
 }
-
-#if canImport(SwiftUI) && DEBUG
-import SwiftUI
-
-struct HeroDetailViewController_Preview: PreviewProvider {
-    static var previews: some View {
-        HeroDetailViewController().showPreview(.iPhone13)
-    }
-}
