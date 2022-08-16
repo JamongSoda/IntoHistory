@@ -15,8 +15,13 @@ class HeroListCell: UICollectionViewCell {
     
     // MARK: - View
     
+    let vStack: UIStackView = {
+        $0.axis = .vertical
+        return $0
+    }(UIStackView())
+    
     let imageView: UIImageView = {
-        $0.contentMode = .scaleAspectFit
+        $0.contentMode = .scaleAspectFill
         return $0
     }(UIImageView())
 
@@ -41,27 +46,30 @@ class HeroListCell: UICollectionViewCell {
     // MARK: - Method
 
     private func setupCell() {
-        addSubview(imageView)
-        addSubview(labelView)
+        addSubview(vStack)
+        vStack.addArrangedSubview(imageView)
+        vStack.addArrangedSubview(labelView)
         
-        imageView.anchor(
+        vStack.anchor(
             top: topAnchor,
-            left: leftAnchor,
-            bottom: labelView.topAnchor,
-            right: rightAnchor,
-            paddingTop: 0,
-            paddingLeft: 0,
-            paddingBottom: 10,
-            paddingRight: 0
-        )
-        
-        labelView.anchor(
             left: leftAnchor,
             bottom: bottomAnchor,
             right: rightAnchor,
-            paddingLeft: 0,
-            paddingBottom: 0,
-            paddingRight: 0
+            height: (UIScreen.main.bounds.width - 90) / 2 + 30
+        )
+        
+        imageView.anchor(
+            top: vStack.topAnchor,
+            left: vStack.leftAnchor,
+            bottom: labelView.topAnchor,
+            right: vStack.rightAnchor,
+            paddingBottom: 10
+        )
+        
+        labelView.anchor(
+            left: vStack.leftAnchor,
+            bottom: vStack.bottomAnchor,
+            right: vStack.rightAnchor
         )
     }
 }

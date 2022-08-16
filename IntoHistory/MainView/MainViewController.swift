@@ -198,7 +198,7 @@ class MainViewController: UIViewController {
     }
 
     @objc func tapHeroButton(_ sender: UITapGestureRecognizer) {
-        let vc = ViewController()
+        let vc = HeroListViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -209,7 +209,7 @@ class MainViewController: UIViewController {
             for cntPin in 0..<loadCourseJSON[cntCourse].course_pins.count {
                 savePinData(pinData: loadCourseJSON[cntCourse].course_pins[cntPin])
             }
-            saveHeroData(heroData: loadCourseJSON[cntCourse].related_person!)
+            saveHeroData(heroData: loadCourseJSON[cntCourse].related_person)
         }
     }
     
@@ -247,7 +247,7 @@ class MainViewController: UIViewController {
             let pin = NSManagedObject(entity: pinEntity, insertInto: context)
             pin.setValue(pinData.pin_id, forKey: "pid")
             pin.setValue(pinData.pin_title, forKey: "pinName")
-            pin.setValue("임시 주소", forKey: "address")
+            pin.setValue(pinData.pin_address, forKey: "address")
             pin.setValue(pinData.pin_x, forKey: "lat")
             pin.setValue(pinData.pin_y, forKey: "lng")
             pin.setValue(false, forKey: "isVisited")
@@ -270,7 +270,7 @@ class MainViewController: UIViewController {
             let hero = NSManagedObject(entity: heroEntity, insertInto: context)
             hero.setValue(heroData.person_id, forKey: "hid")
             hero.setValue(heroData.person_name, forKey: "heroName")
-            hero.setValue("NoImageHero.png", forKey: "image")
+            hero.setValue(heroData.person_image, forKey: "image")
             hero.setValue(heroData.person_type, forKey: "type")
             hero.setValue(heroData.person_description, forKey: "heroDescription")
             hero.setValue(false, forKey: "isCollected")

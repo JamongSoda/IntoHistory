@@ -16,12 +16,12 @@ extension PinEntity {
         return NSFetchRequest<PinEntity>(entityName: "PinEntity")
     }
 
-    @NSManaged public var address: String?
+    @NSManaged public var address: String
     @NSManaged public var isVisited: Bool
     @NSManaged public var lat: Double
     @NSManaged public var lng: Double
     @NSManaged public var pid: Int16
-    @NSManaged public var pinName: String?
+    @NSManaged public var pinName: String
     @NSManaged public var pinToCourse: CourseEntity?
 
 }

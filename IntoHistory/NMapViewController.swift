@@ -29,8 +29,8 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
         // 지정 좌표로 시작 화면 띄우기
         let cameraUpdate = NMFCameraUpdate (
             scrollTo: NMGLatLng(
-                lat: courseJSONLoader[1].course_pins[0].pin_x!,
-                lng: courseJSONLoader[1].course_pins[0].pin_y!
+                lat: courseJSONLoader[1].course_pins[0].pin_x,
+                lng: courseJSONLoader[1].course_pins[0].pin_y
             )
         )
         cameraUpdate.animation = .easeIn
