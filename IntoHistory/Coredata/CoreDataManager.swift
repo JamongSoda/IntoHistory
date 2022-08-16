@@ -35,4 +35,27 @@ class CoreDataManager {
             }
         }
     }
+    
+    func savePinData(pinData: CoursePins) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let pinEntity = NSEntityDescription.entity(forEntityName: "PinEntity", in: context)
+        
+        if let pinEntity = pinEntity {
+            let pin = NSManagedObject(entity: pinEntity, insertInto: context)
+            pin.setValue(pinData.pin_id, forKey: "pid")
+            pin.setValue(pinData.pin_title, forKey: "pinName")
+            pin.setValue(pinData.pin_address, forKey: "address")
+            pin.setValue(pinData.pin_x, forKey: "lat")
+            pin.setValue(pinData.pin_y, forKey: "lng")
+            pin.setValue(false, forKey: "isVisited")
+            
+            do {
+                try context.save()
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
 }
