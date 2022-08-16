@@ -21,7 +21,7 @@ class HeroListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadHeroList()
+        coreDataManager.loadHeroData()
         
         attribute()
         layout()
@@ -68,10 +68,10 @@ extension HeroListViewController: UICollectionViewDataSource, UICollectionViewDe
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 1 {
-            return resistances.count
+            return coreDataManager.resistances.count
         }
         if section == 2 {
-            return warriors.count
+            return coreDataManager.warriors.count
         }
         return 1
     }
@@ -83,10 +83,12 @@ extension HeroListViewController: UICollectionViewDataSource, UICollectionViewDe
         } else if indexPath.section == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeroListCell.identifier, for: indexPath) as! HeroListCell
             
-            cell.imageView.image = UIImage(named: resistances[indexPath.row].isCollected ? resistances[indexPath.row].image : ImageLiteral.lockedHero)
-            cell.labelView.text = resistances[indexPath.row].isCollected ? resistances[indexPath.row].heroName : "대한민국의 영웅"
             
-            if resistances[indexPath.row].isCollected {
+            cell.imageView.image = UIImage(named: coreDataManager.resistances[indexPath.row].isCollected ? coreDataManager.resistances[indexPath.row].image : ImageLiteral.lockedHero)
+            cell.labelView.text = coreDataManager.resistances[indexPath.row].isCollected ? coreDataManager.resistances[indexPath.row].heroName : "대한민국의 영웅"
+            
+            if coreDataManager.resistances[indexPath.row].isCollected {
+                coreDataManager.heroID = Int(coreDataManager.resistances[indexPath.row].hid)
                 cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapHeroCell(_:))))
             }
             
@@ -94,10 +96,11 @@ extension HeroListViewController: UICollectionViewDataSource, UICollectionViewDe
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeroListCell.identifier, for: indexPath) as! HeroListCell
             
-            cell.imageView.image = UIImage(named: warriors[indexPath.row].isCollected ? warriors[indexPath.row].image : ImageLiteral.lockedHero)
-            cell.labelView.text = warriors[indexPath.row].isCollected ? warriors[indexPath.row].heroName : "대한민국의 영웅"
+            cell.imageView.image = UIImage(named: coreDataManager.warriors[indexPath.row].isCollected ? coreDataManager.warriors[indexPath.row].image : ImageLiteral.lockedHero)
+            cell.labelView.text = coreDataManager.warriors[indexPath.row].isCollected ? coreDataManager.warriors[indexPath.row].heroName : "대한민국의 영웅"
             
-            if warriors[indexPath.row].isCollected {
+            if coreDataManager.warriors[indexPath.row].isCollected {
+                coreDataManager.heroID = Int(coreDataManager.warriors[indexPath.row].hid)
                 cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapHeroCell(_:))))
             }
             
