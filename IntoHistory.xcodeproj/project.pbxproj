@@ -10,7 +10,6 @@
 		260F9992289D1B460010E258 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260F9991289D1B460010E258 /* AppDelegate.swift */; };
 		260F9994289D1B460010E258 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260F9993289D1B460010E258 /* SceneDelegate.swift */; };
 		260F9996289D1B460010E258 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260F9995289D1B460010E258 /* ViewController.swift */; };
-		260F999C289D1B460010E258 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 260F999A289D1B460010E258 /* Model.xcdatamodeld */; };
 		260F999E289D1B470010E258 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 260F999D289D1B470010E258 /* Assets.xcassets */; };
 		260F99A1289D1B470010E258 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 260F999F289D1B470010E258 /* LaunchScreen.storyboard */; };
 		26272A3B28A9E65D0097B19E /* CourseEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26272A3528A9E65D0097B19E /* CourseEntity+CoreDataClass.swift */; };
@@ -19,6 +18,7 @@
 		26272A3E28A9E65D0097B19E /* HeroEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26272A3828A9E65D0097B19E /* HeroEntity+CoreDataProperties.swift */; };
 		26272A3F28A9E65D0097B19E /* PinEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26272A3928A9E65D0097B19E /* PinEntity+CoreDataClass.swift */; };
 		26272A4028A9E65D0097B19E /* PinEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26272A3A28A9E65D0097B19E /* PinEntity+CoreDataProperties.swift */; };
+		268A8D1028AADED80095A324 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 260F999A289D1B460010E258 /* Model.xcdatamodeld */; };
 		2694641428A65FD000485526 /* HeroListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694641328A65FD000485526 /* HeroListCell.swift */; };
 		2694641928A6973C00485526 /* HeroListDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694641828A6973C00485526 /* HeroListDescriptionCell.swift */; };
 		2694641B28A7577300485526 /* CollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694641A28A7577300485526 /* CollectionViewHeader.swift */; };
@@ -132,11 +132,11 @@
 				2694641A28A7577300485526 /* CollectionViewHeader.swift */,
 				2694641328A65FD000485526 /* HeroListCell.swift */,
 				2694641828A6973C00485526 /* HeroListDescriptionCell.swift */,
-				26272A3428A9E5850097B19E /* Coredata */,
 				26F01C4E28A3F57800D3FD88 /* HeroListViewController.swift */,
+				26AD066028A7B1A7008A4169 /* HeroDetailViewController.swift */,
+				26272A3428A9E5850097B19E /* Coredata */,
 				7B2C3E0728A3D86200BF197D /* Extension */,
 				9828EC8428A600D300D0D82E /* Data */,
-				26AD066028A7B1A7008A4169 /* HeroDetailViewController.swift */,
 			);
 			path = IntoHistory;
 			sourceTree = "<group>";
@@ -359,11 +359,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				260F999C289D1B460010E258 /* Model.xcdatamodeld in Sources */,
+				268A8D1028AADED80095A324 /* Model.xcdatamodeld in Sources */,
 				9828EC9628A667AA00D0D82E /* ImageLiteral.swift in Sources */,
 				7B2C3E0928A3D8FA00BF197D /* Color+Extension.swift in Sources */,
 				26272A3B28A9E65D0097B19E /* CourseEntity+CoreDataClass.swift in Sources */,
-				260F999C289D1B460010E258 /* Model.xcdatamodeld in Sources */,
 				9877CF1728A7CD3400CC2D5B /* CourseListCell.swift in Sources */,
 				9847905128AA0CC700FC5995 /* UIView+Extension.swift in Sources */,
 				9877CF1B28A9206F00CC2D5B /* DetailCourseCell.swift in Sources */,
