@@ -42,7 +42,7 @@ class MainViewController: UIViewController {
     // TODO: - 추후에 날짜별로 라벨 텍스트가 바뀌도록 하는 로직 구현 예정
     private lazy var blackboardLabel: UILabel = {
         $0.numberOfLines = 0
-        $0.text = "테스트"
+        $0.text = ""
         $0.textColor = .white
         $0.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         return $0
@@ -305,6 +305,24 @@ class MainViewController: UIViewController {
             }
         } catch {
             print(error.localizedDescription)
+        }
+    }
+    // MARK: - 칠판 내용 바꾸는 method
+
+    func checkDate() -> String {
+        let currentDate = Date().toString()
+        return currentDate
+    }
+
+    func changeBlackBoardLabelText() {
+        // 데이트 확인해서, 라벨 바꿔주기
+        // 공휴일에있으면= 특정문구, 평소 = 역사정보, notification = noti 내용
+        let currentDate = checkDate()
+        if Holiday(rawValue: currentDate) == nil {
+            blackboardLabel.text = "안어ㅣㅏㅓㄴㅁ아ㅓ리만어"
+        } else {
+            let type = Holiday(rawValue: currentDate)
+            blackboardLabel.text = type!.boardContent
         }
     }
 }
