@@ -14,7 +14,13 @@ class CoreDataManager {
     
     @Published var courses = [CourseEntity]()
     @Published var pins = [PinEntity]()
+    @Published var heros = [HeroEntity]()
+    
     @Published var coursePins = [PinEntity]()
+    
+    @Published var resistances = [HeroEntity]()
+    @Published var warriors = [HeroEntity]()
+    
     @Published var courseID = 0
     let loadCourseJSON = LoadingCourseJSON().courses
     
@@ -145,4 +151,25 @@ class CoreDataManager {
             print(error.localizedDescription)
         }
     }
+    
+    func loadHeroData() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        do {
+            let hero = try context.fetch(HeroEntity.fetchRequest()) as! [HeroEntity]
+            
+            hero.forEach {
+                heros.append($0)
+                if $0.type == "독립운동" {
+                    resistances.append($0)
+                } else {
+                    warriors.append($0)
+                }
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
 }
