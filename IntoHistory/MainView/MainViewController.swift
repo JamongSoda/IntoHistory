@@ -39,12 +39,12 @@ class MainViewController: UIViewController {
         return $0
     }(UIImageView())
 
-    // TODO: - 추후에 날짜별로 라벨 텍스트가 바뀌도록 하는 로직 구현 예정
     private lazy var blackboardLabel: UILabel = {
         $0.numberOfLines = 0
-        $0.text = "테스트"
+        $0.text = ""
+        $0.font = UIFont(name: "ulsanjunggu", size: 25)
         $0.textColor = .white
-        $0.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        $0.textAlignment = .center
         return $0
     }(UILabel())
 
@@ -80,7 +80,8 @@ class MainViewController: UIViewController {
             UserDefaults.standard.set(true, forKey: "isFirstLaunch")
         }
         loadJSONData()
-        
+        changeBlackBoardLabelText()
+
         attribute()
         layout()
     }
@@ -145,6 +146,12 @@ class MainViewController: UIViewController {
         contentView.addSubview(blackboardLabel)
         blackboardLabel.centerX(inView: blackboardImage)
         blackboardLabel.centerY(inView: blackboardImage)
+        blackboardLabel.anchor(
+            left: blackboardImage.leftAnchor,
+            right: blackboardImage.rightAnchor,
+            paddingLeft: 16,
+            paddingRight: 16
+        )
 
         contentView.addSubview(buttonAreaBackground)
         buttonAreaBackground.anchor(
@@ -183,6 +190,8 @@ class MainViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
 
+    // MARK: - Button tap method
+
     private func setButtonGesture() {
         let tapCourseButtonGesture = UITapGestureRecognizer(target: self, action: #selector(tapCourseButton(_:)))
         courseButton.addGestureRecognizer(tapCourseButtonGesture)
@@ -212,6 +221,8 @@ class MainViewController: UIViewController {
             saveHeroData(heroData: loadCourseJSON[cntCourse].related_person)
         }
     }
+
+    // MARK: - CoreData Method
     
     private func saveCourseData(courseData: Courses) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -307,5 +318,23 @@ class MainViewController: UIViewController {
             print(error.localizedDescription)
         }
     }
-}
 
+    // MARK: - Update Blackboard label Method
+
+    func checkDate() -> String {
+        let currentDate = Date().toString()
+        return currentDate
+    }
+
+    func changeBlackBoardLabelText() {
+        // 데이트 확인해서, 라벨 바꿔주기
+        // 공휴일에있으면= 특정문구, 평소 = 역사정보, notification = noti 내용
+        let currentDate = checkDate()
+        if Holiday(rawValue: currentDate) == nil {
+            blackboardLabel.text = historyInfoArray.randomElement()
+        } else {
+            let type = Holiday(rawValue: currentDate)
+            blackboardLabel.text = type!.boardContent
+        }
+    }
+}
