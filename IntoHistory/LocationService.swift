@@ -32,11 +32,9 @@ class LocationService: NSObject {
 
     
     func registLocation(lat: Double , long: Double) {
-
         locationManager.allowsBackgroundLocationUpdates = true
         locationManager.pausesLocationUpdatesAutomatically = false
         locationManager.startUpdatingLocation()
-
     }
     
     func evaluateClosestRegions() {
@@ -47,7 +45,6 @@ class LocationService: NSObject {
                let distance = currentLocation!.distance(from: CLLocation(latitude: circularRegion.center.latitude, longitude: circularRegion.center.longitude))
                allDistance.append(distance)
            }
-
       
            let distanceOfEachRegionToCurrentLocation = zip(allRegions, allDistance)
 
@@ -119,8 +116,6 @@ class LocationService: NSObject {
         }
     }
 
-   
-
 extension LocationService: CLLocationManagerDelegate {
 
     func requestAlwaysLocation() {
@@ -136,7 +131,6 @@ extension LocationService: CLLocationManagerDelegate {
         }
     }
 
-
     func locationManager(_ manager: CLLocationManager, didDetermineState state: CLRegionState, for region: CLRegion) {
         switch state {
         case .inside:
@@ -145,18 +139,14 @@ extension LocationService: CLLocationManagerDelegate {
             print("나감")
         case .unknown: break
         }
-        // 해당 지역에 들어오고 나가면 프린트로 찍힘
     }
-
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-       
-        if let nowLocation = locations.first {
-            print("위도: \(nowLocation.coordinate.latitude)")
-            print("경도: \(nowLocation.coordinate.longitude)")
-            
-            guard let location = locations.last else { return};currentLocation = location
-        }
+        guard let location = locations.last else { return };currentLocation = location
+//        if let nowLocation = locations.first {
+//            print("위도: \(nowLocation.coordinate.latitude)")
+//            print("경도: \(nowLocation.coordinate.longitude)")
+//
+//        }
     }
-
 }
