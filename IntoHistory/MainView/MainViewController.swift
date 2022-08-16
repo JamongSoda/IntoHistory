@@ -83,6 +83,9 @@ class MainViewController: UIViewController {
         
         attribute()
         layout()
+        
+        let ls = LocationService.shared
+        ls.requestAlwaysLocation()
     }
 
     // MARK: - Method
@@ -193,12 +196,12 @@ class MainViewController: UIViewController {
 
     // TODO: - 관련 viewcontroller 추가되면 변경 예정
     @objc func tapCourseButton(_ sender: UITapGestureRecognizer) {
-        let vc = ViewController()
+        let vc = CourseListViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
 
     @objc func tapHeroButton(_ sender: UITapGestureRecognizer) {
-        let vc = ViewController()
+        let vc = HeroListViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
     
