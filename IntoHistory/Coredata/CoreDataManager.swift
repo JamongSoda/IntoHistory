@@ -221,4 +221,16 @@ class CoreDataManager {
         }
     }
     
+    func updateHeroIsCollected(hero: NSManagedObject) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        hero.setValue(true, forKey: "isCollected")
+        
+        do {
+            try context.save()
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
 }
