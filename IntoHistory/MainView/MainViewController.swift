@@ -80,7 +80,6 @@ class MainViewController: UIViewController {
             UserDefaults.standard.set(true, forKey: "isFirstLaunch")
         }
         loadJSONData()
-        
         changeBlackBoardLabelText()
 
         attribute()
@@ -191,6 +190,8 @@ class MainViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
 
+    // MARK: - Button tap method
+
     private func setButtonGesture() {
         let tapCourseButtonGesture = UITapGestureRecognizer(target: self, action: #selector(tapCourseButton(_:)))
         courseButton.addGestureRecognizer(tapCourseButtonGesture)
@@ -220,6 +221,8 @@ class MainViewController: UIViewController {
             saveHeroData(heroData: loadCourseJSON[cntCourse].related_person)
         }
     }
+
+    // MARK: - CoreData Method
     
     private func saveCourseData(courseData: Courses) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -315,7 +318,8 @@ class MainViewController: UIViewController {
             print(error.localizedDescription)
         }
     }
-    // MARK: - 칠판 내용 바꾸는 method
+
+    // MARK: - Update Blackboard label Method
 
     func checkDate() -> String {
         let currentDate = Date().toString()
@@ -334,4 +338,3 @@ class MainViewController: UIViewController {
         }
     }
 }
-
