@@ -22,12 +22,11 @@ class CoreDataManager {
     @Published var resistances = [HeroEntity]()
     @Published var warriors = [HeroEntity]()
     
-    @Published var oneHero = HeroEntity()
-    
     @Published var courseID = 0
-    @Published var heroID = 0
     
     let loadCourseJSON = LoadingCourseJSON().courses
+    
+    // MARK: - CoreData Create
     
     func saveJSONData() {
         for cntCourse in 0..<loadCourseJSON.count {
@@ -109,10 +108,14 @@ class CoreDataManager {
             }
         }
     }
+    
+    // MARK: - CoreData Read
 
     func loadCourseData() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
+        
+        courses = [CourseEntity]()
         
         do {
             let course = try context.fetch(CourseEntity.fetchRequest()) as! [CourseEntity]
@@ -129,6 +132,8 @@ class CoreDataManager {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         
+        pins = [PinEntity]()
+        
         do {
             let pin = try context.fetch(PinEntity.fetchRequest()) as! [PinEntity]
             
@@ -143,6 +148,8 @@ class CoreDataManager {
     func loadCoursePinData() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
+        
+        coursePins = [PinEntity]()
         
         do {
             let pin = try context.fetch(PinEntity.fetchRequest()) as! [PinEntity]
@@ -161,6 +168,10 @@ class CoreDataManager {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         
+        heros = [HeroEntity]()
+        resistances = [HeroEntity]()
+        warriors = [HeroEntity]()
+        
         do {
             let hero = try context.fetch(HeroEntity.fetchRequest()) as! [HeroEntity]
             
@@ -177,23 +188,7 @@ class CoreDataManager {
         }
     }
     
-    func loadOneHeroData() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        
-        do {
-            let hero = try context.fetch(HeroEntity.fetchRequest()) as! [HeroEntity]
-            
-            hero.forEach {
-                if $0.hid == heroID {
-                    oneHero = $0
-                    print("Hid: \($0.hid) heroID: \(heroID)")
-                }
-            }
-        } catch {
-            print(error.localizedDescription)
-        }
-    }
+    // MARK: - CoreData Update
     
     func updateCourseIsClear(course: NSManagedObject) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -206,6 +201,8 @@ class CoreDataManager {
         } catch {
             print(error.localizedDescription)
         }
+        
+        loadCourseData()
     }
     
     func updatePinIsVisited(pin: NSManagedObject) {
@@ -219,6 +216,8 @@ class CoreDataManager {
         } catch {
             print(error.localizedDescription)
         }
+        
+        loadPinData()
     }
     
     func updateHeroIsCollected(hero: NSManagedObject) {
@@ -232,5 +231,7 @@ class CoreDataManager {
         } catch {
             print(error.localizedDescription)
         }
+        
+        loadHeroData()
     }
 }
