@@ -31,7 +31,7 @@ class ChangeViewController: UIViewController {
 
         guard let courseEntity = courseEntity else { return }
         coreDataManager.loadCoursePinData(courseID: Int(courseEntity.cid))
-        detailCourseVC.courseArr1 = courseEntity
+        detailCourseVC.courseEntity = courseEntity
         
         layout()
     }

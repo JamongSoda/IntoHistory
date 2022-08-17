@@ -11,7 +11,7 @@ class DetailCourseViewController: UIViewController {
 
     // MARK: - Property
     
-    var courseArr1: CourseEntity?
+    var courseEntity: CourseEntity?
     
     // MARK: - View
     
@@ -104,11 +104,11 @@ extension DetailCourseViewController:  UICollectionViewDelegate, UICollectionVie
         if kind == UICollectionView.elementKindSectionHeader {
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: DetailCourseHeader.identifier, for: indexPath) as! DetailCourseHeader
 
-            header.uiComponent.courseListTitle.text = courseArr1?.courseName
-            header.uiComponent.courseListRouteText.text = courseArr1?.transportation
-            header.uiComponent.courseListTimeText.text = courseArr1?.time
-            header.uiComponent.courseListRegionText.text = courseArr1?.region
-            header.courseListDescription.text = courseArr1?.courseDescription
+            header.uiComponent.courseListTitle.text = courseEntity?.courseName
+            header.uiComponent.courseListRouteText.text = courseEntity?.transportation
+            header.uiComponent.courseListTimeText.text = courseEntity?.time
+            header.uiComponent.courseListRegionText.text = courseEntity?.region
+            header.courseListDescription.text = courseEntity?.courseDescription
 
             return header
         }
