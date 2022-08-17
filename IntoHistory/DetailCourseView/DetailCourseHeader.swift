@@ -52,7 +52,6 @@ class DetailCourseHeader: UICollectionReusableView {
     }
     
     private func setup() {
-        
         uiComponent.anchor(
             top: vStackView.topAnchor,
             left: leftAnchor,
