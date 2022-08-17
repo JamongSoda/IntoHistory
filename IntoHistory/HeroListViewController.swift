@@ -5,15 +5,10 @@
 //  Created by 김민택 on 2022/08/10.
 //
 
-import UIKit
 import CoreData
+import UIKit
 
 class HeroListViewController: UIViewController {
-    
-    // MARK: - Property
-    
-    var resistances = [HeroEntity]()
-    var warriors = [HeroEntity]()
     
     // MARK: - View
     
@@ -26,8 +21,6 @@ class HeroListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadHeroList()
-        
         attribute()
         layout()
     }
@@ -36,6 +29,7 @@ class HeroListViewController: UIViewController {
     
     private func attribute() {
         view.backgroundColor = .basicBackground
+        
         setupNavigationTitle()
         setupCollectionView()
     }
@@ -67,36 +61,16 @@ class HeroListViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
     }
-    
-    private func loadHeroList() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        
-        do {
-            let hero = try context.fetch(HeroEntity.fetchRequest()) as! [HeroEntity]
-            
-            hero.forEach {
-                if $0.type == "독립운동" {
-                    resistances.append($0)
-                } else {
-                    warriors.append($0)
-                }
-            }
-            
-        } catch {
-            print(error.localizedDescription)
-        }
-    }
 }
 
 extension HeroListViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 1 {
-            return resistances.count
+            return coreDataManager.resistances.count
         }
         if section == 2 {
-            return warriors.count
+            return coreDataManager.warriors.count
         }
         return 1
     }
@@ -107,15 +81,17 @@ extension HeroListViewController: UICollectionViewDataSource, UICollectionViewDe
             return cell
         } else if indexPath.section == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeroListCell.identifier, for: indexPath) as! HeroListCell
-            cell.imageView.image = UIImage(named: resistances[indexPath.row].image)
-            cell.labelView.text = resistances[indexPath.row].heroName
-            cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapHeroCell(_:))))
+            
+            cell.imageView.image = UIImage(named: coreDataManager.resistances[indexPath.row].isCollected ? coreDataManager.resistances[indexPath.row].image : ImageLiteral.lockedHero)
+            cell.labelView.text = coreDataManager.resistances[indexPath.row].isCollected ? coreDataManager.resistances[indexPath.row].heroName : "대한민국의 영웅"
+            
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeroListCell.identifier, for: indexPath) as! HeroListCell
-            cell.imageView.image = UIImage(named: warriors[indexPath.row].image)
-            cell.labelView.text = warriors[indexPath.row].heroName
-            cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapHeroCell(_:))))
+            
+            cell.imageView.image = UIImage(named: coreDataManager.warriors[indexPath.row].isCollected ? coreDataManager.warriors[indexPath.row].image : ImageLiteral.lockedHero)
+            cell.labelView.text = coreDataManager.warriors[indexPath.row].isCollected ? coreDataManager.warriors[indexPath.row].heroName : "대한민국의 영웅"
+            
             return cell
         }
     }
@@ -152,9 +128,9 @@ extension HeroListViewController: UICollectionViewDataSource, UICollectionViewDe
         if kind == UICollectionView.elementKindSectionHeader {
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CollectionViewHeader.identifier, for: indexPath) as! CollectionViewHeader
             if indexPath.section == 1 {
-                header.labelView.text = "순국 선열"
+                header.labelView.text = "독립운동가"
             } else {
-                header.labelView.text = "호국영령"
+                header.labelView.text = "전쟁영웅"
             }
             return header
         }
@@ -174,10 +150,24 @@ extension HeroListViewController: UICollectionViewDataSource, UICollectionViewDe
         }
         return UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30)
     }
-
-    @objc func tapHeroCell(_ sender: UITapGestureRecognizer) {
-        let popupVC = HeroDetailViewController()
-        popupVC.modalPresentationStyle = .overFullScreen
-        present(popupVC, animated: false, completion: nil)
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section == 1 {
+            if coreDataManager.resistances[indexPath.row].isCollected {
+                let heroArray = coreDataManager.resistances[indexPath.row]
+                let popupVC = HeroDetailViewController()
+                popupVC.heroArray = heroArray
+                popupVC.modalPresentationStyle = .overFullScreen
+                present(popupVC, animated: false, completion: nil)
+            }
+        } else if indexPath.section == 2 {
+            if coreDataManager.warriors[indexPath.row].isCollected {
+                let heroArray = coreDataManager.warriors[indexPath.row]
+                let popupVC = HeroDetailViewController()
+                popupVC.heroArray = heroArray
+                popupVC.modalPresentationStyle = .overFullScreen
+                present(popupVC, animated: false, completion: nil)
+            }
+        }
     }
 }
