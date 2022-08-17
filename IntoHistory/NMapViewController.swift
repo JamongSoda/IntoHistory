@@ -185,8 +185,16 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
     }
 
     // MARK: - Method
+    
+    @objc private func didTapRightBarButton() {
+        navigationController?.popToRootViewController(animated: true)
+        let beforeVC = DetailCourseViewController()
+        beforeVC.view.backgroundColor = .white
+        navigationController?.pushViewController(beforeVC, animated: false)
+    }
 
-    func attribute() {
+    private func attribute() {
+        setNavigationBar()
         view.backgroundColor = .white
         navigationItem.title = "상세 코스"
         navigationController?.navigationBar.backgroundColor = .white
@@ -200,4 +208,3 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
 }
-
