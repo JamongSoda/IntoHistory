@@ -82,6 +82,9 @@ class MainViewController: UIViewController {
 
         attribute()
         layout()
+        
+        let ls = LocationService.shared
+        ls.requestAlwaysLocation()
     }
 
     // MARK: - Method
@@ -184,7 +187,7 @@ class MainViewController: UIViewController {
     }
 
     private func setNavigationTitle() {
-        navigationController?.navigationBar.topItem?.title = "오늘의 역사 상식"
+        navigationController?.navigationBar.topItem?.title = "걸어서 역사 속으로🚶🏻"
         navigationController?.navigationBar.prefersLargeTitles = true
     }
 
@@ -200,7 +203,7 @@ class MainViewController: UIViewController {
 
     // TODO: - 관련 viewcontroller 추가되면 변경 예정
     @objc func tapCourseButton(_ sender: UITapGestureRecognizer) {
-        let vc = ViewController()
+        let vc = CourseListViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
 
