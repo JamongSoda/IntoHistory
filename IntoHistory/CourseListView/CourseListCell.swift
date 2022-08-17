@@ -19,7 +19,6 @@ class CourseListCell: UICollectionViewCell {
         return $0
     }(CourseListUIComponents())
 
-
     let heroCourseImage: UIImageView = {
         $0.image = UIImage(named: ImageLiteral.resistanceCourse)
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -48,7 +47,6 @@ class CourseListCell: UICollectionViewCell {
     // MARK: - Method
    
     private func layout() {
-
         addSubview(hStackView)
         hStackView.addArrangedSubview(heroCourseImage)
         hStackView.addArrangedSubview(uiComponent)
@@ -74,7 +72,6 @@ class CourseListCell: UICollectionViewCell {
             height: 90
         )
 
-        
         hStackView.uiViewShadow(backgroundView: hStackView)
         
         heroCourseImage.centerY(inView: hStackView)

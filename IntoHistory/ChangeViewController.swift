@@ -10,43 +10,32 @@ import UIKit
 class ChangeViewController: UIViewController {
 
     // MARK: - Property
-    
+
     var rightButton = false
     var courseEntity: CourseEntity?
-    var pinEntity: PinEntity?
-    
+
     // MARK: - ViewController
-    
+
     private let nMapVC: NMapViewController = {
         return $0
     }(NMapViewController())
-    
+
     private let detailCourseVC: DetailCourseViewController = {
         return $0
     }(DetailCourseViewController())
-    
+
     // MARK: - Lifecycle
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        layout()
-        
+
         guard let courseEntity = courseEntity else { return }
         coreDataManager.loadCoursePinData(courseID: Int(courseEntity.cid))
-        print(coreDataManager.coursePins)
+        detailCourseVC.courseArr1 = courseEntity
         
-        
-            let nMapVC = NMapViewController()
-            //        let detailCourseVC = DetailCourseViewController()
-            let pins = coreDataManager.coursePins
-            nMapVC.pinArr = pins
-        
-        
-//        print("감사합니다감사합니다감사합니다감사합니다감사합니다감사합니다감사합니다감사합니다감사합니다감사합니다감사합니다감사합니다감사합니다감사합니다감사합니다감사합니다감사합니다감사합니다감사합니다감사합니다감사합니다감사합니다감사합니다감사합니다감사합니다감사합니다감사합니다감사합니다감사합니다감사합니다감사합니다")
-//        detailCourseVC.courseArr1 = courseEntity
-//        nMapVC.courseArr2 = courseEntity
+        layout()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         if rightButton {
             detailCourseVC.view.isHidden = true
@@ -58,18 +47,18 @@ class ChangeViewController: UIViewController {
             navigationItem.rightBarButtonItem?.image = UIImage(systemName: "map")
         }
     }
-    
+
     // MARK: - layout
-    
+
     private func layout() {
         view.backgroundColor = .white
-        
+
         self.addChild(nMapVC)
         self.addChild(detailCourseVC)
-        
+
         view.addSubview(nMapVC.view)
         view.addSubview(detailCourseVC.view)
-        
+
         nMapVC.view.frame = view.frame
         detailCourseVC.view.frame = view.frame
 
@@ -79,9 +68,9 @@ class ChangeViewController: UIViewController {
             target: self,
             action: #selector(tapRightButton(_:)))
     }
-    
+
     // MARK: - Method
-    
+
     @objc func tapRightButton(_ sender: UITapGestureRecognizer) {
         rightButton.toggle()
         viewWillAppear(true)

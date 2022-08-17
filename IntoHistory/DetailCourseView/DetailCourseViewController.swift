@@ -25,10 +25,6 @@ class DetailCourseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(coreDataManager.coursePins)
-        print("안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요")
-//        guard let courseArr = courseArr1 else { return }
-//        coreDataManager.loadCoursePinData(courseID: Int(courseArr.cid))
 
         navigationController?.navigationBar.topItem?.title = "상세 코스"
         navigationController?.navigationBar.backgroundColor = .white
@@ -61,6 +57,7 @@ class DetailCourseViewController: UIViewController {
             right: view.safeAreaLayoutGuide.rightAnchor
         )
     }
+    
     @objc func didTapMapButton() {
         let nextVC = NMapViewController()
         nextVC.view.backgroundColor = .white
@@ -106,12 +103,13 @@ extension DetailCourseViewController:  UICollectionViewDelegate, UICollectionVie
 
         if kind == UICollectionView.elementKindSectionHeader {
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: DetailCourseHeader.identifier, for: indexPath) as! DetailCourseHeader
-            
+
             header.uiComponent.courseListTitle.text = courseArr1?.courseName
             header.uiComponent.courseListRouteText.text = courseArr1?.transportation
             header.uiComponent.courseListTimeText.text = courseArr1?.time
             header.uiComponent.courseListRegionText.text = courseArr1?.region
             header.courseListDescription.text = courseArr1?.courseDescription
+
             return header
         }
         return UICollectionReusableView()
