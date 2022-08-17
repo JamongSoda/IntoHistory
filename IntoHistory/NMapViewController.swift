@@ -14,9 +14,6 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
     // MARK: - Property
 
     var locationManager = CLLocationManager()
-    let infoWindow = NMFInfoWindow()
-    let dataSource = NMFInfoWindowDefaultTextSource.data()
-    var courseArr2: PinEntity?
 
     // MARK: - View
 
