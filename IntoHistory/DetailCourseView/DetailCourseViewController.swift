@@ -27,7 +27,6 @@ class DetailCourseViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .white
-
         attribute()
 
         detailCourseView.delegate = self
@@ -43,7 +42,7 @@ class DetailCourseViewController: UIViewController {
 
     private func attribute() {
         self.view.backgroundColor = UIColor.basicBackground
-
+        
         setupNavigationBar()
     }
 

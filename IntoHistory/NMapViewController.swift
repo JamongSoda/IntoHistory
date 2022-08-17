@@ -196,8 +196,6 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
     private func attribute() {
         setNavigationBar()
         view.backgroundColor = .white
-        navigationItem.title = "상세 코스"
-        navigationController?.navigationBar.backgroundColor = .white
 
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
