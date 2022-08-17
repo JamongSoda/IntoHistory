@@ -39,6 +39,7 @@ enum SelectedTypes: Int {
     case ten = 10
     case eleven = 11
     case twelve = 12
+    case thirteen = 13
 
     func selectedPinsImage(isSelecting: Bool) -> String {
         if isSelecting {
@@ -67,6 +68,8 @@ enum SelectedTypes: Int {
                 return ImageLiteral.pinEleven
             case .twelve:
                 return ImageLiteral.pinTwelve
+            case .thirteen:
+                return ImageLiteral.pinThirteen
             }
         } else {
             switch self {
@@ -94,6 +97,8 @@ enum SelectedTypes: Int {
                 return ImageLiteral.markerEleven
             case .twelve:
                 return ImageLiteral.markerTwelve
+            case .thirteen:
+                return ImageLiteral.markerThirteen
             }
         }
     }

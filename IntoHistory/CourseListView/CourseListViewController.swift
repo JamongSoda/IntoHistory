@@ -69,16 +69,15 @@ extension CourseListViewController: UICollectionViewDelegate, UICollectionViewDa
 
         if heroEntity[indexPath.row].type == "독립운동" {
             cell.heroCourseImage.image = UIImage(named: ImageLiteral.resistanceCourse)
-
         } else {
             cell.heroCourseImage.image = UIImage(named: ImageLiteral.warriorCourse)
         }
+
         cell.uiComponent.courseListTitle.text = courseEntity[indexPath.row].courseName
         cell.uiComponent.courseListRegionText.text = courseEntity[indexPath.row].region
         cell.uiComponent.courseListTimeText.text = courseEntity[indexPath.row].time
         cell.uiComponent.courseListRouteText.text = courseEntity[indexPath.row].transportation
-        
-        cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapCourseListCell(_:))))
+
         return cell
     }
     
@@ -95,10 +94,12 @@ extension CourseListViewController: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
     }
-    
-    @objc func tapCourseListCell(_ sender: UITapGestureRecognizer) {
-        let detailCourseVC = DetailCourseViewController()
-        navigationController?.pushViewController(detailCourseVC, animated: true)
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let changeVC = ChangeViewController()
+        let courseArray = coreDataManager.courses[indexPath.row]
+        changeVC.courseEntity = courseArray
+        navigationController?.pushViewController(changeVC, animated: true)
     }
     
     private func loadCourseData() {
