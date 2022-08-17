@@ -22,6 +22,7 @@ enum ImageLiteral {
     static var pinTen = "SelectedNo10"
     static var pinEleven = "SelectedNo11"
     static var pinTwelve = "SelectedNo12"
+    static var pinThirteen = "SelectedNo13"
     
     // TODO: 선택되지 않은 마커(핀) -> 방문 시 visitedMarKerOne
     static var markerOne = "NormalNo1"
@@ -36,6 +37,7 @@ enum ImageLiteral {
     static var markerTen = "NormalNo10"
     static var markerEleven = "NormalNo11"
     static var markerTwelve = "NormalNo12"
+    static var markerThirteen = "NormalNo13"
     
     // MARK: - CourseListView Image Set
     
