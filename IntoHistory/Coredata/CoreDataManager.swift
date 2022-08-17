@@ -22,8 +22,6 @@ class CoreDataManager {
     @Published var resistances = [HeroEntity]()
     @Published var warriors = [HeroEntity]()
     
-    @Published var courseID = 0
-    
     let loadCourseJSON = LoadingCourseJSON().courses
     
     // MARK: - CoreData Create
@@ -145,7 +143,7 @@ class CoreDataManager {
         }
     }
     
-    func loadCoursePinData() {
+    func loadCoursePinData(courseID: Int) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         

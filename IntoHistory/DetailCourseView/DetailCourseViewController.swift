@@ -11,9 +11,7 @@ class DetailCourseViewController: UIViewController {
 
     // MARK: - Property
     
-    private let courseJSONLoader = LoadingCourseJSON().courses
-    var courseEntity = [CourseEntity]()
-    var pinEntity = [PinEntity]()
+    var courseArr1: CourseEntity?
     
     // MARK: - View
     
@@ -27,6 +25,10 @@ class DetailCourseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(coreDataManager.coursePins)
+        print("안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요")
+//        guard let courseArr = courseArr1 else { return }
+//        coreDataManager.loadCoursePinData(courseID: Int(courseArr.cid))
 
         navigationController?.navigationBar.topItem?.title = "상세 코스"
         navigationController?.navigationBar.backgroundColor = .white
@@ -71,14 +73,18 @@ class DetailCourseViewController: UIViewController {
 extension DetailCourseViewController:  UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return pinEntity.count
+        return coreDataManager.coursePins.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailCourseCell.identifier, for: indexPath) as! DetailCourseCell
-        cell.pinImage.image = UIImage(named: SelectedTypes(rawValue: indexPath.row + 1)?.selectedPinsImage(isSelecting: false) ?? ImageLiteral.markerOne)
-        cell.pinTitle.text = pinEntity[indexPath.row].pinName
-        cell.pinLocation.text = pinEntity[indexPath.row].address
+        
+        cell.pinImage.image = UIImage(named: SelectedTypes(rawValue: indexPath.row + 1)?
+            .selectedPinsImage(isSelecting: false) ?? ImageLiteral.markerOne)
+        cell.pinTitle.text = coreDataManager.coursePins[indexPath.row].pinName
+        cell.pinLocation.text = coreDataManager.coursePins[indexPath.row].address
+        
         return cell
     }
 
@@ -101,11 +107,11 @@ extension DetailCourseViewController:  UICollectionViewDelegate, UICollectionVie
         if kind == UICollectionView.elementKindSectionHeader {
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: DetailCourseHeader.identifier, for: indexPath) as! DetailCourseHeader
             
-            header.uiComponent.courseListTitle.text = courseJSONLoader[indexPath.row].title
-            header.uiComponent.courseListRouteText.text = courseJSONLoader[indexPath.row].transportation
-            header.uiComponent.courseListTimeText.text = courseJSONLoader[indexPath.row].time
-            header.uiComponent.courseListRegionText.text = courseJSONLoader[indexPath.row].region
-            header.courseListDescription.text = courseJSONLoader[indexPath.row].description
+            header.uiComponent.courseListTitle.text = courseArr1?.courseName
+            header.uiComponent.courseListRouteText.text = courseArr1?.transportation
+            header.uiComponent.courseListTimeText.text = courseArr1?.time
+            header.uiComponent.courseListRegionText.text = courseArr1?.region
+            header.courseListDescription.text = courseArr1?.courseDescription
             return header
         }
         return UICollectionReusableView()
@@ -113,24 +119,5 @@ extension DetailCourseViewController:  UICollectionViewDelegate, UICollectionVie
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: UIScreen.main.bounds.width, height: 170)
-    }
-    
-    private func loadCourseData() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        
-        do {
-            let course = try context.fetch(CourseEntity.fetchRequest()) as! [CourseEntity]
-            let pin = try context.fetch(PinEntity.fetchRequest()) as! [PinEntity]
-            course.forEach {
-                courseEntity.append($0)
-            }
-            pin.forEach {
-                pinEntity.append($0)
-            }
-            
-        } catch {
-            print("error")
-        }
     }
 }
