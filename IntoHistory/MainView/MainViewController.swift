@@ -69,6 +69,7 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewDidAppear(true)
         
         if !UserDefaults.standard.bool(forKey: "isFirstLaunch") {
             
@@ -86,12 +87,15 @@ class MainViewController: UIViewController {
         let ls = LocationService.shared
         ls.requestAlwaysLocation()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        setNavigationTitle()
+    }
 
     // MARK: - Method
 
     private func attribute() {
         self.view.backgroundColor = UIColor.basicBackground
-        setNavigationTitle()
         setScrollView()
         setButtonGesture()
     }
@@ -119,6 +123,7 @@ class MainViewController: UIViewController {
             paddingBottom: 0,
             paddingRight: 0)
         contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+        
         let contentViewHeight = contentView.heightAnchor.constraint(greaterThanOrEqualTo: view.heightAnchor)
         contentViewHeight.priority = .defaultLow
         contentViewHeight.isActive = true
