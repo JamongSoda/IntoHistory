@@ -108,9 +108,7 @@ class LocationService: NSObject {
                 let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.1, repeats: false)
                 let request = UNNotificationRequest(identifier: "test-\(uuidString)", content: content, trigger: trigger)
                 notificationCenter.add(request, withCompletionHandler: { (error) in
-                    if error != nil {
-                        // error
-                    }
+                    if error != nil { }
                 })
             }
         }
@@ -143,10 +141,5 @@ extension LocationService: CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return };currentLocation = location
-//        if let nowLocation = locations.first {
-//            print("위도: \(nowLocation.coordinate.latitude)")
-//            print("경도: \(nowLocation.coordinate.longitude)")
-//
-//        }
     }
 }
