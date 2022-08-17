@@ -207,4 +207,18 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.startUpdatingLocation()
         }
     }
+
+    private func setNavigationBar() {
+        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        navigationItem.backBarButtonItem = backBarButtonItem
+        navigationItem.title = "코스지도"
+        navigationItem.largeTitleDisplayMode = .never
+        navigationController?.navigationBar.prefersLargeTitles = false
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: "list.bullet"),
+            style: .plain,
+            target: self,
+            action: #selector(didTapRightBarButton)
+        )
+    }
 }
