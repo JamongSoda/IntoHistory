@@ -6,8 +6,8 @@
 //
 //
 
-import Foundation
 import CoreData
+import Foundation
 
 @objc(PinEntity)
 public class PinEntity: NSManagedObject {

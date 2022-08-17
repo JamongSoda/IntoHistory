@@ -6,8 +6,8 @@
 //
 //
 
-import Foundation
 import CoreData
+import Foundation
 
 @objc(CourseEntity)
 public class CourseEntity: NSManagedObject {

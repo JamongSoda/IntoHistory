@@ -5,8 +5,8 @@
 //  Created by Yu ahyeon on 2022/08/10.
 //
 
-import UIKit
 import CoreData
+import UIKit
 
 class MainViewController: UIViewController {
 

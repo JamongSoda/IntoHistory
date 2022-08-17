@@ -5,8 +5,8 @@
 //  Created by 김민택 on 2022/08/16.
 //
 
-import Foundation
 import CoreData
+import Foundation
 import UIKit
 
 let coreDataManager = CoreDataManager()
