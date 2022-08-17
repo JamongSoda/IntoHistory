@@ -35,20 +35,20 @@ class HeroDetailViewController: UIViewController {
     }(UIImageView())
     
     private let heroImage: UIImageView = {
-        $0.image = UIImage(named: "LockedHero.png")
+        $0.image = UIImage(named: "NoImageHero.png")
         $0.contentMode = .scaleAspectFit
         return $0
     }(UIImageView())
     
     private let heroName: UILabel = {
-        $0.text = "이익수 준장"
+        $0.text = "영웅 이름"
         $0.font = UIFont.boldSystemFont(ofSize: 24)
         $0.textAlignment = .center
         return $0
     }(UILabel())
     
     private let heroDescription: UILabel = {
-        $0.text = "1968년 1.21사태 당시 무장공비 31명이 청와대를 습격하자 이를 추적하는 가운데 펼쳐진 포위작전 중 적의 습격으로 전사하였다.\n1968년 1.21사태 당시 무장공비 31명이 청와대를 습격하자 이를 추적하는 가운데 펼쳐진 포위작전 중 적의 습격으로 전사하였다.\n1968년 1.21사태 당시 무장공비 31명이 청와대를 습격하자 이를 추적하는 가운데 펼쳐진 포위작전 중 적의 습격으로 전사하였다.\n1968년 1.21사태 당시 무장공비 31명이 청와대를 습격하자 이를 추적하는 가운데 펼쳐진 포위작전 중 적의 습격으로 전사하였다.\n1968년 1.21사태 당시 무장공비 31명이 청와대를 습격하자 이를 추적하는 가운데 펼쳐진 포위작전 중 적의 습격으로 전사하였다.\n1968년 1.21사태 당시 무장공비 31명이 청와대를 습격하자 이를 추적하는 가운데 펼쳐진 포위작전 중 적의 습격으로 전사하였다.\n1968년 1.21사태 당시 무장공비 31명이 청와대를 습격하자 이를 추적하는 가운데 펼쳐진 포위작전 중 적의 습격으로 전사하였다.\n1968년 1.21사태 당시 무장공비 31명이 청와대를 습격하자 이를 추적하는 가운데 펼쳐진 포위작전 중 적의 습격으로 전사하였다.\n1968년 1.21사태 당시 무장공비 31명이 청와대를 습격하자 이를 추적하는 가운데 펼쳐진 포위작전 중 적의 습격으로 전사하였다.\n1968년 1.21사태 당시 무장공비 31명이 청와대를 습격하자 이를 추적하는 가운데 펼쳐진 포위작전 중 적의 습격으로 전사하였다.\n1968년 1.21사태 당시 무장공비 31명이 청와대를 습격하자 이를 추적하는 가운데 펼쳐진 포위작전 중 적의 습격으로 전사하였다."
+        $0.text = "영웅 설명"
         $0.font = UIFont.systemFont(ofSize: 17)
         $0.numberOfLines = 0
         let attrString = NSMutableAttributedString(string: $0.text!)
