@@ -49,6 +49,8 @@ class CourseListViewController: UIViewController {
         navigationItem.title = "역사탐방"
         navigationItem.largeTitleDisplayMode = .never
         navigationController?.navigationBar.prefersLargeTitles = false
+        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        navigationItem.backBarButtonItem = backBarButtonItem
     }
 
     private func setCollectionView() {
