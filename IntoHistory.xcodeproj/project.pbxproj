@@ -31,7 +31,6 @@
 		38DE9B5528AC1A4B00C2B001 /* ulsanjunggu.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38DE9B5428AC1A4B00C2B001 /* ulsanjunggu.ttf */; };
 		38DE9B5A28ACCDF200C2B001 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DE9B5928ACCDF200C2B001 /* ARViewController.swift */; };
 		38DE9B5C28ACCDFA00C2B001 /* ARView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38DE9B5B28ACCDFA00C2B001 /* ARView.storyboard */; };
-		38DE9B5E28ACD09A00C2B001 /* TempButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DE9B5D28ACD09A00C2B001 /* TempButtonViewController.swift */; };
 		7539DC3959AA009030BA88E8 /* Pods_IntoHistory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5AB256B7E455FBDF91C78F0 /* Pods_IntoHistory.framework */; };
 		7B18C38628A784FA00BC0504 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B18C38528A784FA00BC0504 /* LocationService.swift */; };
 		7B2C3E0628A3D85900BF197D /* AutoLayout+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2C3E0528A3D85900BF197D /* AutoLayout+Extension.swift */; };
@@ -82,7 +81,6 @@
 		38DE9B5428AC1A4B00C2B001 /* ulsanjunggu.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ulsanjunggu.ttf; sourceTree = "<group>"; };
 		38DE9B5928ACCDF200C2B001 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		38DE9B5B28ACCDFA00C2B001 /* ARView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ARView.storyboard; sourceTree = "<group>"; };
-		38DE9B5D28ACD09A00C2B001 /* TempButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempButtonViewController.swift; sourceTree = "<group>"; };
 		7B18C38528A784FA00BC0504 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		7B2C3E0528A3D85900BF197D /* AutoLayout+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AutoLayout+Extension.swift"; sourceTree = "<group>"; };
 		7B2C3E0828A3D8FA00BF197D /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
@@ -202,7 +200,6 @@
 			children = (
 				38DE9B5928ACCDF200C2B001 /* ARViewController.swift */,
 				38DE9B5B28ACCDFA00C2B001 /* ARView.storyboard */,
-				38DE9B5D28ACD09A00C2B001 /* TempButtonViewController.swift */,
 			);
 			path = ARView;
 			sourceTree = "<group>";
@@ -443,7 +440,6 @@
 				9877CF1D28A9336200CC2D5B /* DetailCourseHeader.swift in Sources */,
 				38DE9B5128AC02AF00C2B001 /* BlackBoardTextData.swift in Sources */,
 				9828EC8C28A600DF00D0D82E /* CourseData.swift in Sources */,
-				38DE9B5E28ACD09A00C2B001 /* TempButtonViewController.swift in Sources */,
 				7B2C3E0B28A3DDD300BF197D /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
