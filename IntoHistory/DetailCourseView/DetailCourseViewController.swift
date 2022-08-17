@@ -118,6 +118,8 @@ extension DetailCourseViewController:  UICollectionViewDelegate, UICollectionVie
                 withReuseIdentifier: DetailCourseFooter.identifier,
                 for: indexPath) as! DetailCourseFooter
 
+            let didTapARButton = UITapGestureRecognizer(target: self, action: #selector(didTapARButton(_:)))
+            footer.addGestureRecognizer(didTapARButton)
 
             return footer
         }
@@ -133,4 +135,11 @@ extension DetailCourseViewController:  UICollectionViewDelegate, UICollectionVie
         return CGSize(width: UIScreen.main.bounds.width, height: 60)
     }
 
+    @objc func didTapARButton(_ sender: UITapGestureRecognizer) {
+        let storyboard = UIStoryboard(name: "ARView", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "ARViewController") as? ARViewController else {
+            return
+        }
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
