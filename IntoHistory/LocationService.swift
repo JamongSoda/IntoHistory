@@ -16,7 +16,7 @@ class LocationService: NSObject {
     var locationManager: CLLocationManager!
     var allRegions = [CLRegion]()
     let pinData = coreDataManager.pins
-    var temp: PinEntity = coreDataManager.pins[0]
+    var currentPinData: PinEntity = coreDataManager.pins[0]
     var currentLocation : CLLocation?{
         didSet{
             evaluateClosestRegions()
@@ -38,7 +38,7 @@ class LocationService: NSObject {
         
         for i in 0..<coreDataManager.pins.count {
             if Double(region.identifier[latStartIndex ..< latEndIndex]) == pinData[i].lat && Double(region.identifier[lngStartIndex ..< lngEndIndex]) == pinData[i].lng {
-                temp = pinData[i]
+                currentPinData = pinData[i]
             }
         }
     }
@@ -125,9 +125,9 @@ extension LocationService: CLLocationManagerDelegate {
         switch state {
         case .inside:
             makePinData(region: region)
-            fireNotification("\(temp.pinName) 방문완료❣️",
+            fireNotification("\(currentPinData.pinName) 방문완료❣️",
                              body: "그들이 지켜낸 대한민국\n우리들의 영웅을 기억해주세요🇰🇷")
-            coreDataManager.updatePinIsVisited(pin: temp)
+            coreDataManager.updatePinIsVisited(pin: currentPinData)
         case .outside:
             print("나감")
         case .unknown: break
