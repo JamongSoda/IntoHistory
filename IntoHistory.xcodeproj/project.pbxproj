@@ -149,7 +149,6 @@
 				9828EC9428A6679900D0D82E /* Literal */,
 				7B18C38528A784FA00BC0504 /* LocationService.swift */,
 				26DD473B28AD0BDB006C01E2 /* HeroListView */,
-				260F999D289D1B470010E258 /* Assets.xcassets */,
 				260F999F289D1B470010E258 /* LaunchScreen.storyboard */,
 				260F99A2289D1B470010E258 /* Info.plist */,
 				26272A3428A9E5850097B19E /* Coredata */,

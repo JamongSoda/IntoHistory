@@ -87,10 +87,6 @@ class MainViewController: UIViewController {
         let ls = LocationService.shared
         ls.requestAlwaysLocation()
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        setNavigationTitle()
-    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
