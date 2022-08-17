@@ -5,14 +5,10 @@
 //  Created by Yu ahyeon on 2022/08/10.
 //
 
-import UIKit
 import CoreData
+import UIKit
 
 class MainViewController: UIViewController {
-    
-    // MARK: - Property
-    
-    let loadCourseJSON = LoadingCourseJSON().courses
 
     // MARK: - View
 
@@ -76,11 +72,13 @@ class MainViewController: UIViewController {
         
         if !UserDefaults.standard.bool(forKey: "isFirstLaunch") {
             
-            saveJSONData()
+            coreDataManager.saveJSONData()
             UserDefaults.standard.set(true, forKey: "isFirstLaunch")
         }
-        loadJSONData()
         changeBlackBoardLabelText()
+        coreDataManager.loadCourseData()
+        coreDataManager.loadPinData()
+        coreDataManager.loadHeroData()
 
         attribute()
         layout()
@@ -211,6 +209,7 @@ class MainViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    // TODO: - 코어데이터 매니저로 연결하고, 필요없는 func 삭제해야함.
     private func saveJSONData() {
         for cntCourse in 0..<loadCourseJSON.count {
             saveCourseData(courseData: loadCourseJSON[cntCourse])
@@ -318,6 +317,7 @@ class MainViewController: UIViewController {
             print(error.localizedDescription)
         }
     }
+}
 
     // MARK: - Update Blackboard label Method
 

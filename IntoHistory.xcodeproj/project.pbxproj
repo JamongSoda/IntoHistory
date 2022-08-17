@@ -23,6 +23,7 @@
 		2694641928A6973C00485526 /* HeroListDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694641828A6973C00485526 /* HeroListDescriptionCell.swift */; };
 		2694641B28A7577300485526 /* CollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694641A28A7577300485526 /* CollectionViewHeader.swift */; };
 		26AD066128A7B1A7008A4169 /* HeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AD066028A7B1A7008A4169 /* HeroDetailViewController.swift */; };
+		26DD473828ABB6D8006C01E2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DD473728ABB6D8006C01E2 /* CoreDataManager.swift */; };
 		26F01C4F28A3F57800D3FD88 /* HeroListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F01C4E28A3F57800D3FD88 /* HeroListViewController.swift */; };
 		38DE9B5128AC02AF00C2B001 /* BlackBoardTextData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DE9B5028AC02AF00C2B001 /* BlackBoardTextData.swift */; };
 		38DE9B5328AC152500C2B001 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DE9B5228AC152500C2B001 /* Date+Extension.swift */; };
@@ -66,6 +67,7 @@
 		2694641828A6973C00485526 /* HeroListDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroListDescriptionCell.swift; sourceTree = "<group>"; };
 		2694641A28A7577300485526 /* CollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewHeader.swift; sourceTree = "<group>"; };
 		26AD066028A7B1A7008A4169 /* HeroDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailViewController.swift; sourceTree = "<group>"; };
+		26DD473728ABB6D8006C01E2 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		26F01C4E28A3F57800D3FD88 /* HeroListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroListViewController.swift; sourceTree = "<group>"; };
 		31444BDF2B6EE4561E242759 /* Pods-IntoHistory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntoHistory.release.xcconfig"; path = "Target Support Files/Pods-IntoHistory/Pods-IntoHistory.release.xcconfig"; sourceTree = "<group>"; };
 		38DE9B5028AC02AF00C2B001 /* BlackBoardTextData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackBoardTextData.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				26272A3928A9E65D0097B19E /* PinEntity+CoreDataClass.swift */,
 				26272A3A28A9E65D0097B19E /* PinEntity+CoreDataProperties.swift */,
 				260F999A289D1B460010E258 /* Model.xcdatamodeld */,
+				26DD473728ABB6D8006C01E2 /* CoreDataManager.swift */,
 			);
 			path = Coredata;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				7B32F65628A6758E00F4CB48 /* MainViewButton.swift in Sources */,
 				260F9996289D1B460010E258 /* ViewController.swift in Sources */,
 				9877CF1928A9205400CC2D5B /* DetailCourseViewController.swift in Sources */,
+				26DD473828ABB6D8006C01E2 /* CoreDataManager.swift in Sources */,
 				9847904C28A96D8500FC5995 /* CourseListUIComponents.swift in Sources */,
 				260F9992289D1B460010E258 /* AppDelegate.swift in Sources */,
 				260F9994289D1B460010E258 /* SceneDelegate.swift in Sources */,

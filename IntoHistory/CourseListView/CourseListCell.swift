@@ -12,7 +12,6 @@ class CourseListCell: UICollectionViewCell {
     // MARK: - Property
 
     static let identifier = "courseListCell"
-    static let courseJSONLoader = LoadingCourseJSON().courses
 
     // MARK: - View
     
@@ -47,7 +46,7 @@ class CourseListCell: UICollectionViewCell {
     }
 
     // MARK: - Method
-
+   
     private func layout() {
 
         addSubview(hStackView)
