@@ -40,47 +40,46 @@ class LocationService: NSObject {
     func evaluateClosestRegions() {
         var allDistance : [Double] = []
 
-           for region in allRegions{
-               let circularRegion = region as! CLCircularRegion
-               let distance = currentLocation!.distance(from: CLLocation(latitude: circularRegion.center.latitude, longitude: circularRegion.center.longitude))
-               allDistance.append(distance)
-           }
-      
-           let distanceOfEachRegionToCurrentLocation = zip(allRegions, allDistance)
+        for region in allRegions{
+            let circularRegion = region as! CLCircularRegion
+            let distance = currentLocation!.distance(from: CLLocation(latitude: circularRegion.center.latitude, longitude: circularRegion.center.longitude))
+            allDistance.append(distance)
+        }
 
-           let twentyNearbyRegions = distanceOfEachRegionToCurrentLocation
-               .sorted{ tuple1, tuple2 in return tuple1.1 < tuple2.1 }
-               .prefix(20)
+        let distanceOfEachRegionToCurrentLocation = zip(allRegions, allDistance)
 
+        let twentyNearbyRegions = distanceOfEachRegionToCurrentLocation
+            .sorted{ tuple1, tuple2 in return tuple1.1 < tuple2.1 }
+            .prefix(20)
 
-           for region in locationManager.monitoredRegions{
-               locationManager.stopMonitoring(for: region)
-           }
+        for region in locationManager.monitoredRegions{
+            locationManager.stopMonitoring(for: region)
+        }
 
-           twentyNearbyRegions.forEach{
-               locationManager.startMonitoring(for: $0.0)
-           }
+        twentyNearbyRegions.forEach{
+            locationManager.startMonitoring(for: $0.0)
+        }
     }
 
     private func loadJSONData() {
-          let appDelegate = UIApplication.shared.delegate as! AppDelegate
-          let context = appDelegate.persistentContainer.viewContext
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
 
-          do {
-              let course = try context.fetch(CourseEntity.fetchRequest()) as! [CourseEntity]
-              let pin = try context.fetch(PinEntity.fetchRequest()) as! [PinEntity]
-              let hero = try context.fetch(HeroEntity.fetchRequest()) as! [HeroEntity]
+        do {
+            let course = try context.fetch(CourseEntity.fetchRequest()) as! [CourseEntity]
+            let pin = try context.fetch(PinEntity.fetchRequest()) as! [PinEntity]
+            let hero = try context.fetch(HeroEntity.fetchRequest()) as! [HeroEntity]
 
-              pin.forEach {
-                  latlongArray.append(($0.lat, $0.lng))
-              }
+            pin.forEach {
+                latlongArray.append(($0.lat, $0.lng))
+            }
 
-          } catch {
-              print(error.localizedDescription)
-          }
-      }
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
 
-    func makeNotification() {
+    private func makeNotification() {
         self.loadJSONData()
         for i in 0..<latlongArray.count {
             let lat = latlongArray[i].lat
@@ -93,9 +92,8 @@ class LocationService: NSObject {
             allRegions.append(region)
         }
     }
-}
 
-    func fireNotification(_ title: String = "Background Test", body: String){
+    private func fireNotification(_ title: String = "Background Test", body: String){
         let notificationCenter = UNUserNotificationCenter.current()
 
         notificationCenter.getNotificationSettings{
@@ -113,6 +111,7 @@ class LocationService: NSObject {
             }
         }
     }
+}
 
 extension LocationService: CLLocationManagerDelegate {
 
