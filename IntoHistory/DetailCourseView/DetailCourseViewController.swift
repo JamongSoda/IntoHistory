@@ -48,6 +48,9 @@ class DetailCourseViewController: UIViewController {
     }
 
     private func setupNavigationBar() {
+        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        navigationItem.backBarButtonItem = backBarButtonItem
+
         navigationItem.title = "상세코스"
         navigationItem.largeTitleDisplayMode = .never
         navigationController?.navigationBar.prefersLargeTitles = false
