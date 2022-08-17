@@ -30,7 +30,7 @@ class HeroListViewController: UIViewController {
     private func attribute() {
         view.backgroundColor = .basicBackground
         
-        setupNavigationTitle()
+        setupNavigationBar()
         setupCollectionView()
     }
     
@@ -49,8 +49,12 @@ class HeroListViewController: UIViewController {
         )
     }
     
-    private func setupNavigationTitle() {
-        navigationController?.navigationBar.topItem?.title = "호국 선열"
+    private func setupNavigationBar() {
+        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        navigationItem.backBarButtonItem = backBarButtonItem
+
+        navigationItem.title = "대한민국 영웅"
+        navigationItem.largeTitleDisplayMode = .never
         navigationController?.navigationBar.prefersLargeTitles = false
     }
     
