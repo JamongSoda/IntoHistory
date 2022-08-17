@@ -187,17 +187,11 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
         beforeVC.view.backgroundColor = .white
         navigationController?.pushViewController(beforeVC, animated: false)
     }
-    func attribute() {
+
+    private func attribute() {
+        setNavigationBar()
         view.backgroundColor = .white
-        navigationItem.title = "상세 코스"
-        navigationController?.navigationBar.backgroundColor = .white
-        navigationItem.rightBarButtonItem = UIBarButtonItem(
-            image: UIImage(systemName: "list.bullet"),
-            style: .plain,
-            target: self,
-            action: #selector(didTapRightBarButton)
-        )
-        
+
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
@@ -205,6 +199,7 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
         if CLLocationManager.locationServicesEnabled() {
             locationManager.startUpdatingLocation()
         }
+    }
 
     }
 }
