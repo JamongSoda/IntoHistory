@@ -135,8 +135,8 @@
 		260F9990289D1B460010E258 /* IntoHistory */ = {
 			isa = PBXGroup;
 			children = (
+				38AC750D28AD3676002724B6 /* Resources */,
 				38DE9B5828ACCDDF00C2B001 /* ARView */,
-				38DE9B5428AC1A4B00C2B001 /* ulsanjunggu.ttf */,
 				7B32F65128A674A600F4CB48 /* MainView */,
 				260F9991289D1B460010E258 /* AppDelegate.swift */,
 				260F9993289D1B460010E258 /* SceneDelegate.swift */,
@@ -193,6 +193,23 @@
 				31444BDF2B6EE4561E242759 /* Pods-IntoHistory.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		38AC750D28AD3676002724B6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				260F999D289D1B470010E258 /* Assets.xcassets */,
+				38AC750E28AD367D002724B6 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		38AC750E28AD367D002724B6 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				38DE9B5428AC1A4B00C2B001 /* ulsanjunggu.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		38DE9B5828ACCDDF00C2B001 /* ARView */ = {
