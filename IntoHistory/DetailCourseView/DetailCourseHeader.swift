@@ -52,14 +52,16 @@ class DetailCourseHeader: UICollectionReusableView {
     }
     
     private func setup() {
+
         uiComponent.anchor(
             top: vStackView.topAnchor,
             left: leftAnchor,
             bottom: courseListDescription.topAnchor,
             right: rightAnchor,
             paddingTop: 0,
-            paddingLeft: 35,
-            paddingRight: 35
+            paddingLeft: 30,
+            paddingBottom: 0,
+            paddingRight: 30
         )
 
         uiComponent.courseListTitle.font = UIFont.systemFont(ofSize: 22, weight: .bold)
@@ -69,16 +71,15 @@ class DetailCourseHeader: UICollectionReusableView {
 
         uiComponent.courseListTitle.anchor(
             bottom: uiComponent.hStackView.topAnchor,
-            paddingBottom: 16
+            paddingBottom: 10
         )
-
+        
         courseListDescription.anchor(
             left: leftAnchor,
-            bottom: bottomAnchor,
             right: rightAnchor,
-            paddingLeft: 35,
-            paddingBottom: 10,
-            paddingRight: 35
+            paddingLeft: 30,
+            paddingRight: 30
         )
+        courseListDescription.bottomAnchor.constraint(greaterThanOrEqualTo: self.bottomAnchor, constant: -10).isActive = true
     }
 }

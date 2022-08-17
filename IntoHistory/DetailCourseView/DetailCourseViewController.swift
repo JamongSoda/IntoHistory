@@ -25,6 +25,7 @@ class DetailCourseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = .white
         
         navigationController?.navigationBar.topItem?.title = "상세 코스"
@@ -74,9 +75,10 @@ extension DetailCourseViewController:  UICollectionViewDelegate, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailCourseCell.identifier, for: indexPath) as! DetailCourseCell
-        
-        cell.pinImage.image = UIImage(named: SelectedTypes(rawValue: indexPath.row + 1)?
-            .selectedPinsImage(isSelecting: false) ?? ImageLiteral.markerOne)
+
+        cell.pinImage.image =  UIImage(named: SelectedTypes(rawValue: indexPath.row + 1)?
+            .selectedPinsImage(isVisited: coreDataManager.coursePins[indexPath.row].isVisited,
+                               isSelected: false) ?? ImageLiteral.markerOne)
         cell.pinTitle.text = coreDataManager.coursePins[indexPath.row].pinName
         cell.pinLocation.text = coreDataManager.coursePins[indexPath.row].address
         
@@ -114,6 +116,6 @@ extension DetailCourseViewController:  UICollectionViewDelegate, UICollectionVie
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.width, height: 170)
+        return CGSize(width: UIScreen.main.bounds.width, height: 180)
     }
 }

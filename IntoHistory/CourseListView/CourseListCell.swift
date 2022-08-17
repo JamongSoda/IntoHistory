@@ -76,6 +76,9 @@ class CourseListCell: UICollectionViewCell {
         
         heroCourseImage.centerY(inView: hStackView)
 
-        uiComponent.centerY(inView: hStackView)
+        uiComponent.anchor(
+            bottom: hStackView.bottomAnchor,
+            paddingBottom: 15
+        )
     }
 }
