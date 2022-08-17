@@ -28,10 +28,6 @@ class DetailCourseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationController?.navigationBar.topItem?.title = "상세 코스"
-        navigationController?.navigationBar.backgroundColor = .white
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "map"), style: .plain, target: self, action: #selector(didTapMapButton))
-
         attribute()
         setCollectionView()
 
@@ -48,6 +44,14 @@ class DetailCourseViewController: UIViewController {
 
     private func attribute() {
         self.view.backgroundColor = UIColor.basicBackground
+        setupNavigationBar()
+    }
+
+    private func setupNavigationBar() {
+        navigationItem.title = "상세코스"
+        navigationItem.largeTitleDisplayMode = .never
+        navigationController?.navigationBar.prefersLargeTitles = false
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "map"), style: .plain, target: self, action: #selector(didTapMapButton))
     }
 
     private func setCollectionView() {
