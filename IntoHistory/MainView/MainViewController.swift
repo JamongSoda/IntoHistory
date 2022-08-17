@@ -75,7 +75,7 @@ class MainViewController: UIViewController {
             coreDataManager.saveJSONData()
             UserDefaults.standard.set(true, forKey: "isFirstLaunch")
         }
-//        changeBlackBoardLabelText()
+        changeBlackBoardLabelText()
         coreDataManager.loadCourseData()
         coreDataManager.loadPinData()
         coreDataManager.loadHeroData()
@@ -320,22 +320,19 @@ class MainViewController: UIViewController {
             print(error.localizedDescription)
         }
     }
-}
-
-    // MARK: - Update Blackboard label Method
 
     func checkDate() -> String {
         let currentDate = Date().toString()
         return currentDate
     }
 
-//    func changeBlackBoardLabelText() {
-//        let currentDate = checkDate()
-//        if Holiday(rawValue: currentDate) == nil {
-//            blackboardLabel.text = historyInfoArray.randomElement()
-//        } else {
-//            let type = Holiday(rawValue: currentDate)
-//            blackboardLabel.text = type!.boardContent
-//        }
-//    }
-//}
+    func changeBlackBoardLabelText() {
+        let currentDate = checkDate()
+        if Holiday(rawValue: currentDate) == nil {
+            blackboardLabel.text = historyInfoArray.randomElement()
+        } else {
+            let type = Holiday(rawValue: currentDate)
+            blackboardLabel.text = type!.boardContent
+        }
+    }
+}
