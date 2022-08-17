@@ -15,7 +15,7 @@ class LocationService: NSObject {
     static let shared = LocationService()
     var locationManager: CLLocationManager!
     let courseData = LoadingCourseJSON().courses.map{$0.course_pins}
-    var arr = [(lat: Double, long: Double)]()
+    var latlongArray = [(lat: Double, long: Double)]()
 
     var allRegions = [CLRegion]()
     var currentLocation : CLLocation?{
@@ -72,7 +72,7 @@ class LocationService: NSObject {
               let hero = try context.fetch(HeroEntity.fetchRequest()) as! [HeroEntity]
 
               pin.forEach {
-                  arr.append(($0.lat, $0.lng))
+                  latlongArray.append(($0.lat, $0.lng))
               }
 
           } catch {
@@ -82,9 +82,9 @@ class LocationService: NSObject {
 
     func makeNotification() {
         self.loadJSONData()
-        for i in 0..<arr.count {
-            let lat = arr[i].lat
-            let long = arr[i].long
+        for i in 0..<latlongArray.count {
+            let lat = latlongArray[i].lat
+            let long = latlongArray[i].long
             registLocation(lat: lat, long: long)
 
             let location = CLLocationCoordinate2D(latitude: lat, longitude: long)
