@@ -11,7 +11,7 @@ class ChangeViewController: UIViewController {
 
     // MARK: - Property
 
-    var rightButton = false
+    var isSelectedButton = false
     var courseEntity: CourseEntity?
 
     // MARK: - ViewController
@@ -37,7 +37,7 @@ class ChangeViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        if rightButton {
+        if isSelectedButton {
             detailCourseVC.view.isHidden = true
             nMapVC.view.isHidden = false
             navigationItem.rightBarButtonItem?.image = UIImage(systemName: "list.bullet")
@@ -48,7 +48,7 @@ class ChangeViewController: UIViewController {
         }
     }
 
-    // MARK: - layout
+    // MARK: - Method
 
     private func layout() {
         view.backgroundColor = .white
@@ -69,10 +69,8 @@ class ChangeViewController: UIViewController {
             action: #selector(tapRightButton(_:)))
     }
 
-    // MARK: - Method
-
     @objc func tapRightButton(_ sender: UITapGestureRecognizer) {
-        rightButton.toggle()
+        isSelectedButton.toggle()
         viewWillAppear(true)
     }
 }
