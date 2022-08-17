@@ -192,7 +192,7 @@ class MainViewController: UIViewController {
     }
 
     private func setNavigationTitle() {
-        navigationController?.navigationBar.topItem?.title = "걸어서 역사 속으로🚶🏻"
+        navigationController?.navigationBar.topItem?.title = "히어로드"
         navigationController?.navigationBar.prefersLargeTitles = true
     }
 
