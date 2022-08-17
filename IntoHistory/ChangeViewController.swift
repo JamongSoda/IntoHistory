@@ -67,6 +67,13 @@ class ChangeViewController: UIViewController {
             style: .plain,
             target: self,
             action: #selector(tapRightButton(_:)))
+        
+        detailCourseVC.view.anchor(
+            top: view.safeAreaLayoutGuide.topAnchor,
+            left: view.safeAreaLayoutGuide.leftAnchor,
+            bottom: view.bottomAnchor,
+            right: view.safeAreaLayoutGuide.rightAnchor
+        )
     }
 
     // MARK: - Method
