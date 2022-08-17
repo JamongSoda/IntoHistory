@@ -28,7 +28,6 @@ class CourseListViewController: UIViewController {
         super.viewDidLoad()
         viewDidAppear(true)
 
-        navigationController?.navigationBar.topItem?.title = "역사 탐방"
         attribute()
         loadCourseData()
 
@@ -50,6 +49,12 @@ class CourseListViewController: UIViewController {
         setCollectionView()
         setupNavigationBar()
 
+    }
+
+    private func setupNavigationBar() {
+        navigationItem.title = "역사탐방"
+        navigationItem.largeTitleDisplayMode = .never
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
 
     private func setCollectionView() {
