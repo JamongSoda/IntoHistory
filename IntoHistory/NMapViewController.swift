@@ -35,14 +35,12 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
     }(UIImageView())
     
     private let titleLabel: UILabel = {
-        $0.text = "테스트"
         $0.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         $0.numberOfLines = 0
         return $0
     }(UILabel())
 
     private let addressLabel: UILabel = {
-        $0.text = "주소"
         $0.font = UIFont.systemFont(ofSize: 14, weight: .light)
         $0.numberOfLines = 0
         return $0
