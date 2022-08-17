@@ -20,31 +20,31 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
     
     // MARK: - View
     
-    let hStackView: UIStackView = {
+    private let hStackView: UIStackView = {
         $0.axis = .horizontal
         $0.backgroundColor = .white
         return $0
     }(UIStackView())
     
-    let vStackView: UIStackView = {
+    private let vStackView: UIStackView = {
         $0.axis = .vertical
         return $0
     }(UIStackView())
     
-    let numberImage: UIImageView = {
+    private let numberImage: UIImageView = {
         $0.image = UIImage(named: SelectedTypes(rawValue: 1)?.selectedPinsImage(isSelecting: false) ?? "")
         $0.contentMode = .scaleAspectFit
         return $0
     }(UIImageView())
     
-    let titleLabel: UILabel = {
+    private let titleLabel: UILabel = {
         $0.text = "테스트"
         $0.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         $0.numberOfLines = 0
         return $0
     }(UILabel())
     
-    let addressLabel: UILabel = {
+    private let addressLabel: UILabel = {
         $0.text = "주소"
         $0.font = UIFont.systemFont(ofSize: 14, weight: .light)
         $0.numberOfLines = 0
