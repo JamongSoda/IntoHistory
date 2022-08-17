@@ -13,10 +13,12 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
 
     // MARK: - Property
     
-    private let courseJSONLoader = LoadingCourseJSON().courses
     var locationManager = CLLocationManager()
     let infoWindow = NMFInfoWindow()
     let dataSource = NMFInfoWindowDefaultTextSource.data()
+    var courseArr2: CourseEntity?
+    var pinArr: [PinEntity]?
+//    var coursePins: [CoursePins]?
     
     // MARK: - View
     
@@ -51,11 +53,19 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
         return $0
     }(UILabel())
     
+//    let
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        guard let courseArr2 = courseArr2 else { return }
+//        coreDataManager.loadCoursePinData(courseID: Int(courseArr2.cid))
         attribute()
+//        print(coreDataManager.coursePins)
+//        detailCourseVC.courseArr1 = courseEntity
+//        nMapVC.courseArr2 = courseEntity
+        
         
         let naverMapView = NMFNaverMapView(frame: view.frame)
         naverMapView.showLocationButton = true
@@ -113,20 +123,23 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
         // 지정 좌표로 시작 화면 띄우기
         let cameraUpdate = NMFCameraUpdate (
             scrollTo: NMGLatLng(
-                lat: courseJSONLoader[1].course_pins[0].pin_x,
-                lng: courseJSONLoader[1].course_pins[0].pin_y
+                lat: pinArr?[0].lat ?? 35.0,
+                lng: pinArr?[0].lng ?? 127.0
+//                lat: 35,
+//                lng: 127
             )
         )
         cameraUpdate.animation = .easeIn
         naverMapView.mapView.moveCamera(cameraUpdate)
-
-        titleLabel.text = courseJSONLoader[1].course_pins[0].pin_title
-        addressLabel.text = courseJSONLoader[1].course_pins[0].pin_title
+//
+        titleLabel.text = pinArr?[0].pinName ?? ""
+        addressLabel.text = pinArr?[0].address ?? ""
         
         var booleanArray = [Bool]()
         var markers = [NMFMarker()]
-        
-        for pinNum in 0 ..< courseJSONLoader[1].course_pins.count {
+        print(pinArr)
+        print("안~~~~녕안~~~~녕안~~~~녕안~~~~녕안~~~~녕안~~~~녕안~~~~녕안~~~~녕안~~~~녕안~~~~녕안~~~~녕안~~~~녕안~~~~녕안~~~~녕안~~~~녕")
+        for pinNum in 0 ..< 10 {
 
             markers.append(NMFMarker())
             booleanArray.append(false)
@@ -141,8 +154,8 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
             // MARK: - 마커 위치
             
             markers[pinNum].position = NMGLatLng(
-                lat: courseJSONLoader[1].course_pins[pinNum].pin_x,
-                lng: courseJSONLoader[1].course_pins[pinNum].pin_y
+                lat: pinArr?[pinNum].lat ?? 35.0,
+                lng: pinArr?[pinNum].lng ?? 127.0
             )
             
             // MARK: - 마커 누르면 이미지, 텍스트 변경
@@ -151,10 +164,10 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
                 
                 booleanArray[pinNum].toggle()
                 numberImage.image = UIImage(named: SelectedTypes(rawValue: pinNum + 1)?.selectedPinsImage(isSelecting: false) ?? "")
-                titleLabel.text = courseJSONLoader[1].course_pins[pinNum].pin_title
-                addressLabel.text = courseJSONLoader[1].course_pins[pinNum].pin_title
-                
-                if booleanArray[pinNum] {
+                titleLabel.text = coreDataManager.coursePins[pinNum].pinName
+                addressLabel.text = coreDataManager.coursePins[pinNum].address
+                            
+                if booleanArray[pinNum] {   
                     hStackView.isHidden = false
                 } else {
                     hStackView.isHidden = true
