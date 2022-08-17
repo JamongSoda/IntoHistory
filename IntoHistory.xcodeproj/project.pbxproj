@@ -28,6 +28,8 @@
 		38DE9B5128AC02AF00C2B001 /* BlackBoardTextData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DE9B5028AC02AF00C2B001 /* BlackBoardTextData.swift */; };
 		38DE9B5328AC152500C2B001 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DE9B5228AC152500C2B001 /* Date+Extension.swift */; };
 		38DE9B5528AC1A4B00C2B001 /* ulsanjunggu.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38DE9B5428AC1A4B00C2B001 /* ulsanjunggu.ttf */; };
+		38DE9B5A28ACCDF200C2B001 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DE9B5928ACCDF200C2B001 /* ARViewController.swift */; };
+		38DE9B5C28ACCDFA00C2B001 /* ARView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38DE9B5B28ACCDFA00C2B001 /* ARView.storyboard */; };
 		7539DC3959AA009030BA88E8 /* Pods_IntoHistory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5AB256B7E455FBDF91C78F0 /* Pods_IntoHistory.framework */; };
 		7B2C3E0628A3D85900BF197D /* AutoLayout+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2C3E0528A3D85900BF197D /* AutoLayout+Extension.swift */; };
 		7B2C3E0928A3D8FA00BF197D /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2C3E0828A3D8FA00BF197D /* Color+Extension.swift */; };
@@ -73,6 +75,8 @@
 		38DE9B5028AC02AF00C2B001 /* BlackBoardTextData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackBoardTextData.swift; sourceTree = "<group>"; };
 		38DE9B5228AC152500C2B001 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		38DE9B5428AC1A4B00C2B001 /* ulsanjunggu.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ulsanjunggu.ttf; sourceTree = "<group>"; };
+		38DE9B5928ACCDF200C2B001 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
+		38DE9B5B28ACCDFA00C2B001 /* ARView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ARView.storyboard; sourceTree = "<group>"; };
 		7B2C3E0528A3D85900BF197D /* AutoLayout+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AutoLayout+Extension.swift"; sourceTree = "<group>"; };
 		7B2C3E0828A3D8FA00BF197D /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		7B2C3E0A28A3DDD300BF197D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 		260F9990289D1B460010E258 /* IntoHistory */ = {
 			isa = PBXGroup;
 			children = (
+				38DE9B5828ACCDDF00C2B001 /* ARView */,
 				38DE9B5428AC1A4B00C2B001 /* ulsanjunggu.ttf */,
 				7B32F65128A674A600F4CB48 /* MainView */,
 				260F9991289D1B460010E258 /* AppDelegate.swift */,
@@ -172,6 +177,15 @@
 				31444BDF2B6EE4561E242759 /* Pods-IntoHistory.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		38DE9B5828ACCDDF00C2B001 /* ARView */ = {
+			isa = PBXGroup;
+			children = (
+				38DE9B5928ACCDF200C2B001 /* ARViewController.swift */,
+				38DE9B5B28ACCDFA00C2B001 /* ARView.storyboard */,
+			);
+			path = ARView;
 			sourceTree = "<group>";
 		};
 		7B2C3E0728A3D86200BF197D /* Extension */ = {
@@ -318,6 +332,7 @@
 			files = (
 				9847905428AA3A2600FC5995 /* course_json.json in Resources */,
 				260F99A1289D1B470010E258 /* LaunchScreen.storyboard in Resources */,
+				38DE9B5C28ACCDFA00C2B001 /* ARView.storyboard in Resources */,
 				38DE9B5528AC1A4B00C2B001 /* ulsanjunggu.ttf in Resources */,
 				260F999E289D1B470010E258 /* Assets.xcassets in Resources */,
 			);
@@ -385,6 +400,7 @@
 				9877CF1928A9205400CC2D5B /* DetailCourseViewController.swift in Sources */,
 				26DD473828ABB6D8006C01E2 /* CoreDataManager.swift in Sources */,
 				9847904C28A96D8500FC5995 /* CourseListUIComponents.swift in Sources */,
+				38DE9B5A28ACCDF200C2B001 /* ARViewController.swift in Sources */,
 				260F9992289D1B460010E258 /* AppDelegate.swift in Sources */,
 				260F9994289D1B460010E258 /* SceneDelegate.swift in Sources */,
 				26272A3F28A9E65D0097B19E /* PinEntity+CoreDataClass.swift in Sources */,
