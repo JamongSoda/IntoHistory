@@ -12,7 +12,9 @@ import NMapsMap
 class NMapViewController: UIViewController, CLLocationManagerDelegate {
 
     // MARK: - Property
-
+    var pinlines = [NMGLatLng()]
+    var booleanArray = [Bool]()
+    var markers = [NMFMarker()]
     var locationManager = CLLocationManager()
 
     // MARK: - View
@@ -29,7 +31,7 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
     }(UIStackView())
 
     private let numberImage: UIImageView = {
-        $0.image = UIImage(named: SelectedTypes(rawValue: 1)?.selectedPinsImage(isSelecting: false) ?? "")
+        $0.image = UIImage(named: SelectedTypes(rawValue: 1)?.selectedPinsImage(isVisited: false, isSelected: false) ?? "")
         $0.contentMode = .scaleAspectFit
         return $0
     }(UIImageView())
@@ -124,21 +126,28 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
 
         titleLabel.text = coreDataManager.coursePins[0].pinName
         addressLabel.text = coreDataManager.coursePins[0].address
-
-        var booleanArray = [Bool]()
-        var markers = [NMFMarker()]
-
+        
+        // MARK: - 경로 표시
+        
+        
         for pinNum in 0..<coreDataManager.coursePins.count {
 
             markers.append(NMFMarker())
             booleanArray.append(false)
             booleanArray[0] = true
+            
+            // MARK: 좌표 간 선 연결
+            
+            let polyline = NMGLatLng(
+                lat: coreDataManager.coursePins[pinNum].lat,
+                lng: coreDataManager.coursePins[pinNum].lng
+            )
 
             // MARK: - 마커 디폴트 이미지
 
             markers[pinNum].iconImage = NMFOverlayImage(
                 image: UIImage(imageLiteralResourceName: SelectedTypes(rawValue: pinNum + 1)?
-                        .selectedPinsImage(isSelecting: booleanArray[pinNum]) ?? ""))
+                    .selectedPinsImage(isVisited: coreDataManager.coursePins[pinNum].isVisited, isSelected: booleanArray[pinNum]) ?? ""))
 
             // MARK: - 마커 위치
 
@@ -152,7 +161,8 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
             let handler = { [self] (overlay: NMFOverlay) -> Bool in
 
                 numberImage.image = UIImage(named: SelectedTypes(rawValue: pinNum + 1)?
-                    .selectedPinsImage(isSelecting: false) ?? "")
+                    .selectedPinsImage(isVisited: false, isSelected: false) ?? "")
+                
                 titleLabel.text = coreDataManager.coursePins[pinNum].pinName
                 addressLabel.text = coreDataManager.coursePins[pinNum].address
 
@@ -167,11 +177,11 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
                     
                     markers[count].iconImage = NMFOverlayImage(
                         image: UIImage(imageLiteralResourceName: SelectedTypes(rawValue: count + 1)?
-                            .selectedPinsImage(isSelecting: booleanArray[count]) ?? ""))
+                            .selectedPinsImage(isVisited: coreDataManager.coursePins[count].isVisited, isSelected: booleanArray[count]) ?? ""))
 
                     markers[count].mapView = naverMapView.mapView
                 }
-
+                
                 if booleanArray[pinNum] {
                     hStackView.isHidden = false
                 } else {
@@ -181,6 +191,7 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
             }
             markers[pinNum].touchHandler = handler
             markers[pinNum].mapView = naverMapView.mapView
+
         }
     }
 
