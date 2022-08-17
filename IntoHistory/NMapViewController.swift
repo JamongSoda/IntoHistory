@@ -12,27 +12,25 @@ import NMapsMap
 class NMapViewController: UIViewController, CLLocationManagerDelegate {
 
     // MARK: - Property
-    
+
     var locationManager = CLLocationManager()
     let infoWindow = NMFInfoWindow()
     let dataSource = NMFInfoWindowDefaultTextSource.data()
-    var courseArr2: CourseEntity?
-    var pinArr: [PinEntity]?
-//    var coursePins: [CoursePins]?
-    
+    var courseArr2: PinEntity?
+
     // MARK: - View
-    
+
     private let hStackView: UIStackView = {
         $0.axis = .horizontal
         $0.backgroundColor = .white
         return $0
     }(UIStackView())
-    
+
     private let vStackView: UIStackView = {
         $0.axis = .vertical
         return $0
     }(UIStackView())
-    
+
     private let numberImage: UIImageView = {
         $0.image = UIImage(named: SelectedTypes(rawValue: 1)?.selectedPinsImage(isSelecting: false) ?? "")
         $0.contentMode = .scaleAspectFit
@@ -45,48 +43,41 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
         $0.numberOfLines = 0
         return $0
     }(UILabel())
-    
+
     private let addressLabel: UILabel = {
         $0.text = "주소"
         $0.font = UIFont.systemFont(ofSize: 14, weight: .light)
         $0.numberOfLines = 0
         return $0
     }(UILabel())
-    
-//    let
-    
+
     // MARK: - Lifecycle
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-//        guard let courseArr2 = courseArr2 else { return }
-//        coreDataManager.loadCoursePinData(courseID: Int(courseArr2.cid))
+
         attribute()
-//        print(coreDataManager.coursePins)
-//        detailCourseVC.courseArr1 = courseEntity
-//        nMapVC.courseArr2 = courseEntity
-        
-        
+
         let naverMapView = NMFNaverMapView(frame: view.frame)
         naverMapView.showLocationButton = true
         naverMapView.showZoomControls = false
-        
+
         view.addSubview(naverMapView)
         naverMapView.addSubview(hStackView)
-        
+
         hStackView.addArrangedSubview(numberImage)
         hStackView.addArrangedSubview(vStackView)
-        
+
         vStackView.addArrangedSubview(titleLabel)
         vStackView.addArrangedSubview(addressLabel)
-        
+
         naverMapView.anchor(
             top: view.safeAreaLayoutGuide.topAnchor,
             left: view.safeAreaLayoutGuide.leftAnchor,
             bottom: view.bottomAnchor,
             right: view.safeAreaLayoutGuide.rightAnchor
         )
-        
+
         hStackView.anchor(
             left: naverMapView.leftAnchor,
             bottom: naverMapView.bottomAnchor,
@@ -97,8 +88,9 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
             width: UIScreen.main.bounds.width,
             height: 90
         )
+
         hStackView.uiViewShadow(backgroundView: hStackView)
-        
+
         numberImage.anchor(
             top: hStackView.topAnchor,
             left: hStackView.leftAnchor,
@@ -110,7 +102,7 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
             width: 26,
             height: 26
         )
-        
+
         vStackView.anchor(
             top: hStackView.topAnchor,
             bottom: hStackView.bottomAnchor,
@@ -119,71 +111,76 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
             paddingBottom: 25,
             paddingRight: 30
         )
-        
-        // 지정 좌표로 시작 화면 띄우기
+
+        // MARK: - 맵뷰 최초 화면좌표
+
         let cameraUpdate = NMFCameraUpdate (
             scrollTo: NMGLatLng(
-                lat: pinArr?[0].lat ?? 35.0,
-                lng: pinArr?[0].lng ?? 127.0
-//                lat: 35,
-//                lng: 127
+
+                lat: coreDataManager.coursePins[0].lat,
+                lng: coreDataManager.coursePins[0].lng
+
             )
         )
         cameraUpdate.animation = .easeIn
         naverMapView.mapView.moveCamera(cameraUpdate)
-//
-        titleLabel.text = pinArr?[0].pinName ?? ""
-        addressLabel.text = pinArr?[0].address ?? ""
-        
+
+        // MARK: - 마커(핀) 디폴트 이름 및 주소
+
+        titleLabel.text = coreDataManager.coursePins[0].pinName
+        addressLabel.text = coreDataManager.coursePins[0].address
+
         var booleanArray = [Bool]()
         var markers = [NMFMarker()]
-        print(pinArr)
-        print("안~~~~녕안~~~~녕안~~~~녕안~~~~녕안~~~~녕안~~~~녕안~~~~녕안~~~~녕안~~~~녕안~~~~녕안~~~~녕안~~~~녕안~~~~녕안~~~~녕안~~~~녕")
-        for pinNum in 0 ..< 10 {
+
+        for pinNum in 0..<coreDataManager.coursePins.count {
 
             markers.append(NMFMarker())
             booleanArray.append(false)
             booleanArray[0] = true
-            
+
             // MARK: - 마커 디폴트 이미지
-            
+
             markers[pinNum].iconImage = NMFOverlayImage(
                 image: UIImage(imageLiteralResourceName: SelectedTypes(rawValue: pinNum + 1)?
-                        .selectedPinsImage(isSelecting: false) ?? ""))
-            
+                        .selectedPinsImage(isSelecting: booleanArray[pinNum]) ?? ""))
+
             // MARK: - 마커 위치
-            
+
             markers[pinNum].position = NMGLatLng(
-                lat: pinArr?[pinNum].lat ?? 35.0,
-                lng: pinArr?[pinNum].lng ?? 127.0
+                lat: coreDataManager.coursePins[pinNum].lat,
+                lng: coreDataManager.coursePins[pinNum].lng
             )
-            
+
             // MARK: - 마커 누르면 이미지, 텍스트 변경
-            
+
             let handler = { [self] (overlay: NMFOverlay) -> Bool in
-                
-                booleanArray[pinNum].toggle()
-                numberImage.image = UIImage(named: SelectedTypes(rawValue: pinNum + 1)?.selectedPinsImage(isSelecting: false) ?? "")
+
+                numberImage.image = UIImage(named: SelectedTypes(rawValue: pinNum + 1)?
+                    .selectedPinsImage(isSelecting: false) ?? "")
                 titleLabel.text = coreDataManager.coursePins[pinNum].pinName
                 addressLabel.text = coreDataManager.coursePins[pinNum].address
-                            
-                if booleanArray[pinNum] {   
-                    hStackView.isHidden = false
-                } else {
-                    hStackView.isHidden = true
-                }
-                
+
+                booleanArray[pinNum].toggle()
+
                 for count in 0..<booleanArray.count {
                     if pinNum != count {
                         booleanArray[count] = false
                     }
-                    
+
                     markers[count].mapView = nil
                     
                     markers[count].iconImage = NMFOverlayImage(
                         image: UIImage(imageLiteralResourceName: SelectedTypes(rawValue: count + 1)?
                             .selectedPinsImage(isSelecting: booleanArray[count]) ?? ""))
+
                     markers[count].mapView = naverMapView.mapView
+                }
+
+                if booleanArray[pinNum] {
+                    hStackView.isHidden = false
+                } else {
+                    hStackView.isHidden = true
                 }
                 return true
             }
@@ -191,15 +188,9 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
             markers[pinNum].mapView = naverMapView.mapView
         }
     }
-    
+
     // MARK: - Method
-    
-    @objc private func didTapRightBarButton() {
-        navigationController?.popToRootViewController(animated: true)
-        let beforeVC = DetailCourseViewController()
-        beforeVC.view.backgroundColor = .white
-        navigationController?.pushViewController(beforeVC, animated: false)
-    }
+
     func attribute() {
         view.backgroundColor = .white
         navigationItem.title = "상세 코스"
@@ -210,15 +201,21 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
             target: self,
             action: #selector(didTapRightBarButton)
         )
-        
+
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
-        
+
         if CLLocationManager.locationServicesEnabled() {
             locationManager.startUpdatingLocation()
         }
+    }
 
+    @objc private func didTapRightBarButton() {
+        navigationController?.popToRootViewController(animated: true)
+        let beforeVC = DetailCourseViewController()
+        beforeVC.view.backgroundColor = .white
+        navigationController?.pushViewController(beforeVC, animated: false)
     }
 }
 
