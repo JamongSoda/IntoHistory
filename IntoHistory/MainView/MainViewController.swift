@@ -327,8 +327,6 @@ class MainViewController: UIViewController {
     }
 
     func changeBlackBoardLabelText() {
-        // 데이트 확인해서, 라벨 바꿔주기
-        // 공휴일에있으면= 특정문구, 평소 = 역사정보, notification = noti 내용
         let currentDate = checkDate()
         if Holiday(rawValue: currentDate) == nil {
             blackboardLabel.text = historyInfoArray.randomElement()
