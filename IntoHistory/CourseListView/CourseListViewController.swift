@@ -26,8 +26,8 @@ class CourseListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewDidAppear(true)
 
-        navigationController?.navigationBar.topItem?.title = "역사 탐방"
         view.backgroundColor = .basicBackground
         setCollectionView()
         loadCourseData()
@@ -36,6 +36,11 @@ class CourseListViewController: UIViewController {
         collectionView.dataSource = self
 
         collectionView.register(CourseListCell.self, forCellWithReuseIdentifier: CourseListCell.identifier)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        navigationController?.navigationBar.topItem?.title = "역사 탐방"
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
     
     // MARK: - Method
