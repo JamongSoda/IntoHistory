@@ -12,6 +12,9 @@
 		260F9996289D1B460010E258 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260F9995289D1B460010E258 /* ViewController.swift */; };
 		260F999E289D1B470010E258 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 260F999D289D1B470010E258 /* Assets.xcassets */; };
 		260F99A1289D1B470010E258 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 260F999F289D1B470010E258 /* LaunchScreen.storyboard */; };
+		38E88C6E28A6428000B6634E /* TempButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E88C6D28A6428000B6634E /* TempButtonViewController.swift */; };
+		38E88C7028A642F600B6634E /* ARView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38E88C6F28A642F600B6634E /* ARView.storyboard */; };
+		38E88C7428A6477000B6634E /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E88C7328A6477000B6634E /* ARViewController.swift */; };
 		26272A3B28A9E65D0097B19E /* CourseEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26272A3528A9E65D0097B19E /* CourseEntity+CoreDataClass.swift */; };
 		26272A3C28A9E65D0097B19E /* CourseEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26272A3628A9E65D0097B19E /* CourseEntity+CoreDataProperties.swift */; };
 		26272A3D28A9E65D0097B19E /* HeroEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26272A3728A9E65D0097B19E /* HeroEntity+CoreDataClass.swift */; };
@@ -57,6 +60,10 @@
 		260F999D289D1B470010E258 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		260F99A0289D1B470010E258 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		260F99A2289D1B470010E258 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38E88C6D28A6428000B6634E /* TempButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempButtonViewController.swift; sourceTree = "<group>"; };
+		38E88C6F28A642F600B6634E /* ARView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ARView.storyboard; sourceTree = "<group>"; };
+		38E88C7328A6477000B6634E /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
+		437BF5BF00867FA43E5D2831 /* Pods-IntoHistory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntoHistory.release.xcconfig"; path = "Target Support Files/Pods-IntoHistory/Pods-IntoHistory.release.xcconfig"; sourceTree = "<group>"; };
 		26272A3528A9E65D0097B19E /* CourseEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CourseEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		26272A3628A9E65D0097B19E /* CourseEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CourseEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		26272A3728A9E65D0097B19E /* HeroEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HeroEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -125,6 +132,7 @@
 		260F9990289D1B460010E258 /* IntoHistory */ = {
 			isa = PBXGroup;
 			children = (
+				38E88C6828A6213400B6634E /* Screens */,
 				38DE9B5428AC1A4B00C2B001 /* ulsanjunggu.ttf */,
 				7B32F65128A674A600F4CB48 /* MainView */,
 				260F9991289D1B460010E258 /* AppDelegate.swift */,
@@ -150,6 +158,30 @@
 			path = IntoHistory;
 			sourceTree = "<group>";
 		};
+		38E88C6828A6213400B6634E /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				38E88C6928A6213D00B6634E /* ARView */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		38E88C6928A6213D00B6634E /* ARView */ = {
+			isa = PBXGroup;
+			children = (
+				38E88C6C28A6427500B6634E /* SupportViews */,
+				38E88C7328A6477000B6634E /* ARViewController.swift */,
+			);
+			path = ARView;
+			sourceTree = "<group>";
+		};
+		38E88C6C28A6427500B6634E /* SupportViews */ = {
+			isa = PBXGroup;
+			children = (
+				38E88C6D28A6428000B6634E /* TempButtonViewController.swift */,
+				38E88C6F28A642F600B6634E /* ARView.storyboard */,
+			);
+			path = SupportViews;
 		26272A3428A9E5850097B19E /* Coredata */ = {
 			isa = PBXGroup;
 			children = (
@@ -320,6 +352,10 @@
 				260F99A1289D1B470010E258 /* LaunchScreen.storyboard in Resources */,
 				38DE9B5528AC1A4B00C2B001 /* ulsanjunggu.ttf in Resources */,
 				260F999E289D1B470010E258 /* Assets.xcassets in Resources */,
+				38E88C7028A642F600B6634E /* ARView.storyboard in Resources */,
+				9828EC9028A600DF00D0D82E /* course_json.json in Resources */,
+				9828EC8F28A600DF00D0D82E /* person_json.json in Resources */,
+				260F9999289D1B460010E258 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +416,11 @@
 				9847905128AA0CC700FC5995 /* UIView+Extension.swift in Sources */,
 				9877CF1B28A9206F00CC2D5B /* DetailCourseCell.swift in Sources */,
 				7B2C3E0628A3D85900BF197D /* AutoLayout+Extension.swift in Sources */,
+				38E88C6E28A6428000B6634E /* TempButtonViewController.swift in Sources */,
+				9828EC8D28A600DF00D0D82E /* LoadingCourseJSON.swift in Sources */,
+				260F9996289D1B460010E258 /* ViewController.swift in Sources */,
+				9828EC8B28A600DF00D0D82E /* PersonData.swift in Sources */,
+				38E88C7428A6477000B6634E /* ARViewController.swift in Sources */,
 				7B32F65628A6758E00F4CB48 /* MainViewButton.swift in Sources */,
 				260F9996289D1B460010E258 /* ViewController.swift in Sources */,
 				9877CF1928A9205400CC2D5B /* DetailCourseViewController.swift in Sources */,
@@ -544,7 +585,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = N6LML762WM;
+				DEVELOPMENT_TEAM = 82DRSFKFS9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IntoHistory/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "걸어서 역사속으로";
@@ -573,7 +614,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = N6LML762WM;
+				DEVELOPMENT_TEAM = 82DRSFKFS9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IntoHistory/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "걸어서 역사속으로";

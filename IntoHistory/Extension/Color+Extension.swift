@@ -20,23 +20,23 @@ extension UIColor {
     static let popupDim = UIColor(red: 0, green: 0, blue: 0, a: 0.5)
 
     convenience init(red: Int, green: Int, blue: Int, a: CGFloat = 1.0) {
-           self.init(
-               red: CGFloat(red) / 255.0,
-               green: CGFloat(green) / 255.0,
-               blue: CGFloat(blue) / 255.0,
-               alpha: a
-           )
-       }
+        self.init(
+            red: CGFloat(red) / 255.0,
+            green: CGFloat(green) / 255.0,
+            blue: CGFloat(blue) / 255.0,
+            alpha: a
+        )
+    }
 }
 
 extension UIView {
-    func setGradient(color1:UIColor,color2:UIColor){
-           let gradient: CAGradientLayer = CAGradientLayer()
-           gradient.colors = [color1.cgColor,color2.cgColor]
-           gradient.locations = [0.0 , 1.0]
-           gradient.startPoint = CGPoint(x: 0.0, y: 1.0)
-           gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
-           gradient.frame = bounds
-           layer.addSublayer(gradient)
-       }
+    func setGradient(startColor :UIColor, endColor: UIColor){
+        let gradient: CAGradientLayer = CAGradientLayer()
+        gradient.colors = [startColor.cgColor, endColor.cgColor]
+        gradient.locations = [0.0 , 1.0]
+        gradient.startPoint = CGPoint(x: 0.0, y: 1.0)
+        gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
+        gradient.frame = bounds
+        layer.addSublayer(gradient)
+    }
 }
