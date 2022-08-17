@@ -75,7 +75,7 @@ class MainViewController: UIViewController {
             coreDataManager.saveJSONData()
             UserDefaults.standard.set(true, forKey: "isFirstLaunch")
         }
-        changeBlackBoardLabelText()
+//        changeBlackBoardLabelText()
         coreDataManager.loadCourseData()
         coreDataManager.loadPinData()
         coreDataManager.loadHeroData()
@@ -210,16 +210,16 @@ class MainViewController: UIViewController {
     }
     
     // TODO: - 코어데이터 매니저로 연결하고, 필요없는 func 삭제해야함.
-    private func saveJSONData() {
-        for cntCourse in 0..<loadCourseJSON.count {
-            saveCourseData(courseData: loadCourseJSON[cntCourse])
-            
-            for cntPin in 0..<loadCourseJSON[cntCourse].course_pins.count {
-                savePinData(pinData: loadCourseJSON[cntCourse].course_pins[cntPin])
-            }
-            saveHeroData(heroData: loadCourseJSON[cntCourse].related_person)
-        }
-    }
+//    private func saveJSONData() {
+//        for cntCourse in 0..<loadCourseJSON.count {
+//            saveCourseData(courseData: loadCourseJSON[cntCourse])
+//
+//            for cntPin in 0..<loadCourseJSON[cntCourse].course_pins.count {
+//                savePinData(pinData: loadCourseJSON[cntCourse].course_pins[cntPin])
+//            }
+//            saveHeroData(heroData: loadCourseJSON[cntCourse].related_person)
+//        }
+//    }
 
     // MARK: - CoreData Method
     
@@ -326,13 +326,13 @@ class MainViewController: UIViewController {
         return currentDate
     }
 
-    func changeBlackBoardLabelText() {
-        let currentDate = checkDate()
-        if Holiday(rawValue: currentDate) == nil {
-            blackboardLabel.text = historyInfoArray.randomElement()
-        } else {
-            let type = Holiday(rawValue: currentDate)
-            blackboardLabel.text = type!.boardContent
-        }
-    }
-}
+//    func changeBlackBoardLabelText() {
+//        let currentDate = checkDate()
+//        if Holiday(rawValue: currentDate) == nil {
+//            blackboardLabel.text = historyInfoArray.randomElement()
+//        } else {
+//            let type = Holiday(rawValue: currentDate)
+//            blackboardLabel.text = type!.boardContent
+//        }
+//    }
+//}
