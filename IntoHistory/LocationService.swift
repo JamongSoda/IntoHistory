@@ -49,7 +49,7 @@ class LocationService: NSObject {
         let distanceOfEachRegionToCurrentLocation = zip(allRegions, allDistance)
 
         let twentyNearbyRegions = distanceOfEachRegionToCurrentLocation
-            .sorted{ tuple1, tuple2 in return tuple1.1 < tuple2.1 }
+            .sorted{ prevDistance, nextDistance in return prevDistance.1 < nextDistance.1 }
             .prefix(20)
 
         for region in locationManager.monitoredRegions{
