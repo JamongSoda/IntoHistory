@@ -28,8 +28,7 @@ class CourseListViewController: UIViewController {
         super.viewDidLoad()
 
         navigationController?.navigationBar.topItem?.title = "역사 탐방"
-        view.backgroundColor = .basicBackground
-        setCollectionView()
+        attribute()
         loadCourseData()
 
         collectionView.delegate = self
@@ -39,6 +38,13 @@ class CourseListViewController: UIViewController {
     }
     
     // MARK: - Method
+
+    private func attribute() {
+        view.backgroundColor = .basicBackground
+        setCollectionView()
+        setupNavigationBar()
+
+    }
 
     private func setCollectionView() {
         view.addSubview(collectionView)
