@@ -102,6 +102,8 @@ class MainViewController: UIViewController {
 
     private func attribute() {
         self.view.backgroundColor = UIColor.basicBackground
+
+        setNavigationBar()
         setScrollView()
         setButtonGesture()
     }
@@ -197,9 +199,11 @@ class MainViewController: UIViewController {
             height: 140)
     }
 
-    private func setNavigationTitle() {
-        navigationController?.navigationBar.topItem?.title = "히어로드"
+    private func setNavigationBar() {
+        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        navigationController?.navigationBar.topItem?.title = "걸어서 역사 속으로🚶🏻"
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.backBarButtonItem = backBarButtonItem
     }
 
     // MARK: - Button tap method
