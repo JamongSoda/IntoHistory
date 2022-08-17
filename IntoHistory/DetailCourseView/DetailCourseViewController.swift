@@ -25,13 +25,13 @@ class DetailCourseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = .white
+        
         navigationController?.navigationBar.topItem?.title = "상세 코스"
         navigationController?.navigationBar.backgroundColor = .white
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "map"), style: .plain, target: self, action: #selector(didTapMapButton))
 
         attribute()
-        setCollectionView()
 
         detailCourseView.delegate = self
         detailCourseView.dataSource = self
@@ -46,15 +46,12 @@ class DetailCourseViewController: UIViewController {
 
     private func attribute() {
         self.view.backgroundColor = UIColor.basicBackground
-    }
-
-    private func setCollectionView() {
         view.addSubview(detailCourseView)
         detailCourseView.anchor(
             top: view.topAnchor,
-            left: view.safeAreaLayoutGuide.leftAnchor,
+            left: view.leftAnchor,
             bottom: view.bottomAnchor,
-            right: view.safeAreaLayoutGuide.rightAnchor
+            right: view.rightAnchor
         )
     }
     
