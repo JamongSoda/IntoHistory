@@ -92,6 +92,12 @@ class MainViewController: UIViewController {
         setNavigationTitle()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+
     // MARK: - Method
 
     private func attribute() {
