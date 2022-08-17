@@ -5,9 +5,9 @@
 //  Created by 김민택 on 2022/08/05.
 //
 
-import UIKit
 import CoreData
 import UserNotifications
+import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {

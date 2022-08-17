@@ -12,7 +12,9 @@ class DetailCourseViewController: UIViewController {
     // MARK: - Property
     
     private let courseJSONLoader = LoadingCourseJSON().courses
-
+    var courseEntity = [CourseEntity]()
+    var pinEntity = [PinEntity]()
+    
     // MARK: - View
     
     let detailCourseView: UICollectionView = {
@@ -28,6 +30,7 @@ class DetailCourseViewController: UIViewController {
 
         navigationController?.navigationBar.topItem?.title = "상세 코스"
         navigationController?.navigationBar.backgroundColor = .white
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "map"), style: .plain, target: self, action: #selector(didTapMapButton))
 
         attribute()
         setCollectionView()
@@ -56,6 +59,11 @@ class DetailCourseViewController: UIViewController {
             right: view.safeAreaLayoutGuide.rightAnchor
         )
     }
+    @objc func didTapMapButton() {
+        let nextVC = NMapViewController()
+        nextVC.view.backgroundColor = .white
+        navigationController?.pushViewController(nextVC, animated: true)
+    }
 }
 
 // MARK: - UICollectionViewDelegate, DataSourse, DelegateFlowLayout
@@ -63,14 +71,14 @@ class DetailCourseViewController: UIViewController {
 extension DetailCourseViewController:  UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return courseJSONLoader[0].course_pins.count
+        return pinEntity.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailCourseCell.identifier, for: indexPath) as! DetailCourseCell
-        cell.pinImage.image = UIImage(named: SelectedTypes(rawValue: indexPath.row + 1)?.selectedPinsImage(isSelecting: false) ?? ImageLiteral.markerEleven)
-        cell.pinTitle.text = courseJSONLoader[0].course_pins[indexPath.row].pin_title
-        cell.pinLocation.text = courseJSONLoader[0].course_pins[indexPath.row].pin_title
+        cell.pinImage.image = UIImage(named: SelectedTypes(rawValue: indexPath.row + 1)?.selectedPinsImage(isSelecting: false) ?? ImageLiteral.markerOne)
+        cell.pinTitle.text = pinEntity[indexPath.row].pinName
+        cell.pinLocation.text = pinEntity[indexPath.row].address
         return cell
     }
 
@@ -89,8 +97,10 @@ extension DetailCourseViewController:  UICollectionViewDelegate, UICollectionVie
     }
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+
         if kind == UICollectionView.elementKindSectionHeader {
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: DetailCourseHeader.identifier, for: indexPath) as! DetailCourseHeader
+            
             header.uiComponent.courseListTitle.text = courseJSONLoader[indexPath.row].title
             header.uiComponent.courseListRouteText.text = courseJSONLoader[indexPath.row].transportation
             header.uiComponent.courseListTimeText.text = courseJSONLoader[indexPath.row].time
@@ -103,5 +113,24 @@ extension DetailCourseViewController:  UICollectionViewDelegate, UICollectionVie
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: UIScreen.main.bounds.width, height: 170)
+    }
+    
+    private func loadCourseData() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        do {
+            let course = try context.fetch(CourseEntity.fetchRequest()) as! [CourseEntity]
+            let pin = try context.fetch(PinEntity.fetchRequest()) as! [PinEntity]
+            course.forEach {
+                courseEntity.append($0)
+            }
+            pin.forEach {
+                pinEntity.append($0)
+            }
+            
+        } catch {
+            print("error")
+        }
     }
 }

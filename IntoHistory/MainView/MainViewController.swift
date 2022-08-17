@@ -5,14 +5,10 @@
 //  Created by Yu ahyeon on 2022/08/10.
 //
 
-import UIKit
 import CoreData
+import UIKit
 
 class MainViewController: UIViewController {
-    
-    // MARK: - Property
-    
-    let loadCourseJSON = LoadingCourseJSON().courses
 
     // MARK: - View
 
@@ -39,12 +35,12 @@ class MainViewController: UIViewController {
         return $0
     }(UIImageView())
 
-    // TODO: - 추후에 날짜별로 라벨 텍스트가 바뀌도록 하는 로직 구현 예정
     private lazy var blackboardLabel: UILabel = {
         $0.numberOfLines = 0
-        $0.text = "테스트"
+        $0.text = ""
+        $0.font = UIFont(name: "ulsanjunggu", size: 25)
         $0.textColor = .white
-        $0.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        $0.textAlignment = .center
         return $0
     }(UILabel())
 
@@ -76,11 +72,14 @@ class MainViewController: UIViewController {
         
         if !UserDefaults.standard.bool(forKey: "isFirstLaunch") {
             
-            saveJSONData()
+            coreDataManager.saveJSONData()
             UserDefaults.standard.set(true, forKey: "isFirstLaunch")
         }
-        loadJSONData()
-        
+        changeBlackBoardLabelText()
+        coreDataManager.loadCourseData()
+        coreDataManager.loadPinData()
+        coreDataManager.loadHeroData()
+
         attribute()
         layout()
         
@@ -148,6 +147,12 @@ class MainViewController: UIViewController {
         contentView.addSubview(blackboardLabel)
         blackboardLabel.centerX(inView: blackboardImage)
         blackboardLabel.centerY(inView: blackboardImage)
+        blackboardLabel.anchor(
+            left: blackboardImage.leftAnchor,
+            right: blackboardImage.rightAnchor,
+            paddingLeft: 16,
+            paddingRight: 16
+        )
 
         contentView.addSubview(buttonAreaBackground)
         buttonAreaBackground.anchor(
@@ -186,6 +191,8 @@ class MainViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
 
+    // MARK: - Button tap method
+
     private func setButtonGesture() {
         let tapCourseButtonGesture = UITapGestureRecognizer(target: self, action: #selector(tapCourseButton(_:)))
         courseButton.addGestureRecognizer(tapCourseButtonGesture)
@@ -205,6 +212,7 @@ class MainViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    // TODO: - 코어데이터 매니저로 연결하고, 필요없는 func 삭제해야함.
     private func saveJSONData() {
         for cntCourse in 0..<loadCourseJSON.count {
             saveCourseData(courseData: loadCourseJSON[cntCourse])
@@ -215,6 +223,8 @@ class MainViewController: UIViewController {
             saveHeroData(heroData: loadCourseJSON[cntCourse].related_person)
         }
     }
+
+    // MARK: - CoreData Method
     
     private func saveCourseData(courseData: Courses) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -312,3 +322,20 @@ class MainViewController: UIViewController {
     }
 }
 
+    // MARK: - Update Blackboard label Method
+
+    func checkDate() -> String {
+        let currentDate = Date().toString()
+        return currentDate
+    }
+
+    func changeBlackBoardLabelText() {
+        let currentDate = checkDate()
+        if Holiday(rawValue: currentDate) == nil {
+            blackboardLabel.text = historyInfoArray.randomElement()
+        } else {
+            let type = Holiday(rawValue: currentDate)
+            blackboardLabel.text = type!.boardContent
+        }
+    }
+}
