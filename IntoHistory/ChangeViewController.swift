@@ -74,6 +74,5 @@ class ChangeViewController: UIViewController {
     @objc func tapRightButton(_ sender: UITapGestureRecognizer) {
         rightButton.toggle()
         viewWillAppear(true)
-        print(rightButton)
     }
 }
