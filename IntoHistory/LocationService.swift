@@ -31,13 +31,13 @@ class LocationService: NSObject {
     }
 
     
-    func registLocation(lat: Double , long: Double) {
+    private func registLocation(lat: Double , long: Double) {
         locationManager.allowsBackgroundLocationUpdates = true
         locationManager.pausesLocationUpdatesAutomatically = false
         locationManager.startUpdatingLocation()
     }
     
-    func evaluateClosestRegions() {
+    private func evaluateClosestRegions() {
         var allDistance : [Double] = []
 
         for region in allRegions{
