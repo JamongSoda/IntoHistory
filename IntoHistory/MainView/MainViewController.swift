@@ -35,12 +35,12 @@ class MainViewController: UIViewController {
         return $0
     }(UIImageView())
 
-    // TODO: - 추후에 날짜별로 라벨 텍스트가 바뀌도록 하는 로직 구현 예정
     private lazy var blackboardLabel: UILabel = {
         $0.numberOfLines = 0
-        $0.text = "테스트"
+        $0.text = ""
+        $0.font = UIFont(name: "ulsanjunggu", size: 25)
         $0.textColor = .white
-        $0.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        $0.textAlignment = .center
         return $0
     }(UILabel())
 
@@ -75,6 +75,7 @@ class MainViewController: UIViewController {
             coreDataManager.saveJSONData()
             UserDefaults.standard.set(true, forKey: "isFirstLaunch")
         }
+        changeBlackBoardLabelText()
         coreDataManager.loadCourseData()
         coreDataManager.loadPinData()
         coreDataManager.loadHeroData()
@@ -143,6 +144,12 @@ class MainViewController: UIViewController {
         contentView.addSubview(blackboardLabel)
         blackboardLabel.centerX(inView: blackboardImage)
         blackboardLabel.centerY(inView: blackboardImage)
+        blackboardLabel.anchor(
+            left: blackboardImage.leftAnchor,
+            right: blackboardImage.rightAnchor,
+            paddingLeft: 16,
+            paddingRight: 16
+        )
 
         contentView.addSubview(buttonAreaBackground)
         buttonAreaBackground.anchor(
@@ -181,6 +188,8 @@ class MainViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
 
+    // MARK: - Button tap method
+
     private func setButtonGesture() {
         let tapCourseButtonGesture = UITapGestureRecognizer(target: self, action: #selector(tapCourseButton(_:)))
         courseButton.addGestureRecognizer(tapCourseButtonGesture)
@@ -199,5 +208,131 @@ class MainViewController: UIViewController {
         let vc = HeroListViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
+    
+    // TODO: - 코어데이터 매니저로 연결하고, 필요없는 func 삭제해야함.
+    private func saveJSONData() {
+        for cntCourse in 0..<loadCourseJSON.count {
+            saveCourseData(courseData: loadCourseJSON[cntCourse])
+            
+            for cntPin in 0..<loadCourseJSON[cntCourse].course_pins.count {
+                savePinData(pinData: loadCourseJSON[cntCourse].course_pins[cntPin])
+            }
+            saveHeroData(heroData: loadCourseJSON[cntCourse].related_person)
+        }
+    }
+
+    // MARK: - CoreData Method
+    
+    private func saveCourseData(courseData: Courses) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let courseEntity = NSEntityDescription.entity(forEntityName: "CourseEntity", in: context)
+        
+        if let courseEntity = courseEntity {
+            let course = NSManagedObject(entity: courseEntity, insertInto: context)
+            course.setValue(courseData.id, forKey: "cid")
+            course.setValue(courseData.title, forKey: "courseName")
+            course.setValue(courseData.description, forKey: "courseDescription")
+            course.setValue(courseData.region, forKey: "region")
+            course.setValue(courseData.transportation, forKey: "transportation")
+            course.setValue(courseData.time, forKey: "time")
+            course.setValue(false, forKey: "isClear")
+            
+            do {
+                try context.save()
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    private func savePinData(pinData: CoursePins) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let pinEntity = NSEntityDescription.entity(forEntityName: "PinEntity", in: context)
+        
+        if let pinEntity = pinEntity {
+            let pin = NSManagedObject(entity: pinEntity, insertInto: context)
+            pin.setValue(pinData.pin_id, forKey: "pid")
+            pin.setValue(pinData.pin_title, forKey: "pinName")
+            pin.setValue(pinData.pin_address, forKey: "address")
+            pin.setValue(pinData.pin_x, forKey: "lat")
+            pin.setValue(pinData.pin_y, forKey: "lng")
+            pin.setValue(false, forKey: "isVisited")
+            
+            do {
+                try context.save()
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    private func saveHeroData(heroData: RelatedPerson) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let heroEntity = NSEntityDescription.entity(forEntityName: "HeroEntity", in: context)
+        
+        if let heroEntity = heroEntity {
+            let hero = NSManagedObject(entity: heroEntity, insertInto: context)
+            hero.setValue(heroData.person_id, forKey: "hid")
+            hero.setValue(heroData.person_name, forKey: "heroName")
+            hero.setValue(heroData.person_image, forKey: "image")
+            hero.setValue(heroData.person_type, forKey: "type")
+            hero.setValue(heroData.person_description, forKey: "heroDescription")
+            hero.setValue(false, forKey: "isCollected")
+            
+            do {
+                try context.save()
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    private func loadJSONData() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        do {
+            let course = try context.fetch(CourseEntity.fetchRequest()) as! [CourseEntity]
+            let pin = try context.fetch(PinEntity.fetchRequest()) as! [PinEntity]
+            let hero = try context.fetch(HeroEntity.fetchRequest()) as! [HeroEntity]
+            
+            course.forEach {
+                print($0.courseName)
+            }
+            
+            pin.forEach {
+                print($0.pinName)
+            }
+
+            hero.forEach {
+                print($0.heroName)
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
 }
 
+    // MARK: - Update Blackboard label Method
+
+    func checkDate() -> String {
+        let currentDate = Date().toString()
+        return currentDate
+    }
+
+    func changeBlackBoardLabelText() {
+        let currentDate = checkDate()
+        if Holiday(rawValue: currentDate) == nil {
+            blackboardLabel.text = historyInfoArray.randomElement()
+        } else {
+            let type = Holiday(rawValue: currentDate)
+            blackboardLabel.text = type!.boardContent
+        }
+    }
+}
