@@ -40,6 +40,7 @@ class CourseListViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         navigationController?.navigationBar.topItem?.title = "역사 탐방"
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
     
     // MARK: - Method

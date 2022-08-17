@@ -29,6 +29,7 @@ class DetailCourseViewController: UIViewController {
         super.viewDidLoad()
 
         navigationController?.navigationBar.topItem?.title = "상세 코스"
+        navigationController?.navigationBar.prefersLargeTitles = false
         navigationController?.navigationBar.backgroundColor = .white
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "map"), style: .plain, target: self, action: #selector(didTapMapButton))
 
