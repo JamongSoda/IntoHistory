@@ -82,6 +82,12 @@ class HeroCollectedViewController: UIViewController {
 
     private func attribute() {
         view.backgroundColor = .basicBackground
+        setNavigationBar()
+    }
+
+    private func setNavigationBar() {
+        navigationController?.setNavigationBarHidden(true, animated: false)
+        navigationItem.hidesBackButton = true
     }
 
     private func layout() {
@@ -118,6 +124,7 @@ class HeroCollectedViewController: UIViewController {
             left: contentView.leftAnchor,
             bottom: contentView.bottomAnchor,
             right: contentView.rightAnchor,
+            paddingTop: 45,
             paddingLeft: 16,
             paddingRight: 16
         )
