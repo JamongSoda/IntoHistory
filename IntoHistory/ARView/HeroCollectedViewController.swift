@@ -67,16 +67,15 @@ class HeroCollectedViewController: UIViewController {
         $0.alignment = .center
         $0.spacing = 20
         return $0
-    }(UIStackView(arrangedSubviews: [congratsLabel, heroImage, heroName, heroDescription, gotoMainButton]))
+    }(UIStackView(arrangedSubviews: [congratsLabel, heroImage, heroName, heroDescription]))
 
-    // MARK: - Lift Cycle
+    // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         attribute()
         layout()
-        // Do any additional setup after loading the view.
     }
 
     // MARK: - Method
@@ -123,13 +122,20 @@ class HeroCollectedViewController: UIViewController {
             paddingRight: 16
         )
 
+        contentView.addSubview(gotoMainButton)
         gotoMainButton.anchor(
-            left: vStackView.leftAnchor,
-            right: vStackView.rightAnchor
+            top: vStackView.bottomAnchor,
+            left: contentView.leftAnchor,
+            right: contentView.rightAnchor,
+            paddingTop: 20,
+            paddingLeft: 16,
+            paddingRight: 16
         )
     }
 
-    @objc func tapGoToMainButton(_ sender: UITapGestureRecognizer) {
-        // TODO: - 메인으로 돌리는 화면 연결
+    @objc func tapGoToMainButton(_ sender: UIButton) {
+
+        // TODO: - 메인으로 돌리는 화면 연결 - 버튼연결
+        self.navigationController?.popToRootViewController(animated: true)
     }
 }
