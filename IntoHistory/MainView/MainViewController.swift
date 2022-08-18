@@ -38,7 +38,7 @@ class MainViewController: UIViewController {
     private lazy var blackboardLabel: UILabel = {
         $0.numberOfLines = 0
         $0.text = ""
-        $0.font = UIFont(name: "ulsanjunggu", size: 20)
+        $0.font = UIFont(name: "ulsanjunggu", size: 18)
         $0.textColor = .white
         $0.textAlignment = .center
         return $0
