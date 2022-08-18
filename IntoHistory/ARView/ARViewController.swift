@@ -10,6 +10,9 @@ import SceneKit
 import ARKit
 
 class ARViewController: UIViewController, ARSCNViewDelegate {
+    
+    var courseInfo: CourseEntity?
+    var heroInfo = coreDataManager.heros[0]
 
     // MARK: - View
 
@@ -65,6 +68,12 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
 
         if !hitResults.isEmpty {
             let vc = HeroCollectedViewController()
+            coreDataManager.heros.forEach {
+                if courseInfo?.cid == $0.hid {
+                    heroInfo = $0
+                }
+            }
+            vc.heroInfo = heroInfo
             navigationController?.pushViewController(vc, animated: true)
         }
     }
