@@ -12,6 +12,7 @@ class DetailCourseViewController: UIViewController {
     // MARK: - Property
     
     var courseEntity: CourseEntity?
+    var countVisitedPin = 0
     
     // MARK: - View
     
@@ -25,6 +26,16 @@ class DetailCourseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        for num in 0..<coreDataManager.coursePins.count {
+            if coreDataManager.coursePins[num].isVisited {
+                countVisitedPin += 1
+            }
+        }
+        
+        if coreDataManager.coursePins.count == countVisitedPin {
+            coreDataManager.updateCourseIsClear(course: courseEntity!)
+        }
         
         view.backgroundColor = .white
         
@@ -139,6 +150,7 @@ extension DetailCourseViewController:  UICollectionViewDelegate, UICollectionVie
 
     @objc func didTapARButton(_ sender: UITapGestureRecognizer) {
         let storyboard = UIStoryboard(name: "ARView", bundle: nil)
+        
         guard let vc = storyboard.instantiateViewController(withIdentifier: "ARViewController") as? ARViewController else {
             return
         }
