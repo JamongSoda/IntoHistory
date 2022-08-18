@@ -129,14 +129,14 @@ class HeroCollectedViewController: UIViewController {
             paddingRight: 16
         )
 
-        contentView.addSubview(gotoMainButton)
+        view.addSubview(gotoMainButton)
         gotoMainButton.anchor(
             top: vStackView.bottomAnchor,
-            left: contentView.leftAnchor,
-            right: contentView.rightAnchor,
+            left: vStackView.leftAnchor,
+            right: vStackView.rightAnchor,
             paddingTop: 20,
-            paddingLeft: 16,
-            paddingRight: 16
+            paddingLeft: 0,
+            paddingRight: 0
         )
     }
 
