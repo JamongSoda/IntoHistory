@@ -28,4 +28,10 @@ class HeroCollectedViewController: UIViewController {
         return $0
     }(UIImageView())
 
+    private let heroName: UILabel = {
+        $0.text = "영웅 이름"
+        $0.font = UIFont.boldSystemFont(ofSize: 24)
+        $0.textAlignment = .center
+        return $0
+    }(UILabel())
 }
