@@ -8,7 +8,9 @@ import CoreLocation
 import UIKit
 
 import NMapsMap
-	
+
+let naverMapView = NMFNaverMapView()
+
 class NMapViewController: UIViewController, CLLocationManagerDelegate {
 
     // MARK: - Property
@@ -16,6 +18,8 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
     var booleanArray = [Bool]()
     var markers = [NMFMarker()]
     var locationManager = CLLocationManager()
+    var booleanArray = [Bool]()
+    var markers = [NMFMarker()]
 
     // MARK: - View
 
@@ -55,7 +59,8 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
 
         attribute()
 
-        let naverMapView = NMFNaverMapView(frame: view.frame)
+        naverMapView.frame = view.frame
+        naverMapView.mapView.addCameraDelegate(delegate: self)
         naverMapView.showLocationButton = true
         naverMapView.showZoomControls = false
 
@@ -128,8 +133,7 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
         addressLabel.text = coreDataManager.coursePins[0].address
         
         // MARK: - 경로 표시
-        
-        
+ 
         for pinNum in 0..<coreDataManager.coursePins.count {
 
             markers.append(NMFMarker())
