@@ -196,6 +196,14 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
 
         }
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        markers.forEach {
+            $0.mapView = nil
+        }
+        naverMapView.removeFromSuperview()
+        hStackView.removeFromSuperview()
+    }
 
     // MARK: - Method
 
