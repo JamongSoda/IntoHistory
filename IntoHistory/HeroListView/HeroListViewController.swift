@@ -138,7 +138,7 @@ extension HeroListViewController: UICollectionViewDataSource, UICollectionViewDe
             if indexPath.section == 1 {
                 header.labelView.text = "독립운동가"
             } else {
-                header.labelView.text = "전쟁영웅"
+                header.labelView.text = "호국영웅"
             }
             return header
         }
