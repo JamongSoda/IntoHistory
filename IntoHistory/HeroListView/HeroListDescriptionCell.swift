@@ -29,14 +29,14 @@ class HeroListDescriptionCell: UICollectionViewCell {
     }(UIStackView())
     
     private let descriptionTitle: UILabel = {
-        $0.text = "숭고한 희생과 헌신 기억하겠습니다."
+        $0.text = "대한민국의 영웅들의 희생 잊지않겠습니다.🇰🇷"
         $0.textColor = .black
         $0.font = UIFont.boldSystemFont(ofSize: 16)
         return $0
     }(UILabel())
     
     private let descriptionContent: UILabel = {
-        $0.text = "순국 선열과 호국영령의 숭고한 희생정신을 기리며 우리가 누리는 자유와 평화와 행복이, 가장 젊고 빛나는 시기에 자신의 모든 것을 조국에 바치신 순국선열과 호국영령의 희생과 헌신을 딛고 서 있는 것임을 잊지 않겠습니다"
+        $0.text = "애국지사와 호국영웅의 숭고한 희생정신을 기리며 우리가 누리는 자유와 평화와 행복이, 가장 젊고 빛나는 시기에 자신의 모든 것을 조국에 바친 여러분의 희생과 헌신을 딛고 서 있는 것임을 잊지 않겠습니다."
         $0.textColor = .black
         $0.font = UIFont.systemFont(ofSize: 16)
         $0.textAlignment = .left
