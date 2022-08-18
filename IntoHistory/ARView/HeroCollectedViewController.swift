@@ -60,7 +60,7 @@ class HeroCollectedViewController: UIViewController {
         $0.configuration?.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16)
         $0.configuration?.cornerStyle = .medium
         $0.configuration?.baseBackgroundColor = .greenBackground
-        $0.addTarget(self, action: #selector(tapGoToMainButton), for: .touchUpInside)
+        $0.addTarget(HeroCollectedViewController.self, action: #selector(tapGoToMainButton), for: .touchUpInside)
         return $0
     }(UIButton(configuration: .filled()))
 

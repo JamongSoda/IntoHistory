@@ -137,13 +137,6 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
             markers.append(NMFMarker())
             booleanArray.append(false)
             booleanArray[0] = true
-            
-            // MARK: 좌표 간 선 연결
-            
-            let polyline = NMGLatLng(
-                lat: coreDataManager.coursePins[pinNum].lat,
-                lng: coreDataManager.coursePins[pinNum].lng
-            )
 
             // MARK: - 마커 디폴트 이미지
 
