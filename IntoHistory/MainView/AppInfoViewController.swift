@@ -139,4 +139,14 @@ class AppInfoViewController: UIViewController {
         )
     }
 
+    private func setButtonGesture() {
+        let tapCloseButton = UITapGestureRecognizer(target: self, action: #selector(self.tapCloseButton(_:)))
+        closeButton.addGestureRecognizer(tapCloseButton)
+        closeButton.isUserInteractionEnabled = true
+    }
+
+    @objc func tapCloseButton(_ sender: UITapGestureRecognizer) {
+        self.dismiss(animated: true, completion: nil)
+    }
+
 }
