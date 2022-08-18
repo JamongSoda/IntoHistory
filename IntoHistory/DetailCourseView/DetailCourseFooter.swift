@@ -29,8 +29,6 @@ class DetailCourseFooter: UICollectionReusableView {
         return $0
     }(UILabel())
 
-    // MARK: - Method
-
     // MARK: - Init
 
     override init(frame: CGRect) {
