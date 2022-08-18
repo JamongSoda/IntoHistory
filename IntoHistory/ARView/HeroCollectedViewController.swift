@@ -21,4 +21,11 @@ class HeroCollectedViewController: UIViewController {
         $0.textAlignment = .center
         return $0
     }(UILabel())
+
+    private let heroImage: UIImageView = {
+        $0.image = UIImage(named: "NoImageHero.png")
+        $0.contentMode = .scaleAspectFit
+        return $0
+    }(UIImageView())
+
 }
