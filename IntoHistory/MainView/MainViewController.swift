@@ -76,7 +76,7 @@ class MainViewController: UIViewController {
             coreDataManager.saveJSONData()
             UserDefaults.standard.set(true, forKey: "isFirstLaunch")
         }
-//        changeBlackBoardLabelText()
+        changeBlackBoardLabelText()
         coreDataManager.loadCourseData()
         coreDataManager.loadPinData()
         coreDataManager.loadHeroData()
@@ -192,8 +192,12 @@ class MainViewController: UIViewController {
     }
 
     private func setNavigationTitle() {
-        navigationController?.navigationBar.topItem?.title = "히어로드"
+        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        navigationController?.navigationBar.topItem?.title = "걸어서 역사 속으로🚶🏻"
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.backBarButtonItem = backBarButtonItem
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        navigationItem.hidesBackButton = false
     }
 
     // MARK: - Button tap method
@@ -325,22 +329,19 @@ class MainViewController: UIViewController {
             print(error.localizedDescription)
         }
     }
-}
 
-    // MARK: - Update Blackboard label Method
-
-    func checkDate() -> String {
+    private func checkDate() -> String {
         let currentDate = Date().toString()
         return currentDate
     }
 
-//    func changeBlackBoardLabelText() {
-//        let currentDate = checkDate()
-//        if Holiday(rawValue: currentDate) == nil {
-//            blackboardLabel.text = historyInfoArray.randomElement()
-//        } else {
-//            let type = Holiday(rawValue: currentDate)
-//            blackboardLabel.text = type!.boardContent
-//        }
-//    }
-//}
+    private func changeBlackBoardLabelText() {
+        let currentDate = checkDate()
+        if Holiday(rawValue: currentDate) == nil {
+            blackboardLabel.text = historyInfoArray.randomElement()
+        } else {
+            let type = Holiday(rawValue: currentDate)
+            blackboardLabel.text = type!.boardContent
+        }
+    }
+}

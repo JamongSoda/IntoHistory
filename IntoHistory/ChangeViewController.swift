@@ -28,7 +28,7 @@ class ChangeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationItem.title = "상세 코스"
         guard let courseEntity = courseEntity else { return }
         coreDataManager.loadCoursePinData(courseID: Int(courseEntity.cid))
         detailCourseVC.courseEntity = courseEntity
@@ -51,7 +51,7 @@ class ChangeViewController: UIViewController {
     // MARK: - Method
 
     private func layout() {
-        view.backgroundColor = .white
+        view.backgroundColor = .basicBackground
 
         self.addChild(nMapVC)
         self.addChild(detailCourseVC)
