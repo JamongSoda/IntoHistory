@@ -17,6 +17,7 @@ class LocationService: NSObject {
     var allRegions = [CLRegion]()
     let pinData = coreDataManager.pins
     var currentPinData: PinEntity = coreDataManager.pins[0]
+    var pinName = ""
     var currentLocation : CLLocation?{
         didSet{
             evaluateClosestRegions()
@@ -78,15 +79,17 @@ class LocationService: NSObject {
         for i in 0..<pinData.count {
             let lat = pinData[i].lat
             let long = pinData[i].lng
+            pinName = pinData[i].pinName
             
             let location = CLLocationCoordinate2D(latitude: lat, longitude: long)
             let region = CLCircularRegion(center: location, radius: 50.0, identifier: "id\(location)")
             region.notifyOnEntry = true
             allRegions.append(region)
+//            pinName.append(pinName)
         }
     }
     
-    private func fireNotification(_ title: String = "Background Test", body: String){
+    private func fireNotification(_ title: String = "Background Test", body: String, identifier: String){
         let notificationCenter = UNUserNotificationCenter.current()
         
         notificationCenter.getNotificationSettings{
@@ -95,9 +98,10 @@ class LocationService: NSObject {
                 content.title = title
                 content.body = body
                 
-                let uuidString = UUID().uuidString
+                let identifier = identifier
+//                let uuidString = UUID().uuidString
                 let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.1, repeats: false)
-                let request = UNNotificationRequest(identifier: "test-\(uuidString)", content: content, trigger: trigger)
+                let request = UNNotificationRequest(identifier: identifier , content: content, trigger: trigger)
                 notificationCenter.add(request, withCompletionHandler: { (error) in
                     if error != nil { }
                 })
@@ -126,7 +130,7 @@ extension LocationService: CLLocationManagerDelegate {
         case .inside:
             makePinData(region: region)
             fireNotification("\(currentPinData.pinName) 방문완료❣️",
-                             body: "그들이 지켜낸 대한민국\n우리들의 영웅을 기억해주세요🇰🇷")
+                             body: "그들이 지켜낸 대한민국\n우리들의 영웅을 기억해주세요🇰🇷", identifier: pinName)
             coreDataManager.updatePinIsVisited(pin: currentPinData)
         case .outside:
             print("나감")

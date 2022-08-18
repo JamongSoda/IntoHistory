@@ -65,13 +65,13 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     }
 
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        if response.notification.request.content.body == "그들이 지켜낸 대한민국\n우리들의 영웅을 기억해주세요🇰🇷" {
-            guard let rootViewController = (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.window?.rootViewController else {
-                return
-            }
-           if let navController = rootViewController as? UINavigationController{
-               navController.pushViewController(DetailCourseViewController(), animated: true)
-            }
-        }
+//        if response.notification.request.content.body == "그들이 지켜낸 대한민국\n우리들의 영웅을 기억해주세요🇰🇷" {
+//            guard let rootViewController = (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.window?.rootViewController else {
+//                return
+//            }
+//           if let navController = rootViewController as? UINavigationController{
+//               navController.pushViewController(MainViewController(), animated: true)
+//            }
+//        }
     }
 }
