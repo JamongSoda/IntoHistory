@@ -76,10 +76,10 @@ class LocationService: NSObject {
     
     private func makeNotification() {
         setLocationManager()
-        for i in 0..<pinData.count {
-            let lat = pinData[i].lat
-            let long = pinData[i].lng
-            pinName = pinData[i].pinName
+        for num in 0..<pinData.count {
+            let lat = pinData[num].lat
+            let long = pinData[num].lng
+            pinName = pinData[num].pinName
             
             let location = CLLocationCoordinate2D(latitude: lat, longitude: long)
             let region = CLCircularRegion(center: location, radius: 50.0, identifier: "id\(location)")
@@ -97,7 +97,6 @@ class LocationService: NSObject {
                 content.title = title
                 content.body = body
                 
-//                let uuidString = UUID().uuidString
                 let identifier = identifier
                 let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.1, repeats: false)
                 let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
