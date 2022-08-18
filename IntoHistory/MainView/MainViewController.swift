@@ -192,8 +192,10 @@ class MainViewController: UIViewController {
     }
 
     private func setNavigationTitle() {
-        navigationController?.navigationBar.topItem?.title = "히어로드"
+        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        navigationController?.navigationBar.topItem?.title = "걸어서 역사 속으로🚶🏻"
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.backBarButtonItem = backBarButtonItem
     }
 
     // MARK: - Button tap method
@@ -325,9 +327,6 @@ class MainViewController: UIViewController {
             print(error.localizedDescription)
         }
     }
-}
-
-    // MARK: - Update Blackboard label Method
 
     func checkDate() -> String {
         let currentDate = Date().toString()
