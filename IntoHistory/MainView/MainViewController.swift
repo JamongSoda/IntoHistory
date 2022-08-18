@@ -330,10 +330,12 @@ class MainViewController: UIViewController {
         }
     }
 
+    private func checkDate() -> String {
         let currentDate = Date().toString()
         return currentDate
     }
 
+    private func changeBlackBoardLabelText() {
         let currentDate = checkDate()
         if Holiday(rawValue: currentDate) == nil {
             blackboardLabel.text = historyInfoArray.randomElement()
