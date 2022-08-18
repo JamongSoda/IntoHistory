@@ -58,7 +58,6 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
         attribute()
 
         naverMapView.frame = view.frame
-        naverMapView.mapView.addCameraDelegate(delegate: self)
         naverMapView.showLocationButton = true
         naverMapView.showZoomControls = false
 
@@ -122,6 +121,7 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
 
             )
         )
+
         cameraUpdate.animation = .easeIn
         naverMapView.mapView.moveCamera(cameraUpdate)
 
@@ -196,6 +196,14 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
 
         }
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        markers.forEach {
+            $0.mapView = nil
+        }
+        naverMapView.removeFromSuperview()
+        hStackView.removeFromSuperview()
+    }
 
     // MARK: - Method
 
@@ -214,23 +222,4 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
     }
 }
 
-extension NMapViewController: NMFMapViewCameraDelegate {
-    func mapView(_ mapView: NMFMapView, cameraIsChangingByReason reason: Int) {
-        if reason == -1 {
-            for num in 0..<booleanArray.count {
-                markers[num].mapView = nil
-                booleanArray[num] = false
-                markers[num].iconImage = NMFOverlayImage(
-                    image: UIImage(imageLiteralResourceName: SelectedTypes(rawValue: num + 1)?
-                        .selectedPinsImage(isVisited: coreDataManager.coursePins[num].isVisited, isSelected: booleanArray[num]) ?? ""))
-                markers[num].mapView = naverMapView.mapView
-                if booleanArray[num] {
-                    hStackView.isHidden = false
-                } else {
-                    hStackView.isHidden = true
-                }
-            }
-        }
-    }
-}
 
