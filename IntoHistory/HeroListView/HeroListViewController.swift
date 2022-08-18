@@ -30,7 +30,7 @@ class HeroListViewController: UIViewController {
     private func attribute() {
         view.backgroundColor = .basicBackground
         
-        setupNavigationTitle()
+        setupNavigationBar()
         setupCollectionView()
     }
     
@@ -48,11 +48,13 @@ class HeroListViewController: UIViewController {
             paddingRight: 0
         )
     }
-    
-    private func setupNavigationTitle() {
-        navigationController?.navigationBar.topItem?.title = "호국 선열"
-        navigationController?.navigationBar.prefersLargeTitles = false
-    }
+
+    private func setupNavigationBar() {
+            let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+            navigationItem.backBarButtonItem = backBarButtonItem
+            navigationItem.title = "대한민국 영웅"
+            navigationController?.navigationBar.prefersLargeTitles = false
+        }
     
     private func setupCollectionView() {
         collectionView.register(HeroListDescriptionCell.self, forCellWithReuseIdentifier: HeroListDescriptionCell.identifier)
