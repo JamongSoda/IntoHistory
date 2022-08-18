@@ -203,3 +203,23 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
     }
 }
 
+extension NMapViewController: NMFMapViewCameraDelegate {
+    func mapView(_ mapView: NMFMapView, cameraIsChangingByReason reason: Int) {
+        if reason == -1 {
+            for i in 0..<booleanArray.count {
+                markers[i].mapView = nil
+                booleanArray[i] = false
+                markers[i].iconImage = NMFOverlayImage(
+                    image: UIImage(imageLiteralResourceName: SelectedTypes(rawValue: i + 1)?
+                        .selectedPinsImage(isSelecting: booleanArray[i]) ?? ""))
+                markers[i].mapView = naverMapView.mapView
+                if booleanArray[i] {
+                    hStackView.isHidden = false
+                } else {
+                    hStackView.isHidden = true
+                }
+            }
+        }
+    }
+}
+
