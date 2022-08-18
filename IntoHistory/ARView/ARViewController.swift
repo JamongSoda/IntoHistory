@@ -64,10 +64,8 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         let hitResults: [SCNHitTestResult] = sceneView.hitTest(touchLocation, options: [:])
 
         if !hitResults.isEmpty {
-            let node = hitResults[0].node
-
-            // TODO: - 미뉴가 만든 팝업 present + 밑에 버튼 놔야할듯? ("돌아가기")이런거,,
-            self.presentingViewController?.dismiss(animated: true, completion: nil)
+            let vc = HeroCollectedViewController()
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
 }
