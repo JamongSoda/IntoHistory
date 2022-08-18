@@ -20,9 +20,10 @@ class HeroCollectedViewController: UIViewController {
     }(UIView())
 
     private let congratsLabel: UILabel = {
-        $0.text = "영웅을 만나셨네요!🥳\n 축하드려요"
+        $0.text = "🌸대한민국의 영웅을 만나셨네요!🇰🇷"
         $0.font = UIFont.boldSystemFont(ofSize: 28)
         $0.textAlignment = .center
+        $0.numberOfLines = 0
         return $0
     }(UILabel())
 
@@ -40,7 +41,7 @@ class HeroCollectedViewController: UIViewController {
     }(UILabel())
 
     private let heroDescription: UILabel = {
-        $0.text = "영웅 설명"
+        $0.text = "영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명영웅 설명"
         $0.font = UIFont.systemFont(ofSize: 17)
         $0.numberOfLines = 0
         let attrString = NSMutableAttributedString(string: $0.text!)
@@ -57,7 +58,7 @@ class HeroCollectedViewController: UIViewController {
 
     private lazy var vStackView: UIStackView = {
         $0.axis = .vertical
-        $0.alignment = .leading
+        $0.alignment = .center
         $0.spacing = 20
         return $0
     }(UIStackView(arrangedSubviews: [congratsLabel, heroImage, heroName, heroDescription, gotoMainButton]))
@@ -73,9 +74,9 @@ class HeroCollectedViewController: UIViewController {
     }
 
     // MARK: - Method
-    
+
     private func attribute() {
-        view.backgroundColor = .systemRed
+        view.backgroundColor = .basicBackground
     }
 
     private func layout() {
