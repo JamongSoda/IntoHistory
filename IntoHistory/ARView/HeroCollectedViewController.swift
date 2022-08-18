@@ -58,4 +58,13 @@ class HeroCollectedViewController: UIViewController {
         return $0
     }(UIStackView(arrangedSubviews: [congratsLabel, heroImage, heroName, heroDescription, gotoMainButton]))
 
+    // MARK: - Lift Cycle
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        attribute()
+        // Do any additional setup after loading the view.
+    }
+
 }
