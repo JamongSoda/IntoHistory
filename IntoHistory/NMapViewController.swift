@@ -18,6 +18,8 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
     var booleanArray = [Bool]()
     var markers = [NMFMarker()]
     var locationManager = CLLocationManager()
+    var booleanArray = [Bool]()
+    var markers = [NMFMarker()]
 
     // MARK: - View
 
@@ -131,7 +133,7 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
         addressLabel.text = coreDataManager.coursePins[0].address
         
         // MARK: - 경로 표시
- 
+
         for pinNum in 0..<coreDataManager.coursePins.count {
 
             markers.append(NMFMarker())
