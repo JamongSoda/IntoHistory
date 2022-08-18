@@ -46,7 +46,7 @@ class AppInfoViewController: UIViewController {
     }(UILabel())
 
     private let developerTitleLabel: UILabel = {
-        $0.text = "\n📌 Developer Info"
+        $0.text = "\n📌 개발자 정보"
         $0.font = UIFont.boldSystemFont(ofSize: 28)
         $0.numberOfLines = 0
         return $0
