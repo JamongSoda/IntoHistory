@@ -41,65 +41,69 @@ enum SelectedTypes: Int {
     case twelve = 12
     case thirteen = 13
 
-    func selectedPinsImage(isSelecting: Bool) -> String {
-        if isSelecting {
-            switch self {
-            case .one:
-                return ImageLiteral.pinOne
-            case .two:
-                return ImageLiteral.pinTwo
-            case .three:
-                return ImageLiteral.pinThree
-            case .four:
-                return ImageLiteral.pinFour
-            case .five:
-                return ImageLiteral.pinFive
-            case .six:
-                return ImageLiteral.pinSix
-            case .seven:
-                return ImageLiteral.pinSeven
-            case .eight:
-                return ImageLiteral.pinEight
-            case .nine:
-                return ImageLiteral.pinNine
-            case .ten:
-                return ImageLiteral.pinTen
-            case .eleven:
-                return ImageLiteral.pinEleven
-            case .twelve:
-                return ImageLiteral.pinTwelve
-            case .thirteen:
-                return ImageLiteral.pinThirteen
+    func selectedPinsImage(isVisited: Bool, isSelected: Bool) -> String {
+        if !isVisited {
+            if isSelected {
+                switch self {
+                case .one:
+                    return ImageLiteral.pinOne
+                case .two:
+                    return ImageLiteral.pinTwo
+                case .three:
+                    return ImageLiteral.pinThree
+                case .four:
+                    return ImageLiteral.pinFour
+                case .five:
+                    return ImageLiteral.pinFive
+                case .six:
+                    return ImageLiteral.pinSix
+                case .seven:
+                    return ImageLiteral.pinSeven
+                case .eight:
+                    return ImageLiteral.pinEight
+                case .nine:
+                    return ImageLiteral.pinNine
+                case .ten:
+                    return ImageLiteral.pinTen
+                case .eleven:
+                    return ImageLiteral.pinEleven
+                case .twelve:
+                    return ImageLiteral.pinTwelve
+                case .thirteen:
+                    return ImageLiteral.pinThirteen
+                }
+            } else {
+                switch self {
+                case .one:
+                    return ImageLiteral.markerOne
+                case .two:
+                    return ImageLiteral.markerTwo
+                case .three:
+                    return ImageLiteral.markerThree
+                case .four:
+                    return ImageLiteral.markerFour
+                case .five:
+                    return ImageLiteral.markerFive
+                case .six:
+                    return ImageLiteral.markerSix
+                case .seven:
+                    return ImageLiteral.markerSeven
+                case .eight:
+                    return ImageLiteral.markerEight
+                case .nine:
+                    return ImageLiteral.markerNine
+                case .ten:
+                    return ImageLiteral.markerTen
+                case .eleven:
+                    return ImageLiteral.markerEleven
+                case .twelve:
+                    return ImageLiteral.markerTwelve
+                case .thirteen:
+                    return ImageLiteral.markerThirteen
+                }
             }
         } else {
-            switch self {
-            case .one:
-                return ImageLiteral.markerOne
-            case .two:
-                return ImageLiteral.markerTwo
-            case .three:
-                return ImageLiteral.markerThree
-            case .four:
-                return ImageLiteral.markerFour
-            case .five:
-                return ImageLiteral.markerFive
-            case .six:
-                return ImageLiteral.markerSix
-            case .seven:
-                return ImageLiteral.markerSeven
-            case .eight:
-                return ImageLiteral.markerEight
-            case .nine:
-                return ImageLiteral.markerNine
-            case .ten:
-                return ImageLiteral.markerTen
-            case .eleven:
-                return ImageLiteral.markerEleven
-            case .twelve:
-                return ImageLiteral.markerTwelve
-            case .thirteen:
-                return ImageLiteral.markerThirteen
-            }
+            return ImageLiteral.visitedMarker
         }
     }
 }

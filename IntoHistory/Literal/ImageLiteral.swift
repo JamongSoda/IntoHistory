@@ -51,4 +51,8 @@ enum ImageLiteral {
     // MARK: - HeroList LockedHero Image
     
     static var lockedHero = "LockedHero"
+    
+    // MARK: - 방문한 마커(핀)
+    
+    static var visitedMarker = "VisitedMarker"
 }

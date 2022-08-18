@@ -122,9 +122,9 @@ class CourseListUIComponents: UIView {
             left: leftAnchor,
             bottom: bottomAnchor,
             right: rightAnchor,
-            paddingTop: 25,
+            paddingTop: 15,
             paddingLeft: 0,
-            paddingBottom: 40,
+            paddingBottom: 20,
             paddingRight: 0
         )
         
