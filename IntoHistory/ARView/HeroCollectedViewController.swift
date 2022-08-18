@@ -47,4 +47,8 @@ class HeroCollectedViewController: UIViewController {
         return $0
     }(UILabel())
 
+    private let gotoMainButton: UIButton = {
+        return $0
+    }(UIButton())
+
 }
