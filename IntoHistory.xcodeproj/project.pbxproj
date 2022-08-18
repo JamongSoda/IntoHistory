@@ -25,12 +25,13 @@
 		26AD066128A7B1A7008A4169 /* HeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AD066028A7B1A7008A4169 /* HeroDetailViewController.swift */; };
 		26DD473828ABB6D8006C01E2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DD473728ABB6D8006C01E2 /* CoreDataManager.swift */; };
 		26F01C4F28A3F57800D3FD88 /* HeroListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F01C4E28A3F57800D3FD88 /* HeroListViewController.swift */; };
+		38AC751628AD79EE002724B6 /* DetailCourseFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AC751528AD79EE002724B6 /* DetailCourseFooter.swift */; };
+		38AC751828AD8D28002724B6 /* HeroCollectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AC751728AD8D28002724B6 /* HeroCollectedViewController.swift */; };
 		38DE9B5128AC02AF00C2B001 /* BlackBoardTextData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DE9B5028AC02AF00C2B001 /* BlackBoardTextData.swift */; };
 		38DE9B5328AC152500C2B001 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DE9B5228AC152500C2B001 /* Date+Extension.swift */; };
 		38DE9B5528AC1A4B00C2B001 /* ulsanjunggu.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38DE9B5428AC1A4B00C2B001 /* ulsanjunggu.ttf */; };
 		38DE9B5A28ACCDF200C2B001 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DE9B5928ACCDF200C2B001 /* ARViewController.swift */; };
 		38DE9B5C28ACCDFA00C2B001 /* ARView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38DE9B5B28ACCDFA00C2B001 /* ARView.storyboard */; };
-		38DE9B5E28ACD09A00C2B001 /* TempButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DE9B5D28ACD09A00C2B001 /* TempButtonViewController.swift */; };
 		7539DC3959AA009030BA88E8 /* Pods_IntoHistory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5AB256B7E455FBDF91C78F0 /* Pods_IntoHistory.framework */; };
 		7B18C38628A784FA00BC0504 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B18C38528A784FA00BC0504 /* LocationService.swift */; };
 		7B2C3E0628A3D85900BF197D /* AutoLayout+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2C3E0528A3D85900BF197D /* AutoLayout+Extension.swift */; };
@@ -75,12 +76,13 @@
 		26DD473728ABB6D8006C01E2 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		26F01C4E28A3F57800D3FD88 /* HeroListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroListViewController.swift; sourceTree = "<group>"; };
 		31444BDF2B6EE4561E242759 /* Pods-IntoHistory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntoHistory.release.xcconfig"; path = "Target Support Files/Pods-IntoHistory/Pods-IntoHistory.release.xcconfig"; sourceTree = "<group>"; };
+		38AC751528AD79EE002724B6 /* DetailCourseFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCourseFooter.swift; sourceTree = "<group>"; };
+		38AC751728AD8D28002724B6 /* HeroCollectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCollectedViewController.swift; sourceTree = "<group>"; };
 		38DE9B5028AC02AF00C2B001 /* BlackBoardTextData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackBoardTextData.swift; sourceTree = "<group>"; };
 		38DE9B5228AC152500C2B001 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		38DE9B5428AC1A4B00C2B001 /* ulsanjunggu.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ulsanjunggu.ttf; sourceTree = "<group>"; };
 		38DE9B5928ACCDF200C2B001 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		38DE9B5B28ACCDFA00C2B001 /* ARView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ARView.storyboard; sourceTree = "<group>"; };
-		38DE9B5D28ACD09A00C2B001 /* TempButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempButtonViewController.swift; sourceTree = "<group>"; };
 		7B18C38528A784FA00BC0504 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		7B2C3E0528A3D85900BF197D /* AutoLayout+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AutoLayout+Extension.swift"; sourceTree = "<group>"; };
 		7B2C3E0828A3D8FA00BF197D /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
@@ -200,7 +202,7 @@
 			children = (
 				38DE9B5928ACCDF200C2B001 /* ARViewController.swift */,
 				38DE9B5B28ACCDFA00C2B001 /* ARView.storyboard */,
-				38DE9B5D28ACD09A00C2B001 /* TempButtonViewController.swift */,
+				38AC751728AD8D28002724B6 /* HeroCollectedViewController.swift */,
 			);
 			path = ARView;
 			sourceTree = "<group>";
@@ -258,6 +260,7 @@
 				9877CF1828A9205400CC2D5B /* DetailCourseViewController.swift */,
 				9877CF1C28A9336200CC2D5B /* DetailCourseHeader.swift */,
 				9877CF1A28A9206F00CC2D5B /* DetailCourseCell.swift */,
+				38AC751528AD79EE002724B6 /* DetailCourseFooter.swift */,
 			);
 			path = DetailCourseView;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				260F9992289D1B460010E258 /* AppDelegate.swift in Sources */,
 				7B18C38628A784FA00BC0504 /* LocationService.swift in Sources */,
 				260F9994289D1B460010E258 /* SceneDelegate.swift in Sources */,
+				38AC751628AD79EE002724B6 /* DetailCourseFooter.swift in Sources */,
 				983C4E7828AC939C009E175E /* ChangeViewController.swift in Sources */,
 				26272A3F28A9E65D0097B19E /* PinEntity+CoreDataClass.swift in Sources */,
 				2694641928A6973C00485526 /* HeroListDescriptionCell.swift in Sources */,
@@ -439,7 +443,7 @@
 				9877CF1D28A9336200CC2D5B /* DetailCourseHeader.swift in Sources */,
 				38DE9B5128AC02AF00C2B001 /* BlackBoardTextData.swift in Sources */,
 				9828EC8C28A600DF00D0D82E /* CourseData.swift in Sources */,
-				38DE9B5E28ACD09A00C2B001 /* TempButtonViewController.swift in Sources */,
+				38AC751828AD8D28002724B6 /* HeroCollectedViewController.swift in Sources */,
 				7B2C3E0B28A3DDD300BF197D /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -580,7 +584,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = N6LML762WM;
+				DEVELOPMENT_TEAM = 82DRSFKFS9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IntoHistory/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "히어로드";
@@ -612,7 +616,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = N6LML762WM;
+				DEVELOPMENT_TEAM = 82DRSFKFS9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IntoHistory/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "히어로드";
