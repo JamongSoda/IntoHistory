@@ -18,8 +18,6 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
     var booleanArray = [Bool]()
     var markers = [NMFMarker()]
     var locationManager = CLLocationManager()
-    var booleanArray = [Bool]()
-    var markers = [NMFMarker()]
 
     // MARK: - View
 
@@ -219,14 +217,14 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
 extension NMapViewController: NMFMapViewCameraDelegate {
     func mapView(_ mapView: NMFMapView, cameraIsChangingByReason reason: Int) {
         if reason == -1 {
-            for i in 0..<booleanArray.count {
-                markers[i].mapView = nil
-                booleanArray[i] = false
-                markers[i].iconImage = NMFOverlayImage(
-                    image: UIImage(imageLiteralResourceName: SelectedTypes(rawValue: i + 1)?
-                        .selectedPinsImage(isSelecting: booleanArray[i]) ?? ""))
-                markers[i].mapView = naverMapView.mapView
-                if booleanArray[i] {
+            for num in 0..<booleanArray.count {
+                markers[num].mapView = nil
+                booleanArray[num] = false
+                markers[num].iconImage = NMFOverlayImage(
+                    image: UIImage(imageLiteralResourceName: SelectedTypes(rawValue: num + 1)?
+                        .selectedPinsImage(isVisited: coreDataManager.coursePins[num].isVisited, isSelected: booleanArray[num]) ?? ""))
+                markers[num].mapView = naverMapView.mapView
+                if booleanArray[num] {
                     hStackView.isHidden = false
                 } else {
                     hStackView.isHidden = true
