@@ -66,7 +66,7 @@ class AppInfoViewController: UIViewController {
     }(UILabel())
 
     private let dataInfoLabel: UILabel = {
-        $0.text = "1. 제공기관: 독립기념관 \n1.1 데이터명: 독립기념관_국내사적지_나라사랑역사의길\n1.2 공공데이터 URL: https://www.data.go.kr/data/15065471/fileData.do\n1.3 활용내용: 영웅의 길 목록 \n2. 제공기관: 국가보훈처\n2.1 데이터명: 국가보훈처_이달의 독립운동가\n2.2 공공데이터 URL: https://e-gonghun.mpva.go.kr/user/IndepCrusaderOpenAPI.do?goTocode=50004\n3. 제공기관: 국방부\n3.1 데이터명: 전쟁기념관 행사정보\n3.2 공공데이터 URL:  https://www.data.go.kr/data/3064886/fileData.do\n4. 제공기관: 국방부\n3.1 데이터명: 국방부_호국선열 정보\n3.2 공공데이터 URL: https://www.data.go.kr/data/3081228/fileData.do"
+        $0.text = "1. 제공기관: 독립기념관 \n1.1 데이터명: 독립기념관_국내사적지_나라사랑역사의길\n1.2 공공데이터 URL: https://www.data.go.kr/data/15065471/fileData.do\n1.3 활용내용: 영웅의 길 목록 \n2. 제공기관: 국가보훈처\n2.1 데이터명: 국가보훈처_이달의 독립운동가\n2.2 공공데이터 URL: https://e-gonghun.mpva.go.kr/user/IndepCrusaderOpenAPI.do?goTocode=50004\n2.3 활용내용: 독립운동과 관련된 역사의 길을 지나면 독립운동가를 조회하고, 사용자가 직접 독립운동가의 정보를 확인할 수 있도록 함.\n3. 제공기관: 국방부\n3.1 데이터명: 전쟁기념관 행사정보\n3.2 공공데이터 URL:  https://www.data.go.kr/data/3064886/fileData.do\n3.3 활용내용: 호국영웅에 대한 정보를 사용자가 직접 수집하고, 읽어볼 수 있게함.\n4. 제공기관: 국방부\n3.1 데이터명: 국방부_호국선열 정보\n3.2 공공데이터 URL: https://www.data.go.kr/data/3081228/fileData.do\n4.3 활용내용: 호국선열에 대한 정보를 사용자가 직접 수집하고, 읽어볼 수 있게함."
         $0.numberOfLines = 0
         return $0
     }(UILabel())
