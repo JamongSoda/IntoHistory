@@ -12,6 +12,7 @@ class DetailCourseViewController: UIViewController {
     // MARK: - Property
     
     var courseEntity: CourseEntity?
+    var countVisitedPin = 0
     
     // MARK: - View
     
@@ -25,11 +26,22 @@ class DetailCourseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .basicBackground
 
         let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         navigationItem.backBarButtonItem = backBarButtonItem
+        for num in 0..<coreDataManager.coursePins.count {
+            if coreDataManager.coursePins[num].isVisited {
+                countVisitedPin += 1
+            }
+        }
+        
+        if coreDataManager.coursePins.count == countVisitedPin {
+            coreDataManager.updateCourseIsClear(course: courseEntity!)
+        }
+        
+        view.backgroundColor = .white
+        
+        navigationController?.navigationBar.topItem?.title = "상세 코스"
         navigationController?.navigationBar.prefersLargeTitles = false
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "map"), style: .plain, target: self, action: #selector(didTapMapButton))
 
@@ -119,9 +131,15 @@ extension DetailCourseViewController:  UICollectionViewDelegate, UICollectionVie
                 ofKind: UICollectionView.elementKindSectionFooter,
                 withReuseIdentifier: DetailCourseFooter.identifier,
                 for: indexPath) as! DetailCourseFooter
-
-            let didTapARButton = UITapGestureRecognizer(target: self, action: #selector(didTapARButton(_:)))
-            footer.addGestureRecognizer(didTapARButton)
+            
+            if courseEntity!.isClear {
+                let didTapARButton = UITapGestureRecognizer(target: self, action: #selector(didTapARButton(_:)))
+                footer.addGestureRecognizer(didTapARButton)
+            } else {
+                footer.arButtonShape.backgroundColor = .inactiveButtonColor
+                footer.arButtonLabel.textColor = .popupDim
+                footer.arButtonLabel.text = "코스의 핀들을 모두 방문해야 활성화 되요~"
+            }
 
             return footer
         }
@@ -139,9 +157,11 @@ extension DetailCourseViewController:  UICollectionViewDelegate, UICollectionVie
 
     @objc func didTapARButton(_ sender: UITapGestureRecognizer) {
         let storyboard = UIStoryboard(name: "ARView", bundle: nil)
+        
         guard let vc = storyboard.instantiateViewController(withIdentifier: "ARViewController") as? ARViewController else {
             return
         }
+        vc.courseInfo = courseEntity
         navigationController?.pushViewController(vc, animated: true)
     }
 }

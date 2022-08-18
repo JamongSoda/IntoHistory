@@ -8,6 +8,8 @@
 import UIKit
 
 class HeroCollectedViewController: UIViewController {
+    
+    var heroInfo: HeroEntity?
 
     // MARK: - View
 
@@ -58,7 +60,7 @@ class HeroCollectedViewController: UIViewController {
         $0.configuration?.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16)
         $0.configuration?.cornerStyle = .medium
         $0.configuration?.baseBackgroundColor = .greenBackground
-        $0.addTarget(self, action: #selector(tapGoToMainButton), for: .touchUpInside)
+        $0.addTarget(HeroCollectedViewController.self, action: #selector(tapGoToMainButton), for: .touchUpInside)
         return $0
     }(UIButton(configuration: .filled()))
 
@@ -83,6 +85,9 @@ class HeroCollectedViewController: UIViewController {
     private func attribute() {
         view.backgroundColor = .basicBackground
         setNavigationBar()
+        heroImage.image = UIImage(named: heroInfo!.image)
+        heroName.text = heroInfo!.heroName
+        heroDescription.text = heroInfo!.heroDescription
     }
 
     private func setNavigationBar() {

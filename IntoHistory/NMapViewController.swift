@@ -58,7 +58,6 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
         attribute()
 
         naverMapView.frame = view.frame
-        naverMapView.mapView.addCameraDelegate(delegate: self)
         naverMapView.showLocationButton = true
         naverMapView.showZoomControls = false
 
@@ -122,6 +121,7 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
 
             )
         )
+
         cameraUpdate.animation = .easeIn
         naverMapView.mapView.moveCamera(cameraUpdate)
 
@@ -137,13 +137,6 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
             markers.append(NMFMarker())
             booleanArray.append(false)
             booleanArray[0] = true
-            
-            // MARK: 좌표 간 선 연결
-            
-            let polyline = NMGLatLng(
-                lat: coreDataManager.coursePins[pinNum].lat,
-                lng: coreDataManager.coursePins[pinNum].lng
-            )
 
             // MARK: - 마커 디폴트 이미지
 
@@ -196,6 +189,14 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
 
         }
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        markers.forEach {
+            $0.mapView = nil
+        }
+        naverMapView.removeFromSuperview()
+        hStackView.removeFromSuperview()
+    }
 
     // MARK: - Method
 
@@ -210,26 +211,6 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
 
         if CLLocationManager.locationServicesEnabled() {
             locationManager.startUpdatingLocation()
-        }
-    }
-}
-
-extension NMapViewController: NMFMapViewCameraDelegate {
-    func mapView(_ mapView: NMFMapView, cameraIsChangingByReason reason: Int) {
-        if reason == -1 {
-            for num in 0..<booleanArray.count {
-                markers[num].mapView = nil
-                booleanArray[num] = false
-                markers[num].iconImage = NMFOverlayImage(
-                    image: UIImage(imageLiteralResourceName: SelectedTypes(rawValue: num + 1)?
-                        .selectedPinsImage(isVisited: coreDataManager.coursePins[num].isVisited, isSelected: booleanArray[num]) ?? ""))
-                markers[num].mapView = naverMapView.mapView
-                if booleanArray[num] {
-                    hStackView.isHidden = false
-                } else {
-                    hStackView.isHidden = true
-                }
-            }
         }
     }
 }
