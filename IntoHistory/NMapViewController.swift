@@ -8,12 +8,16 @@ import CoreLocation
 import UIKit
 
 import NMapsMap
-	
+
+let naverMapView = NMFNaverMapView()
+
 class NMapViewController: UIViewController, CLLocationManagerDelegate {
 
     // MARK: - Property
 
     var locationManager = CLLocationManager()
+    var booleanArray = [Bool]()
+    var markers = [NMFMarker()]
 
     // MARK: - View
 
@@ -53,7 +57,8 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
 
         attribute()
 
-        let naverMapView = NMFNaverMapView(frame: view.frame)
+        naverMapView.frame = view.frame
+        naverMapView.mapView.addCameraDelegate(delegate: self)
         naverMapView.showLocationButton = true
         naverMapView.showZoomControls = false
 
@@ -125,9 +130,6 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
         titleLabel.text = coreDataManager.coursePins[0].pinName
         addressLabel.text = coreDataManager.coursePins[0].address
 
-        var booleanArray = [Bool]()
-        var markers = [NMFMarker()]
-
         for pinNum in 0..<coreDataManager.coursePins.count {
 
             markers.append(NMFMarker())
@@ -197,6 +199,26 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
 
         if CLLocationManager.locationServicesEnabled() {
             locationManager.startUpdatingLocation()
+        }
+    }
+}
+
+extension NMapViewController: NMFMapViewCameraDelegate {
+    func mapView(_ mapView: NMFMapView, cameraIsChangingByReason reason: Int) {
+        if reason == -1 {
+            for i in 0..<booleanArray.count {
+                markers[i].mapView = nil
+                booleanArray[i] = false
+                markers[i].iconImage = NMFOverlayImage(
+                    image: UIImage(imageLiteralResourceName: SelectedTypes(rawValue: i + 1)?
+                        .selectedPinsImage(isSelecting: booleanArray[i]) ?? ""))
+                markers[i].mapView = naverMapView.mapView
+                if booleanArray[i] {
+                    hStackView.isHidden = false
+                } else {
+                    hStackView.isHidden = true
+                }
+            }
         }
     }
 }
