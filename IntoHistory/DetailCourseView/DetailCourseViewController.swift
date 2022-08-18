@@ -26,7 +26,6 @@ class DetailCourseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
 
         let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         navigationItem.backBarButtonItem = backBarButtonItem
