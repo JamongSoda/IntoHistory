@@ -8,12 +8,16 @@ import CoreLocation
 import UIKit
 
 import NMapsMap
-	
+
+let naverMapView = NMFNaverMapView()
+
 class NMapViewController: UIViewController, CLLocationManagerDelegate {
 
     // MARK: - Property
 
     var locationManager = CLLocationManager()
+    var booleanArray = [Bool]()
+    var markers = [NMFMarker()]
 
     // MARK: - View
 
@@ -53,7 +57,8 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
 
         attribute()
 
-        let naverMapView = NMFNaverMapView(frame: view.frame)
+        naverMapView.frame = view.frame
+        naverMapView.mapView.addCameraDelegate(delegate: self)
         naverMapView.showLocationButton = true
         naverMapView.showZoomControls = false
 
@@ -124,9 +129,6 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
 
         titleLabel.text = coreDataManager.coursePins[0].pinName
         addressLabel.text = coreDataManager.coursePins[0].address
-
-        var booleanArray = [Bool]()
-        var markers = [NMFMarker()]
 
         for pinNum in 0..<coreDataManager.coursePins.count {
 
