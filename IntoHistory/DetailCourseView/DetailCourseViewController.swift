@@ -130,9 +130,15 @@ extension DetailCourseViewController:  UICollectionViewDelegate, UICollectionVie
                 ofKind: UICollectionView.elementKindSectionFooter,
                 withReuseIdentifier: DetailCourseFooter.identifier,
                 for: indexPath) as! DetailCourseFooter
-
-            let didTapARButton = UITapGestureRecognizer(target: self, action: #selector(didTapARButton(_:)))
-            footer.addGestureRecognizer(didTapARButton)
+            
+            if courseEntity!.isClear {
+                let didTapARButton = UITapGestureRecognizer(target: self, action: #selector(didTapARButton(_:)))
+                footer.addGestureRecognizer(didTapARButton)
+            } else {
+                footer.arButtonShape.backgroundColor = .inactiveButtonColor
+                footer.arButtonLabel.textColor = .popupDim
+                footer.arButtonLabel.text = "코스의 핀들을 모두 방문해야 활성화 되요~"
+            }
 
             return footer
         }

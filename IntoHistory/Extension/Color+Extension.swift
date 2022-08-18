@@ -18,6 +18,7 @@ extension UIColor {
     static let blackboardBorder2 = UIColor.init(red: 118, green: 71, blue: 0)
     static let blackboardEraser = UIColor.init(red: 81, green: 37, blue: 12)
     static let popupDim = UIColor(red: 0, green: 0, blue: 0, a: 0.5)
+    static let inactiveButtonColor = UIColor(red: 236, green: 236, blue: 236)
 
     convenience init(red: Int, green: Int, blue: Int, a: CGFloat = 1.0) {
            self.init(
