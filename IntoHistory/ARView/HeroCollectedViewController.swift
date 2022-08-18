@@ -14,6 +14,10 @@ class HeroCollectedViewController: UIViewController {
     private let scrollView: UIScrollView = {
         return $0
     }(UIScrollView())
+    
+    private let contentView: UIView = {
+        return $0
+    }(UIView())
 
     private let congratsLabel: UILabel = {
         $0.text = "영웅을 만나셨네요!🥳\n 축하드려요"
@@ -64,6 +68,7 @@ class HeroCollectedViewController: UIViewController {
         super.viewDidLoad()
 
         attribute()
+        layout()
         // Do any additional setup after loading the view.
     }
 
@@ -75,7 +80,7 @@ class HeroCollectedViewController: UIViewController {
 
     private func layout() {
         view.addSubview(scrollView)
-        [congratsLabel, heroImage, heroName, heroDescription, gotoMainButton].forEach { scrollView.addSubview($0) }
+        scrollView.addSubview(vStackView)
 
         scrollView.anchor(
             top: view.topAnchor,
@@ -86,6 +91,29 @@ class HeroCollectedViewController: UIViewController {
             paddingLeft: 0,
             paddingBottom: 0,
             paddingRight: 0
+        )
+
+        scrollView.addSubview(contentView)
+        contentView.anchor(
+            top: scrollView.contentLayoutGuide.topAnchor,
+            left: scrollView.contentLayoutGuide.leftAnchor,
+            bottom: scrollView.contentLayoutGuide.bottomAnchor,
+            right: scrollView.contentLayoutGuide.rightAnchor,
+            paddingTop: 0,
+            paddingLeft: 0,
+            paddingBottom: 0,
+            paddingRight: 0)
+        contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+        
+        vStackView.centerX(inView: contentView)
+        vStackView.centerY(inView: contentView)
+        vStackView.anchor(
+            top: contentView.topAnchor,
+            left: contentView.leftAnchor,
+            bottom: contentView.bottomAnchor,
+            right: contentView.rightAnchor,
+            paddingLeft: 16,
+            paddingRight: 16
         )
     }
 }
