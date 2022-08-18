@@ -38,7 +38,7 @@ class MainViewController: UIViewController {
     private lazy var blackboardLabel: UILabel = {
         $0.numberOfLines = 0
         $0.text = ""
-        $0.font = UIFont(name: "ulsanjunggu", size: 25)
+        $0.font = UIFont(name: "ulsanjunggu", size: 18)
         $0.textColor = .white
         $0.textAlignment = .center
         return $0
@@ -123,7 +123,7 @@ class MainViewController: UIViewController {
             paddingBottom: 0,
             paddingRight: 0)
         contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
-        
+
         let contentViewHeight = contentView.heightAnchor.constraint(greaterThanOrEqualTo: view.heightAnchor)
         contentViewHeight.priority = .defaultLow
         contentViewHeight.isActive = true
@@ -163,7 +163,7 @@ class MainViewController: UIViewController {
         buttonAreaBackground.anchor(
             top: blackboardImage.bottomAnchor,
             left: contentView.leftAnchor,
-            bottom: view.bottomAnchor,
+            bottom: contentView.bottomAnchor,
             right: contentView.rightAnchor,
             paddingTop: 30,
             paddingLeft: 0,
@@ -173,8 +173,8 @@ class MainViewController: UIViewController {
         contentView.addSubview(courseButton)
         courseButton.anchor(
             top: buttonAreaBackground.topAnchor,
-            left: contentView.leftAnchor,
-            right: contentView.rightAnchor,
+            left: buttonAreaBackground.leftAnchor,
+            right: buttonAreaBackground.rightAnchor,
             paddingTop: 30,
             paddingLeft: 16,
             paddingRight: 16,
@@ -183,8 +183,8 @@ class MainViewController: UIViewController {
         contentView.addSubview(heroButton)
         heroButton.anchor(
             top: courseButton.bottomAnchor,
-            left: contentView.leftAnchor,
-            right: contentView.rightAnchor,
+            left: buttonAreaBackground.leftAnchor,
+            right: buttonAreaBackground.rightAnchor,
             paddingTop: 20,
             paddingLeft: 16,
             paddingRight: 16,
@@ -194,10 +194,15 @@ class MainViewController: UIViewController {
     private func setNavigationTitle() {
         let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         navigationController?.navigationBar.topItem?.title = "걸어서 역사 속으로🚶🏻"
-        navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.backBarButtonItem = backBarButtonItem
+        navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.setNavigationBarHidden(false, animated: false)
         navigationItem.hidesBackButton = false
+
+        let infoImage = UIImage(systemName: "info.circle")
+        let infoButton = UIBarButtonItem(image: infoImage, style: .plain, target: self, action: #selector(tapInfoButton))
+        self.navigationItem.rightBarButtonItem = infoButton
+        navigationItem.rightBarButtonItem?.tintColor = .systemGray2
     }
 
     // MARK: - Button tap method
@@ -343,5 +348,11 @@ class MainViewController: UIViewController {
             let type = Holiday(rawValue: currentDate)
             blackboardLabel.text = type!.boardContent
         }
+    }
+
+    @objc private func tapInfoButton() {
+        let appInfoVC = AppInfoViewController()
+        appInfoVC.modalPresentationStyle = .fullScreen
+        present(appInfoVC, animated: true, completion: nil)
     }
 }

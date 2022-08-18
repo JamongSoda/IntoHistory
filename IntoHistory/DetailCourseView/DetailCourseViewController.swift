@@ -66,7 +66,8 @@ class DetailCourseViewController: UIViewController {
             top: view.topAnchor,
             left: view.leftAnchor,
             bottom: view.bottomAnchor,
-            right: view.rightAnchor
+            right: view.rightAnchor,
+            paddingBottom: 16
         )
     }
     

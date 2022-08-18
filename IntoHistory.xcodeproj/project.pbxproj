@@ -27,6 +27,7 @@
 		26F01C4F28A3F57800D3FD88 /* HeroListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F01C4E28A3F57800D3FD88 /* HeroListViewController.swift */; };
 		38AC751628AD79EE002724B6 /* DetailCourseFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AC751528AD79EE002724B6 /* DetailCourseFooter.swift */; };
 		38AC751828AD8D28002724B6 /* HeroCollectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AC751728AD8D28002724B6 /* HeroCollectedViewController.swift */; };
+		38AC751A28AE8FC6002724B6 /* AppInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AC751928AE8FC6002724B6 /* AppInfoViewController.swift */; };
 		38DE9B5128AC02AF00C2B001 /* BlackBoardTextData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DE9B5028AC02AF00C2B001 /* BlackBoardTextData.swift */; };
 		38DE9B5328AC152500C2B001 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DE9B5228AC152500C2B001 /* Date+Extension.swift */; };
 		38DE9B5528AC1A4B00C2B001 /* ulsanjunggu.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38DE9B5428AC1A4B00C2B001 /* ulsanjunggu.ttf */; };
@@ -78,6 +79,7 @@
 		31444BDF2B6EE4561E242759 /* Pods-IntoHistory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntoHistory.release.xcconfig"; path = "Target Support Files/Pods-IntoHistory/Pods-IntoHistory.release.xcconfig"; sourceTree = "<group>"; };
 		38AC751528AD79EE002724B6 /* DetailCourseFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCourseFooter.swift; sourceTree = "<group>"; };
 		38AC751728AD8D28002724B6 /* HeroCollectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCollectedViewController.swift; sourceTree = "<group>"; };
+		38AC751928AE8FC6002724B6 /* AppInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoViewController.swift; sourceTree = "<group>"; };
 		38DE9B5028AC02AF00C2B001 /* BlackBoardTextData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackBoardTextData.swift; sourceTree = "<group>"; };
 		38DE9B5228AC152500C2B001 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		38DE9B5428AC1A4B00C2B001 /* ulsanjunggu.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ulsanjunggu.ttf; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				38DE9B5028AC02AF00C2B001 /* BlackBoardTextData.swift */,
 				7B2C3E0A28A3DDD300BF197D /* MainViewController.swift */,
 				7B32F65428A6750800F4CB48 /* support Views */,
+				38AC751928AE8FC6002724B6 /* AppInfoViewController.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				38DE9B5A28ACCDF200C2B001 /* ARViewController.swift in Sources */,
 				260F9992289D1B460010E258 /* AppDelegate.swift in Sources */,
 				7B18C38628A784FA00BC0504 /* LocationService.swift in Sources */,
+				38AC751A28AE8FC6002724B6 /* AppInfoViewController.swift in Sources */,
 				260F9994289D1B460010E258 /* SceneDelegate.swift in Sources */,
 				38AC751628AD79EE002724B6 /* DetailCourseFooter.swift in Sources */,
 				983C4E7828AC939C009E175E /* ChangeViewController.swift in Sources */,
