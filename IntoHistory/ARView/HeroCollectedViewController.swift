@@ -73,4 +73,19 @@ class HeroCollectedViewController: UIViewController {
         view.backgroundColor = .systemRed
     }
 
+    private func layout() {
+        view.addSubview(scrollView)
+        [congratsLabel, heroImage, heroName, heroDescription, gotoMainButton].forEach { scrollView.addSubview($0) }
+
+        scrollView.anchor(
+            top: view.topAnchor,
+            left: view.leftAnchor,
+            bottom: view.bottomAnchor,
+            right: view.rightAnchor,
+            paddingTop: 0,
+            paddingLeft: 0,
+            paddingBottom: 0,
+            paddingRight: 0
+        )
+    }
 }
