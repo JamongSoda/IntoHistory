@@ -14,4 +14,11 @@ class HeroCollectedViewController: UIViewController {
     private let scrollView: UIScrollView = {
         return $0
     }(UIScrollView())
+
+    private let congratsLabel: UILabel = {
+        $0.text = "영웅을 만나셨네요!🥳\n 축하드려요"
+        $0.font = UIFont.boldSystemFont(ofSize: 28)
+        $0.textAlignment = .center
+        return $0
+    }(UILabel())
 }
