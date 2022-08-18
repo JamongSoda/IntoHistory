@@ -8,6 +8,8 @@
 import UIKit
 
 class HeroCollectedViewController: UIViewController {
+    
+    var heroInfo: HeroEntity?
 
     // MARK: - View
 
@@ -83,6 +85,9 @@ class HeroCollectedViewController: UIViewController {
     private func attribute() {
         view.backgroundColor = .basicBackground
         setNavigationBar()
+        heroImage.image = UIImage(named: heroInfo!.image)
+        heroName.text = heroInfo!.heroName
+        heroDescription.text = heroInfo!.heroDescription
     }
 
     private func setNavigationBar() {

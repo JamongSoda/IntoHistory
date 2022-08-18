@@ -142,6 +142,7 @@ extension DetailCourseViewController:  UICollectionViewDelegate, UICollectionVie
         guard let vc = storyboard.instantiateViewController(withIdentifier: "ARViewController") as? ARViewController else {
             return
         }
+        vc.courseInfo = courseEntity
         navigationController?.pushViewController(vc, animated: true)
     }
 }
