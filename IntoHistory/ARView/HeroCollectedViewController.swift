@@ -51,4 +51,11 @@ class HeroCollectedViewController: UIViewController {
         return $0
     }(UIButton())
 
+    private lazy var vStackView: UIStackView = {
+        $0.axis = .vertical
+        $0.alignment = .leading
+        $0.spacing = 20
+        return $0
+    }(UIStackView(arrangedSubviews: [congratsLabel, heroImage, heroName, heroDescription, gotoMainButton]))
+
 }
