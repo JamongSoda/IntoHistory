@@ -202,7 +202,6 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
     func attribute() {
         let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         navigationItem.backBarButtonItem = backBarButtonItem
-        navigationItem.largeTitleDisplayMode = .never
         navigationController?.navigationBar.prefersLargeTitles = false
 
         locationManager.delegate = self
