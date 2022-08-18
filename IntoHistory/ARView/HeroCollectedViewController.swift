@@ -53,8 +53,14 @@ class HeroCollectedViewController: UIViewController {
     }(UILabel())
 
     private let gotoMainButton: UIButton = {
+        $0.configuration?.title = "홈으로 돌아가기🥳"
+        $0.configuration?.baseForegroundColor = .black
+        $0.configuration?.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16)
+        $0.configuration?.cornerStyle = .medium
+        $0.configuration?.baseBackgroundColor = .greenBackground
+        $0.addTarget(self, action: #selector(tapGoToMainButton), for: .touchUpInside)
         return $0
-    }(UIButton())
+    }(UIButton(configuration: .filled()))
 
     private lazy var vStackView: UIStackView = {
         $0.axis = .vertical
@@ -116,5 +122,14 @@ class HeroCollectedViewController: UIViewController {
             paddingLeft: 16,
             paddingRight: 16
         )
+
+        gotoMainButton.anchor(
+            left: vStackView.leftAnchor,
+            right: vStackView.rightAnchor
+        )
+    }
+
+    @objc func tapGoToMainButton(_ sender: UITapGestureRecognizer) {
+        // TODO: - 메인으로 돌리는 화면 연결
     }
 }
