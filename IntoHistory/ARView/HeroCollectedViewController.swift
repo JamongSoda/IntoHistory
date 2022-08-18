@@ -34,4 +34,17 @@ class HeroCollectedViewController: UIViewController {
         $0.textAlignment = .center
         return $0
     }(UILabel())
+
+    private let heroDescription: UILabel = {
+        $0.text = "영웅 설명"
+        $0.font = UIFont.systemFont(ofSize: 17)
+        $0.numberOfLines = 0
+        let attrString = NSMutableAttributedString(string: $0.text!)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 4
+        attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attrString.length))
+        $0.attributedText = attrString
+        return $0
+    }(UILabel())
+
 }
