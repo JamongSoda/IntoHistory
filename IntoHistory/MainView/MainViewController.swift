@@ -196,6 +196,8 @@ class MainViewController: UIViewController {
         navigationController?.navigationBar.topItem?.title = "걸어서 역사 속으로🚶🏻"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.backBarButtonItem = backBarButtonItem
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        navigationItem.hidesBackButton = false
     }
 
     // MARK: - Button tap method
@@ -328,12 +330,10 @@ class MainViewController: UIViewController {
         }
     }
 
-    func checkDate() -> String {
         let currentDate = Date().toString()
         return currentDate
     }
 
-    func changeBlackBoardLabelText() {
         let currentDate = checkDate()
         if Holiday(rawValue: currentDate) == nil {
             blackboardLabel.text = historyInfoArray.randomElement()
@@ -343,7 +343,3 @@ class MainViewController: UIViewController {
         }
     }
 }
-
-// MARK: - Update Blackboard label Method
-
-
