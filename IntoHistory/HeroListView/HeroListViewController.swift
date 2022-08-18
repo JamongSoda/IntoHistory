@@ -81,14 +81,12 @@ extension HeroListViewController: UICollectionViewDataSource, UICollectionViewDe
             return cell
         } else if indexPath.section == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeroListCell.identifier, for: indexPath) as! HeroListCell
-            coreDataManager.resistances[indexPath.row].isCollected = true
             cell.imageView.image = UIImage(named: coreDataManager.resistances[indexPath.row].isCollected ? coreDataManager.resistances[indexPath.row].image : ImageLiteral.lockedHero)
             cell.labelView.text = coreDataManager.resistances[indexPath.row].isCollected ? coreDataManager.resistances[indexPath.row].heroName : "대한민국의 영웅"
             
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeroListCell.identifier, for: indexPath) as! HeroListCell
-            coreDataManager.warriors[indexPath.row].isCollected = true
             cell.imageView.image = UIImage(named: coreDataManager.warriors[indexPath.row].isCollected ? coreDataManager.warriors[indexPath.row].image : ImageLiteral.lockedHero)
             cell.labelView.text = coreDataManager.warriors[indexPath.row].isCollected ? coreDataManager.warriors[indexPath.row].heroName : "대한민국의 영웅"
             
