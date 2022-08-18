@@ -72,4 +72,71 @@ class AppInfoViewController: UIViewController {
     }(UILabel())
 
 
+    // MARK: - Life Cycle
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        attribute()
+        layout()
+        setButtonGesture()
+    }
+
+    // MARK: - Method
+
+    private func attribute() {
+        view.backgroundColor = .basicBackground
+    }
+
+    private func layout() {
+
+        view.addSubview(scrollView)
+        scrollView.anchor(
+            top: view.safeAreaLayoutGuide.topAnchor,
+            left: view.leftAnchor,
+            bottom: view.safeAreaLayoutGuide.bottomAnchor,
+            right: view.rightAnchor,
+            paddingTop: 0,
+            paddingLeft: 0,
+            paddingBottom: 0,
+            paddingRight: 0)
+
+        scrollView.addSubview(contentView)
+        contentView.anchor(
+            top: scrollView.contentLayoutGuide.topAnchor,
+            left: scrollView.contentLayoutGuide.leftAnchor,
+            bottom: scrollView.contentLayoutGuide.bottomAnchor,
+            right: scrollView.contentLayoutGuide.rightAnchor,
+            paddingTop: 0,
+            paddingLeft: 0,
+            paddingBottom: 0,
+            paddingRight: 0)
+        contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+
+        let contentViewHeight = contentView.heightAnchor.constraint(greaterThanOrEqualTo: view.heightAnchor)
+        contentViewHeight.priority = .defaultHigh
+        contentViewHeight.isActive = true
+
+        contentView.addSubview(appInfoStack)
+        appInfoStack.anchor(
+            top: contentView.topAnchor,
+            left: contentView.leftAnchor,
+            bottom: contentView.bottomAnchor,
+            right: contentView.rightAnchor,
+            paddingTop: 40,
+            paddingLeft: 16,
+            paddingBottom: 40,
+            paddingRight: 16,
+            width: UIScreen.main.bounds.width - 32
+        )
+
+        contentView.addSubview(closeButton)
+        closeButton.anchor(
+            top: contentView.topAnchor,
+            right: contentView.rightAnchor,
+            paddingTop: 40,
+            paddingRight: 25
+        )
+    }
+
 }
