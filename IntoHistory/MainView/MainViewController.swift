@@ -123,7 +123,7 @@ class MainViewController: UIViewController {
             paddingBottom: 0,
             paddingRight: 0)
         contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
-        
+
         let contentViewHeight = contentView.heightAnchor.constraint(greaterThanOrEqualTo: view.heightAnchor)
         contentViewHeight.priority = .defaultLow
         contentViewHeight.isActive = true
@@ -196,10 +196,15 @@ class MainViewController: UIViewController {
     private func setNavigationTitle() {
         let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         navigationController?.navigationBar.topItem?.title = "걸어서 역사 속으로🚶🏻"
-        navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.backBarButtonItem = backBarButtonItem
+        navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.setNavigationBarHidden(false, animated: false)
         navigationItem.hidesBackButton = false
+
+        let infoImage = UIImage(systemName: "info.circle")
+        let infoButton = UIBarButtonItem(image: infoImage, style: .plain, target: self, action: #selector(tapInfoButton))
+        self.navigationItem.rightBarButtonItem = infoButton
+        navigationItem.rightBarButtonItem?.tintColor = .systemGray2
     }
 
     // MARK: - Button tap method
@@ -345,5 +350,11 @@ class MainViewController: UIViewController {
             let type = Holiday(rawValue: currentDate)
             blackboardLabel.text = type!.boardContent
         }
+    }
+
+    @objc private func tapInfoButton() {
+        let appInfoVC = AppInfoViewController()
+        appInfoVC.modalPresentationStyle = .fullScreen
+        present(appInfoVC, animated: true, completion: nil)
     }
 }
