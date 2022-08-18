@@ -163,7 +163,7 @@ class MainViewController: UIViewController {
         buttonAreaBackground.anchor(
             top: blackboardImage.bottomAnchor,
             left: contentView.leftAnchor,
-            bottom: view.bottomAnchor,
+            bottom: contentView.bottomAnchor,
             right: contentView.rightAnchor,
             paddingTop: 30,
             paddingLeft: 0,
@@ -173,8 +173,8 @@ class MainViewController: UIViewController {
         contentView.addSubview(courseButton)
         courseButton.anchor(
             top: buttonAreaBackground.topAnchor,
-            left: contentView.leftAnchor,
-            right: contentView.rightAnchor,
+            left: buttonAreaBackground.leftAnchor,
+            right: buttonAreaBackground.rightAnchor,
             paddingTop: 30,
             paddingLeft: 16,
             paddingRight: 16,
@@ -183,10 +183,12 @@ class MainViewController: UIViewController {
         contentView.addSubview(heroButton)
         heroButton.anchor(
             top: courseButton.bottomAnchor,
-            left: contentView.leftAnchor,
-            right: contentView.rightAnchor,
+            left: buttonAreaBackground.leftAnchor,
+            bottom: buttonAreaBackground.bottomAnchor,
+            right: buttonAreaBackground.rightAnchor,
             paddingTop: 20,
             paddingLeft: 16,
+            paddingBottom: 20,
             paddingRight: 16,
             height: 140)
     }
