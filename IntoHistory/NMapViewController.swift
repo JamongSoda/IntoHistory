@@ -200,9 +200,10 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
     // MARK: - Method
 
     func attribute() {
-        view.backgroundColor = .white
-        navigationItem.title = "상세 코스"
-        navigationController?.navigationBar.backgroundColor = .white
+        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        navigationItem.backBarButtonItem = backBarButtonItem
+        navigationItem.largeTitleDisplayMode = .never
+        navigationController?.navigationBar.prefersLargeTitles = false
 
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -233,4 +234,3 @@ extension NMapViewController: NMFMapViewCameraDelegate {
         }
     }
 }
-
