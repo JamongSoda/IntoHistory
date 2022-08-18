@@ -184,11 +184,9 @@ class MainViewController: UIViewController {
         heroButton.anchor(
             top: courseButton.bottomAnchor,
             left: buttonAreaBackground.leftAnchor,
-            bottom: buttonAreaBackground.bottomAnchor,
             right: buttonAreaBackground.rightAnchor,
             paddingTop: 20,
             paddingLeft: 16,
-            paddingBottom: 20,
             paddingRight: 16,
             height: 140)
     }
