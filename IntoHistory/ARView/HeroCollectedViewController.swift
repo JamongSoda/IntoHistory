@@ -67,4 +67,10 @@ class HeroCollectedViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    // MARK: - Method
+    
+    private func attribute() {
+        view.backgroundColor = .systemRed
+    }
+
 }
