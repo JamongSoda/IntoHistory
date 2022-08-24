@@ -139,7 +139,7 @@ extension DetailCourseViewController:  UICollectionViewDelegate, UICollectionVie
             } else {
                 footer.arButtonShape.backgroundColor = .inactiveButtonColor
                 footer.arButtonLabel.textColor = .popupDim
-                footer.arButtonLabel.text = "코스의 핀들을 모두 방문해야 활성화 돼요"
+                footer.arButtonLabel.text = "코스의 핀들을 모두 방문해보세요~"
             }
 
             return footer
